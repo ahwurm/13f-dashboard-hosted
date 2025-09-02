@@ -1,16 +1,16 @@
-# 13F Institutional Holdings Analyzer
+﻿# 13F Institutional Holdings Analyzer
 
 A comprehensive pipeline for analyzing SEC 13F institutional holdings filings with an interactive Streamlit dashboard. Track institutional positions, identify consensus trades, and visualize quarter-over-quarter changes across major investment firms.
 
-## 🎯 Key Features
+## Key Features
 
-- **Automated 13F Filing Download**: Pulls latest institutional holdings from SEC EDGAR
+- **13F Filing Download Pipeline**: Pulls latest institutional holdings from SEC EDGAR
 - **Quarter-over-Quarter Analysis**: Tracks position changes and identifies new institutional bets
 - **Interactive Dashboard**: Explore holdings by institution, security, or portfolio metrics
 - **Consensus Detection**: Identifies securities with highest institutional conviction
 - **Real-time Filtering**: Dynamic filtering by institution type, specific investors, or securities
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Clone the repository
@@ -20,14 +20,19 @@ cd 13f-holdings-analyzer
 # Install dependencies
 pip install -r requirements.txt
 
-# Run the analysis pipeline
+# Run the full pipeline
+python pipeline/00_download_13f_filings.py
+python pipeline/01_download_sec_tickers.py
+python pipeline/02_build_cusip_mappings.py
+python pipeline/03_get_sec_shares_outstanding.py
+python pipeline/04_complete_cusip_mapping.py
 python pipeline/05_analyze_net_adds.py
 
 # Launch the dashboard
 streamlit run app.py
 ```
 
-## 📁 Essential Files Structure
+## Essential File Structure
 
 ```
 13f-holdings-analyzer/
@@ -58,7 +63,7 @@ streamlit run app.py
 ### Prerequisites
 
 - Python 3.8 or higher
-- 10GB+ free disk space for data storage
+- 2GB+ free disk space for data storage
 - Internet connection for SEC EDGAR access
 
 ### Installation
@@ -82,32 +87,11 @@ streamlit run app.py
 
 4. **Configure SEC User Agent**
    
-   Edit `config/analysis_config.json` to add your contact info (required by SEC):
-   ```json
-   {
-     "sec_user_agent": {
-       "company": "Your Name/Company",
-       "email": "your.email@example.com"
-     }
-   }
-   ```
+   Copy/edit .evn.example to add your name and contact info (required by SEC
 
 ## 📊 Running the Pipeline
 
-### Option 1: Run Complete Analysis (Recommended)
-
-```bash
-# This runs the complete pipeline with proper quarter detection
-python pipeline/05_analyze_net_adds.py
-```
-
-This will:
-- Detect the latest completed quarter with 45-day filing deadline
-- Process both current and previous quarter if needed
-- Generate holdings analysis and net additions
-- Output JSON data for the dashboard
-
-### Option 2: Step-by-Step Pipeline
+### Step-by-Step Pipeline
 
 ```bash
 # Step 1: Download 13F filings (takes 10-30 minutes)
@@ -208,9 +192,14 @@ To get the latest quarter's data:
    rm -rf data/13f_filings/sec-edgar-filings/
    rm data/13f_filings/download_progress_v2.json
    ```
-3. **Run pipeline**:
+3. **Run full pipeline**:
    ```bash
-   python pipeline/05_analyze_net_adds.py
+python pipeline/00_download_13f_filings.py
+python pipeline/01_download_sec_tickers.py
+python pipeline/02_build_cusip_mappings.py
+python pipeline/03_get_sec_shares_outstanding.py
+python pipeline/04_complete_cusip_mapping.py
+python pipeline/05_analyze_net_adds.py
    ```
 
 ## 📊 Data Sources
@@ -240,9 +229,6 @@ To get the latest quarter's data:
 # Clear all cached data
 rm -rf data/mappings/*.json
 rm -rf output/
-
-# Re-run pipeline
-python pipeline/05_analyze_net_adds.py
 ```
 
 ## 📈 Example Use Cases
