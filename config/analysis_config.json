@@ -1,0 +1,49 @@
+{
+  "quarter": "Q2",
+  "year": 2025,
+  "user_agent": {
+    "name": "Your Name",
+    "email": "your.email@example.com"
+  },
+  "paths": {
+    "institutions_csv": "config/top_100_institutions.csv",
+    "filings_base": "data/13f_filings",
+    "mappings_dir": "data/mappings",
+    "sec_data_dir": "data/sec_data",
+    "output_base": "output"
+  },
+  "api": {
+    "openfigi": {
+      "base_url": "https://api.openfigi.com/v3/mapping",
+      "batch_size": 5,
+      "rate_limit_per_minute": 250
+    },
+    "sec": {
+      "base_url": "https://data.sec.gov",
+      "companyfacts_endpoint": "/api/xbrl/companyfacts/",
+      "rate_limit_seconds": 0.15,
+      "rate_limit_requests_per_second": 6.6,
+      "timeout_seconds": 30
+    }
+  },
+  "analysis": {
+    "ownership_cap_percent": 101,
+    "min_shares_outstanding": 100000,
+    "max_data_age_days": 365,
+    "min_data_date": "2024-07-01",
+    "min_filing_year": 2020,
+    "placeholder_values": [
+      1,
+      10,
+      100,
+      1000,
+      10000
+    ],
+    "exclude_etfs": true
+  },
+  "download": {
+    "max_retries": 3,
+    "timeout_seconds": 30,
+    "filings_limit": 5
+  }
+}

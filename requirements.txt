@@ -1,0 +1,30 @@
+# 13F Holdings Analysis Pipeline Requirements
+
+# SEC Data Download
+sec-edgar-downloader>=5.0.0
+
+# API and Web Requests
+requests>=2.31.0
+urllib3>=2.0.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization
+plotly>=5.14.0
+
+# Progress Tracking
+tqdm>=4.65.0
+
+# Financial Data (optional, for fallback)
+yfinance>=0.2.18
+
+# Web Application
+streamlit>=1.28.0
+
+# Excel Export (optional)
+openpyxl>=3.1.0
+
+# Utilities
+pathlib2>=2.3.7

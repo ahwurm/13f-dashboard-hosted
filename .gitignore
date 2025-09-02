@@ -1,0 +1,92 @@
+# Data and Output
+data/
+output/
+*.csv
+*.json
+!config/*.json
+!config/*.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+tmp/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+!examples/*.ipynb
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+.mypy_cache/
+
+# Documentation build
+docs/_build/
+docs/.doctrees
+
+# Streamlit
+.streamlit/secrets.toml
+
+# SEC Filing Downloads
+sec-edgar-filings/
+13f_filings/
+sec_data/
+mappings/
+cik_metadata.json
+company_tickers.json
+companyfacts.zip
