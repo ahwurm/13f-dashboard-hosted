@@ -672,41 +672,11 @@ class Filing13FAnalyzer:
         unmapped_count = 0
         
         for cusip, data in self.current_holdings.items():
-            # Filter out ETFs
             ticker = data.get('ticker', '')
             name = data.get('name', '').upper()
             
             # Use shares outstanding data if available
             shares_outstanding = data.get('shares_outstanding')
-            
-            # Dynamic ETF detection based on name patterns and characteristics
-            # ETFs typically have certain patterns in their names
-            is_etf = False
-            
-            # Common ETF name patterns (case-insensitive)
-            etf_patterns = [
-                'ETF', 'FUND', 'TRUST', 'INDEX', 'SHARES', 'SPDR', 
-                'ISHARES', 'VANGUARD', 'INVESCO', 'PROSHARES', 'VANECK',
-                'WISDOMTREE', 'FIRST TRUST', 'SCHWAB', 'STATE STREET'
-            ]
-            
-            # Check if name contains ETF patterns
-            for pattern in etf_patterns:
-                if pattern in name:
-                    is_etf = True
-                    logger.debug(f"Excluding ETF (pattern '{pattern}'): {name} ({ticker})")
-                    break
-            
-            # Additional check: ETFs often have very high institutional ownership (>100%)
-            # or unusually round share counts
-            if not is_etf and shares_outstanding and shares_outstanding > 0:
-                total_inst_ownership = (data['shares'] / shares_outstanding) * 100
-                if total_inst_ownership > 95:  # Most stocks don't have >95% institutional ownership
-                    logger.debug(f"Likely ETF (ownership {total_inst_ownership:.1f}%): {name} ({ticker})")
-                    is_etf = True
-            
-            if is_etf:
-                continue
             
             if shares_outstanding and shares_outstanding > 0:
                 pct_of_shares = (data['shares'] / shares_outstanding) * 100

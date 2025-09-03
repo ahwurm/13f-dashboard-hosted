@@ -574,6 +574,21 @@ class ModernSEC13FDownloader:
                 print(f"  - {item['name']} ({item['type']})")
         else:
             print("  None")
+    
+    def save_latest_download_metadata(self, year: int, quarter: int):
+        """Save metadata about the latest download for other scripts to use"""
+        metadata = {
+            "last_download": datetime.now().isoformat(),
+            "quarter": quarter,
+            "year": year,
+            "successful_downloads": len(self.successful_downloads),
+            "failed_downloads": len(self.failed_downloads),
+            "total_attempted": len(self.successful_downloads) + len(self.failed_downloads)
+        }
+        
+        metadata_file = self.output_dir / "latest_download.json"
+        with open(metadata_file, 'w') as f:
+            json.dump(metadata, f, indent=2)
 
 
 def main():
