@@ -1,0 +1,48 @@
+name: Update 13F Data Quarterly
+
+on:
+  schedule:
+    # Run 45 days after each quarter end
+    - cron: '0 2 14 2 *'   # Feb 14 (45 days after Q4)
+    - cron: '0 2 15 5 *'   # May 15 (45 days after Q1)
+    - cron: '0 2 14 8 *'   # Aug 14 (45 days after Q2)
+    - cron: '0 2 14 11 *'  # Nov 14 (45 days after Q3)
+  
+  workflow_dispatch:  # Manual trigger for testing
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    
+    - name: Run pipeline
+      run: |
+        cd pipeline
+        python 00_download_13f_filings.py --top 200
+        python 01_download_sec_tickers.py
+        python 02_build_cusip_mappings.py
+        python 03_get_sec_shares_outstanding.py
+        python 04_complete_cusip_mapping.py
+        python 05_analyze_net_adds.py
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add output/
+        git diff --staged --quiet || git commit -m "Update 13F data"
+        git push
