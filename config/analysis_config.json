@@ -6,7 +6,7 @@
     "email": "your.email@example.com"
   },
   "paths": {
-    "institutions_csv": "config/top_100_institutions.csv",
+    "institutions_csv": "config/clean_institutions.csv",
     "filings_base": "data/13f_filings",
     "mappings_dir": "data/mappings",
     "sec_data_dir": "data/sec_data",

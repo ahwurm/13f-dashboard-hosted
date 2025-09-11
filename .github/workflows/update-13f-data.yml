@@ -30,6 +30,9 @@ jobs:
         pip install -r requirements.txt
     
     - name: Run pipeline
+      env:
+        SEC_EMAIL: ${{ secrets.SEC_EMAIL }}
+        SEC_NAME: ${{ secrets.SEC_NAME }}
       run: |
         cd pipeline
         python 00_download_13f_filings.py --top 200
