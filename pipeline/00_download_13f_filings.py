@@ -98,7 +98,7 @@ class ModernSEC13FDownloader:
         logger.info("Initializing target_firms.json from clean_institutions.csv...")
         
         # Read the CSV file
-        csv_path = Path("config/clean_institutions.csv")
+        csv_path = self.paths['config'] / "clean_institutions.csv"
         if not csv_path.exists():
             logger.error("clean_institutions.csv not found! Cannot initialize.")
             return

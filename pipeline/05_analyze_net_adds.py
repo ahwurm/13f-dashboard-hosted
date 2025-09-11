@@ -48,7 +48,7 @@ class Filing13FAnalyzer:
         self.progress_file = self.data_dir / "analysis_progress.json"
         
         # Load configuration
-        config_path = Path(__file__).parent.parent / 'config' / 'analysis_config.json'
+        config_path = paths['analysis_config']
         with open(config_path, 'r') as f:
             self.config = json.load(f)
         
@@ -773,7 +773,8 @@ class Filing13FAnalyzer:
         prev_year = self.year if current_q > 1 else self.year - 1
         
         # Check if previous quarter data exists in output
-        prev_output_dir = Path(f"output/{prev_quarter}_{prev_year}")
+        paths = get_paths()
+        prev_output_dir = paths['output'] / f"{prev_quarter}_{prev_year}"
         prev_data_file = prev_output_dir / "total_holdings_data.json"
         
         # If previous quarter output doesn't exist, try to generate it from raw filings
@@ -1146,7 +1147,8 @@ def main():
     prev_year = target_year if current_q > 1 else target_year - 1
     
     # Check if previous quarter data exists
-    prev_output_dir = Path(f"output/{prev_quarter}_{prev_year}")
+    paths = get_paths()
+    prev_output_dir = paths['output'] / f"{prev_quarter}_{prev_year}"
     prev_data_file = prev_output_dir / "total_holdings_data.json"
     
     # Run previous quarter first if it doesn't exist
