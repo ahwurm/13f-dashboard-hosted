@@ -48,9 +48,8 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add -f output/
         git add -f data/cik_metadata.json
-        git add -f data/mappings/*.json
-        git add -f data/company_tickers.json
-        git add -f data/*.json
+        git add -f data/mappings/
+        git add -f data/sec_data/*.json
         git add -f config/target_firms.json
         git diff --staged --quiet || git commit -m "Update 13F data"
         git push
