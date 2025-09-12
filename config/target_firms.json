@@ -1,0 +1,404 @@
+{
+  "firms": [
+    {
+      "cik": "0000102909",
+      "name": "Vanguard Group"
+    },
+    {
+      "cik": "0001364742",
+      "name": "BlackRock"
+    },
+    {
+      "cik": "0000035368",
+      "name": "Fidelity Management"
+    },
+    {
+      "cik": "0000093751",
+      "name": "State Street Global Advisors"
+    },
+    {
+      "cik": "0000732812",
+      "name": "Capital Group"
+    },
+    {
+      "cik": "0000019617",
+      "name": "JPMorgan Chase"
+    },
+    {
+      "cik": "0000886982",
+      "name": "Goldman Sachs"
+    },
+    {
+      "cik": "0001113169",
+      "name": "T. Rowe Price"
+    },
+    {
+      "cik": "0000038777",
+      "name": "Franklin Templeton"
+    },
+    {
+      "cik": "0000914208",
+      "name": "Invesco"
+    },
+    {
+      "cik": "0000895421",
+      "name": "Morgan Stanley"
+    },
+    {
+      "cik": "0001390777",
+      "name": "BNY Mellon"
+    },
+    {
+      "cik": "0001214717",
+      "name": "Geode Capital Management"
+    },
+    {
+      "cik": "0000902219",
+      "name": "Wellington Management"
+    },
+    {
+      "cik": "0000073124",
+      "name": "Northern Trust"
+    },
+    {
+      "cik": "0000354204",
+      "name": "Dimensional Fund Advisors"
+    },
+    {
+      "cik": "0001109448",
+      "name": "AllianceBernstein"
+    },
+    {
+      "cik": "0001610520",
+      "name": "UBS Asset Management"
+    },
+    {
+      "cik": "0000070858",
+      "name": "Bank of America"
+    },
+    {
+      "cik": "0000831001",
+      "name": "Citigroup"
+    },
+    {
+      "cik": "0000072971",
+      "name": "Wells Fargo"
+    },
+    {
+      "cik": "0001628471",
+      "name": "CalPERS"
+    },
+    {
+      "cik": "0001067983",
+      "name": "Berkshire Hathaway"
+    },
+    {
+      "cik": "0001350694",
+      "name": "Bridgewater Associates"
+    },
+    {
+      "cik": "0001037389",
+      "name": "Renaissance Technologies"
+    },
+    {
+      "cik": "0001791786",
+      "name": "Elliott Management"
+    },
+    {
+      "cik": "0001167483",
+      "name": "Tiger Global"
+    },
+    {
+      "cik": "0001423053",
+      "name": "Citadel"
+    },
+    {
+      "cik": "0001009207",
+      "name": "D.E. Shaw"
+    },
+    {
+      "cik": "0001179392",
+      "name": "Two Sigma"
+    },
+    {
+      "cik": "0001603466",
+      "name": "Point72"
+    },
+    {
+      "cik": "0001061768",
+      "name": "Baupost Group"
+    },
+    {
+      "cik": "0001135730",
+      "name": "Coatue Management"
+    },
+    {
+      "cik": "0001273087",
+      "name": "Millennium Management"
+    },
+    {
+      "cik": "0001061165",
+      "name": "Lone Pine Capital"
+    },
+    {
+      "cik": "0001040273",
+      "name": "Third Point"
+    },
+    {
+      "cik": "0001336528",
+      "name": "Pershing Square"
+    },
+    {
+      "cik": "0001656456",
+      "name": "Appaloosa Management"
+    },
+    {
+      "cik": "0000813762",
+      "name": "Icahn Enterprises"
+    },
+    {
+      "cik": "0001029160",
+      "name": "Soros Fund Management"
+    },
+    {
+      "cik": "0001536411",
+      "name": "Duquesne Family Office"
+    },
+    {
+      "cik": "0001079114",
+      "name": "Greenlight Capital"
+    },
+    {
+      "cik": "0001035674",
+      "name": "Paulson & Co"
+    },
+    {
+      "cik": "0001103804",
+      "name": "Viking Global"
+    },
+    {
+      "cik": "0000934639",
+      "name": "Maverick Capital"
+    },
+    {
+      "cik": "0001389507",
+      "name": "Discovery Capital"
+    },
+    {
+      "cik": "0001569049",
+      "name": "Light Street Capital"
+    },
+    {
+      "cik": "0001387322",
+      "name": "Whale Rock Capital"
+    },
+    {
+      "cik": "0001541617",
+      "name": "Altimeter Capital"
+    },
+    {
+      "cik": "0001628110",
+      "name": "Melvin Capital"
+    },
+    {
+      "cik": "0001798849",
+      "name": "Durable Capital Partners"
+    },
+    {
+      "cik": "0001649339",
+      "name": "Scion Asset Management"
+    },
+    {
+      "cik": "0001351069",
+      "name": "ValueAct Capital"
+    },
+    {
+      "cik": "0001517137",
+      "name": "Starboard Value"
+    },
+    {
+      "cik": "0000949509",
+      "name": "Oaktree Capital"
+    },
+    {
+      "cik": "0001176948",
+      "name": "Ares Management"
+    },
+    {
+      "cik": "0001404912",
+      "name": "KKR"
+    },
+    {
+      "cik": "0001393818",
+      "name": "Blackstone"
+    },
+    {
+      "cik": "0001527166",
+      "name": "Carlyle Group"
+    },
+    {
+      "cik": "0001858681",
+      "name": "Apollo Global Management"
+    },
+    {
+      "cik": "0001510387",
+      "name": "Gotham Asset Management"
+    },
+    {
+      "cik": "0001167557",
+      "name": "AQR Capital Management"
+    },
+    {
+      "cik": "0001126346",
+      "name": "Arrowstreet Capital"
+    },
+    {
+      "cik": "0001751982",
+      "name": "PDT Partners"
+    },
+    {
+      "cik": "0001376154",
+      "name": "Sculptor Capital"
+    },
+    {
+      "cik": "0001670346",
+      "name": "Tiger Eye Capital"
+    },
+    {
+      "cik": "0001501913",
+      "name": "Soroban Capital"
+    },
+    {
+      "cik": "0001048678",
+      "name": "Matrix Capital Management"
+    },
+    {
+      "cik": "0000200217",
+      "name": "Dodge & Cox"
+    },
+    {
+      "cik": "0000028970",
+      "name": "Baron Capital Management"
+    },
+    {
+      "cik": "0000913885",
+      "name": "Bamco Inc"
+    },
+    {
+      "cik": "0000290660",
+      "name": "Davis Selected Advisers"
+    },
+    {
+      "cik": "0000091142",
+      "name": "Royce & Associates"
+    },
+    {
+      "cik": "0000096223",
+      "name": "Tweedy Browne"
+    },
+    {
+      "cik": "0000852743",
+      "name": "First Eagle Investment"
+    },
+    {
+      "cik": "0000799185",
+      "name": "Columbia Management"
+    },
+    {
+      "cik": "0000884887",
+      "name": "American Century Investments"
+    },
+    {
+      "cik": "0000056873",
+      "name": "Nuveen Asset Management"
+    },
+    {
+      "cik": "0000810784",
+      "name": "Janus Henderson"
+    },
+    {
+      "cik": "0000105624",
+      "name": "MFS Investment Management"
+    },
+    {
+      "cik": "0000074251",
+      "name": "Federated Hermes"
+    },
+    {
+      "cik": "0000920520",
+      "name": "Principal Global Investors"
+    },
+    {
+      "cik": "0001112520",
+      "name": "Artisan Partners"
+    },
+    {
+      "cik": "0000934639",
+      "name": "Parnassus Investments"
+    },
+    {
+      "cik": "0001092131",
+      "name": "Brown Advisory"
+    },
+    {
+      "cik": "0000092297",
+      "name": "Neuberger Berman"
+    },
+    {
+      "cik": "0000313143",
+      "name": "Cohen & Steers"
+    },
+    {
+      "cik": "0000859737",
+      "name": "Gabelli Asset Management"
+    },
+    {
+      "cik": "0000105625",
+      "name": "Wasatch Advisors"
+    },
+    {
+      "cik": "0000886982",
+      "name": "Third Avenue Management"
+    },
+    {
+      "cik": "0001392284",
+      "name": "Fairholme Capital"
+    },
+    {
+      "cik": "0000896737",
+      "name": "Longleaf Partners"
+    },
+    {
+      "cik": "0000892862",
+      "name": "FPA Capital"
+    },
+    {
+      "cik": "0000901832",
+      "name": "Primecap Management"
+    },
+    {
+      "cik": "0000879661",
+      "name": "Weitz Investment Management"
+    },
+    {
+      "cik": "0001478617",
+      "name": "Weiss Multi-Strategy"
+    },
+    {
+      "cik": "0001439289",
+      "name": "Centerbridge Partners"
+    },
+    {
+      "cik": "0001541039",
+      "name": "Silver Point Capital"
+    },
+    {
+      "cik": "0001458061",
+      "name": "Caxton Associates"
+    },
+    {
+      "cik": "0000812317",
+      "name": "Southeastern Asset Management"
+    }
+  ]
+}

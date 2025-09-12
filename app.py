@@ -40,7 +40,7 @@ st.set_page_config(
     page_title="Smart Capital Tracker",
     page_icon="financial-institution-icon.png",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="auto"
 )
 
 # Custom CSS for professional styling - optimized for 100% zoom
@@ -584,7 +584,10 @@ def create_ownership_scatter(df, top_n=100, single_institution=None, institution
         yaxis_title=y_title,
         xaxis=dict(tickformat='.2f', ticksuffix='%'),
         yaxis=dict(tickformat='.1f', ticksuffix='%'),
-        showlegend=False
+        showlegend=False,
+        dragmode=False,
+        clickmode='none',
+        hovermode=False
     )
     
     return fig
@@ -659,7 +662,10 @@ def create_top_holdings_bar(df, top_n=20, single_institution=None, institution_t
     fig.update_layout(
         height=500,
         yaxis={'categoryorder': 'total ascending'},
-        coloraxis_colorbar_title=color_title
+        coloraxis_colorbar_title=color_title,
+        dragmode=False,
+        clickmode='none',
+        hovermode=False
     )
     
     return fig
@@ -775,7 +781,7 @@ def render_overview_tab(filtered_df, single_institution, institution_totals, fil
                 filtered_institutions=filtered_institutions
             )
             if fig_scatter:
-                st.plotly_chart(fig_scatter, use_container_width=True)
+                st.plotly_chart(fig_scatter, use_container_width=True, config={'displayModeBar': False, 'staticPlot': True})
             else:
                 st.info("No data available for scatter plot")
         else:
@@ -791,7 +797,7 @@ def render_overview_tab(filtered_df, single_institution, institution_totals, fil
                 filtered_institutions=filtered_institutions
             )
             if fig_bar:
-                st.plotly_chart(fig_bar, use_container_width=True)
+                st.plotly_chart(fig_bar, use_container_width=True, config={'displayModeBar': False, 'staticPlot': True})
             else:
                 st.info("No data available for bar chart")
         else:
@@ -1324,10 +1330,13 @@ def main():
                                 x=0.5,
                                 xanchor='center'
                             ),
-                            showlegend=False
+                            showlegend=False,
+                            dragmode=False,
+                            clickmode='none',
+                            hovermode=False
                         )
                         fig_holders.update_xaxes(tickformat='.1f', ticksuffix='%')
-                        st.plotly_chart(fig_holders, use_container_width=True)
+                        st.plotly_chart(fig_holders, use_container_width=True, config={'displayModeBar': False, 'staticPlot': True})
                 
                 with col2:
                     # Display the holders table
