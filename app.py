@@ -37,8 +37,8 @@ def format_large_number(value_in_millions):
 
 # Page configuration
 st.set_page_config(
-    page_title="13F Holdings Dashboard",
-    page_icon="📊",
+    page_title="Smart Capital Tracker",
+    page_icon="financial-institution-icon.png",
     layout="wide",
     initial_sidebar_state="expanded"
 )

@@ -29,6 +29,12 @@ jobs:
       run: |
         pip install -r requirements.txt
     
+    - name: Clean stale cache files
+      run: |
+        # Remove cache files that could interfere with new quarter processing
+        rm -f data/mappings/analysis_progress.json
+        rm -f data/mappings/enriched_holdings_cache.json
+    
     - name: Run pipeline
       env:
         SEC_EMAIL: ${{ secrets.SEC_EMAIL }}
