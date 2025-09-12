@@ -1,0 +1,132 @@
+{
+  "generated": "2025-09-12T17:35:45.613990",
+  "statistics": {
+    "total_cusips": 12818,
+    "already_mapped": 0,
+    "newly_mapped": 9045,
+    "failed_mappings": 3703,
+    "api_calls": 1276,
+    "api_errors": 7,
+    "filings_processed": 120,
+    "successful_parses": 116,
+    "failed_parses": 4
+  },
+  "filing_coverage": {
+    "total_filings": 120,
+    "successful_parses": 116,
+    "failed_parses": 4,
+    "parse_success_rate": 96.67
+  },
+  "coverage": {
+    "total_cusips": 12818,
+    "mapped_cusips": 9045,
+    "unmapped_cusips": 3703,
+    "coverage_percentage": 70.56
+  },
+  "api_usage": {
+    "total_calls": 1276,
+    "errors": 7
+  },
+  "example_mappings": [
+    {
+      "cusip": "88025U109",
+      "ticker": "TXG",
+      "name": "10X GENOMICS INC"
+    },
+    {
+      "cusip": "88579Y101",
+      "ticker": "MMM",
+      "name": "3M CO"
+    },
+    {
+      "cusip": "002824100",
+      "ticker": "ABT",
+      "name": "ABBOTT LABS"
+    },
+    {
+      "cusip": "00287Y109",
+      "ticker": "ABBV",
+      "name": "ABBVIE INC"
+    },
+    {
+      "cusip": "003881307",
+      "ticker": "ACTG",
+      "name": "ACACIA RESH CORP"
+    },
+    {
+      "cusip": "00404A109",
+      "ticker": "ACHC",
+      "name": "ACADIA HEALTHCARE COMPANY IN"
+    },
+    {
+      "cusip": "00461U105",
+      "ticker": "ACRS",
+      "name": "ACLARIS   THERAPEUTICS    INC"
+    },
+    {
+      "cusip": "00510N102",
+      "ticker": "TIC",
+      "name": "ACUREN CORP                 "
+    },
+    {
+      "cusip": "00653Q102",
+      "ticker": "AHCO",
+      "name": "ADAPTHEALTH       CORP"
+    },
+    {
+      "cusip": "00724F101",
+      "ticker": "ADBE",
+      "name": "ADOBE INC"
+    },
+    {
+      "cusip": "00090Q103",
+      "ticker": "ADT",
+      "name": "ADT   INC  DEL"
+    },
+    {
+      "cusip": "007973100",
+      "ticker": "AEIS",
+      "name": "ADVANCED   ENERGY  INDS"
+    },
+    {
+      "cusip": "007903107",
+      "ticker": "AMD",
+      "name": "ADVANCED MICRO DEVICES INC  "
+    },
+    {
+      "cusip": "00766T100",
+      "ticker": "ACM",
+      "name": "AECOM"
+    },
+    {
+      "cusip": "00827B106",
+      "ticker": "AFRM",
+      "name": "AFFIRM HLDGS INC"
+    },
+    {
+      "cusip": "00846U101",
+      "ticker": "A",
+      "name": "AGILENT TECHNOLOGIES INC"
+    },
+    {
+      "cusip": "00857U107",
+      "ticker": "AGL",
+      "name": "AGILON HEALTH INC"
+    },
+    {
+      "cusip": "00123Q104",
+      "ticker": "AGNC",
+      "name": "AGNC INVT CORP"
+    },
+    {
+      "cusip": "008474108",
+      "ticker": "AEM",
+      "name": "AGNICO EAGLE MINES LTD"
+    },
+    {
+      "cusip": "009066101",
+      "ticker": "ABNB",
+      "name": "AIRBNB INC"
+    }
+  ]
+}
