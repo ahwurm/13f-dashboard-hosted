@@ -380,10 +380,7 @@ class OptimizedSECSharesFetcher:
             logger.info(f"Will extract data for {len(needed_ciks)} specific companies")
         else:
             logger.info("No CIK filter found - will extract all companies")
-            response = input("Continue with full extraction? (y/n): ")
-            if response.lower() != 'y':
-                logger.info("Extraction cancelled")
-                return False
+            logger.info("Continuing with full extraction")
         
         # Step 3: Extract only needed companies (selective extraction)
         shares_data = self.extract_selective_companyfacts(needed_ciks)
@@ -427,13 +424,10 @@ class OptimizedSECSharesFetcher:
             total_size = sum(f.stat().st_size for f in json_files) / (1024**3)  # GB
             logger.info(f"Total size: {total_size:.1f} GB")
             
-            response = input("Delete this directory to save space? (y/n): ")
-            if response.lower() == 'y':
-                import shutil
-                shutil.rmtree(old_companyfacts_dir)
-                logger.info(f"Deleted {total_size:.1f} GB of unnecessary data")
-            else:
-                logger.info("Keeping old data")
+            # Always delete old directory to save space
+            import shutil
+            shutil.rmtree(old_companyfacts_dir)
+            logger.info(f"Deleted {total_size:.1f} GB of unnecessary data")
 
 
 def main():
@@ -445,15 +439,9 @@ def main():
         with open(fetcher.consolidated_shares_file, 'r') as f:
             data = json.load(f)
             companies = len(data.get('data', {}))
-        
+
         logger.info(f"Consolidated file exists with {companies} companies")
-        response = input("Re-run extraction? (y/n): ")
-        if response.lower() != 'y':
-            logger.info("Using existing data")
-            
-            # Offer to clean up old data
-            fetcher.cleanup_old_data()
-            return
+        logger.info("Re-running extraction to get fresh data")
     
     # Run optimized extraction
     if fetcher.run_optimized_extraction():
