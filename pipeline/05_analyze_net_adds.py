@@ -299,6 +299,7 @@ class Filing13FAnalyzer:
             cusip_xpath = f'{xpath_prefix}:cusip'
             value_xpath = f'{xpath_prefix}:value'
             shares_xpath = f'.//{xpath_prefix}:sshPrnamt'
+            put_call_xpath = f'{xpath_prefix}:putCall'
             
             # Try with namespace
             info_tables = root.findall(info_table_xpath, ns)
@@ -310,6 +311,7 @@ class Filing13FAnalyzer:
                 cusip_xpath = 'cusip'
                 value_xpath = 'value'
                 shares_xpath = './/sshPrnamt'
+                put_call_xpath = 'putCall'
                 ns = {}
             
             # Extract holdings
@@ -321,6 +323,7 @@ class Filing13FAnalyzer:
                 cusip_elem = info_table.find(cusip_xpath, ns) if ns else info_table.find(cusip_xpath)
                 value_elem = info_table.find(value_xpath, ns) if ns else info_table.find(value_xpath)
                 shares_elem = info_table.find(shares_xpath, ns) if ns else info_table.find(shares_xpath)
+                put_call_elem = info_table.find(put_call_xpath, ns) if ns else info_table.find(put_call_xpath)
                 
                 if name_elem is not None:
                     holding['name'] = name_elem.text
@@ -330,6 +333,13 @@ class Filing13FAnalyzer:
                     holding['value'] = int(value_elem.text) * 1000  # Value is in thousands
                 if shares_elem is not None:
                     holding['shares'] = int(shares_elem.text)
+                if put_call_elem is not None:
+                    holding['put_call'] = put_call_elem.text.strip().upper()
+                    # Log when we find options
+                    if holding['put_call'] in ['PUT', 'P']:
+                        logger.debug(f"Found PUT option: {holding.get('name', 'Unknown')} ({holding.get('cusip', '')})")
+                    elif holding['put_call'] in ['CALL', 'C']:
+                        logger.debug(f"Found CALL option: {holding.get('name', 'Unknown')} ({holding.get('cusip', '')})")
                 
                 if holding.get('cusip') and holding.get('shares'):
                     holdings.append(holding)
@@ -475,8 +485,17 @@ class Filing13FAnalyzer:
                     # Aggregate holdings by CUSIP
                     for holding in holdings:
                         cusip = holding['cusip']
-                        self.current_holdings[cusip]['shares'] += holding['shares']
-                        self.current_holdings[cusip]['value'] += holding['value']
+
+                        # Handle PUT options as negative positions (short)
+                        shares = holding['shares']
+                        value = holding['value']
+                        if holding.get('put_call') in ['PUT', 'P']:
+                            shares = -shares  # Make shares negative for PUT options
+                            value = -value    # Make value negative for PUT options
+                            logger.info(f"Processing PUT option for {holding['name']}: {shares:,} shares (negative)")
+
+                        self.current_holdings[cusip]['shares'] += shares
+                        self.current_holdings[cusip]['value'] += value
                         self.current_holdings[cusip]['name'] = holding['name']
                         self.current_holdings[cusip]['cusip'] = cusip
                         
@@ -485,11 +504,14 @@ class Filing13FAnalyzer:
                             self.current_holdings[cusip]['positions'][company_name] = {
                                 'shares': 0,
                                 'value': 0,
-                                'pct_of_company_shares': 0  # Will be calculated later when we have shares outstanding
+                                'pct_of_company_shares': 0,  # Will be calculated later when we have shares outstanding
+                                'put_call': None  # Track if this is an option position
                             }
-                        
-                        self.current_holdings[cusip]['positions'][company_name]['shares'] += holding['shares']
-                        self.current_holdings[cusip]['positions'][company_name]['value'] += holding['value']
+
+                        self.current_holdings[cusip]['positions'][company_name]['shares'] += shares
+                        self.current_holdings[cusip]['positions'][company_name]['value'] += value
+                        if holding.get('put_call'):
+                            self.current_holdings[cusip]['positions'][company_name]['put_call'] = holding['put_call']
                         
                         if company_name not in self.current_holdings[cusip]['holders']:
                             self.current_holdings[cusip]['holders'].append(company_name)
@@ -680,12 +702,7 @@ class Filing13FAnalyzer:
             
             if shares_outstanding and shares_outstanding > 0:
                 pct_of_shares = (data['shares'] / shares_outstanding) * 100
-                
-                # Cap at 101% - anything above this indicates data quality issues
-                if pct_of_shares > 101:
-                    logger.debug(f"Excluding {data['name']} - ownership {pct_of_shares:.1f}% exceeds 101% cap")
-                    continue
-                
+
                 # Calculate each institution's percentage of company shares
                 positions_with_pct = {}
                 for inst_name, inst_position in data.get('positions', {}).items():
