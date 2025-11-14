@@ -1,12 +1,12 @@
 {
-  "generated": "2025-09-12T17:35:45.613990",
+  "generated": "2025-11-14T17:27:06.775029",
   "statistics": {
-    "total_cusips": 12818,
-    "already_mapped": 0,
-    "newly_mapped": 9045,
-    "failed_mappings": 3703,
-    "api_calls": 1276,
-    "api_errors": 7,
+    "total_cusips": 13357,
+    "already_mapped": 8966,
+    "newly_mapped": 462,
+    "failed_mappings": 3929,
+    "api_calls": 440,
+    "api_errors": 0,
     "filings_processed": 120,
     "successful_parses": 116,
     "failed_parses": 4
@@ -18,14 +18,14 @@
     "parse_success_rate": 96.67
   },
   "coverage": {
-    "total_cusips": 12818,
-    "mapped_cusips": 9045,
-    "unmapped_cusips": 3703,
-    "coverage_percentage": 70.56
+    "total_cusips": 13357,
+    "mapped_cusips": 9428,
+    "unmapped_cusips": 3929,
+    "coverage_percentage": 70.58
   },
   "api_usage": {
-    "total_calls": 1276,
-    "errors": 7
+    "total_calls": 440,
+    "errors": 0
   },
   "example_mappings": [
     {
@@ -61,17 +61,17 @@
     {
       "cusip": "00461U105",
       "ticker": "ACRS",
-      "name": "ACLARIS   THERAPEUTICS    INC"
+      "name": "ACLARIS THERAPEUTICS INC"
     },
     {
       "cusip": "00510N102",
       "ticker": "TIC",
-      "name": "ACUREN CORP                 "
+      "name": "ACUREN CORP"
     },
     {
       "cusip": "00653Q102",
       "ticker": "AHCO",
-      "name": "ADAPTHEALTH       CORP"
+      "name": "ADAPTHEALTH CORP"
     },
     {
       "cusip": "00724F101",
@@ -81,17 +81,17 @@
     {
       "cusip": "00090Q103",
       "ticker": "ADT",
-      "name": "ADT   INC  DEL"
+      "name": "ADT INC DEL"
     },
     {
       "cusip": "007973100",
       "ticker": "AEIS",
-      "name": "ADVANCED   ENERGY  INDS"
+      "name": "ADVANCED ENERGY INDS"
     },
     {
       "cusip": "007903107",
       "ticker": "AMD",
-      "name": "ADVANCED MICRO DEVICES INC  "
+      "name": "ADVANCED MICRO DEVICES INC"
     },
     {
       "cusip": "00766T100",
