@@ -34,6 +34,7 @@ jobs:
         # Remove cache files that could interfere with new quarter processing
         rm -f data/mappings/analysis_progress.json
         rm -f data/mappings/enriched_holdings_cache.json
+        rm -f data/13f_filings/download_progress_v2.json
     
     - name: Run pipeline
       env:
