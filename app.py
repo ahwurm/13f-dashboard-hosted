@@ -363,10 +363,10 @@ def add_portfolio_percentages(df, selected_institution, institution_totals):
             return calculate_portfolio_percentage(position_value, total_portfolio)
         
         df['portfolio_pct'] = df.apply(get_portfolio_pct, axis=1)
-        df['portfolio_pct_formatted'] = df['portfolio_pct'].apply(lambda x: f"{x:.2f}%" if x > 0 else "")
-        
-        # Filter to only show holdings of this institution
-        df = df[df['portfolio_pct'] > 0]
+        df['portfolio_pct_formatted'] = df['portfolio_pct'].apply(lambda x: f"{x:.2f}%" if x != 0 else "")
+
+        # Filter to only show holdings of this institution (including PUT positions with negative values)
+        df = df[df['portfolio_pct'] != 0]
     
     return df
 
@@ -679,8 +679,11 @@ def get_position_value(row, institution, scale=True):
     return 0
 
 def calculate_portfolio_percentage(position_value, total_portfolio):
-    """Calculate portfolio percentage for a position."""
-    return (position_value / total_portfolio * 100) if total_portfolio > 0 else 0
+    """Calculate portfolio percentage for a position, handling negative portfolios from PUT positions."""
+    if total_portfolio == 0:
+        return 0
+    # Use absolute value of total for percentage calculation with PUT-heavy portfolios
+    return (position_value / abs(total_portfolio)) * 100
 
 def create_holdings_display_df(holdings_df, single_institution=None):
     """Create display dataframe for holdings table."""
@@ -888,6 +891,7 @@ def main():
     
     # Load data for selected quarter
     df, metadata = load_holdings_data(quarter, year)
+    df = df.copy() if df is not None else None  # Prevent mutation of cached DataFrame
     df_adds, metadata_adds = load_quarterly_adds_data(quarter, year)
     investor_metadata = load_investor_metadata()
     
