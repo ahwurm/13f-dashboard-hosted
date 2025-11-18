@@ -183,6 +183,8 @@ def load_holdings_data(quarter, year):
             if filtered_positions:
                 sec = sec.copy()
                 sec['positions'] = filtered_positions
+                # Also filter holders array to match positions
+                sec['holders'] = [h for h in sec.get('holders', []) if h in filtered_positions]
                 # Recalculate holder count
                 sec['holder_count'] = len(filtered_positions)
                 filtered_securities.append(sec)
@@ -392,8 +394,8 @@ def filter_dataframe(df, filters, investor_metadata=None, institution_totals=Non
     if single_institution:
         # Filter to only show securities this institution holds
         filtered_df['position_value'] = filtered_df.apply(lambda row: get_position_value(row, single_institution), axis=1)
-        # Only show securities this institution holds
-        filtered_df = filtered_df[filtered_df['position_value'] > 0]
+        # Only show securities this institution holds (including PUTs with negative values)
+        filtered_df = filtered_df[filtered_df['position_value'] != 0]
     
     # Number of holders filter (skip for single institution)
     if not single_institution:
