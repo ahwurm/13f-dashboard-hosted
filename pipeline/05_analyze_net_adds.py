@@ -486,13 +486,12 @@ class Filing13FAnalyzer:
                     for holding in holdings:
                         cusip = holding['cusip']
 
-                        # Handle PUT options as negative positions (short)
+                        # Skip PUT options entirely
+                        if holding.get('put_call') in ['PUT', 'P']:
+                            continue
+
                         shares = holding['shares']
                         value = holding['value']
-                        if holding.get('put_call') in ['PUT', 'P']:
-                            shares = -shares  # Make shares negative for PUT options
-                            value = -value    # Make value negative for PUT options
-                            logger.info(f"Processing PUT option for {holding['name']}: {shares:,} shares (negative)")
 
                         self.current_holdings[cusip]['shares'] += shares
                         self.current_holdings[cusip]['value'] += value
@@ -504,14 +503,11 @@ class Filing13FAnalyzer:
                             self.current_holdings[cusip]['positions'][company_name] = {
                                 'shares': 0,
                                 'value': 0,
-                                'pct_of_company_shares': 0,  # Will be calculated later when we have shares outstanding
-                                'put_call': None  # Track if this is an option position
+                                'pct_of_company_shares': 0  # Will be calculated later when we have shares outstanding
                             }
 
                         self.current_holdings[cusip]['positions'][company_name]['shares'] += shares
                         self.current_holdings[cusip]['positions'][company_name]['value'] += value
-                        if holding.get('put_call'):
-                            self.current_holdings[cusip]['positions'][company_name]['put_call'] = holding['put_call']
                         
                         if company_name not in self.current_holdings[cusip]['holders']:
                             self.current_holdings[cusip]['holders'].append(company_name)

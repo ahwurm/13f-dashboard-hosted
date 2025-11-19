@@ -367,7 +367,7 @@ def add_portfolio_percentages(df, selected_institution, institution_totals):
         df['portfolio_pct'] = df.apply(get_portfolio_pct, axis=1)
         df['portfolio_pct_formatted'] = df['portfolio_pct'].apply(lambda x: f"{x:.2f}%" if x != 0 else "")
 
-        # Filter to only show holdings of this institution (including PUT positions with negative values)
+        # Filter to only show holdings of this institution
         df = df[df['portfolio_pct'] != 0]
     else:
         # Institution has no data - return empty dataframe with required columns
@@ -396,10 +396,10 @@ def filter_dataframe(df, filters, investor_metadata=None, institution_totals=Non
         filtered_df = add_portfolio_percentages(filtered_df, single_institution, institution_totals)
     
     # For single institution, only show securities they hold
-    if single_institution:
+    if single_institution and len(filtered_df) > 0:
         # Filter to only show securities this institution holds
         filtered_df['position_value'] = filtered_df.apply(lambda row: get_position_value(row, single_institution), axis=1)
-        # Only show securities this institution holds (including PUTs with negative values)
+        # Only show securities this institution holds
         filtered_df = filtered_df[filtered_df['position_value'] != 0]
     
     # Number of holders filter (skip for single institution)
@@ -686,11 +686,10 @@ def get_position_value(row, institution, scale=True):
     return 0
 
 def calculate_portfolio_percentage(position_value, total_portfolio):
-    """Calculate portfolio percentage for a position, handling negative portfolios from PUT positions."""
+    """Calculate portfolio percentage for a position."""
     if total_portfolio == 0:
         return 0
-    # Use absolute value of total for percentage calculation with PUT-heavy portfolios
-    return (position_value / abs(total_portfolio)) * 100
+    return (position_value / total_portfolio) * 100
 
 def create_holdings_display_df(holdings_df, single_institution=None):
     """Create display dataframe for holdings table."""
