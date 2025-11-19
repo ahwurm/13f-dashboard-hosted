@@ -35,6 +35,11 @@ jobs:
         rm -f data/mappings/analysis_progress.json
         rm -f data/mappings/enriched_holdings_cache.json
         rm -f data/13f_filings/download_progress_v2.json
+        rm -f output/*
+        rm -f data/sec_data/*
+        rm -f data/cik_metadata.json
+        rm -f data/mappings/*
+
     
     - name: Run pipeline
       env:
