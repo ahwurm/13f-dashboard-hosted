@@ -356,20 +356,25 @@ def calculate_institution_portfolios(_df):
 def add_portfolio_percentages(df, selected_institution, institution_totals):
     """Add portfolio percentage column for a specific institution"""
     df = df.copy()
-    
+
     if selected_institution and selected_institution in institution_totals:
         total_portfolio = institution_totals[selected_institution]
-        
+
         def get_portfolio_pct(row):
             position_value = get_position_value(row, selected_institution)
             return calculate_portfolio_percentage(position_value, total_portfolio)
-        
+
         df['portfolio_pct'] = df.apply(get_portfolio_pct, axis=1)
         df['portfolio_pct_formatted'] = df['portfolio_pct'].apply(lambda x: f"{x:.2f}%" if x != 0 else "")
 
         # Filter to only show holdings of this institution (including PUT positions with negative values)
         df = df[df['portfolio_pct'] != 0]
-    
+    else:
+        # Institution has no data - return empty dataframe with required columns
+        df['portfolio_pct'] = 0.0
+        df['portfolio_pct_formatted'] = ""
+        df = df[df['portfolio_pct'] != 0]
+
     return df
 
 def filter_dataframe(df, filters, investor_metadata=None, institution_totals=None):
