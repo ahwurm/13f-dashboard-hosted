@@ -59,4 +59,5 @@ jobs:
         git add -f data/sec_data/*.json
         git add -f config/target_firms.json
         git diff --staged --quiet || git commit -m "Update 13F data"
+        git pull --rebase origin main
         git push
