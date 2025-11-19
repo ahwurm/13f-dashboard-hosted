@@ -209,11 +209,15 @@ def load_holdings_data(quarter, year):
     
     # Convert from storage (millicents) to display (millions)
     df['value_usd'] = df['value_usd'] / SCALE_FACTOR
-    
+
+    # Filter out securities with ownership > cap (indicates stale shares outstanding)
+    ownership_cap = CONFIG.get('analysis', {}).get('ownership_cap_percent', 101)
+    df = df[df['pct_of_shares_outstanding'] <= ownership_cap]
+
     # Add formatted columns
     df['value_formatted'] = df['value_usd'].apply(lambda x: f"${x:,.0f}")
     df['pct_formatted'] = df['pct_of_shares_outstanding'].apply(lambda x: f"{x:.2f}%")
-    
+
     return df, data['metadata']
 
 @st.cache_data(ttl=3600)  # Cache for 1 hour to allow for updates
@@ -235,11 +239,15 @@ def load_quarterly_adds_data(quarter, year):
     
     # Convert from storage (millicents) to display (millions)
     df['value_usd'] = df['value_usd'] / SCALE_FACTOR
-    
+
+    # Filter out securities with ownership > cap (indicates stale shares outstanding)
+    ownership_cap = CONFIG.get('analysis', {}).get('ownership_cap_percent', 101)
+    df = df[df['pct_of_shares_outstanding'] <= ownership_cap]
+
     # Add formatted columns
     df['value_formatted'] = df['value_usd'].apply(lambda x: f"${x:,.0f}")
     df['pct_formatted'] = df['pct_of_shares_outstanding'].apply(lambda x: f"{x:.2f}%")
-    
+
     return df, data.get('metadata', {})
 
 # Investor type consolidation mapping

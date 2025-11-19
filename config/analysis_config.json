@@ -25,7 +25,7 @@
     }
   },
   "analysis": {
-    "ownership_cap_percent": 101,
+    "ownership_cap_percent": 100,
     "min_shares_outstanding": 100000,
     "max_data_age_days": 365,
     "min_data_date": "2024-07-01",
