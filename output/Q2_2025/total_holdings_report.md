@@ -1,11 +1,11 @@
 # Total Institutional Holdings as % of Shares Outstanding
 
-*Generated: 2025-11-19 12:04:26*
+*Generated: 2025-11-19 19:04:22*
 
 ## Summary Statistics
 
 - Total Securities Analyzed: 3732
-- Total Portfolio Value: $2320699.61B
+- Total Portfolio Value: $2320760.22B
 - Average Holders per Security: 6.0
 - High Concentration Positions (>50% of shares outstanding): 13
 - Institutions Included: 57 total
@@ -52,9 +52,9 @@
 | 34 | JANUX THERAPEUTICS INC | JANX | 16,955,736 | 60,123,602 | 28.20% | 10 | $391677.5 |
 | 35 | TYRA BIOSCIENCES INC | TYRA | 14,895,119 | 53,318,198 | 27.94% | 11 | $142546.3 |
 | 36 | PONY AI INC | PONY | 31,056,262 | 114,318,765 | 27.17% | 9 | $409942.7 |
-| 37 | Incyte Corp | INCY | 52,380,841 | 196,130,993 | 26.71% | 14 | $3567135.2 |
+| 37 | INCYTE CORP | INCY | 52,380,841 | 196,130,993 | 26.71% | 14 | $3567135.2 |
 | 38 | MNTN INC | MNTN | 4,358,654 | 16,441,170 | 26.51% | 8 | $95323.8 |
-| 39 | Adaptive Biotechnologies Corp | ADPT | 39,523,698 | 152,581,042 | 25.90% | 9 | $460451.1 |
+| 39 | ADAPTIVE BIOTECHNOLOGIES COR | ADPT | 39,523,698 | 152,581,042 | 25.90% | 9 | $460451.1 |
 | 40 | ARS PHARMACEUTICALS INC | SPRY | 25,526,358 | 98,844,178 | 25.82% | 8 | $445435.0 |
 | 41 | FULCRUM THERAPEUTICS INC | FULC | 13,764,162 | 54,108,438 | 25.44% | 9 | $94697.4 |
 | 42 | AMERICAN EXPRESS CO | AXP | 173,020,790 | 689,000,000 | 25.11% | 12 | $55190171.3 |
@@ -64,7 +64,7 @@
 | 46 | 4D MOLECULAR THERAPEUTICS IN | FDMT | 11,062,154 | 46,771,185 | 23.65% | 6 | $41040.6 |
 | 47 | INTAPP INC | INTA | 19,199,319 | 81,694,000 | 23.50% | 9 | $991068.8 |
 | 48 | WENDYS CO | WEN | 44,062,822 | 190,311,000 | 23.15% | 6 | $503197.4 |
-| 49 | Twist Bioscience Corp | TWST | 13,672,380 | 60,174,000 | 22.72% | 10 | $503006.9 |
+| 49 | TWIST BIOSCIENCE CORP | TWST | 13,672,380 | 60,174,000 | 22.72% | 10 | $503006.9 |
 | 50 | LEXEO THERAPEUTICS INC | LXEO | 12,291,738 | 54,934,275 | 22.38% | 8 | $49412.8 |
 
 ## Concentration Risk Analysis
@@ -88,12 +88,12 @@
 - **AMAZON COM INC**: 33 holders (2.52% of shares outstanding)
 - **META PLATFORMS INC**: 32 holders (2.83% of shares outstanding)
 - **ALPHABET INC**: 29 holders (1.73% of shares outstanding)
-- **NVIDIA Corp**: 26 holders (2.21% of shares outstanding)
+- **NVIDIA CORPORATION**: 26 holders (2.21% of shares outstanding)
 - **CAPITAL ONE FINL CORP**: 22 holders (8.40% of shares outstanding)
 - **UBER TECHNOLOGIES INC**: 21 holders (4.91% of shares outstanding)
 - **MASTERCARD INCORPORATED**: 21 holders (4.23% of shares outstanding)
 - **APPLE INC**: 21 holders (3.41% of shares outstanding)
-- **Sea Ltd**: 20 holders (7.36% of shares outstanding)
+- **SEA LTD**: 20 holders (7.36% of shares outstanding)
 
 ## Key Insights
 
@@ -107,49 +107,49 @@
 - **CUSIP**: 586001109
 - **% of Shares Outstanding**: 10826.42%
 - **Total Value**: $154983.5M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Third Point, Two Sigma, Millennium Management, Citadel Advisors
+- **Key Holders**: Two Sigma, Goldman Sachs Asset Mgmt, Millennium Management, Third Point, Citadel Advisors
 
 ### 2. Tempus AI Inc
 - **CUSIP**: 88023B103
 - **% of Shares Outstanding**: 8605.61%
 - **Total Value**: $945794.9M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Polen Capital, Two Sigma, Balyasny Asset Management and 4 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Polen Capital and 4 others
 
 ### 3. ECHOSTAR CORP
 - **CUSIP**: 278768106
 - **% of Shares Outstanding**: 6083.97%
 - **Total Value**: $484279.8M
-- **Key Holders**: Dodge & Cox, Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Two Sigma, Millennium Management and 2 others
+- **Key Holders**: Two Sigma, Goldman Sachs Asset Mgmt, Dodge & Cox, Millennium Management, Point72 and 2 others
 
 ### 4. NUTANIX INC
 - **CUSIP**: 67059N108
 - **% of Shares Outstanding**: 3945.04%
 - **Total Value**: $806606.7M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Polen Capital, Renaissance Technologies and 6 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Polen Capital and 6 others
 
 ### 5. SUNOPTA INC
 - **CUSIP**: 8676EP108
 - **% of Shares Outstanding**: 1762.86%
 - **Total Value**: $12051.9M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Renaissance Technologies, Balyasny Asset Management, Millennium Management, Citadel Advisors and 1 others
+- **Key Holders**: Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Point72, Citadel Advisors and 1 others
 
 ### 6. COLLIERS INTL GROUP INC
 - **CUSIP**: 194693107
 - **% of Shares Outstanding**: 1503.80%
 - **Total Value**: $558655.6M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Wellington Management, Renaissance Technologies, Citadel Advisors, Durable Capital Partners
+- **Key Holders**: Durable Capital Partners, Goldman Sachs Asset Mgmt, Wellington Management, Citadel Advisors, Renaissance Technologies
 
 ### 7. EHANG HLDGS LTD
 - **CUSIP**: 26853E102
 - **% of Shares Outstanding**: 590.50%
 - **Total Value**: $13273.6M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Balyasny Asset Management, Millennium Management, Citadel Advisors
+- **Key Holders**: Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Citadel Advisors
 
 ### 8. SHIFT4 PMTS INC
 - **CUSIP**: 82452J109
 - **% of Shares Outstanding**: 586.49%
 - **Total Value**: $970042.3M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Balyasny Asset Management, Millennium Management and 4 others
+- **Key Holders**: Balyasny Asset Management, Durable Capital Partners, Goldman Sachs Asset Mgmt, Millennium Management, Wellington Management and 4 others
 
 ### 9. MSP   RECOVERY    INC
 - **CUSIP**: 553745126
@@ -161,5 +161,5 @@
 - **CUSIP**: 45174J509
 - **% of Shares Outstanding**: 92.49%
 - **Total Value**: $8203.0M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Renaissance Technologies, Two Sigma, Citadel Advisors
+- **Key Holders**: Two Sigma, Goldman Sachs Asset Mgmt, Citadel Advisors, Renaissance Technologies
 

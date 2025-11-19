@@ -1,11 +1,11 @@
 # Q3 2025 Net Additions as % of Shares Outstanding
 
-*Generated: 2025-11-19 12:04:29*
+*Generated: 2025-11-19 19:04:26*
 
 ## Summary Statistics
 
 - Total Securities Analyzed: 3868
-- Total Portfolio Value: $2491663.88B
+- Total Portfolio Value: $2491774.33B
 - Average Holders per Security: 6.1
 - High Concentration Positions (>50% of shares outstanding): 20
 - Institutions Included: 57 total
@@ -22,7 +22,7 @@
 | 4 | LUCID GROUP INC | LCID | 11,264,878 | 324,164,267 | 3.48% | 9 | $267991.5 |
 | 5 | UNITI GROUP LLC | UNIT | 64,093,575 | 234,000,000 | 27.39% | 8 | $392252.7 |
 | 6 | LB PHARMACEUTICALS INC | LBRX | 4,724,451 | 25,299,102 | 18.67% | 8 | $74599.1 |
-| 7 | Figure Technology Solutio | FIGR | 7,458,216 | 80,896,185 | 9.22% | 8 | $194343.4 |
+| 7 | FIGURE TECHNOLOGY SOLUTIO | FIGR | 7,458,216 | 80,896,185 | 9.22% | 8 | $194343.4 |
 | 8 | PATTERN GROUP INC | PTRN | 2,208,781 | 94,350,000 | 2.34% | 8 | $30260.3 |
 | 9 | BLACK ROCK COFFEE BAR INC | BRCB | 3,041,349 | 14,808,173 | 20.54% | 7 | $72566.6 |
 | 10 | VIPER ENERGY INC | VNOM | 12,648,153 | 133,741,000 | 9.46% | 7 | $483412.4 |
@@ -63,7 +63,7 @@
 | 45 | CARLSMED INC | CARL | 1,558,362 | 26,584,077 | 5.86% | 4 | $20866.5 |
 | 46 | AVIDBANK HLDGS INC | AVBH | 559,409 | 10,925,102 | 5.12% | 4 | $14264.9 |
 | 47 | AEHR TEST SYS | AEHR | 1,455,243 | 29,877,000 | 4.87% | 8 | $43817.4 |
-| 48 | SYNOPSYS INC | SNPS | 7,422,909 | 185,460,000 | 4.00% | 16 | $3662521.4 |
+| 48 | Synopsys Inc | SNPS | 7,422,909 | 185,460,000 | 4.00% | 16 | $3662521.4 |
 | 49 | VICTORY CAP HLDGS INC | VCTR | 2,502,782 | 65,082,104 | 3.85% | 9 | $162080.2 |
 | 50 | USA RARE EARTH INC | USAR | 3,579,902 | 113,833,000 | 3.14% | 5 | $61538.5 |
 
@@ -87,12 +87,12 @@
 - **MICROSOFT CORP**: 36 holders (2.82% of shares outstanding)
 - **ALPHABET INC**: 33 holders (1.92% of shares outstanding)
 - **META PLATFORMS INC**: 33 holders (2.75% of shares outstanding)
-- **Amazon.com Inc**: 31 holders (2.49% of shares outstanding)
+- **AMAZON COM INC**: 31 holders (2.49% of shares outstanding)
 - **NVIDIA CORPORATION**: 27 holders (2.17% of shares outstanding)
 - **BROADCOM INC**: 22 holders (2.74% of shares outstanding)
 - **INTUIT**: 22 holders (4.47% of shares outstanding)
 - **APPLE INC**: 22 holders (3.31% of shares outstanding)
-- **CAPITAL ONE FINL CORP**: 22 holders (8.38% of shares outstanding)
+- **CAPITAL ONE FC**: 22 holders (8.38% of shares outstanding)
 - **DANAHER CORPORATION**: 21 holders (4.15% of shares outstanding)
 
 ## Key Insights
@@ -107,59 +107,59 @@
 - **CUSIP**: 316841105
 - **% of Shares Outstanding**: 5.83%
 - **Total Value**: $841729.8M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Wellington Management, Soros Fund Management, Coatue Management, Tiger Global and 6 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Durable Capital Partners, Goldman Sachs Asset Mgmt, Soros Fund Management and 6 others
 
 ### 2. SOUTHSTATE BK CORP
 - **CUSIP**: 84472E102
 - **% of Shares Outstanding**: 5.85%
 - **Total Value**: $584741.9M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Two Sigma, Balyasny Asset Management and 4 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Select Equity Group, Millennium Management and 4 others
 
 ### 3. GCI LIBERTY INC
 - **CUSIP**: 36164V800
 - **% of Shares Outstanding**: 5.48%
 - **Total Value**: $59277.5M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Renaissance Technologies, Two Sigma, Balyasny Asset Management, Millennium Management and 4 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Elliott Management and 4 others
 
 ### 4. LUCID GROUP INC
 - **CUSIP**: 549498202
 - **% of Shares Outstanding**: 3.48%
 - **Total Value**: $267991.5M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Coatue Management, Two Sigma and 4 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Wellington Management and 4 others
 
 ### 5. UNITI GROUP LLC
 - **CUSIP**: 912932100
 - **% of Shares Outstanding**: 27.39%
 - **Total Value**: $392252.7M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Two Sigma, Balyasny Asset Management, Millennium Management and 3 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Elliott Management and 3 others
 
 ### 6. LB PHARMACEUTICALS INC
 - **CUSIP**: 50180M108
 - **% of Shares Outstanding**: 18.67%
 - **Total Value**: $74599.1M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Wellington Management, Two Sigma, Balyasny Asset Management, Baker Bros Advisors and 3 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Baker Bros Advisors, Goldman Sachs Asset Mgmt, Millennium Management and 3 others
 
-### 7. Figure Technology Solutio
+### 7. FIGURE TECHNOLOGY SOLUTIO
 - **CUSIP**: 349381103
 - **% of Shares Outstanding**: 9.22%
 - **Total Value**: $194343.4M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Soros Fund Management, Tiger Global, Balyasny Asset Management, Millennium Management and 3 others
+- **Key Holders**: Balyasny Asset Management, Goldman Sachs Asset Mgmt, Soros Fund Management, Discovery Capital, Millennium Management and 3 others
 
 ### 8. PATTERN GROUP INC
 - **CUSIP**: 70339W104
 - **% of Shares Outstanding**: 2.34%
 - **Total Value**: $30260.3M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Soros Fund Management, Two Sigma, Balyasny Asset Management and 3 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Soros Fund Management, Millennium Management and 3 others
 
 ### 9. BLACK ROCK COFFEE BAR INC
 - **CUSIP**: 092244102
 - **% of Shares Outstanding**: 20.54%
 - **Total Value**: $72566.6M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Wellington Management, Soros Fund Management, Balyasny Asset Management, Millennium Management and 2 others
+- **Key Holders**: Balyasny Asset Management, Goldman Sachs Asset Mgmt, Soros Fund Management, Millennium Management, Wellington Management and 2 others
 
 ### 10. VIPER ENERGY INC
 - **CUSIP**: 64361Q101
 - **% of Shares Outstanding**: 9.46%
 - **Total Value**: $483412.4M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Two Sigma, Balyasny Asset Management and 2 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Wellington Management and 2 others
 

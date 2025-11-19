@@ -1,11 +1,11 @@
 # Total Institutional Holdings as % of Shares Outstanding
 
-*Generated: 2025-11-19 12:04:29*
+*Generated: 2025-11-19 19:04:26*
 
 ## Summary Statistics
 
 - Total Securities Analyzed: 3868
-- Total Portfolio Value: $2491663.88B
+- Total Portfolio Value: $2491774.33B
 - Average Holders per Security: 6.1
 - High Concentration Positions (>50% of shares outstanding): 20
 - Institutions Included: 57 total
@@ -18,7 +18,7 @@
 |------|----------|--------|-------------|-------------------|------------|-----------|------------|
 | 1 | SOHO HOUSE & CO INC | SHCO | 16,686,923 | 194,766 | 8567.68% | 5 | $147679.3 |
 | 2 | ECHOSTAR CORP | SATS | 19,506,877 | 287,362 | 6788.26% | 12 | $1484909.7 |
-| 3 | Tempus AI Inc | TEM | 10,897,579 | 172,969 | 6300.31% | 9 | $879543.6 |
+| 3 | TEMPUS AI INC | TEM | 10,897,579 | 172,969 | 6300.31% | 9 | $879543.6 |
 | 4 | NUTANIX INC | NTNX | 10,083,978 | 267,479 | 3770.01% | 11 | $750147.1 |
 | 5 | COLLIERS INTL GROUP INC | CIGI | 4,417,434 | 284,583 | 1552.25% | 7 | $690053.5 |
 | 6 | SUNOPTA INC | STKL | 1,490,651 | 117,871 | 1264.65% | 5 | $8734.9 |
@@ -54,9 +54,9 @@
 | 36 | EDGEWISE THERAPEUTICS INC | EWTX | 34,728,150 | 105,761,949 | 32.84% | 9 | $563290.6 |
 | 37 | ADICET BIO INC | ACET | 26,573,175 | 83,253,779 | 31.92% | 7 | $21529.6 |
 | 38 | ETSY INC | ETSY | 30,504,148 | 98,528,000 | 30.96% | 12 | $2025170.4 |
-| 39 | PRELUDE    THERAPEUTICS        | PRLD | 22,955,684 | 76,038,055 | 30.19% | 6 | $33056.2 |
+| 39 | PRELUDE THERAPEUTICS INC | PRLD | 22,955,684 | 76,038,055 | 30.19% | 6 | $33056.2 |
 | 40 | ACADIA PHARMACEUTICALS INC | ACAD | 50,823,666 | 169,146,043 | 30.05% | 10 | $1084577.0 |
-| 41 | Pony AI Inc | PONY | 34,250,280 | 114,318,765 | 29.96% | 11 | $770288.8 |
+| 41 | PONY AI INC | PONY | 34,250,280 | 114,318,765 | 29.96% | 11 | $770288.8 |
 | 42 | KRAFT HEINZ CO | KHC | 340,067,419 | 1,184,000,000 | 28.72% | 14 | $8855355.6 |
 | 43 | JANUX THERAPEUTICS INC | JANX | 17,051,590 | 60,123,602 | 28.36% | 9 | $416740.9 |
 | 44 | ACUMEN PHARMACEUTICALS INC | ABOS | 16,970,373 | 60,573,425 | 28.02% | 6 | $29019.3 |
@@ -65,7 +65,7 @@
 | 47 | REPLIMUNE GROUP INC | REPL | 21,087,581 | 78,403,255 | 26.90% | 8 | $88357.0 |
 | 48 | TYRA BIOSCIENCES INC | TYRA | 14,169,217 | 53,318,198 | 26.57% | 10 | $198227.3 |
 | 49 | MBX BIOSCIENCES INC | MBX | 11,824,115 | 44,715,498 | 26.44% | 9 | $206922.0 |
-| 50 | Incyte Corp | INCY | 51,587,446 | 196,130,993 | 26.30% | 13 | $4375131.2 |
+| 50 | INCYTE CORP | INCY | 51,587,446 | 196,130,993 | 26.30% | 13 | $4375131.2 |
 
 ## Concentration Risk Analysis
 
@@ -73,7 +73,7 @@
 
 - **SOHO HOUSE & CO INC**: 8567.68% of shares outstanding held by 5 institutions
 - **ECHOSTAR CORP**: 6788.26% of shares outstanding held by 12 institutions
-- **Tempus AI Inc**: 6300.31% of shares outstanding held by 9 institutions
+- **TEMPUS AI INC**: 6300.31% of shares outstanding held by 9 institutions
 - **NUTANIX INC**: 3770.01% of shares outstanding held by 11 institutions
 - **COLLIERS INTL GROUP INC**: 1552.25% of shares outstanding held by 7 institutions
 - **SUNOPTA INC**: 1264.65% of shares outstanding held by 5 institutions
@@ -87,9 +87,9 @@
 - **MICROSOFT CORP**: 36 holders (2.82% of shares outstanding)
 - **META PLATFORMS INC**: 33 holders (2.75% of shares outstanding)
 - **ALPHABET INC**: 33 holders (1.92% of shares outstanding)
-- **Amazon.com Inc**: 31 holders (2.49% of shares outstanding)
+- **AMAZON COM INC**: 31 holders (2.49% of shares outstanding)
 - **NVIDIA CORPORATION**: 27 holders (2.17% of shares outstanding)
-- **CAPITAL ONE FINL CORP**: 22 holders (8.38% of shares outstanding)
+- **CAPITAL ONE FC**: 22 holders (8.38% of shares outstanding)
 - **INTUIT**: 22 holders (4.47% of shares outstanding)
 - **APPLE INC**: 22 holders (3.31% of shares outstanding)
 - **BROADCOM INC**: 22 holders (2.74% of shares outstanding)
@@ -107,43 +107,43 @@
 - **CUSIP**: 586001109
 - **% of Shares Outstanding**: 8567.68%
 - **Total Value**: $147679.3M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Renaissance Technologies, Two Sigma, Millennium Management, Citadel Advisors
+- **Key Holders**: Two Sigma, Goldman Sachs Asset Mgmt, Millennium Management, Citadel Advisors, Renaissance Technologies
 
 ### 2. ECHOSTAR CORP
 - **CUSIP**: 278768106
 - **% of Shares Outstanding**: 6788.26%
 - **Total Value**: $1484909.7M
-- **Key Holders**: Dodge & Cox, Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Renaissance Technologies and 7 others
+- **Key Holders**: Balyasny Asset Management, Goldman Sachs Asset Mgmt, Discovery Capital, Dodge & Cox, Millennium Management and 7 others
 
-### 3. Tempus AI Inc
+### 3. TEMPUS AI INC
 - **CUSIP**: 88023B103
 - **% of Shares Outstanding**: 6300.31%
 - **Total Value**: $879543.6M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Polen Capital, Renaissance Technologies, Two Sigma and 4 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Polen Capital and 4 others
 
 ### 4. NUTANIX INC
 - **CUSIP**: 67059N108
 - **% of Shares Outstanding**: 3770.01%
 - **Total Value**: $750147.1M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Polen Capital, Renaissance Technologies and 6 others
+- **Key Holders**: Two Sigma, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Polen Capital and 6 others
 
 ### 5. COLLIERS INTL GROUP INC
 - **CUSIP**: 194693107
 - **% of Shares Outstanding**: 1552.25%
 - **Total Value**: $690053.5M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Wellington Management, Renaissance Technologies, Two Sigma, Millennium Management and 2 others
+- **Key Holders**: Two Sigma, Durable Capital Partners, Goldman Sachs Asset Mgmt, Millennium Management, Wellington Management and 2 others
 
 ### 6. SUNOPTA INC
 - **CUSIP**: 8676EP108
 - **% of Shares Outstanding**: 1264.65%
 - **Total Value**: $8734.9M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Two Sigma, Millennium Management, Citadel Advisors, Point72
+- **Key Holders**: Two Sigma, Goldman Sachs Asset Mgmt, Millennium Management, Point72, Citadel Advisors
 
 ### 7. EHANG HLDGS LTD
 - **CUSIP**: 26853E102
 - **% of Shares Outstanding**: 1083.41%
 - **Total Value**: $27033.1M
-- **Key Holders**: Goldman Sachs Asset Mgmt, Balyasny Asset Management, Citadel Advisors
+- **Key Holders**: Balyasny Asset Management, Goldman Sachs Asset Mgmt, Citadel Advisors
 
 ### 8. BitMine Immersion Technologies
 - **CUSIP**: 09175A206
@@ -155,7 +155,7 @@
 - **CUSIP**: 82452J109
 - **% of Shares Outstanding**: 513.52%
 - **Total Value**: $663300.5M
-- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Balyasny Asset Management, Millennium Management and 4 others
+- **Key Holders**: Balyasny Asset Management, Durable Capital Partners, Goldman Sachs Asset Mgmt, Millennium Management, Wellington Management and 4 others
 
 ### 10. EIGHTCO HOLDINGS INC
 - **CUSIP**: 22890A302

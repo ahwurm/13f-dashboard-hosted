@@ -1,16 +1,16 @@
 {
-  "timestamp": "2025-11-19T04:06:05.309689",
+  "timestamp": "2025-11-19T19:04:25.521934",
   "quarter": "Q3",
   "year": 2025,
   "cache_version": "2.0",
   "holdings_count": 8248,
   "enrichment_stats": {
     "total_holdings": 8248,
-    "enriched_with_shares": 3905,
-    "enrichment_percentage": 47.34481086323957
+    "enriched_with_shares": 3868,
+    "enrichment_percentage": 46.89621726479146
   },
   "dependencies": {
-    "cusip_to_shares_timestamp": 1763525162.586647
+    "cusip_to_shares_timestamp": 1763579059.8890302
   },
   "holdings": {
     "009066101": {
@@ -446,7 +446,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "CCCS",
+      "ticker": "CCC",
       "shares_outstanding": 647182603,
       "shares_date": "2025-09-30",
       "sec_entity_name": "CCC INTELLIGENT SOLUTIONS HOLDINGS INC.",
@@ -8656,13 +8656,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "AEMD",
-      "shares_outstanding": 761318,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "Aethlon Medical, Inc.",
-      "cik": "882291",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "00835Q202": {
       "shares": 6417133,
@@ -12841,13 +12836,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ATUS",
-      "shares_outstanding": 285388630,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "Optimum Communications, Inc.",
-      "cik": "1702780",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "02155H200": {
       "shares": 5320129,
@@ -19653,13 +19643,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ARIS",
-      "shares_outstanding": 32048183,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "Aris Water Solutions,\u00a0Inc.",
-      "cik": "1865187",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "040413205": {
       "shares": 36761396,
@@ -28193,13 +28178,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "BGFV",
-      "shares_outstanding": 22918721,
-      "shares_date": "2025-06-29",
-      "sec_entity_name": "BIG 5 SPORTING GOODS CORPORATION",
-      "cik": "1156388",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "08975B109": {
       "shares": 20930139,
@@ -29211,7 +29191,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "BTCM",
+      "ticker": "SLAI",
       "shares_outstanding": 1601626031,
       "shares_date": "2025-06-30",
       "sec_entity_name": "BIT Mining Limited",
@@ -48567,13 +48547,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "CCRD",
-      "shares_outstanding": 7792382,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "CORECARD CORPORATION",
-      "cik": "320340",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "21871N101": {
       "shares": 6461014,
@@ -59749,8 +59724,13 @@
           "pct_of_company_shares": 0
         }
       },
-      "shares_data_available": false,
-      "shares_data_source": null
+      "ticker": "ORBS",
+      "shares_outstanding": 3044744,
+      "shares_date": "2025-06-30",
+      "sec_entity_name": "EIGHTCO HOLDINGS INC.",
+      "cik": "1892492",
+      "shares_data_available": true,
+      "shares_data_source": "SEC_EDGAR"
     },
     "268603107": {
       "shares": 1104038,
@@ -63201,13 +63181,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "EPIX",
-      "shares_outstanding": 44388550,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "ESSA Pharma\u00a0Inc.",
-      "cik": "1633932",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "G3198U102": {
       "shares": 3007196,
@@ -70129,7 +70104,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "FI",
+      "ticker": "FISV",
       "shares_outstanding": 550800000,
       "shares_date": "2025-09-30",
       "sec_entity_name": "FISERV, INC.",
@@ -74010,13 +73985,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "GCI",
-      "shares_outstanding": 147108750,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "GANNETT CO., INC.",
-      "cik": "1579684",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "364760108": {
       "shares": 18453450,
@@ -80064,13 +80034,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "GNTY",
-      "shares_outstanding": 11345511,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "GUARANTY BANCSHARES, INC.",
-      "cik": "1058867",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "40131M109": {
       "shares": 11028577,
@@ -81348,13 +81313,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "HONE",
-      "shares_outstanding": 43075333,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "HarborOne Bancorp, Inc.",
-      "cik": "1769617",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "413160102": {
       "shares": 5467931,
@@ -88368,13 +88328,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "INFA",
-      "shares_outstanding": 303976000,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "Informatica Inc.",
-      "cik": "1868778",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "45675Y104": {
       "shares": 1978663,
@@ -92773,13 +92728,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "IPW",
-      "shares_outstanding": 31359899,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "iPower Inc.",
-      "cik": "1830072",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "46266C105": {
       "shares": 4493069,
@@ -102857,7 +102807,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "LPTX",
+      "ticker": "CYPH",
       "shares_outstanding": 41439529,
       "shares_date": "2025-09-30",
       "sec_entity_name": "LEAP THERAPEUTICS, INC.",
@@ -104611,7 +104561,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "LNW",
+      "ticker": "LNWO",
       "shares_outstanding": 83000000,
       "shares_date": "2025-09-30",
       "sec_entity_name": "LIGHT & WONDER, INC.",
@@ -105552,8 +105502,13 @@
           "pct_of_company_shares": 0
         }
       },
-      "shares_data_available": false,
-      "shares_data_source": null
+      "ticker": "LITS",
+      "shares_outstanding": 6663000,
+      "shares_date": "2025-06-30",
+      "sec_entity_name": "Lite Strategy, Inc.",
+      "cik": "1262104",
+      "shares_data_available": true,
+      "shares_data_source": "SEC_EDGAR"
     },
     "536797103": {
       "shares": 3037269,
@@ -106063,13 +106018,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "LPSN",
-      "shares_outstanding": 10303659,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "LIVEPERSON, INC.",
-      "cik": "1102993",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "53815P108": {
       "shares": 1454035,
@@ -107229,8 +107179,13 @@
           "pct_of_company_shares": 0
         }
       },
-      "shares_data_available": false,
-      "shares_data_source": null
+      "ticker": "LNAI",
+      "shares_outstanding": 177392907,
+      "shares_date": "2025-06-30",
+      "sec_entity_name": "LUNAI BIOWORKS INC",
+      "cik": "1527728",
+      "shares_data_available": true,
+      "shares_data_source": "SEC_EDGAR"
     },
     "G5698W116": {
       "shares": 308675,
@@ -107319,13 +107274,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "LXP",
-      "shares_outstanding": 295765814,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "LXP INDUSTRIAL TRUST",
-      "cik": "910108",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "55083R203": {
       "shares": 601396,
@@ -124368,7 +124318,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "OPI",
+      "ticker": "OPITQ",
       "shares_outstanding": 73976190,
       "shares_date": "2025-06-30",
       "sec_entity_name": "OFFICE PROPERTIES INCOME TRUST",
@@ -137622,13 +137572,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "PVBC",
-      "shares_outstanding": 17782946,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "Provident Bancorp, Inc. /MD/",
-      "cik": "1778784",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "74386T105": {
       "shares": 8234162,
@@ -150110,13 +150055,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "SENS",
-      "shares_outstanding": 40812706,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "Senseonics Holdings, Inc.",
-      "cik": "1616543",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "81725T100": {
       "shares": 1018773,
@@ -177673,13 +177613,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "VBTX",
-      "shares_outstanding": 54368000,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "VERITEX HOLDINGS,\u00a0INC.",
-      "cik": "1501570",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "92347M100": {
       "shares": 1329372,
@@ -177928,13 +177863,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "VRNA",
-      "shares_outstanding": 687930486,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "Verona Pharma plc",
-      "cik": "1657312",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "92511U102": {
       "shares": 9799902,
@@ -188982,13 +188912,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ETNB",
-      "shares_outstanding": 148304875,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "89bio, Inc.",
-      "cik": "1785173",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "00370M103": {
       "shares": 6262809,
@@ -191208,13 +191133,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "AVDX",
-      "shares_outstanding": 207695309,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "AvidXchange Holdings, Inc.",
-      "cik": "1858257",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "05368V106": {
       "shares": 4687413,
@@ -206326,13 +206246,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "MLNK",
-      "shares_outstanding": 74195939,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "MeridianLink,\u00a0Inc.",
-      "cik": "1834494",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "59267L107": {
       "shares": 4893365,
@@ -206385,13 +206300,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "MTSR",
-      "shares_outstanding": 105152658,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "METSERA, INC.",
-      "cik": "2040807",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "595017BG8": {
       "shares": 32174000,
@@ -207103,13 +207013,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "COOP",
-      "shares_outstanding": 63851000,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "Mr. Cooper Group Inc.",
-      "cik": "933136",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "626755102": {
       "shares": 1252625,
@@ -210151,13 +210056,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "PBPB",
-      "shares_outstanding": 30256000,
-      "shares_date": "2025-06-29",
-      "sec_entity_name": "Potbelly Corporation",
-      "cik": "1195734",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "69351T106": {
       "shares": 39488535,
@@ -215627,13 +215527,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "TRML",
-      "shares_outstanding": 25692268,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "TOURMALINE BIO, INC.",
-      "cik": "1827506",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "M87915274": {
       "shares": 7284914,
@@ -219839,13 +219734,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ZIMV",
-      "shares_outstanding": 28197000,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "ZIMVIE INC.",
-      "cik": "1876588",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "989817101": {
       "shares": 806220,
@@ -227604,13 +227494,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "CANG",
-      "shares_outstanding": 208197617,
-      "shares_date": "2024-12-31",
-      "sec_entity_name": "Cango\u00a0Inc.",
-      "cik": "1725123",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "91531W106": {
       "shares": 5197823,
@@ -228482,13 +228367,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "MRC",
-      "shares_outstanding": 84991546,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "MRC GLOBAL INC.",
-      "cik": "1439095",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "35137L204": {
       "shares": 10565044,
@@ -229105,13 +228985,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "PHLT",
-      "shares_outstanding": 78309000,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "PERFORMANT HEALTHCARE, INC.",
-      "cik": "1550695",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "83175M205": {
       "shares": 2278617,
@@ -240716,7 +240591,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "IMAB",
+      "ticker": "NBP",
       "shares_outstanding": 188108178,
       "shares_date": "2025-06-30",
       "sec_entity_name": "I-MAB",
@@ -254187,13 +254062,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "SCPH",
-      "shares_outstanding": 53290227,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "SCPHARMACEUTICALS INC.",
-      "cik": "1604950",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "917313108": {
       "shares": 569265,
@@ -258250,13 +258120,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "CYCU",
-      "shares_outstanding": 40353983,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "Cycurion,     Inc.",
-      "cik": "1868419",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "47103U746": {
       "shares": 43191,
@@ -269364,7 +269229,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ADAP",
+      "ticker": "ADAPY",
       "shares_outstanding": 1590309546,
       "shares_date": "2025-06-30",
       "sec_entity_name": "ADAPTIMMUNE THERAPEUTICS PLC",
@@ -270703,13 +270568,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "DHAI",
-      "shares_outstanding": 1690356,
-      "shares_date": "2025-03-31",
-      "sec_entity_name": "DIH HOLDING US, INC.",
-      "cik": "1883788",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "464286202": {
       "shares": 48477,
@@ -275090,8 +274950,13 @@
           "pct_of_company_shares": 0
         }
       },
-      "shares_data_available": false,
-      "shares_data_source": null
+      "ticker": "KDK",
+      "shares_outstanding": 174957000,
+      "shares_date": "2025-09-30",
+      "sec_entity_name": "Kodiak AI, Inc.",
+      "cik": "1853138",
+      "shares_data_available": true,
+      "shares_data_source": "SEC_EDGAR"
     },
     "57164YAD9": {
       "shares": 178421000,
@@ -275974,13 +275839,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ADVWW",
-      "shares_outstanding": 325964565,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "Advantage Solutions Inc.",
-      "cik": "1776661",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "00776X109": {
       "shares": 285387,
@@ -278451,13 +278311,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "DHAIW",
-      "shares_outstanding": 1690356,
-      "shares_date": "2025-03-31",
-      "sec_entity_name": "DIH HOLDING US, INC.",
-      "cik": "1883788",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "25460G781": {
       "shares": 567100,
@@ -278911,13 +278766,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ETHZ",
-      "shares_outstanding": 6039208,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "180 LIFE SCIENCES CORP",
-      "cik": "1690080",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "29970N112": {
       "shares": 125000,
@@ -279407,13 +279257,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "FORD",
-      "shares_outstanding": 1125998,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "Forward Industries, Inc.",
-      "cik": "38264",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "35472T101": {
       "shares": 23000,
@@ -280645,8 +280490,13 @@
           "pct_of_company_shares": 0
         }
       },
-      "shares_data_available": false,
-      "shares_data_source": null
+      "ticker": "KDKRW",
+      "shares_outstanding": 174957000,
+      "shares_date": "2025-09-30",
+      "sec_entity_name": "Kodiak AI, Inc.",
+      "cik": "1853138",
+      "shares_data_available": true,
+      "shares_data_source": "SEC_EDGAR"
     },
     "G5331N119": {
       "shares": 399082,
@@ -281360,13 +281210,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "MGRM",
-      "shares_outstanding": 36088725,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "Monogram\u00a0Technologies\u00a0Inc.",
-      "cik": "1769759",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "L64875112": {
       "shares": 64997,
@@ -283010,7 +282855,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "SHOT",
+      "ticker": "BNKK",
       "shares_outstanding": 101725935,
       "shares_date": "2025-06-30",
       "sec_entity_name": "SAFETY SHOT, INC.",
@@ -283788,7 +283633,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "BSGM",
+      "ticker": "STEX",
       "shares_outstanding": 30793135,
       "shares_date": "2025-06-30",
       "sec_entity_name": "BIOSIG TECHNOLOGIES, INC.",
@@ -291065,13 +290910,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "CDT",
-      "shares_outstanding": 1276574,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "CDT EQUITY INC.",
-      "cik": "1896212",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "86887P119": {
       "shares": 16866,
@@ -294117,13 +293957,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "ENVB",
-      "shares_outstanding": 3026028,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "ENVERIC BIOSCIENCES, INC.",
-      "cik": "890821",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "29415J106": {
       "shares": 84011,
@@ -300409,13 +300244,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "GURE",
-      "shares_outstanding": 13346618,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "GULF RESOURCES, INC.",
-      "cik": "885462",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "410709109": {
       "shares": 12921,
@@ -308615,13 +308445,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "MOVE",
-      "shares_outstanding": 8301204,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "MOVANO INC.",
-      "cik": "1734750",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "62464R109": {
       "shares": 131770,
@@ -312737,7 +312562,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "QSG",
+      "ticker": "HERE",
       "shares_outstanding": 161291663,
       "shares_date": "2025-06-30",
       "sec_entity_name": "QuantaSing Group Limited",
@@ -320694,13 +320519,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "YHGJ",
-      "shares_outstanding": 2772363,
-      "shares_date": "2025-09-30",
-      "sec_entity_name": "YUNHONG GREEN CTI LTD.",
-      "cik": "1042187",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "98873N305": {
       "shares": 22470,
@@ -323497,13 +323317,8 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "NEUE",
-      "shares_outstanding": 9024240,
-      "shares_date": "2025-06-30",
-      "sec_entity_name": "NEUEHEALTH, INC.",
-      "cik": "1671284",
-      "shares_data_available": true,
-      "shares_data_source": "SEC_EDGAR"
+      "shares_data_available": false,
+      "shares_data_source": null
     },
     "64550A107": {
       "shares": 604600,
@@ -323635,7 +323450,7 @@
           "pct_of_company_shares": 0
         }
       },
-      "ticker": "NVFY",
+      "ticker": "XWIN",
       "shares_outstanding": 13772822,
       "shares_date": "2025-06-30",
       "sec_entity_name": "NOVA LIFESTYLE, INC.",

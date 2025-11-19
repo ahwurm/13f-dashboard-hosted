@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-19T03:55:33.701189",
+  "timestamp": "2025-11-19T18:22:23.674709",
   "total_institutions": 69,
   "institutions_with_tickers": [
     {
@@ -400,14 +400,14 @@
       "inst_cik": "0001647251",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -446,14 +446,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -513,9 +513,9 @@
           "cik": "0001278680"
         },
         {
-          "ticker": "GBTC",
-          "company_name": "Grayscale Bitcoin Trust ETF",
-          "cik": "0001588489"
+          "ticker": "DLR",
+          "company_name": "DIGITAL REALTY TRUST, INC.",
+          "cik": "0001297996"
         }
       ]
     },
@@ -529,14 +529,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -570,14 +570,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -601,14 +601,14 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
-        },
-        {
           "ticker": "MUFG",
           "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
           "cik": "0000067088"
+        },
+        {
+          "ticker": "SONY",
+          "company_name": "Sony Group Corp",
+          "cik": "0000313838"
         }
       ]
     },
@@ -632,14 +632,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -699,9 +699,9 @@
           "cik": "0001783180"
         },
         {
-          "ticker": "DIDIY",
-          "company_name": "DiDi Global Inc.",
-          "cik": "0001764757"
+          "ticker": "CBOE",
+          "company_name": "Cboe Global Markets, Inc.",
+          "cik": "0001374310"
         }
       ]
     },
@@ -725,14 +725,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -761,9 +761,9 @@
           "cik": "0001783180"
         },
         {
-          "ticker": "DIDIY",
-          "company_name": "DiDi Global Inc.",
-          "cik": "0001764757"
+          "ticker": "CBOE",
+          "company_name": "Cboe Global Markets, Inc.",
+          "cik": "0001374310"
         }
       ]
     },
@@ -772,14 +772,14 @@
       "inst_cik": "0001135730",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -834,14 +834,14 @@
       "inst_cik": "0001791786",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -896,14 +896,14 @@
       "inst_cik": "0001656456",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -927,14 +927,14 @@
       "inst_cik": "0001029160",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -973,14 +973,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -989,14 +989,14 @@
       "inst_cik": "0001517137",
       "potential_matches": [
         {
-          "ticker": "SVV",
-          "company_name": "Savers Value Village, Inc.",
-          "cik": "0001883313"
-        },
-        {
           "ticker": "NUV",
           "company_name": "NUVEEN MUNICIPAL VALUE FUND INC",
           "cik": "0000812801"
+        },
+        {
+          "ticker": "SVV",
+          "company_name": "Savers Value Village, Inc.",
+          "cik": "0001883313"
         },
         {
           "ticker": "IIM",
@@ -1035,14 +1035,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1056,14 +1056,14 @@
           "cik": "0001089113"
         },
         {
-          "ticker": "BKNG",
-          "company_name": "Booking Holdings Inc.",
-          "cik": "0001075531"
-        },
-        {
           "ticker": "PDD",
           "company_name": "PDD Holdings Inc.",
           "cik": "0001737806"
+        },
+        {
+          "ticker": "BKNG",
+          "company_name": "Booking Holdings Inc.",
+          "cik": "0001075531"
         },
         {
           "ticker": "ARM",
@@ -1082,14 +1082,14 @@
       "inst_cik": "0001032989",
       "potential_matches": [
         {
-          "ticker": "SEIC",
-          "company_name": "SEI INVESTMENTS CO",
-          "cik": "0000350894"
-        },
-        {
           "ticker": "AGNC",
           "company_name": "AGNC Investment Corp.",
           "cik": "0001423689"
+        },
+        {
+          "ticker": "SEIC",
+          "company_name": "SEI INVESTMENTS CO",
+          "cik": "0000350894"
         },
         {
           "ticker": "FRT",
@@ -1128,14 +1128,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1144,14 +1144,14 @@
       "inst_cik": "0001263508",
       "potential_matches": [
         {
-          "ticker": "BKR",
-          "company_name": "Baker Hughes Co",
-          "cik": "0001701605"
-        },
-        {
           "ticker": "WBD",
           "company_name": "Warner Bros. Discovery, Inc.",
           "cik": "0001437107"
+        },
+        {
+          "ticker": "BKR",
+          "company_name": "Baker Hughes Co",
+          "cik": "0001701605"
         },
         {
           "ticker": "BROS",
@@ -1211,14 +1211,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1278,9 +1278,9 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -1294,14 +1294,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "ACGL",
-          "company_name": "ARCH CAPITAL GROUP LTD.",
-          "cik": "0000947484"
-        },
-        {
           "ticker": "WBD",
           "company_name": "Warner Bros. Discovery, Inc.",
           "cik": "0001437107"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
         },
         {
           "ticker": "OWL",
@@ -1309,9 +1309,9 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -1340,9 +1340,9 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
+          "ticker": "CQP",
+          "company_name": "Cheniere Energy Partners, L.P.",
+          "cik": "0001383650"
         }
       ]
     },
@@ -1372,14 +1372,14 @@
       "inst_cik": "0001273087",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -1419,14 +1419,14 @@
       "inst_cik": "0001350694",
       "potential_matches": [
         {
-          "ticker": "MANH",
-          "company_name": "MANHATTAN ASSOCIATES INC",
-          "cik": "0001056696"
-        },
-        {
           "ticker": "JKHY",
           "company_name": "JACK HENRY & ASSOCIATES INC",
           "cik": "0000779152"
+        },
+        {
+          "ticker": "MANH",
+          "company_name": "MANHATTAN ASSOCIATES INC",
+          "cik": "0001056696"
         },
         {
           "ticker": "CBL",
@@ -1470,9 +1470,9 @@
           "cik": "0001571996"
         },
         {
-          "ticker": "ROP",
-          "company_name": "ROPER TECHNOLOGIES INC",
-          "cik": "0000882835"
+          "ticker": "LHX",
+          "company_name": "L3HARRIS TECHNOLOGIES, INC. /DE/",
+          "cik": "0000202058"
         }
       ]
     },
@@ -1496,14 +1496,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1527,14 +1527,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1558,14 +1558,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1574,14 +1574,14 @@
       "inst_cik": "0000035368",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -1605,14 +1605,14 @@
       "inst_cik": "0000902219",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -1651,14 +1651,14 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
-        },
-        {
           "ticker": "MUFG",
           "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
           "cik": "0000067088"
+        },
+        {
+          "ticker": "SONY",
+          "company_name": "Sony Group Corp",
+          "cik": "0000313838"
         }
       ]
     },
@@ -1687,9 +1687,9 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
+          "ticker": "CQP",
+          "company_name": "Cheniere Energy Partners, L.P.",
+          "cik": "0001383650"
         }
       ]
     },
@@ -1698,14 +1698,14 @@
       "inst_cik": "0001697748",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -1744,14 +1744,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1775,14 +1775,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1791,14 +1791,14 @@
       "inst_cik": "0001345471",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -1837,9 +1837,9 @@
           "cik": "0001383650"
         },
         {
-          "ticker": "BEP",
-          "company_name": "Brookfield Renewable Partners L.P.",
-          "cik": "0001533232"
+          "ticker": "BIP",
+          "company_name": "Brookfield Infrastructure Partners L.P.",
+          "cik": "0001406234"
         },
         {
           "ticker": "WES",
@@ -1868,14 +1868,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1899,14 +1899,14 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "ARCC",
-          "company_name": "ARES CAPITAL CORP",
-          "cik": "0001287750"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -1930,9 +1930,9 @@
           "cik": "0001383650"
         },
         {
-          "ticker": "BEP",
-          "company_name": "Brookfield Renewable Partners L.P.",
-          "cik": "0001533232"
+          "ticker": "BIP",
+          "company_name": "Brookfield Infrastructure Partners L.P.",
+          "cik": "0001406234"
         },
         {
           "ticker": "WES",
@@ -1951,14 +1951,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -1982,14 +1982,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -2008,14 +2008,14 @@
       "inst_cik": "0001535472",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -2039,14 +2039,14 @@
       "inst_cik": "0001218710",
       "potential_matches": [
         {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
         },
         {
           "ticker": "APO",
@@ -2116,14 +2116,14 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
-        },
-        {
           "ticker": "MUFG",
           "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
           "cik": "0000067088"
+        },
+        {
+          "ticker": "SONY",
+          "company_name": "Sony Group Corp",
+          "cik": "0000313838"
         }
       ]
     }
