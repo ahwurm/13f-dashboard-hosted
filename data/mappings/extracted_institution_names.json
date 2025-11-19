@@ -1,4 +1,418 @@
 {
+  "0001647251": {
+    "name": "TCI Fund Management",
+    "type": "Activist Hedge Fund",
+    "key_person": "Chris Hohn",
+    "aum_billions": 52.7
+  },
+  "0001697868": {
+    "name": "Valley Forge Capital",
+    "type": "Concentrated Value",
+    "key_person": "Dev Kantesaria",
+    "aum_billions": 4.6
+  },
+  "0001336528": {
+    "name": "Pershing Square",
+    "type": "Activist Hedge Fund",
+    "key_person": "Bill Ackman",
+    "aum_billions": 14.6
+  },
+  "0001166559": {
+    "name": "Gates Foundation Trust",
+    "type": "Foundation",
+    "key_person": "Michael Larson",
+    "aum_billions": 36.6
+  },
+  "0001112520": {
+    "name": "Akre Capital Management",
+    "type": "Quality Growth",
+    "key_person": "Chuck Akre",
+    "aum_billions": 14.4
+  },
+  "0001067983": {
+    "name": "Berkshire Hathaway",
+    "type": "Value Investor",
+    "key_person": "Warren Buffett",
+    "aum_billions": 258.0
+  },
+  "0000860643": {
+    "name": "Gardner Russo & Quinn",
+    "type": "Global Value",
+    "key_person": "Tom Russo",
+    "aum_billions": 9.4
+  },
+  "0001034524": {
+    "name": "Polen Capital",
+    "type": "Quality Growth",
+    "key_person": "Dan Davidowitz",
+    "aum_billions": 60.0
+  },
+  "0001061768": {
+    "name": "Baupost Group",
+    "type": "Deep Value",
+    "key_person": "Seth Klarman",
+    "aum_billions": 30.0
+  },
+  "0001079114": {
+    "name": "Greenlight Capital",
+    "type": "Value/Short",
+    "key_person": "David Einhorn",
+    "aum_billions": 2.5
+  },
+  "0001549575": {
+    "name": "Pabrai Investments",
+    "type": "Concentrated Value",
+    "key_person": "Mohnish Pabrai",
+    "aum_billions": 0.3
+  },
+  "0001569205": {
+    "name": "Fundsmith",
+    "type": "Quality Growth",
+    "key_person": "Terry Smith",
+    "aum_billions": 19.8
+  },
+  "0001167483": {
+    "name": "Tiger Global",
+    "type": "Growth/Tech",
+    "key_person": "Chase Coleman",
+    "aum_billions": 70.0
+  },
+  "0001061165": {
+    "name": "Lone Pine Capital",
+    "type": "Tiger Cub Growth",
+    "key_person": "Stephen Mandel",
+    "aum_billions": 35.0
+  },
+  "0001103804": {
+    "name": "Viking Global",
+    "type": "Tiger Cub Growth",
+    "key_person": "Andreas Halvorsen",
+    "aum_billions": 40.0
+  },
+  "0001135730": {
+    "name": "Coatue Management",
+    "type": "Tech Growth",
+    "key_person": "Philippe Laffont",
+    "aum_billions": 30.0
+  },
+  "0001040273": {
+    "name": "Third Point",
+    "type": "Event-Driven",
+    "key_person": "Dan Loeb",
+    "aum_billions": 19.0
+  },
+  "0001791786": {
+    "name": "Elliott Management",
+    "type": "Activist",
+    "key_person": "Paul Singer",
+    "aum_billions": 70.0
+  },
+  "0000813762": {
+    "name": "Icahn Enterprises",
+    "type": "Activist",
+    "key_person": "Carl Icahn",
+    "aum_billions": 25.0
+  },
+  "0001536411": {
+    "name": "Duquesne Family Office",
+    "type": "Macro/Growth",
+    "key_person": "Stanley Druckenmiller",
+    "aum_billions": 4.0
+  },
+  "0001656456": {
+    "name": "Appaloosa Management",
+    "type": "Opportunistic",
+    "key_person": "David Tepper",
+    "aum_billions": 7.4
+  },
+  "0001029160": {
+    "name": "Soros Fund Management",
+    "type": "Macro",
+    "key_person": "George Soros",
+    "aum_billions": 25.0
+  },
+  "0001351069": {
+    "name": "ValueAct Capital",
+    "type": "Activist",
+    "key_person": "Jeffrey Ubben",
+    "aum_billions": 5.0
+  },
+  "0001517137": {
+    "name": "Starboard Value",
+    "type": "Activist",
+    "key_person": "Jeffrey Smith",
+    "aum_billions": 3.0
+  },
+  "0001641864": {
+    "name": "Giverny Capital",
+    "type": "Quality Value",
+    "key_person": "Francois Rochon",
+    "aum_billions": 3.0
+  },
+  "0001021944": {
+    "name": "Temasek Holdings",
+    "type": "Sovereign Wealth",
+    "key_person": "Dilhan Pillay",
+    "aum_billions": 26.2
+  },
+  "0000937567": {
+    "name": "OTPP",
+    "type": "Pension Fund",
+    "key_person": "Jo Taylor",
+    "aum_billions": 5.1
+  },
+  "0001032989": {
+    "name": "CPP Investment Board",
+    "type": "Pension Fund",
+    "key_person": "John Graham",
+    "aum_billions": 103.0
+  },
+  "0001628471": {
+    "name": "CalPERS",
+    "type": "Pension Fund",
+    "key_person": "Marcie Frost",
+    "aum_billions": 480.0
+  },
+  "0001346824": {
+    "name": "RA Capital",
+    "type": "Healthcare",
+    "key_person": "Peter Kolchinsky",
+    "aum_billions": 12.6
+  },
+  "0001263508": {
+    "name": "Baker Bros Advisors",
+    "type": "Healthcare",
+    "key_person": "Julian Baker",
+    "aum_billions": 18.0
+  },
+  "0001055951": {
+    "name": "OrbiMed Advisors",
+    "type": "Healthcare",
+    "key_person": "Samuel Isaly",
+    "aum_billions": 18.0
+  },
+  "0001541617": {
+    "name": "Altimeter Capital",
+    "type": "Growth Tech",
+    "key_person": "Brad Gerstner",
+    "aum_billions": 15.0
+  },
+  "0001387322": {
+    "name": "Whale Rock Capital",
+    "type": "Tech Growth",
+    "key_person": "Alex Sacerdote",
+    "aum_billions": 6.0
+  },
+  "0001569049": {
+    "name": "Light Street Capital",
+    "type": "Tech Growth",
+    "key_person": "Glen Kacher",
+    "aum_billions": 12.0
+  },
+  "0001389507": {
+    "name": "Discovery Capital",
+    "type": "Emerging Tech",
+    "key_person": "Rob Citrone",
+    "aum_billions": 25.0
+  },
+  "0001798849": {
+    "name": "Durable Capital Partners",
+    "type": "Long-term Growth",
+    "key_person": "Henry Ellenbogen",
+    "aum_billions": 10.0
+  },
+  "0001423053": {
+    "name": "Citadel Advisors",
+    "type": "Multi-Strategy",
+    "key_person": "Ken Griffin",
+    "aum_billions": 62.0
+  },
+  "0001273087": {
+    "name": "Millennium Management",
+    "type": "Multi-Strategy",
+    "key_person": "Israel Englander",
+    "aum_billions": 62.0
+  },
+  "0001603466": {
+    "name": "Point72",
+    "type": "Multi-Strategy",
+    "key_person": "Steve Cohen",
+    "aum_billions": 30.0
+  },
+  "0001179392": {
+    "name": "Two Sigma",
+    "type": "Quant",
+    "key_person": "John Overdeck",
+    "aum_billions": 60.0
+  },
+  "0001350694": {
+    "name": "Bridgewater Associates",
+    "type": "Macro",
+    "key_person": "Ray Dalio",
+    "aum_billions": 140.0
+  },
+  "0001037389": {
+    "name": "Renaissance Technologies",
+    "type": "Quant",
+    "key_person": "Peter Brown",
+    "aum_billions": 130.0
+  },
+  "0000934639": {
+    "name": "Maverick Capital",
+    "type": "Long/Short",
+    "key_person": "Lee Ainslie",
+    "aum_billions": 12.0
+  },
+  "0001501913": {
+    "name": "Soroban Capital",
+    "type": "Event-Driven",
+    "key_person": "Eric Mandelblatt",
+    "aum_billions": 8.0
+  },
+  "0001279936": {
+    "name": "Cantillon Capital",
+    "type": "International",
+    "key_person": "William von Mueffling",
+    "aum_billions": 21.0
+  },
+  "0000035368": {
+    "name": "Fidelity Management",
+    "type": "Asset Manager",
+    "key_person": "Abigail Johnson",
+    "aum_billions": 1400.0
+  },
+  "0001113169": {
+    "name": "T. Rowe Price",
+    "type": "Growth Manager",
+    "key_person": "Rob Sharps",
+    "aum_billions": 769.0
+  },
+  "0000902219": {
+    "name": "Wellington Management",
+    "type": "Institutional",
+    "key_person": "Jean Hynes",
+    "aum_billions": 928.0
+  },
+  "0000732812": {
+    "name": "Capital Group",
+    "type": "Global Manager",
+    "key_person": "Mike Gitlin",
+    "aum_billions": 1402.0
+  },
+  "0000886982": {
+    "name": "Goldman Sachs Asset Mgmt",
+    "type": "Alternative",
+    "key_person": "David Solomon",
+    "aum_billions": 1117.0
+  },
+  "0001747057": {
+    "name": "D1 Capital Partners",
+    "type": "Tiger Cub Growth",
+    "key_person": "Dan Sundheim",
+    "aum_billions": 28.0
+  },
+  "0001697748": {
+    "name": "ARK Investment Management",
+    "type": "Disruptive Tech",
+    "key_person": "Cathie Wood",
+    "aum_billions": 7.0
+  },
+  "0001138995": {
+    "name": "Glenview Capital",
+    "type": "Healthcare Value",
+    "key_person": "Larry Robbins",
+    "aum_billions": 8.0
+  },
+  "0001358706": {
+    "name": "Abrams Capital",
+    "type": "Concentrated Value",
+    "key_person": "David Abrams",
+    "aum_billions": 13.0
+  },
+  "0001720792": {
+    "name": "Ruane Cunniff",
+    "type": "Concentrated Value",
+    "key_person": "Richard Goldfarb",
+    "aum_billions": 5.8
+  },
+  "0001345471": {
+    "name": "Trian Fund Management",
+    "type": "Activist",
+    "key_person": "Nelson Peltz",
+    "aum_billions": 5.8
+  },
+  "0001159159": {
+    "name": "Jana Partners",
+    "type": "Activist",
+    "key_person": "Barry Rosenstein",
+    "aum_billions": 2.4
+  },
+  "0001484150": {
+    "name": "Lindsell Train",
+    "type": "Quality Growth",
+    "key_person": "Nick Train",
+    "aum_billions": 14.7
+  },
+  "0001581811": {
+    "name": "Egerton Capital",
+    "type": "European Equity",
+    "key_person": "John Armitage",
+    "aum_billions": 16.5
+  },
+  "0001709323": {
+    "name": "Himalaya Capital",
+    "type": "Deep Value",
+    "key_person": "Li Lu",
+    "aum_billions": 2.7
+  },
+  "0000829464": {
+    "name": "Wedgewood Partners",
+    "type": "Quality Growth",
+    "key_person": "David Rolfe",
+    "aum_billions": 0.5
+  },
+  "0000885062": {
+    "name": "Brown Capital Management",
+    "type": "Small-Cap Growth",
+    "key_person": "Eddie Brown",
+    "aum_billions": 12.0
+  },
+  "0001048678": {
+    "name": "Matrix Capital Management",
+    "type": "Tech Growth",
+    "key_person": "David Goel",
+    "aum_billions": 5.0
+  },
+  "0001535472": {
+    "name": "Corvex Management",
+    "type": "Activist",
+    "key_person": "Keith Meister",
+    "aum_billions": 4.0
+  },
+  "0001218710": {
+    "name": "Balyasny Asset Management",
+    "type": "Multi-Strategy",
+    "key_person": "Dmitry Balyasny",
+    "aum_billions": 13.0
+  },
+  "0000796848": {
+    "name": "Texas Teachers Retirement",
+    "type": "Pension Fund",
+    "key_person": "Brian Guthrie",
+    "aum_billions": 23.8
+  },
+  "0001592643": {
+    "name": "Select Equity Group",
+    "type": "Quality Growth",
+    "key_person": "Robert Caruso",
+    "aum_billions": 23.9
+  },
+  "0000200217": {
+    "name": "Dodge & Cox",
+    "type": "Value Fund",
+    "key_person": "Dana Emery",
+    "aum_billions": 172.0
+  },
   "0000102909": {
     "name": "Vanguard Group",
     "type": "Asset Manager",
@@ -11,41 +425,17 @@
     "key_person": "Larry Fink",
     "aum_billions": 5250.0
   },
-  "0000035368": {
-    "name": "Fidelity Management",
-    "type": "Asset Manager",
-    "key_person": "Abigail Johnson",
-    "aum_billions": 4730.7
-  },
   "0000093751": {
     "name": "State Street Global Advisors",
     "type": "Asset Manager",
     "key_person": "Cyrus Taraporevala",
     "aum_billions": 2670.0
   },
-  "0000732812": {
-    "name": "Capital Group",
-    "type": "Asset Manager",
-    "key_person": "Mike Gitlin",
-    "aum_billions": 2600.0
-  },
   "0000019617": {
     "name": "JPMorgan Chase",
     "type": "Bank",
     "key_person": "Jamie Dimon",
     "aum_billions": 2985.3
-  },
-  "0000886982": {
-    "name": "Third Avenue Management",
-    "type": "Value Fund",
-    "key_person": "Thomas Lapointe",
-    "aum_billions": 2.0
-  },
-  "0001113169": {
-    "name": "T. Rowe Price",
-    "type": "Asset Manager",
-    "key_person": "Rob Sharps",
-    "aum_billions": 1934.2
   },
   "0000038777": {
     "name": "Franklin Templeton",
@@ -76,12 +466,6 @@
     "type": "Quant Fund",
     "key_person": "Gerard O'Reilly",
     "aum_billions": 1376.5
-  },
-  "0000902219": {
-    "name": "Wellington Management",
-    "type": "Asset Manager",
-    "key_person": "Jean Hynes",
-    "aum_billions": 1305.7
   },
   "0000073124": {
     "name": "Northern Trust",
@@ -125,131 +509,11 @@
     "key_person": "Charlie Scharf",
     "aum_billions": 400.0
   },
-  "0001628471": {
-    "name": "CalPERS",
-    "type": "Pension Fund",
-    "key_person": "Marcie Frost",
-    "aum_billions": 500.0
-  },
-  "0001067983": {
-    "name": "Berkshire Hathaway",
-    "type": "Conglomerate",
-    "key_person": "Warren Buffett",
-    "aum_billions": 257.5
-  },
-  "0001350694": {
-    "name": "Bridgewater Associates",
-    "type": "Hedge Fund",
-    "key_person": "Ray Dalio",
-    "aum_billions": 89.6
-  },
-  "0001037389": {
-    "name": "Renaissance Technologies",
-    "type": "Quant Fund",
-    "key_person": "Peter Brown",
-    "aum_billions": 75.2
-  },
-  "0001791786": {
-    "name": "Elliott Management",
-    "type": "Activist Hedge Fund",
-    "key_person": "Paul Singer",
-    "aum_billions": 69.7
-  },
-  "0001167483": {
-    "name": "Tiger Global",
-    "type": "Hedge Fund",
-    "key_person": "Chase Coleman",
-    "aum_billions": 65.0
-  },
-  "0001423053": {
-    "name": "Citadel",
-    "type": "Hedge Fund",
-    "key_person": "Ken Griffin",
-    "aum_billions": 63.4
-  },
   "0001009207": {
     "name": "D.E. Shaw",
     "type": "Quant Fund",
     "key_person": "David Shaw",
     "aum_billions": 53.7
-  },
-  "0001179392": {
-    "name": "Two Sigma",
-    "type": "Quant Fund",
-    "key_person": "John Overdeck",
-    "aum_billions": 44.3
-  },
-  "0001603466": {
-    "name": "Point72",
-    "type": "Hedge Fund",
-    "key_person": "Steve Cohen",
-    "aum_billions": 35.2
-  },
-  "0001061768": {
-    "name": "Baupost Group",
-    "type": "Value Fund",
-    "key_person": "Seth Klarman",
-    "aum_billions": 30.0
-  },
-  "0001135730": {
-    "name": "Coatue Management",
-    "type": "Tech Hedge Fund",
-    "key_person": "Philippe Laffont",
-    "aum_billions": 25.0
-  },
-  "0001273087": {
-    "name": "Millennium Management",
-    "type": "Multi-Strategy",
-    "key_person": "Israel Englander",
-    "aum_billions": 207.0
-  },
-  "0001061165": {
-    "name": "Lone Pine Capital",
-    "type": "Hedge Fund",
-    "key_person": "Stephen Mandel",
-    "aum_billions": 15.0
-  },
-  "0001040273": {
-    "name": "Third Point",
-    "type": "Activist Hedge Fund",
-    "key_person": "Dan Loeb",
-    "aum_billions": 3.5
-  },
-  "0001336528": {
-    "name": "Pershing Square",
-    "type": "Activist Hedge Fund",
-    "key_person": "Bill Ackman",
-    "aum_billions": 13.7
-  },
-  "0001656456": {
-    "name": "Appaloosa Management",
-    "type": "Hedge Fund",
-    "key_person": "David Tepper",
-    "aum_billions": 15.0
-  },
-  "0000813762": {
-    "name": "Icahn Enterprises",
-    "type": "Activist Investor",
-    "key_person": "Carl Icahn",
-    "aum_billions": 18.0
-  },
-  "0001029160": {
-    "name": "Soros Fund Management",
-    "type": "Hedge Fund",
-    "key_person": "George Soros",
-    "aum_billions": 25.0
-  },
-  "0001536411": {
-    "name": "Duquesne Family Office",
-    "type": "Hedge Fund",
-    "key_person": "Stanley Druckenmiller",
-    "aum_billions": 4.0
-  },
-  "0001079114": {
-    "name": "Greenlight Capital",
-    "type": "Hedge Fund",
-    "key_person": "David Einhorn",
-    "aum_billions": 2.0
   },
   "0001035674": {
     "name": "Paulson & Co",
@@ -257,52 +521,10 @@
     "key_person": "John Paulson",
     "aum_billions": 3.0
   },
-  "0001103804": {
-    "name": "Viking Global",
-    "type": "Hedge Fund",
-    "key_person": "Andreas Halvorsen",
-    "aum_billions": 30.0
-  },
-  "0000934639": {
-    "name": "Parnassus Investments",
-    "type": "ESG Fund",
-    "key_person": "Benjamin Allen",
-    "aum_billions": 35.0
-  },
-  "0001389507": {
-    "name": "Discovery Capital",
-    "type": "Tech Hedge Fund",
-    "key_person": "Rob Citrone",
-    "aum_billions": 3.0
-  },
-  "0001569049": {
-    "name": "Light Street Capital",
-    "type": "Tech Hedge Fund",
-    "key_person": "Glen Kacher",
-    "aum_billions": 12.0
-  },
-  "0001387322": {
-    "name": "Whale Rock Capital",
-    "type": "Tech Hedge Fund",
-    "key_person": "Alex Sacerdote",
-    "aum_billions": 15.0
-  },
-  "0001541617": {
-    "name": "Altimeter Capital",
-    "type": "Growth Fund",
-    "key_person": "Brad Gerstner",
-    "aum_billions": 15.0
-  },
   "0001628110": {
     "name": "Melvin Capital",
     "type": "Hedge Fund",
     "key_person": "Gabe Plotkin",
-    "aum_billions": 8.0
-  },
-  "0001798849": {
-    "name": "Durable Capital Partners",
-    "type": "Growth Fund",
-    "key_person": "Henry Ellenbogen",
     "aum_billions": 8.0
   },
   "0001649339": {
@@ -310,18 +532,6 @@
     "type": "Hedge Fund",
     "key_person": "Michael Burry",
     "aum_billions": 0.3
-  },
-  "0001351069": {
-    "name": "ValueAct Capital",
-    "type": "Activist Investor",
-    "key_person": "Jeffrey Ubben",
-    "aum_billions": 5.0
-  },
-  "0001517137": {
-    "name": "Starboard Value",
-    "type": "Activist Investor",
-    "key_person": "Jeffrey Smith",
-    "aum_billions": 3.0
   },
   "0000949509": {
     "name": "Oaktree Capital",
@@ -394,24 +604,6 @@
     "type": "Tiger Cub",
     "key_person": "Neil Patel",
     "aum_billions": 5.0
-  },
-  "0001501913": {
-    "name": "Soroban Capital",
-    "type": "Event-Driven",
-    "key_person": "Eric Mandelblatt",
-    "aum_billions": 8.0
-  },
-  "0001048678": {
-    "name": "Matrix Capital Management",
-    "type": "Tech Hedge Fund",
-    "key_person": "David Goel",
-    "aum_billions": 5.0
-  },
-  "0000200217": {
-    "name": "Dodge & Cox",
-    "type": "Value Fund",
-    "key_person": "Dana Emery",
-    "aum_billions": 172.0
   },
   "0000028970": {
     "name": "Baron Capital Management",
@@ -490,12 +682,6 @@
     "type": "Asset Manager",
     "key_person": "Jim McCaughan",
     "aum_billions": 450.0
-  },
-  "0001112520": {
-    "name": "Artisan Partners",
-    "type": "Asset Manager",
-    "key_person": "Eric Colson",
-    "aum_billions": 150.0
   },
   "0001092131": {
     "name": "Brown Advisory",

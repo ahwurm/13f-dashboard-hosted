@@ -1,30 +1,30 @@
 {
-  "generated": "2025-11-14T17:27:06.775029",
+  "generated": "2025-11-19T04:02:38.531328",
   "statistics": {
-    "total_cusips": 13357,
-    "already_mapped": 8966,
-    "newly_mapped": 462,
-    "failed_mappings": 3929,
-    "api_calls": 440,
+    "total_cusips": 9120,
+    "already_mapped": 7570,
+    "newly_mapped": 73,
+    "failed_mappings": 1477,
+    "api_calls": 155,
     "api_errors": 0,
-    "filings_processed": 120,
-    "successful_parses": 116,
+    "filings_processed": 122,
+    "successful_parses": 118,
     "failed_parses": 4
   },
   "filing_coverage": {
-    "total_filings": 120,
-    "successful_parses": 116,
+    "total_filings": 122,
+    "successful_parses": 118,
     "failed_parses": 4,
-    "parse_success_rate": 96.67
+    "parse_success_rate": 96.72
   },
   "coverage": {
-    "total_cusips": 13357,
-    "mapped_cusips": 9428,
-    "unmapped_cusips": 3929,
-    "coverage_percentage": 70.58
+    "total_cusips": 9120,
+    "mapped_cusips": 7643,
+    "unmapped_cusips": 1477,
+    "coverage_percentage": 83.8
   },
   "api_usage": {
-    "total_calls": 440,
+    "total_calls": 155,
     "errors": 0
   },
   "example_mappings": [
@@ -36,7 +36,7 @@
     {
       "cusip": "88579Y101",
       "ticker": "MMM",
-      "name": "3M CO"
+      "name": "3M Co"
     },
     {
       "cusip": "002824100",
@@ -56,7 +56,7 @@
     {
       "cusip": "00404A109",
       "ticker": "ACHC",
-      "name": "ACADIA HEALTHCARE COMPANY IN"
+      "name": "ACADIA HEALTHCARE CO INC"
     },
     {
       "cusip": "00461U105",
