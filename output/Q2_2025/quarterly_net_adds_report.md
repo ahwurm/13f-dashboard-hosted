@@ -1,92 +1,99 @@
 # Q2 2025 Net Additions as % of Shares Outstanding
 
-*Generated: 2025-09-12 17:39:11*
+*Generated: 2025-11-19 12:04:26*
 
 ## Summary Statistics
 
-- Total Securities Analyzed: 4158
-- Total Portfolio Value: $17960694.25B
-- Average Holders per Security: 17.6
-- High Concentration Positions (>50% of shares outstanding): 22
-- Institutions Included: 54 total
-  - 54 from Q2 2025 (current quarter)
+- Total Securities Analyzed: 3732
+- Total Portfolio Value: $2320699.61B
+- Average Holders per Security: 6.0
+- High Concentration Positions (>50% of shares outstanding): 13
+- Institutions Included: 57 total
+  - 57 from Q2 2025 (current quarter)
   - 0 from earlier quarters (fallback data)
 
 ## Top 50 Positions by Percent of Shares Outstanding
 
 | Rank | Security | Ticker | Shares Held | Shares Outstanding | % of Shares | # Holders | Value ($M) |
 |------|----------|--------|-------------|-------------------|------------|-----------|------------|
-| 1 | RALLIANT CORP                | RAL | 45,973,718 | 112,700,000 | 40.79% | 29 | $2228988.8 |
-| 2 | ROCKET  LAB   CORP | RKLB | 145,859,934 | 479,326,649 | 30.43% | 23 | $5217441.4 |
-| 3 | SMARTSTOP SELF STORAG REIT I | SMA | 7,592,979 | 31,050,000 | 24.45% | 23 | $275152.1 |
-| 4 | LIONSGATE     STUDIOS    CORP | LION | 57,144,603 | 272,300,000 | 20.99% | 23 | $332016.5 |
-| 5 | CHIME FINL INC | CHYM | 31,339,098 | 96,412,477 | 32.51% | 22 | $1065418.3 |
-| 6 | FORWARD     AIR   CORP | FWRD | 8,364,501 | 30,606,895 | 27.33% | 22 | $205590.2 |
-| 7 | EASTERLY     GOVT  PPTYS    IN | DEA | 12,939,351 | 45,354,115 | 28.53% | 20 | $287256.8 |
-| 8 | STARZ   ENTERTAINMENT       CO | STRZ | 2,737,260 | 16,700,000 | 16.39% | 20 | $43988.7 |
-| 9 | CIRCLE INTERNET GROUP INC | CRCL | 10,738,405 | 82,877,000 | 12.96% | 20 | $1946793.3 |
-| 10 | NEKTAR   THERAPEUTICS | NKTR | 3,371,820 | 12,457,252 | 27.07% | 18 | $87129.0 |
-| 11 | CARIS   LIFE  SCIENCES  INC | CAI | 18,928,108 | 281,090,538 | 6.73% | 18 | $505759.1 |
-| 12 | HINGE HEALTH INC | HNGE | 9,833,848 | 30,190,000 | 32.57% | 17 | $508901.6 |
-| 13 | KULR TECHNOLOGY GROUP INC | KULR | 4,586,591 | 39,453,292 | 11.63% | 16 | $32703.1 |
-| 14 | FORGE   GLOBAL   HOLDINGS      | FRGE | 1,278,096 | 12,411,000 | 10.30% | 16 | $24335.4 |
-| 15 | SPIRIT AVIATION HLDGS INC | FLYYQ | 4,014,501 | 109,525,063 | 3.67% | 16 | $20337.7 |
-| 16 | STEM   INC | STEM | 981,429 | 8,358,552 | 11.74% | 15 | $6114.5 |
-| 17 | LYELL     IMMUNOPHARMA     INC | LYEL | 1,110,431 | 14,830,868 | 7.49% | 15 | $9816.6 |
-| 18 | SATELLOGIC INC | SATL | 5,763,332 | 99,949,214 | 5.77% | 15 | $20863.3 |
-| 19 | RAPT   THERAPEUTICS    INC | RAPT | 1,261,432 | 132,006,828 | 0.96% | 15 | $10091.9 |
-| 20 | AMERICAN  INTEGRITY         IN | AII | 1,930,336 | 15,152,075 | 12.74% | 14 | $35499.5 |
-| 21 | EMERA INC | EMA | 27,417,709 | 289,100,000 | 9.48% | 14 | $1260761.1 |
-| 22 | X4  PHARMACEUTICALS        INC | XFOR | 661,254 | 7,959,947 | 8.31% | 14 | $1256.4 |
-| 23 | SLIDE  INS    HLDGS   INC | SLDE | 4,700,204 | 125,243,157 | 3.75% | 14 | $101806.4 |
-| 24 | VOYAGER TECHNOLOGIES INC | VOYG | 3,450,875 | 22,017,362 | 15.67% | 13 | $135446.8 |
-| 25 | QVC GROUP INC | QVCGA | 1,020,127 | 8,032,000 | 12.70% | 13 | $2805.4 |
-| 26 | GBANK FINL HLDGS INC | GBFH | 1,079,121 | 14,273,519 | 7.56% | 13 | $38213.2 |
-| 27 | OMADA   HEALTH   INC | OMDA | 2,254,384 | 57,321,000 | 3.93% | 13 | $41255.2 |
-| 28 | JADE BIOSCIENCES INC | JBIO | 3,254,827 | 32,626,730 | 9.98% | 12 | $32517.1 |
-| 29 | MARKETWISE INC | MKTW | 212,362 | 2,205,000 | 9.63% | 12 | $4202.7 |
-| 30 | JEFFERSON      CAPITAL       I | JCAP | 2,007,218 | 58,266,307 | 3.44% | 12 | $37033.2 |
-| 31 | MNTN INC | MNTN | 4,639,936 | 16,441,170 | 28.22% | 11 | $101475.4 |
-| 32 | HANOVER BANCORP INC | HNVR | 978,585 | 7,224,243 | 13.55% | 11 | $21990.1 |
-| 33 | TVARDI THERAPEUTICS INC | TVRD | 670,380 | 9,373,433 | 7.15% | 11 | $15640.8 |
-| 34 | SERES THERAPEUTICS INC | MCRB | 451,965 | 8,754,482 | 5.16% | 11 | $5021.6 |
-| 35 | SYSTEM1     INC | SST | 322,502 | 7,631,000 | 4.23% | 11 | $1783.5 |
-| 36 | SOLESENCE INC | SLSN | 1,736,047 | 70,481,945 | 2.46% | 11 | $7569.2 |
-| 37 | AMARIN   CORP   PLC | AMRN | 424,653 | 415,401,497 | 0.10% | 11 | $6887.9 |
-| 38 | INUVO INC | INUV | 940,655 | 14,473,843 | 6.50% | 10 | $4327.1 |
-| 39 | AELUMA INC | ALMU | 805,855 | 15,864,360 | 5.08% | 11 | $13192.7 |
-| 40 | NEWSMAX INC | NMAX | 1,638,400 | 86,938,585 | 1.88% | 14 | $24789.0 |
-| 41 | COMPLETE   SOLARIA       INC | SPWR | 8,364,267 | 82,325,722 | 10.16% | 18 | $15390.5 |
-| 42 | SCILEX HOLDING CO | SCLX | 427,049 | 5,497,431 | 7.77% | 9 | $2515.4 |
-| 43 | FIBROGEN INC | FGEN | 273,489 | 4,044,000 | 6.76% | 9 | $1449.5 |
-| 44 | AIRO     GROUP     HLDGS  INC | AIRO | 465,286 | 27,025,503 | 1.72% | 9 | $11199.4 |
-| 45 | ATEGRITY   SPECIALTY     IN  C | ASIC | 629,636 | 48,066,674 | 1.31% | 9 | $13549.8 |
-| 46 | SBC MED GROUP HLDGS INC | SBC | 231,465 | 103,098,442 | 0.22% | 11 | $1074.0 |
-| 47 | ACUREN CORP                  | TIC | 50,307,063 | 121,476,215 | 41.41% | 17 | $555395.4 |
-| 48 | PATRIOT NATL BANCORP INC | PNBK | 16,520,834 | 85,796,228 | 19.26% | 14 | $25111.7 |
-| 49 | COREWEAVE     INC | CRWV | 41,889,636 | 366,765,000 | 11.42% | 25 | $6830553.3 |
-| 50 | UNICYCIVE THERAPEUTICS INC | UNCY | 722,612 | 14,111,852 | 5.12% | 8 | $3446.9 |
+| 1 | SOHO HOUSE & CO INC | SHCO | 21,086,192 | 194,766 | 10826.42% | 5 | $154983.5 |
+| 2 | Tempus AI Inc | TEM | 14,885,031 | 172,969 | 8605.61% | 9 | $945794.9 |
+| 3 | ECHOSTAR CORP | SATS | 17,483,026 | 287,362 | 6083.97% | 7 | $484279.8 |
+| 4 | NUTANIX INC | NTNX | 10,552,154 | 267,479 | 3945.04% | 11 | $806606.7 |
+| 5 | SUNOPTA INC | STKL | 2,077,905 | 117,871 | 1762.86% | 6 | $12051.9 |
+| 6 | COLLIERS INTL GROUP INC | CIGI | 4,279,569 | 284,583 | 1503.80% | 5 | $558655.6 |
+| 7 | EHANG HLDGS LTD | EH | 793,434 | 134,367 | 590.50% | 4 | $13273.6 |
+| 8 | SHIFT4 PMTS INC | FOUR | 9,787,532 | 1,668,826 | 586.49% | 9 | $970042.3 |
+| 9 | MSP   RECOVERY    INC | MSPRW | 3,687,500 | 1,001,525 | 368.19% | 1 | $8.1 |
+| 10 | IHEARTMEDIA INC | IHRT | 4,660,778 | 5,039,323 | 92.49% | 4 | $8203.0 |
+| 11 | ACACIA RESH CORP | ACTG | 63,594,728 | 96,460,378 | 65.93% | 4 | $227669.1 |
+| 12 | MIRION TECHNOLOGIES INC | MIR | 11,828,245 | 18,750,000 | 63.08% | 11 | $254662.1 |
+| 13 | PEPGEN INC | PEPG | 16,625,991 | 32,619,663 | 50.97% | 7 | $18454.8 |
+| 14 | DAVITA INC | DVA | 34,915,893 | 70,977,000 | 49.19% | 9 | $4973769.0 |
+| 15 | CLIMB BIO INC | CLYM | 32,914,140 | 68,184,435 | 48.27% | 6 | $40813.5 |
+| 16 | ARTIVA BIOTHERAPEUTICS INC | ARTV | 10,667,590 | 24,401,353 | 43.72% | 6 | $16108.1 |
+| 17 | SIONNA THERAPEUTICS INC | SION | 17,978,431 | 44,463,527 | 40.43% | 9 | $311925.8 |
+| 18 | SEAPORT ENTMT GROUP INC | SEG | 5,064,675 | 12,735,000 | 39.77% | 2 | $94456.2 |
+| 19 | SIRIUSXM HOLDINGS INC | SIRI | 131,478,155 | 337,000,000 | 39.01% | 8 | $3020053.2 |
+| 20 | ACRIVON THERAPEUTICS INC | ACRV | 12,273,727 | 31,549,770 | 38.90% | 8 | $14605.7 |
+| 21 | LONGEVITY HEALTH HLDGS INC | XAGEW | 575,258 | 1,483,738 | 38.77% | 3 | $14.7 |
+| 22 | LOAR HOLDINGS INC | LOAR | 34,694,156 | 93,622,471 | 37.06% | 10 | $2989595.4 |
+| 23 | OCCIDENTAL PETE CORP | OXY | 361,484,303 | 985,175,029 | 36.69% | 12 | $15185955.6 |
+| 24 | KODIAK SCIENCES INC | KOD | 18,922,236 | 52,998,561 | 35.70% | 7 | $70579.9 |
+| 25 | CYTOMX THERAPEUTICS INC | CTMX | 28,060,512 | 80,099,889 | 35.03% | 10 | $63697.4 |
+| 26 | CERO  THERAPEUTICS        HLDG | CEROW | 108,750 | 330,603 | 32.89% | 1 | $2.6 |
+| 27 | EDGEWISE THERAPEUTICS INC | EWTX | 34,769,238 | 105,761,949 | 32.87% | 8 | $455824.7 |
+| 28 | HOWARD HUGHES HOLDINGS INC | HHH | 19,357,183 | 59,387,488 | 32.59% | 7 | $1306609.9 |
+| 29 | ACADIA PHARMACEUTICALS INC | ACAD | 52,871,854 | 169,146,043 | 31.26% | 9 | $1140445.9 |
+| 30 | ADICET BIO INC | ACET | 25,486,794 | 83,253,779 | 30.61% | 7 | $15546.9 |
+| 31 | PRELUDE THERAPEUTICS INC | PRLD | 22,201,083 | 76,038,055 | 29.20% | 7 | $17969.6 |
+| 32 | ACUMEN PHARMACEUTICALS INC | ABOS | 17,678,539 | 60,573,425 | 29.19% | 6 | $20507.1 |
+| 33 | KRAFT HEINZ CO | KHC | 336,217,069 | 1,184,000,000 | 28.40% | 12 | $8681124.7 |
+| 34 | JANUX THERAPEUTICS INC | JANX | 16,955,736 | 60,123,602 | 28.20% | 10 | $391677.5 |
+| 35 | TYRA BIOSCIENCES INC | TYRA | 14,895,119 | 53,318,198 | 27.94% | 11 | $142546.3 |
+| 36 | PONY AI INC | PONY | 31,056,262 | 114,318,765 | 27.17% | 9 | $409942.7 |
+| 37 | Incyte Corp | INCY | 52,380,841 | 196,130,993 | 26.71% | 14 | $3567135.2 |
+| 38 | MNTN INC | MNTN | 4,358,654 | 16,441,170 | 26.51% | 8 | $95323.8 |
+| 39 | Adaptive Biotechnologies Corp | ADPT | 39,523,698 | 152,581,042 | 25.90% | 9 | $460451.1 |
+| 40 | ARS PHARMACEUTICALS INC | SPRY | 25,526,358 | 98,844,178 | 25.82% | 8 | $445435.0 |
+| 41 | FULCRUM THERAPEUTICS INC | FULC | 13,764,162 | 54,108,438 | 25.44% | 9 | $94697.4 |
+| 42 | AMERICAN EXPRESS CO | AXP | 173,020,790 | 689,000,000 | 25.11% | 12 | $55190171.3 |
+| 43 | TPG INC | TPG | 33,133,423 | 133,901,421 | 24.74% | 8 | $1737848.0 |
+| 44 | MOODYS CORP | MCO | 44,187,693 | 179,500,000 | 24.62% | 15 | $22164105.0 |
+| 45 | ETSY INC | ETSY | 23,852,072 | 98,528,000 | 24.21% | 10 | $1196419.9 |
+| 46 | 4D MOLECULAR THERAPEUTICS IN | FDMT | 11,062,154 | 46,771,185 | 23.65% | 6 | $41040.6 |
+| 47 | INTAPP INC | INTA | 19,199,319 | 81,694,000 | 23.50% | 9 | $991068.8 |
+| 48 | WENDYS CO | WEN | 44,062,822 | 190,311,000 | 23.15% | 6 | $503197.4 |
+| 49 | Twist Bioscience Corp | TWST | 13,672,380 | 60,174,000 | 22.72% | 10 | $503006.9 |
+| 50 | LEXEO THERAPEUTICS INC | LXEO | 12,291,738 | 54,934,275 | 22.38% | 8 | $49412.8 |
 
 ## Concentration Risk Analysis
 
 ### Extremely High Concentration (>70% of shares outstanding)
 
-- **ASSET   ENTITIES     INC**: 87.41% of shares outstanding held by 9 institutions
-- **ONKURE THERAPEUTICS INC**: 70.66% of shares outstanding held by 14 institutions
-- **ACACIA RESH CORP**: 76.24% of shares outstanding held by 20 institutions
+- **SOHO HOUSE & CO INC**: 10826.42% of shares outstanding held by 5 institutions
+- **Tempus AI Inc**: 8605.61% of shares outstanding held by 9 institutions
+- **ECHOSTAR CORP**: 6083.97% of shares outstanding held by 7 institutions
+- **NUTANIX INC**: 3945.04% of shares outstanding held by 11 institutions
+- **SUNOPTA INC**: 1762.86% of shares outstanding held by 6 institutions
+- **COLLIERS INTL GROUP INC**: 1503.80% of shares outstanding held by 5 institutions
+- **EHANG HLDGS LTD**: 590.50% of shares outstanding held by 4 institutions
+- **SHIFT4 PMTS INC**: 586.49% of shares outstanding held by 9 institutions
+- **MSP   RECOVERY    INC**: 368.19% of shares outstanding held by 1 institutions
+- **IHEARTMEDIA INC**: 92.49% of shares outstanding held by 4 institutions
 
 ### Most Widely Held Securities
 
-- **AMAZON COM INC              **: 41 holders (24.67% of shares outstanding)
-- **META PLATFORMS INC          **: 40 holders (25.12% of shares outstanding)
-- **MICROSOFT CORP**: 39 holders (28.03% of shares outstanding)
-- **NVIDIA CORPORATION          **: 39 holders (27.27% of shares outstanding)
-- **UNITEDHEALTH GROUP INC**: 36 holders (36.23% of shares outstanding)
-- **CAPITAL ONE FINL CORP       **: 35 holders (34.38% of shares outstanding)
-- **SEA LTD                     **: 34 holders (16.16% of shares outstanding)
-- **MERCADOLIBRE INC**: 34 holders (16.84% of shares outstanding)
-- **ALPHABET INC**: 34 holders (13.67% of shares outstanding)
-- **UBER TECHNOLOGIES INC**: 34 holders (31.56% of shares outstanding)
+- **MICROSOFT CORP**: 36 holders (2.93% of shares outstanding)
+- **AMAZON COM INC**: 33 holders (2.52% of shares outstanding)
+- **META PLATFORMS INC**: 32 holders (2.83% of shares outstanding)
+- **ALPHABET INC**: 29 holders (1.73% of shares outstanding)
+- **NVIDIA Corp**: 26 holders (2.21% of shares outstanding)
+- **CAPITAL ONE FINL CORP**: 22 holders (8.40% of shares outstanding)
+- **UBER TECHNOLOGIES INC**: 21 holders (4.91% of shares outstanding)
+- **MASTERCARD INCORPORATED**: 21 holders (4.23% of shares outstanding)
+- **APPLE INC**: 21 holders (3.41% of shares outstanding)
+- **Sea Ltd**: 20 holders (7.36% of shares outstanding)
 
 ## Key Insights
 
@@ -96,63 +103,63 @@
 
 ## Detailed Holdings (Top 10)
 
-### 1. RALLIANT CORP               
-- **CUSIP**: 750940108
-- **% of Shares Outstanding**: 40.79%
-- **Total Value**: $2228988.8M
-- **Key Holders**: Tweedy Browne, Gotham Asset Management, Third Point, Morgan Stanley, Dimensional Fund Advisors and 24 others
+### 1. SOHO HOUSE & CO INC
+- **CUSIP**: 586001109
+- **% of Shares Outstanding**: 10826.42%
+- **Total Value**: $154983.5M
+- **Key Holders**: Goldman Sachs Asset Mgmt, Third Point, Two Sigma, Millennium Management, Citadel Advisors
 
-### 2. ROCKET  LAB   CORP
-- **CUSIP**: 773121108
-- **% of Shares Outstanding**: 30.43%
-- **Total Value**: $5217441.4M
-- **Key Holders**: Tweedy Browne, Two Sigma, Morgan Stanley, Dimensional Fund Advisors, UBS Asset Management and 18 others
+### 2. Tempus AI Inc
+- **CUSIP**: 88023B103
+- **% of Shares Outstanding**: 8605.61%
+- **Total Value**: $945794.9M
+- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Polen Capital, Two Sigma, Balyasny Asset Management and 4 others
 
-### 3. SMARTSTOP SELF STORAG REIT I
-- **CUSIP**: 83192D402
-- **% of Shares Outstanding**: 24.45%
-- **Total Value**: $275152.1M
-- **Key Holders**: Two Sigma, Morgan Stanley, UBS Asset Management, State Street Global Advisors, JPMorgan Chase and 18 others
+### 3. ECHOSTAR CORP
+- **CUSIP**: 278768106
+- **% of Shares Outstanding**: 6083.97%
+- **Total Value**: $484279.8M
+- **Key Holders**: Dodge & Cox, Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Two Sigma, Millennium Management and 2 others
 
-### 4. LIONSGATE     STUDIOS    CORP
-- **CUSIP**: 53626N102
-- **% of Shares Outstanding**: 20.99%
-- **Total Value**: $332016.5M
-- **Key Holders**: Tweedy Browne, Two Sigma, Morgan Stanley, Dimensional Fund Advisors, UBS Asset Management and 18 others
+### 4. NUTANIX INC
+- **CUSIP**: 67059N108
+- **% of Shares Outstanding**: 3945.04%
+- **Total Value**: $806606.7M
+- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Polen Capital, Renaissance Technologies and 6 others
 
-### 5. CHIME FINL INC
-- **CUSIP**: 16935C109
-- **% of Shares Outstanding**: 32.51%
-- **Total Value**: $1065418.3M
-- **Key Holders**: Morgan Stanley, UBS Asset Management, JPMorgan Chase, Bank of America, Franklin Templeton and 17 others
+### 5. SUNOPTA INC
+- **CUSIP**: 8676EP108
+- **% of Shares Outstanding**: 1762.86%
+- **Total Value**: $12051.9M
+- **Key Holders**: Goldman Sachs Asset Mgmt, Renaissance Technologies, Balyasny Asset Management, Millennium Management, Citadel Advisors and 1 others
 
-### 6. FORWARD     AIR   CORP
-- **CUSIP**: 34986A104
-- **% of Shares Outstanding**: 27.33%
-- **Total Value**: $205590.2M
-- **Key Holders**: Tweedy Browne, Two Sigma, Morgan Stanley, Dimensional Fund Advisors, UBS Asset Management and 17 others
+### 6. COLLIERS INTL GROUP INC
+- **CUSIP**: 194693107
+- **% of Shares Outstanding**: 1503.80%
+- **Total Value**: $558655.6M
+- **Key Holders**: Goldman Sachs Asset Mgmt, Wellington Management, Renaissance Technologies, Citadel Advisors, Durable Capital Partners
 
-### 7. EASTERLY     GOVT  PPTYS    INC
-- **CUSIP**: 27616P301
-- **% of Shares Outstanding**: 28.53%
-- **Total Value**: $287256.8M
-- **Key Holders**: Two Sigma, Morgan Stanley, Dimensional Fund Advisors, UBS Asset Management, State Street Global Advisors and 15 others
+### 7. EHANG HLDGS LTD
+- **CUSIP**: 26853E102
+- **% of Shares Outstanding**: 590.50%
+- **Total Value**: $13273.6M
+- **Key Holders**: Goldman Sachs Asset Mgmt, Balyasny Asset Management, Millennium Management, Citadel Advisors
 
-### 8. STARZ   ENTERTAINMENT       CORP.
-- **CUSIP**: 855919106
-- **% of Shares Outstanding**: 16.39%
-- **Total Value**: $43988.7M
-- **Key Holders**: Tweedy Browne, Morgan Stanley, Dimensional Fund Advisors, UBS Asset Management, State Street Global Advisors and 15 others
+### 8. SHIFT4 PMTS INC
+- **CUSIP**: 82452J109
+- **% of Shares Outstanding**: 586.49%
+- **Total Value**: $970042.3M
+- **Key Holders**: Texas Teachers Retirement, Goldman Sachs Asset Mgmt, Wellington Management, Balyasny Asset Management, Millennium Management and 4 others
 
-### 9. CIRCLE INTERNET GROUP INC
-- **CUSIP**: 172573107
-- **% of Shares Outstanding**: 12.96%
-- **Total Value**: $1946793.3M
-- **Key Holders**: Two Sigma, Morgan Stanley, UBS Asset Management, State Street Global Advisors, JPMorgan Chase and 15 others
+### 9. MSP   RECOVERY    INC
+- **CUSIP**: 553745126
+- **% of Shares Outstanding**: 368.19%
+- **Total Value**: $8.1M
+- **Key Holders**: Millennium Management
 
-### 10. NEKTAR   THERAPEUTICS
-- **CUSIP**: 640268306
-- **% of Shares Outstanding**: 27.07%
-- **Total Value**: $87129.0M
-- **Key Holders**: Two Sigma, Morgan Stanley, Dimensional Fund Advisors, UBS Asset Management, State Street Global Advisors and 13 others
+### 10. IHEARTMEDIA INC
+- **CUSIP**: 45174J509
+- **% of Shares Outstanding**: 92.49%
+- **Total Value**: $8203.0M
+- **Key Holders**: Goldman Sachs Asset Mgmt, Renaissance Technologies, Two Sigma, Citadel Advisors
 
