@@ -805,7 +805,7 @@ class Filing13FAnalyzer:
                 
                 # Process previous quarter filings
                 prev_analyzer.process_all_filings()
-                prev_total_holdings, _ = prev_analyzer.analyze_holdings()
+                prev_total_holdings, _ = prev_analyzer.calculate_metrics()
                 
                 # Save previous quarter results
                 prev_analyzer.generate_json_output(prev_total_holdings, "total_holdings_data.json")
