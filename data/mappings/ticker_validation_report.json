@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-19T18:22:23.674709",
+  "timestamp": "2026-02-20T21:53:28.553930",
   "total_institutions": 69,
   "institutions_with_tickers": [
     {
@@ -400,14 +400,14 @@
       "inst_cik": "0001647251",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -529,14 +529,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -591,14 +591,14 @@
           "cik": "0001577552"
         },
         {
-          "ticker": "UNH",
-          "company_name": "UNITEDHEALTH GROUP INC",
-          "cik": "0000731766"
-        },
-        {
           "ticker": "GS",
           "company_name": "GOLDMAN SACHS GROUP INC",
           "cik": "0000886982"
+        },
+        {
+          "ticker": "UNH",
+          "company_name": "UNITEDHEALTH GROUP INC",
+          "cik": "0000731766"
         },
         {
           "ticker": "MUFG",
@@ -606,9 +606,9 @@
           "cik": "0000067088"
         },
         {
-          "ticker": "SONY",
-          "company_name": "Sony Group Corp",
-          "cik": "0000313838"
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
         }
       ]
     },
@@ -658,14 +658,14 @@
           "cik": "0001825570"
         },
         {
-          "ticker": "CLOV",
-          "company_name": "CLOVER HEALTH INVESTMENTS, CORP. /DE",
-          "cik": "0001801170"
-        },
-        {
           "ticker": "IRS",
           "company_name": "IRSA INVESTMENTS & REPRESENTATIONS INC",
           "cik": "0000933267"
+        },
+        {
+          "ticker": "CLOV",
+          "company_name": "CLOVER HEALTH INVESTMENTS, CORP. /DE",
+          "cik": "0001801170"
         },
         {
           "ticker": "VINP",
@@ -684,11 +684,6 @@
           "cik": "0000064040"
         },
         {
-          "ticker": "COIN",
-          "company_name": "Coinbase Global, Inc.",
-          "cik": "0001679788"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
@@ -697,6 +692,11 @@
           "ticker": "CARR",
           "company_name": "CARRIER GLOBAL Corp",
           "cik": "0001783180"
+        },
+        {
+          "ticker": "COIN",
+          "company_name": "Coinbase Global, Inc.",
+          "cik": "0001679788"
         },
         {
           "ticker": "CBOE",
@@ -746,11 +746,6 @@
           "cik": "0000064040"
         },
         {
-          "ticker": "COIN",
-          "company_name": "Coinbase Global, Inc.",
-          "cik": "0001679788"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
@@ -761,9 +756,14 @@
           "cik": "0001783180"
         },
         {
-          "ticker": "CBOE",
-          "company_name": "Cboe Global Markets, Inc.",
-          "cik": "0001374310"
+          "ticker": "COIN",
+          "company_name": "Coinbase Global, Inc.",
+          "cik": "0001679788"
+        },
+        {
+          "ticker": "VIK",
+          "company_name": "Viking Holdings Ltd",
+          "cik": "0001745201"
         }
       ]
     },
@@ -772,14 +772,14 @@
       "inst_cik": "0001135730",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -803,6 +803,11 @@
       "inst_cik": "0001040273",
       "potential_matches": [
         {
+          "ticker": "FITB",
+          "company_name": "FIFTH THIRD BANCORP",
+          "cik": "0000035527"
+        },
+        {
           "ticker": "CNP",
           "company_name": "CENTERPOINT ENERGY INC",
           "cik": "0001130310"
@@ -813,19 +818,14 @@
           "cik": "0001015922"
         },
         {
-          "ticker": "FITBI",
-          "company_name": "FIFTH THIRD BANCORP",
-          "cik": "0000035527"
-        },
-        {
           "ticker": "SAIL",
           "company_name": "SailPoint, Inc.",
           "cik": "0002030781"
         },
         {
-          "ticker": "AVPT",
-          "company_name": "AvePoint, Inc.",
-          "cik": "0001777921"
+          "ticker": "TPH",
+          "company_name": "Tri Pointe Homes, Inc.",
+          "cik": "0001561680"
         }
       ]
     },
@@ -834,14 +834,14 @@
       "inst_cik": "0001791786",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -875,19 +875,19 @@
           "cik": "0001952976"
         },
         {
-          "ticker": "CIO",
-          "company_name": "City Office REIT, Inc.",
-          "cik": "0001593222"
+          "ticker": "FOFA",
+          "company_name": "FAMILY OFFICE OF AMERICA, INC.",
+          "cik": "0001871181"
         },
         {
-          "ticker": "OPI",
+          "ticker": "OPITQ",
           "company_name": "OFFICE PROPERTIES INCOME TRUST",
           "cik": "0001456772"
         },
         {
-          "ticker": "FOFA",
-          "company_name": "FAMILY OFFICE OF AMERICA, INC.",
-          "cik": "0001871181"
+          "ticker": "DTLAP",
+          "company_name": "Brookfield DTLA Fund Office Trust Investor Inc.",
+          "cik": "0001575311"
         }
       ]
     },
@@ -896,14 +896,14 @@
       "inst_cik": "0001656456",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -927,14 +927,14 @@
       "inst_cik": "0001029160",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -1247,9 +1247,9 @@
           "cik": "0001024478"
         },
         {
-          "ticker": "ACGL",
-          "company_name": "ARCH CAPITAL GROUP LTD.",
-          "cik": "0000947484"
+          "ticker": "RKLB",
+          "company_name": "Rocket Lab Corp",
+          "cik": "0001819994"
         }
       ]
     },
@@ -1263,14 +1263,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "ACGL",
-          "company_name": "ARCH CAPITAL GROUP LTD.",
-          "cik": "0000947484"
-        },
-        {
           "ticker": "STT",
           "company_name": "STATE STREET CORP",
           "cik": "0000093751"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
         },
         {
           "ticker": "OWL",
@@ -1372,14 +1372,14 @@
       "inst_cik": "0001273087",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -1470,9 +1470,9 @@
           "cik": "0001571996"
         },
         {
-          "ticker": "LHX",
-          "company_name": "L3HARRIS TECHNOLOGIES, INC. /DE/",
-          "cik": "0000202058"
+          "ticker": "IFNNY",
+          "company_name": "INFINEON TECHNOLOGIES AG",
+          "cik": "0001107457"
         }
       ]
     },
@@ -1574,14 +1574,14 @@
       "inst_cik": "0000035368",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -1605,14 +1605,14 @@
       "inst_cik": "0000902219",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -1641,14 +1641,14 @@
           "cik": "0001577552"
         },
         {
-          "ticker": "UNH",
-          "company_name": "UNITEDHEALTH GROUP INC",
-          "cik": "0000731766"
-        },
-        {
           "ticker": "GS",
           "company_name": "GOLDMAN SACHS GROUP INC",
           "cik": "0000886982"
+        },
+        {
+          "ticker": "UNH",
+          "company_name": "UNITEDHEALTH GROUP INC",
+          "cik": "0000731766"
         },
         {
           "ticker": "MUFG",
@@ -1656,9 +1656,9 @@
           "cik": "0000067088"
         },
         {
-          "ticker": "SONY",
-          "company_name": "Sony Group Corp",
-          "cik": "0000313838"
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
         }
       ]
     },
@@ -1698,14 +1698,14 @@
       "inst_cik": "0001697748",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -1791,14 +1791,14 @@
       "inst_cik": "0001345471",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -1837,14 +1837,14 @@
           "cik": "0001383650"
         },
         {
+          "ticker": "BEP",
+          "company_name": "Brookfield Renewable Partners L.P.",
+          "cik": "0001533232"
+        },
+        {
           "ticker": "BIP",
           "company_name": "Brookfield Infrastructure Partners L.P.",
           "cik": "0001406234"
-        },
-        {
-          "ticker": "WES",
-          "company_name": "Western Midstream Partners, LP",
-          "cik": "0001423902"
         }
       ]
     },
@@ -1930,14 +1930,14 @@
           "cik": "0001383650"
         },
         {
+          "ticker": "BEP",
+          "company_name": "Brookfield Renewable Partners L.P.",
+          "cik": "0001533232"
+        },
+        {
           "ticker": "BIP",
           "company_name": "Brookfield Infrastructure Partners L.P.",
           "cik": "0001406234"
-        },
-        {
-          "ticker": "WES",
-          "company_name": "Western Midstream Partners, LP",
-          "cik": "0001423902"
         }
       ]
     },
@@ -1951,14 +1951,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -1982,14 +1982,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -2008,14 +2008,14 @@
       "inst_cik": "0001535472",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -2039,14 +2039,14 @@
       "inst_cik": "0001218710",
       "potential_matches": [
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "WM",
           "company_name": "WASTE MANAGEMENT INC",
           "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "APO",
@@ -2106,14 +2106,14 @@
           "cik": "0001577552"
         },
         {
-          "ticker": "UNH",
-          "company_name": "UNITEDHEALTH GROUP INC",
-          "cik": "0000731766"
-        },
-        {
           "ticker": "GS",
           "company_name": "GOLDMAN SACHS GROUP INC",
           "cik": "0000886982"
+        },
+        {
+          "ticker": "UNH",
+          "company_name": "UNITEDHEALTH GROUP INC",
+          "cik": "0000731766"
         },
         {
           "ticker": "MUFG",
@@ -2121,9 +2121,9 @@
           "cik": "0000067088"
         },
         {
-          "ticker": "SONY",
-          "company_name": "Sony Group Corp",
-          "cik": "0000313838"
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
         }
       ]
     }

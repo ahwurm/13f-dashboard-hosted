@@ -1,11 +1,11 @@
 {
-  "generated": "2025-11-19T19:01:49.834190",
+  "generated": "2026-02-20T22:35:27.613684",
   "statistics": {
-    "total_cusips": 9120,
+    "total_cusips": 9328,
     "already_mapped": 0,
-    "newly_mapped": 7551,
-    "failed_mappings": 1569,
-    "api_calls": 912,
+    "newly_mapped": 7654,
+    "failed_mappings": 1674,
+    "api_calls": 933,
     "api_errors": 0,
     "filings_processed": 122,
     "successful_parses": 118,
@@ -18,13 +18,13 @@
     "parse_success_rate": 96.72
   },
   "coverage": {
-    "total_cusips": 9120,
-    "mapped_cusips": 7551,
-    "unmapped_cusips": 1569,
-    "coverage_percentage": 82.8
+    "total_cusips": 9328,
+    "mapped_cusips": 7654,
+    "unmapped_cusips": 1674,
+    "coverage_percentage": 82.05
   },
   "api_usage": {
-    "total_calls": 912,
+    "total_calls": 933,
     "errors": 0
   },
   "example_mappings": [
@@ -119,14 +119,14 @@
       "name": "AMAZON COM INC"
     },
     {
+      "cusip": "032095101",
+      "ticker": "APH",
+      "name": "AMPHENOL CORP NEW"
+    },
+    {
       "cusip": "03831W108",
       "ticker": "APP",
       "name": "APPLOVIN CORP"
-    },
-    {
-      "cusip": "09857L108",
-      "ticker": "BKNG",
-      "name": "BOOKING HOLDINGS INC"
     }
   ]
 }
