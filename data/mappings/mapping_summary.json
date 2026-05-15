@@ -1,11 +1,11 @@
 {
-  "generated": "2026-02-20T22:35:27.613684",
+  "generated": "2026-05-15T06:29:08.766231",
   "statistics": {
-    "total_cusips": 9328,
+    "total_cusips": 9351,
     "already_mapped": 0,
-    "newly_mapped": 7654,
-    "failed_mappings": 1674,
-    "api_calls": 933,
+    "newly_mapped": 7492,
+    "failed_mappings": 1859,
+    "api_calls": 936,
     "api_errors": 0,
     "filings_processed": 122,
     "successful_parses": 118,
@@ -18,100 +18,20 @@
     "parse_success_rate": 96.72
   },
   "coverage": {
-    "total_cusips": 9328,
-    "mapped_cusips": 7654,
-    "unmapped_cusips": 1674,
-    "coverage_percentage": 82.05
+    "total_cusips": 9351,
+    "mapped_cusips": 7492,
+    "unmapped_cusips": 1859,
+    "coverage_percentage": 80.12
   },
   "api_usage": {
-    "total_calls": 933,
+    "total_calls": 936,
     "errors": 0
   },
   "example_mappings": [
     {
-      "cusip": "009066101",
-      "ticker": "ABNB",
-      "name": "AIRBNB INC"
-    },
-    {
-      "cusip": "03027X100",
-      "ticker": "AMT",
-      "name": "AMERICAN TOWER CORP NEW"
-    },
-    {
-      "cusip": "084670702",
-      "ticker": "BRK/B",
-      "name": "BERKSHIRE HATHAWAY INC DEL"
-    },
-    {
-      "cusip": "11271J107",
-      "ticker": "BN",
-      "name": "BROOKFIELD CORP"
-    },
-    {
-      "cusip": "12510Q100",
-      "ticker": "CCC",
-      "name": "CCC INTELLIGENT SOLUTIONS HL"
-    },
-    {
-      "cusip": "143130102",
-      "ticker": "KMX",
-      "name": "CARMAX INC"
-    },
-    {
-      "cusip": "217204106",
-      "ticker": "CPRT",
-      "name": "COPART INC"
-    },
-    {
-      "cusip": "22160N109",
-      "ticker": "CSGP",
-      "name": "COSTAR GROUP INC"
-    },
-    {
-      "cusip": "235851102",
-      "ticker": "DHR",
-      "name": "DANAHER CORPORATION"
-    },
-    {
-      "cusip": "303250104",
-      "ticker": "FICO",
-      "name": "FAIR ISAAC CORP"
-    },
-    {
-      "cusip": "38267D109",
-      "ticker": "GSHD",
-      "name": "GOOSEHEAD INS INC"
-    },
-    {
-      "cusip": "57636Q104",
-      "ticker": "MA",
-      "name": "MASTERCARD INCORPORATED"
-    },
-    {
-      "cusip": "615369105",
-      "ticker": "MCO",
-      "name": "MOODYS CORP"
-    },
-    {
-      "cusip": "67103H107",
-      "ticker": "ORLY",
-      "name": "OREILLY AUTOMOTIVE INC"
-    },
-    {
-      "cusip": "776696106",
-      "ticker": "ROP",
-      "name": "ROPER TECHNOLOGIES INC"
-    },
-    {
-      "cusip": "92345Y106",
-      "ticker": "VRSK",
-      "name": "VERISK ANALYTICS INC"
-    },
-    {
-      "cusip": "92826C839",
-      "ticker": "V",
-      "name": "VISA INC"
+      "cusip": "007903107",
+      "ticker": "AMD",
+      "name": "ADVANCED MICRO DEVICES INC"
     },
     {
       "cusip": "023135106",
@@ -119,14 +39,94 @@
       "name": "AMAZON COM INC"
     },
     {
-      "cusip": "032095101",
-      "ticker": "APH",
-      "name": "AMPHENOL CORP NEW"
+      "cusip": "038222105",
+      "ticker": "AMAT",
+      "name": "APPLIED MATLS INC"
     },
     {
-      "cusip": "03831W108",
-      "ticker": "APP",
-      "name": "APPLOVIN CORP"
+      "cusip": "071705107",
+      "ticker": "BLCO",
+      "name": "BAUSCH PLUS LOMB CORP"
+    },
+    {
+      "cusip": "09062X103",
+      "ticker": "BIIB",
+      "name": "BIOGEN INC"
+    },
+    {
+      "cusip": "09073M104",
+      "ticker": "TECH",
+      "name": "BIO-TECHNE CORP"
+    },
+    {
+      "cusip": "852234103",
+      "ticker": "XYZ",
+      "name": "BLOCK INC"
+    },
+    {
+      "cusip": "124155110",
+      "ticker": "BFLYW",
+      "name": "BUTTERFLY        NETWORK       INC"
+    },
+    {
+      "cusip": "124155102",
+      "ticker": "BFLY",
+      "name": "Butterfly Network Inc"
+    },
+    {
+      "cusip": "15135B101",
+      "ticker": "CNC",
+      "name": "CENTENE CORP DEL"
+    },
+    {
+      "cusip": "21037T109",
+      "ticker": "CEG",
+      "name": "CONSTELLATION ENERGY CORP"
+    },
+    {
+      "cusip": "126650100",
+      "ticker": "CVS",
+      "name": "CVS HEALTH CORP"
+    },
+    {
+      "cusip": "235851102",
+      "ticker": "DHR",
+      "name": "DANAHER CORPORATION"
+    },
+    {
+      "cusip": "253393102",
+      "ticker": "DKS",
+      "name": "DICKS SPORTING GOODS INC"
+    },
+    {
+      "cusip": "25402D102",
+      "ticker": "DOCN",
+      "name": "DIGITALOCEAN HLDGS INC"
+    },
+    {
+      "cusip": "23355L106",
+      "ticker": "DXC",
+      "name": "DXC TECHNOLOGY CO"
+    },
+    {
+      "cusip": "28618M106",
+      "ticker": "ESI",
+      "name": "ELEMENT SOLUTIONS INC"
+    },
+    {
+      "cusip": "30212P303",
+      "ticker": "EXPE",
+      "name": "EXPEDIA GROUP INC"
+    },
+    {
+      "cusip": "37611X209",
+      "ticker": "DNA",
+      "name": "GINKGO BIOWORKS HOLDINGS INC"
+    },
+    {
+      "cusip": "37940X102",
+      "ticker": "GPN",
+      "name": "GLOBAL PMTS INC"
     }
   ]
 }
