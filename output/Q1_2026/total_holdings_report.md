@@ -1,92 +1,99 @@
 # Total Institutional Holdings as % of Shares Outstanding
 
-*Generated: 2026-05-15 06:31:28*
+*Generated: 2026-06-10 23:57:25*
 
 ## Summary Statistics
 
-- Total Securities Analyzed: 2877
-- Total Portfolio Value: $294717.51B
-- Average Holders per Security: 1.6
-- High Concentration Positions (>50% of shares outstanding): 3
-- Institutions Included: 16 total
-  - 16 from Q1 2026 (current quarter)
+- Total Securities Analyzed: 3734
+- Total Portfolio Value: $2468667.56B
+- Average Holders per Security: 6.2
+- High Concentration Positions (>50% of shares outstanding): 11
+- Institutions Included: 57 total
+  - 57 from Q1 2026 (current quarter)
   - 0 from earlier quarters (fallback data)
 
 ## Top 50 Positions by Percent of Shares Outstanding
 
 | Rank | Security | Ticker | Shares Held | Shares Outstanding | % of Shares | # Holders | Value ($M) |
 |------|----------|--------|-------------|-------------------|------------|-----------|------------|
-| 1 | Tempus AI Inc | TEM | 9,607,745 | 178,880 | 5371.06% | 1 | $434462.2 |
-| 2 | NUTANIX INC | NTNX | 2,744,685 | 269,077 | 1020.04% | 2 | $104325.5 |
-| 3 | SUNOPTA INC | STKL | 501,700 | 117,965 | 425.30% | 1 | $3251.0 |
-| 4 | LOAR HOLDINGS INC | LOAR | 32,179,568 | 93,624,471 | 34.37% | 3 | $1843567.5 |
-| 5 | INTAPP INC | INTA | 17,260,224 | 76,944,000 | 22.43% | 2 | $443415.2 |
-| 6 | TRAEGER INC | COOK | 493,861 | 2,745,361 | 17.99% | 1 | $14322.0 |
-| 7 | AVANTOR INC | AVTR | 119,658,500 | 682,900,000 | 17.52% | 2 | $938122.6 |
-| 8 | IHEARTMEDIA INC | IHRT | 828,729 | 5,039,323 | 16.45% | 1 | $2419.9 |
-| 9 | FORTIVE CORP | FTV | 44,289,860 | 305,600,000 | 14.49% | 3 | $2448343.5 |
-| 10 | INTERNATIONAL FLAVORS&FRAGRA | IFF | 36,476,765 | 255,200,000 | 14.29% | 2 | $2646389.3 |
-| 11 | SUNBELT RENTALS HOLDINGS INC | SUNB | 59,161,157 | 415,072,800 | 14.25% | 3 | $3850799.7 |
-| 12 | CELANESE CORP DEL | CE | 15,374,410 | 109,504,355 | 14.04% | 2 | $1011174.9 |
-| 13 | ELANCO ANIMAL HEALTH INC | ELAN | 69,407,986 | 499,381,644 | 13.90% | 3 | $1660933.1 |
-| 14 | RALLIANT CORP | RAL | 14,779,030 | 111,900,000 | 13.21% | 3 | $614659.9 |
-| 15 | Pacific Biosciences of Califor | PACB | 38,762,388 | 310,487,000 | 12.48% | 2 | $51166.4 |
-| 16 | Beam Therapeutics Inc | BEAM | 12,658,779 | 102,741,848 | 12.32% | 3 | $301658.7 |
-| 17 | ZIMMER BIOMET HOLDINGS INC | ZBH | 23,877,067 | 195,000,000 | 12.24% | 4 | $2158964.4 |
-| 18 | Intellia Therapeutics Inc | NTLA | 14,523,430 | 120,447,521 | 12.06% | 2 | $186190.4 |
-| 19 | CHARTER COMMUNICATIONS INC | CHTR | 14,635,360 | 125,488,486 | 11.66% | 3 | $3159481.5 |
-| 20 | SUN CMNTYS INC | SUI | 14,336,716 | 123,254,249 | 11.63% | 3 | $1805852.7 |
-| 21 | SBA COMMUNICATIONS CORP | SBAC | 12,135,905 | 106,063,000 | 11.44% | 2 | $2088710.6 |
-| 22 | ASBURY AUTOMOTIVE GROUP INC | ABG | 2,157,536 | 19,000,000 | 11.36% | 2 | $421604.1 |
-| 23 | Baxter International, Inc. | BAX | 57,254,570 | 515,000,000 | 11.12% | 1 | $961876.8 |
-| 24 | LITHIA MTRS INC | LAD | 2,495,468 | 22,800,000 | 10.95% | 2 | $623168.3 |
-| 25 | Arcturus Therapeutics Holdings | ARCT | 2,947,818 | 28,423,000 | 10.37% | 2 | $22757.2 |
-| 26 | Cerus Corp | CERS | 19,740,048 | 192,142,000 | 10.27% | 2 | $35926.9 |
-| 27 | Twist Bioscience Corp | TWST | 6,374,557 | 62,154,000 | 10.26% | 3 | $302919.0 |
-| 28 | 10X Genomics Inc | TXG | 12,726,056 | 127,691,329 | 9.97% | 2 | $270174.2 |
-| 29 | FIDELITY NATL INFORMATION SV | FIS | 50,849,460 | 515,000,000 | 9.87% | 3 | $2385348.2 |
-| 30 | FISERV INC | FISV | 50,937,239 | 534,300,000 | 9.53% | 3 | $2842297.9 |
-| 31 | HUMANA INC | HUM | 11,382,470 | 120,332,000 | 9.46% | 2 | $1973606.5 |
-| 32 | MOLSON COORS BEVERAGE CO | TAP | 18,572,254 | 199,100,000 | 9.33% | 3 | $799721.3 |
-| 33 | Strata Critical Medical Inc | SRTA | 7,930,170 | 85,322,941 | 9.29% | 2 | $33148.1 |
-| 34 | ALPHA METALLURGICAL RESOUR I | AMR | 1,172,553 | 12,752,824 | 9.19% | 2 | $240690.0 |
-| 35 | V F CORP | VFC | 34,068,194 | 391,080,149 | 8.71% | 3 | $578818.6 |
-| 36 | TRANSUNION | TRU | 16,192,413 | 192,800,000 | 8.40% | 2 | $1120353.1 |
-| 37 | BIOMARIN PHARMACEUTICAL INC | BMRN | 15,610,356 | 193,268,870 | 8.08% | 3 | $881829.0 |
-| 38 | Recursion Pharmaceuticals Inc | RXRX | 42,670,838 | 530,628,653 | 8.04% | 3 | $130999.5 |
-| 39 | INCYTE CORP | INCY | 15,927,868 | 199,948,401 | 7.97% | 3 | $1499130.9 |
-| 40 | METLIFE INC | MET | 51,249,970 | 646,024,938 | 7.93% | 3 | $3624397.9 |
-| 41 | NEUROCRINE BIOSCIENCES INC | NBIX | 7,894,181 | 100,600,000 | 7.85% | 3 | $1039979.4 |
-| 42 | GE HEALTHCARE TECHNOLOGIES I | GEHC | 34,994,485 | 456,000,000 | 7.67% | 4 | $2490907.4 |
-| 43 | Personalis Inc | PSNL | 7,959,312 | 104,691,704 | 7.60% | 2 | $50700.8 |
-| 44 | Canton Strategic Holdings Inc | CNTN | 4,257,084 | 56,656,271 | 7.51% | 2 | $13920.7 |
-| 45 | OCCIDENTAL PETE CORP | OXY | 74,217,169 | 991,192,560 | 7.49% | 2 | $4824116.0 |
-| 46 | COFFEE HLDG CO INC | JVA | 410,664 | 5,708,599 | 7.19% | 1 | $1745.3 |
-| 47 | MEDIFAST INC | MED | 773,710 | 11,119,000 | 6.96% | 1 | $7884.1 |
-| 48 | LIFEVANTAGE CORP | LFVN | 867,704 | 12,609,000 | 6.88% | 1 | $3748.5 |
-| 49 | SOLUNA HOLDINGS INC | SLNH | 835,277 | 12,508,045 | 6.68% | 1 | $590.4 |
-| 50 | CareDx Inc | CDNA | 3,411,954 | 51,274,651 | 6.65% | 2 | $59231.5 |
+| 1 | TEMPUS AI INC | TEM | 14,823,193 | 178,880 | 8286.67% | 6 | $670304.8 |
+| 2 | NUTANIX INC | NTNX | 10,054,292 | 268,058 | 3750.79% | 8 | $382163.6 |
+| 3 | EHANG     HLDGS        LTD | EH | 1,110,431 | 146,665 | 757.12% | 4 | $10782.3 |
+| 4 | SHIFT4 PMTS INC | FOUR | 8,392,375 | 1,333,686 | 629.26% | 6 | $366998.6 |
+| 5 | AVITA MEDICAL INC | RCEL | 82,136,464 | 30,776,689 | 266.88% | 3 | $197422.5 |
+| 6 | ASPIRE   BIOPHARMA       HLDGS | ASBPW | 275,000 | 167,470 | 164.21% | 1 | $4.6 |
+| 7 | MYRIAD GENETICS INC | MYGN | 142,629,490 | 94,400,000 | 151.09% | 9 | $202207.7 |
+| 8 | INFLEQTION INC | INFQ | 24,257,039 | 17,449,020 | 139.02% | 6 | $237961.6 |
+| 9 | MIRION TECHNOLOGIES INC | MIR | 19,912,357 | 18,750,000 | 106.20% | 9 | $370170.7 |
+| 10 | IHEARTMEDIA INC | IHRT | 5,258,285 | 5,039,323 | 104.35% | 5 | $15354.2 |
+| 11 | ACACIA   RESH     CORP | ACTG | 63,458,947 | 96,589,132 | 65.70% | 6 | $305237.5 |
+| 12 | DAVITA INC | DVA | 31,766,319 | 68,549,000 | 46.34% | 10 | $4882165.6 |
+| 13 | ARTIVA BIOTHERAPEUTICS INC | ARTV | 10,393,094 | 24,678,420 | 42.11% | 7 | $66931.5 |
+| 14 | SIONNA THERAPEUTICS INC | SION | 18,816,577 | 45,075,651 | 41.74% | 11 | $754356.6 |
+| 15 | SEAPORT ENTMT GROUP INC | SEG | 5,236,076 | 12,806,000 | 40.89% | 4 | $112470.9 |
+| 16 | SIRIUSXM HOLDINGS INC | SIRI | 136,537,384 | 335,000,000 | 40.76% | 10 | $3151282.8 |
+| 17 | LOAR HOLDINGS INC | LOAR | 37,368,651 | 93,624,471 | 39.91% | 8 | $2140850.0 |
+| 18 | KODIAK SCIENCES INC | KOD | 24,678,565 | 62,155,685 | 39.70% | 10 | $940746.9 |
+| 19 | PEPGEN INC | PEPG | 26,521,441 | 68,874,944 | 38.51% | 10 | $46943.0 |
+| 20 | OCCIDENTAL PETE CORP | OXY | 364,588,240 | 991,192,560 | 36.78% | 11 | $23698235.6 |
+| 21 | HOWARD HUGHES HOLDINGS INC | HHH | 19,222,587 | 59,630,969 | 32.24% | 5 | $1216020.9 |
+| 22 | ACUMEN PHARMACEUTICALS INC | ABOS | 22,931,160 | 72,227,580 | 31.75% | 6 | $54117.5 |
+| 23 | EDGEWISE THERAPEUTICS INC | EWTX | 34,019,664 | 107,481,522 | 31.65% | 9 | $1071619.4 |
+| 24 | ACADIA PHARMACEUTICALS INC | ACAD | 51,413,618 | 171,086,205 | 30.05% | 11 | $1144467.1 |
+| 25 | ADICET BIO INC | ACET | 2,868,088 | 9,597,693 | 29.88% | 5 | $19531.7 |
+| 26 | KRAFT HEINZ CO | KHC | 347,152,543 | 1,186,000,000 | 29.27% | 12 | $7807460.7 |
+| 27 | ARS   PHARMACEUTICALS          | SPRY | 28,743,565 | 99,300,137 | 28.95% | 7 | $230810.8 |
+| 28 | JANUX THERAPEUTICS INC | JANX | 17,523,229 | 60,865,458 | 28.79% | 9 | $243572.9 |
+| 29 | CLIMB BIO INC | CLYM | 13,666,787 | 47,768,543 | 28.61% | 8 | $93617.5 |
+| 30 | INTAPP INC | INTA | 21,843,389 | 76,944,000 | 28.39% | 8 | $561156.7 |
+| 31 | UNITI   GROUP  LLC | UNIT | 66,283,385 | 235,000,000 | 28.21% | 6 | $621738.1 |
+| 32 | PRELUDE THERAPEUTICS INC | PRLD | 22,991,819 | 82,519,981 | 27.86% | 8 | $78632.0 |
+| 33 | ACRIVON THERAPEUTICS INC | ACRV | 10,391,215 | 38,745,032 | 26.82% | 5 | $14443.8 |
+| 34 | INCYTE CORP | INCY | 53,282,331 | 199,948,401 | 26.65% | 12 | $5014933.0 |
+| 35 | LEXEO THERAPEUTICS INC | LXEO | 19,635,227 | 74,086,737 | 26.50% | 9 | $112706.2 |
+| 36 | ADAPTIVE BIOTECHNOLOGIES COR | ADPT | 42,231,041 | 159,697,221 | 26.44% | 11 | $586166.8 |
+| 37 | MOODYS CORP | MCO | 46,380,193 | 176,800,000 | 26.23% | 18 | $20233359.4 |
+| 38 | RHYTHM PHARMACEUTICALS INC | RYTM | 17,894,962 | 68,445,084 | 26.14% | 12 | $1556324.8 |
+| 39 | BANZAI    INTERNATIONAL     IN | BNZIW | 226,355 | 867,355 | 26.10% | 2 | $2.8 |
+| 40 | GENEDX HOLDINGS CORP | WGS | 7,638,288 | 29,666,318 | 25.75% | 11 | $490530.9 |
+| 41 | SPYGLASS     PHARMA  INC | SGP | 8,509,194 | 33,432,555 | 25.45% | 3 | $220473.2 |
+| 42 | ETSY INC | ETSY | 23,478,808 | 94,887,000 | 24.74% | 11 | $1173470.8 |
+| 43 | AMERICAN EXPRESS CO | AXP | 164,410,297 | 682,000,000 | 24.11% | 15 | $49730826.7 |
+| 44 | NKARTA INC | NKTX | 16,959,907 | 71,078,531 | 23.86% | 7 | $35785.4 |
+| 45 | FORTIVE   CORP | FTV | 71,770,782 | 305,600,000 | 23.49% | 10 | $3967488.9 |
+| 46 | RALLIANT CORP | RAL | 26,008,489 | 111,900,000 | 23.24% | 11 | $1081693.1 |
+| 47 | SEPTERNA INC | SEPN | 10,376,132 | 44,916,572 | 23.10% | 6 | $249338.5 |
+| 48 | TYRA BIOSCIENCES INC | TYRA | 13,620,259 | 59,469,687 | 22.90% | 9 | $521655.9 |
+| 49 | WENDYS CO | WEN | 43,617,091 | 190,450,000 | 22.90% | 8 | $303138.8 |
+| 50 | CELLDEX THERAPEUTICS INC NEW | CLDX | 15,153,042 | 66,568,971 | 22.76% | 9 | $480654.5 |
 
 ## Concentration Risk Analysis
 
 ### Extremely High Concentration (>70% of shares outstanding)
 
-- **Tempus AI Inc**: 5371.06% of shares outstanding held by 1 institutions
-- **NUTANIX INC**: 1020.04% of shares outstanding held by 2 institutions
-- **SUNOPTA INC**: 425.30% of shares outstanding held by 1 institutions
+- **TEMPUS AI INC**: 8286.67% of shares outstanding held by 6 institutions
+- **NUTANIX INC**: 3750.79% of shares outstanding held by 8 institutions
+- **EHANG     HLDGS        LTD**: 757.12% of shares outstanding held by 4 institutions
+- **SHIFT4 PMTS INC**: 629.26% of shares outstanding held by 6 institutions
+- **AVITA MEDICAL INC**: 266.88% of shares outstanding held by 3 institutions
+- **ASPIRE   BIOPHARMA       HLDGS  INC**: 164.21% of shares outstanding held by 1 institutions
+- **MYRIAD GENETICS INC**: 151.09% of shares outstanding held by 9 institutions
+- **INFLEQTION INC**: 139.02% of shares outstanding held by 6 institutions
+- **MIRION TECHNOLOGIES INC**: 106.20% of shares outstanding held by 9 institutions
+- **IHEARTMEDIA INC**: 104.35% of shares outstanding held by 5 institutions
 
 ### Most Widely Held Securities
 
-- **ALPHABET INC**: 10 holders (0.21% of shares outstanding)
-- **MASTERCARD INCORPORATED**: 8 holders (1.09% of shares outstanding)
-- **AMAZON COM INC**: 8 holders (0.31% of shares outstanding)
-- **META PLATFORMS INC**: 8 holders (0.28% of shares outstanding)
-- **Microsoft Corp**: 8 holders (0.28% of shares outstanding)
-- **ALPHABET INC**: 8 holders (0.21% of shares outstanding)
-- **NVIDIA CORPORATION**: 8 holders (0.11% of shares outstanding)
-- **Airbnb Inc**: 7 holders (1.45% of shares outstanding)
-- **THERMO FISHER SCIENTIFIC INC**: 7 holders (0.79% of shares outstanding)
-- **Intuitive Surgical Inc**: 7 holders (0.34% of shares outstanding)
+- **ALPHABET INC**: 35 holders (2.08% of shares outstanding)
+- **AMAZON COM INC**: 33 holders (2.60% of shares outstanding)
+- **META PLATFORMS INC**: 31 holders (3.00% of shares outstanding)
+- **MICROSOFT CORP**: 31 holders (2.57% of shares outstanding)
+- **NVIDIA CORPORATION**: 29 holders (2.17% of shares outstanding)
+- **BROADCOM INC**: 25 holders (2.83% of shares outstanding)
+- **ALPHABET INC**: 25 holders (0.91% of shares outstanding)
+- **APPLE INC**: 22 holders (3.26% of shares outstanding)
+- **UBER TECHNOLOGIES INC**: 21 holders (4.99% of shares outstanding)
+- **CAPITAL ONE FINL CORP**: 20 holders (7.59% of shares outstanding)
 
 ## Key Insights
 
@@ -96,63 +103,63 @@
 
 ## Detailed Holdings (Top 10)
 
-### 1. Tempus AI Inc
+### 1. TEMPUS AI INC
 - **CUSIP**: 88023B103
-- **% of Shares Outstanding**: 5371.06%
-- **Total Value**: $434462.2M
-- **Key Holders**: ARK Investment Management
+- **% of Shares Outstanding**: 8286.67%
+- **Total Value**: $670304.8M
+- **Key Holders**: ARK Investment Management, Citadel Advisors, Wellington Management, Goldman Sachs Asset Mgmt, Millennium Management and 1 others
 
 ### 2. NUTANIX INC
 - **CUSIP**: 67059N108
-- **% of Shares Outstanding**: 1020.04%
-- **Total Value**: $104325.5M
-- **Key Holders**: Texas Teachers Retirement, Renaissance Technologies
+- **% of Shares Outstanding**: 3750.79%
+- **Total Value**: $382163.6M
+- **Key Holders**: Fundsmith, Point72, Citadel Advisors, Renaissance Technologies, Goldman Sachs Asset Mgmt and 3 others
 
-### 3. SUNOPTA INC
-- **CUSIP**: 8676EP108
-- **% of Shares Outstanding**: 425.30%
-- **Total Value**: $3251.0M
-- **Key Holders**: Renaissance Technologies
+### 3. EHANG     HLDGS        LTD
+- **CUSIP**: 26853E102
+- **% of Shares Outstanding**: 757.12%
+- **Total Value**: $10782.3M
+- **Key Holders**: Point72, Citadel Advisors, Goldman Sachs Asset Mgmt, Millennium Management
 
-### 4. LOAR HOLDINGS INC
-- **CUSIP**: 53947R105
-- **% of Shares Outstanding**: 34.37%
-- **Total Value**: $1843567.5M
-- **Key Holders**: Renaissance Technologies, Brown Capital Management, Abrams Capital
+### 4. SHIFT4 PMTS INC
+- **CUSIP**: 82452J109
+- **% of Shares Outstanding**: 629.26%
+- **Total Value**: $366998.6M
+- **Key Holders**: Point72, Citadel Advisors, Goldman Sachs Asset Mgmt, Millennium Management, Durable Capital Partners and 1 others
 
-### 5. INTAPP INC
-- **CUSIP**: 45827U109
-- **% of Shares Outstanding**: 22.43%
-- **Total Value**: $443415.2M
-- **Key Holders**: Temasek Holdings, Brown Capital Management
+### 5. AVITA MEDICAL INC
+- **CUSIP**: 05380C102
+- **% of Shares Outstanding**: 266.88%
+- **Total Value**: $197422.5M
+- **Key Holders**: Citadel Advisors, Goldman Sachs Asset Mgmt, OrbiMed Advisors
 
-### 6. TRAEGER INC
-- **CUSIP**: 89269P202
-- **% of Shares Outstanding**: 17.99%
-- **Total Value**: $14322.0M
-- **Key Holders**: OTPP
+### 6. ASPIRE   BIOPHARMA       HLDGS  INC
+- **CUSIP**: 738920115
+- **% of Shares Outstanding**: 164.21%
+- **Total Value**: $4.6M
+- **Key Holders**: Millennium Management
 
-### 7. AVANTOR INC
-- **CUSIP**: 05352A100
-- **% of Shares Outstanding**: 17.52%
-- **Total Value**: $938122.6M
-- **Key Holders**: Dodge & Cox, Texas Teachers Retirement
+### 7. MYRIAD GENETICS INC
+- **CUSIP**: 62855J104
+- **% of Shares Outstanding**: 151.09%
+- **Total Value**: $202207.7M
+- **Key Holders**: Point72, Citadel Advisors, Renaissance Technologies, Glenview Capital, Goldman Sachs Asset Mgmt and 4 others
 
-### 8. IHEARTMEDIA INC
+### 8. INFLEQTION INC
+- **CUSIP**: 45676K103
+- **% of Shares Outstanding**: 139.02%
+- **Total Value**: $237961.6M
+- **Key Holders**: Point72, Citadel Advisors, Renaissance Technologies, Maverick Capital, Goldman Sachs Asset Mgmt and 1 others
+
+### 9. MIRION TECHNOLOGIES INC
+- **CUSIP**: 60471A101
+- **% of Shares Outstanding**: 106.20%
+- **Total Value**: $370170.7M
+- **Key Holders**: Point72, Citadel Advisors, Wellington Management, Maverick Capital, Goldman Sachs Asset Mgmt and 4 others
+
+### 10. IHEARTMEDIA INC
 - **CUSIP**: 45174J509
-- **% of Shares Outstanding**: 16.45%
-- **Total Value**: $2419.9M
-- **Key Holders**: Renaissance Technologies
-
-### 9. FORTIVE CORP
-- **CUSIP**: 34959J108
-- **% of Shares Outstanding**: 14.49%
-- **Total Value**: $2448343.5M
-- **Key Holders**: Dodge & Cox, Texas Teachers Retirement, Renaissance Technologies
-
-### 10. INTERNATIONAL FLAVORS&FRAGRA
-- **CUSIP**: 459506101
-- **% of Shares Outstanding**: 14.29%
-- **Total Value**: $2646389.3M
-- **Key Holders**: Dodge & Cox, Texas Teachers Retirement
+- **% of Shares Outstanding**: 104.35%
+- **Total Value**: $15354.2M
+- **Key Holders**: Renaissance Technologies, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Millennium Management, Two Sigma
 

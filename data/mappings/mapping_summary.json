@@ -1,11 +1,11 @@
 {
-  "generated": "2026-05-15T06:29:08.766231",
+  "generated": "2026-06-10T23:54:41.771357",
   "statistics": {
-    "total_cusips": 9351,
+    "total_cusips": 9533,
     "already_mapped": 0,
-    "newly_mapped": 7492,
-    "failed_mappings": 1859,
-    "api_calls": 936,
+    "newly_mapped": 7712,
+    "failed_mappings": 1821,
+    "api_calls": 954,
     "api_errors": 0,
     "filings_processed": 122,
     "successful_parses": 118,
@@ -18,115 +18,115 @@
     "parse_success_rate": 96.72
   },
   "coverage": {
-    "total_cusips": 9351,
-    "mapped_cusips": 7492,
-    "unmapped_cusips": 1859,
-    "coverage_percentage": 80.12
+    "total_cusips": 9533,
+    "mapped_cusips": 7712,
+    "unmapped_cusips": 1821,
+    "coverage_percentage": 80.9
   },
   "api_usage": {
-    "total_calls": 936,
+    "total_calls": 954,
     "errors": 0
   },
   "example_mappings": [
     {
-      "cusip": "007903107",
-      "ticker": "AMD",
-      "name": "ADVANCED MICRO DEVICES INC"
+      "cusip": "000899104",
+      "ticker": "ADMA",
+      "name": "ADMA BIOLOGICS INC"
     },
     {
-      "cusip": "023135106",
-      "ticker": "AMZN",
-      "name": "AMAZON COM INC"
+      "cusip": "02079K305",
+      "ticker": "GOOGL",
+      "name": "ALPHABET INC"
     },
     {
-      "cusip": "038222105",
-      "ticker": "AMAT",
-      "name": "APPLIED MATLS INC"
+      "cusip": "053015103",
+      "ticker": "ADP",
+      "name": "AUTOMATIC DATA PROCESSING IN"
     },
     {
-      "cusip": "071705107",
-      "ticker": "BLCO",
-      "name": "BAUSCH PLUS LOMB CORP"
+      "cusip": "056525108",
+      "ticker": "BMI",
+      "name": "BADGER METER INC"
     },
     {
-      "cusip": "09062X103",
-      "ticker": "BIIB",
-      "name": "BIOGEN INC"
+      "cusip": "14888U101",
+      "ticker": "CPRX",
+      "name": "CATALYST   PHARMACEUTICALS          INC"
     },
     {
-      "cusip": "09073M104",
-      "ticker": "TECH",
-      "name": "BIO-TECHNE CORP"
+      "cusip": "171340102",
+      "ticker": "CHD",
+      "name": "CHURCH & DWIGHT CO INC"
     },
     {
-      "cusip": "852234103",
-      "ticker": "XYZ",
-      "name": "BLOCK INC"
+      "cusip": "189054109",
+      "ticker": "CLX",
+      "name": "CLOROX CO DEL"
     },
     {
-      "cusip": "124155110",
-      "ticker": "BFLYW",
-      "name": "BUTTERFLY        NETWORK       INC"
+      "cusip": "26622P107",
+      "ticker": "DOCS",
+      "name": "DOXIMITY INC"
     },
     {
-      "cusip": "124155102",
-      "ticker": "BFLY",
-      "name": "Butterfly Network Inc"
+      "cusip": "34959E109",
+      "ticker": "FTNT",
+      "name": "FORTINET INC"
     },
     {
-      "cusip": "15135B101",
-      "ticker": "CNC",
-      "name": "CENTENE CORP DEL"
+      "cusip": "437076102",
+      "ticker": "HD",
+      "name": "HOME DEPOT INC"
     },
     {
-      "cusip": "21037T109",
-      "ticker": "CEG",
-      "name": "CONSTELLATION ENERGY CORP"
+      "cusip": "45168D104",
+      "ticker": "IDXX",
+      "name": "IDEXX LABS INC"
     },
     {
-      "cusip": "126650100",
-      "ticker": "CVS",
-      "name": "CVS HEALTH CORP"
+      "cusip": "562750109",
+      "ticker": "MANH",
+      "name": "MANHATTAN ASSOCIATES INC"
     },
     {
-      "cusip": "235851102",
-      "ticker": "DHR",
-      "name": "DANAHER CORPORATION"
+      "cusip": "571903202",
+      "ticker": "MAR",
+      "name": "MARRIOTT   INTL      INC  NEW"
     },
     {
-      "cusip": "253393102",
-      "ticker": "DKS",
-      "name": "DICKS SPORTING GOODS INC"
+      "cusip": "58506Q109",
+      "ticker": "MEDP",
+      "name": "MEDPACE HLDGS INC"
     },
     {
-      "cusip": "25402D102",
-      "ticker": "DOCN",
-      "name": "DIGITALOCEAN HLDGS INC"
+      "cusip": "30303M102",
+      "ticker": "META",
+      "name": "META PLATFORMS INC"
     },
     {
-      "cusip": "23355L106",
-      "ticker": "DXC",
-      "name": "DXC TECHNOLOGY CO"
+      "cusip": "592688105",
+      "ticker": "MTD",
+      "name": "METTLER TOLEDO INTERNATIONAL"
     },
     {
-      "cusip": "28618M106",
-      "ticker": "ESI",
-      "name": "ELEMENT SOLUTIONS INC"
+      "cusip": "594918104",
+      "ticker": "MSFT",
+      "name": "MICROSOFT CORP"
     },
     {
-      "cusip": "30212P303",
-      "ticker": "EXPE",
-      "name": "EXPEDIA GROUP INC"
+      "cusip": "55354G100",
+      "ticker": "MSCI",
+      "name": "MSCI INC"
     },
     {
-      "cusip": "37611X209",
-      "ticker": "DNA",
-      "name": "GINKGO BIOWORKS HOLDINGS INC"
+      "cusip": "630402105",
+      "ticker": "NSSC",
+      "name": "NAPCO SEC TECHNOLOGIES INC"
     },
     {
-      "cusip": "37940X102",
-      "ticker": "GPN",
-      "name": "GLOBAL PMTS INC"
+      "cusip": "67059N108",
+      "ticker": "NTNX",
+      "name": "NUTANIX INC"
     }
   ]
 }

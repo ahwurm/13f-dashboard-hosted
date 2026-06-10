@@ -1,92 +1,99 @@
 # Q1 2026 Net Additions as % of Shares Outstanding
 
-*Generated: 2026-05-15 06:31:28*
+*Generated: 2026-06-10 23:57:25*
 
 ## Summary Statistics
 
-- Total Securities Analyzed: 2877
-- Total Portfolio Value: $294717.51B
-- Average Holders per Security: 1.6
-- High Concentration Positions (>50% of shares outstanding): 3
-- Institutions Included: 16 total
-  - 16 from Q1 2026 (current quarter)
+- Total Securities Analyzed: 3734
+- Total Portfolio Value: $2468667.56B
+- Average Holders per Security: 6.2
+- High Concentration Positions (>50% of shares outstanding): 11
+- Institutions Included: 57 total
+  - 57 from Q1 2026 (current quarter)
   - 0 from earlier quarters (fallback data)
 
 ## Top 50 Positions by Percent of Shares Outstanding
 
 | Rank | Security | Ticker | Shares Held | Shares Outstanding | % of Shares | # Holders | Value ($M) |
 |------|----------|--------|-------------|-------------------|------------|-----------|------------|
-| 1 | SUNBELT RENTALS HOLDINGS INC | SUNB | 59,161,157 | 415,072,800 | 14.25% | 3 | $3850799.7 |
-| 2 | VERSANT MEDIA GROUP INC | VSNT | 5,289,078 | 143,378,000 | 3.69% | 3 | $195801.7 |
-| 3 | ETHOS TECHNOLOGIES INC | LIFE | 180,000 | 48,130,000 | 0.37% | 2 | $2010.6 |
-| 4 | PIPER SANDLER COMPANIES | PIPR | 64,684 | 67,857,561 | 0.10% | 2 | $4951.6 |
-| 5 | TRAEGER INC | COOK | 493,861 | 2,745,361 | 17.99% | 1 | $14322.0 |
-| 6 | Canton Strategic Holdings Inc | CNTN | 4,257,084 | 56,656,271 | 7.51% | 2 | $13920.7 |
-| 7 | RALLYBIO CORP | RLYB | 156,527 | 5,290,236 | 2.96% | 1 | $1404.0 |
-| 8 | BITCOIN DEPOT INC | BTM | 171,051 | 7,147,534 | 2.39% | 1 | $372.9 |
-| 9 | HARVARD BIOSCIENCE INC | HBIO | 101,427 | 4,510,182 | 2.25% | 1 | $493.9 |
-| 10 | ORIGIN MATERIALS INC | ORGN | 80,458 | 5,499,307 | 1.46% | 1 | $183.4 |
-| 11 | ATOSSA THERAPEUTICS INC | ATOS | 109,007 | 8,611,361 | 1.27% | 1 | $573.4 |
-| 12 | ARKO PETE CORP | APC | 500,000 | 41,104,000 | 1.22% | 1 | $8945.0 |
-| 13 | AGILON HEALTH INC | AGL | 149,043 | 16,606,000 | 0.90% | 1 | $1178.9 |
-| 14 | XILIO THERAPEUTICS INC | XLO | 49,566 | 5,782,536 | 0.86% | 1 | $416.9 |
-| 15 | FLY E GROUP INC | FLYE | 12,600 | 1,632,386 | 0.77% | 1 | $26.5 |
-| 16 | REALLOYS INC | ALOY | 29,300 | 4,309,652 | 0.68% | 1 | $286.0 |
-| 17 | NEURAXIS INC | NRXS | 76,954 | 11,450,045 | 0.67% | 1 | $569.5 |
-| 18 | FORWARD INDUSTRIES INC | FWDI | 400,224 | 76,314,617 | 0.52% | 1 | $1773.0 |
-| 19 | URBAN ONE INC | UONEK | 21,536 | 4,449,258 | 0.48% | 1 | $117.4 |
-| 20 | FIBROBIOLOGICS INC | FBLG | 15,997 | 3,772,930 | 0.42% | 1 | $21.1 |
-| 21 | Generate Biomedicines Inc | GENB | 498,408 | 128,192,484 | 0.39% | 1 | $6230.1 |
-| 22 | EQUIPMENTSHARE COM INC | EQPT | 300,000 | 79,000,000 | 0.38% | 1 | $6111.0 |
-| 23 | REVIVA PHARMACEUTCLS HLDGS I | RVPH | 43,002 | 12,810,377 | 0.34% | 1 | $31.4 |
-| 24 | NOVABAY PHARMACEUTICALS INC | SDEV | 82,795 | 25,216,000 | 0.33% | 1 | $123.4 |
-| 25 | CINGULATE INC | CING | 31,888 | 11,908,316 | 0.27% | 1 | $198.0 |
-| 26 | ADVANTAGE SOLUTIONS INC | ADV | 33,475 | 13,080,791 | 0.26% | 1 | $707.7 |
-| 27 | NOODLES & CO | NDLS | 13,346 | 5,892,050 | 0.23% | 1 | $114.1 |
-| 28 | SOLV ENERGY INC | MWH | 250,000 | 115,348,571 | 0.22% | 1 | $7507.5 |
-| 29 | FUBOTV INC | FUBO | 629,647 | 342,664,855 | 0.18% | 1 | $5956.5 |
-| 30 | PINNACLE FINL PARTNERS INC | PNFP | 188,800 | 151,000,000 | 0.13% | 1 | $16263.2 |
-| 31 | ONCE UPON A FARM PBC | OFRM | 40,631 | 41,890,392 | 0.10% | 1 | $664.3 |
-| 32 | ADAGIO MED HLDGS INC | ADGM | 16,557 | 22,210,459 | 0.07% | 1 | $19.0 |
-| 33 | JANUS LIVING INC | JAN | 50,000 | 187,223,000 | 0.03% | 1 | $1178.5 |
-| 34 | FORGENT POWER SOLUTIONS INC | FPS | 45,000 | 233,735,000 | 0.02% | 1 | $1317.2 |
-| 35 | INDIVIOR PHARMACEUTICALS INC | INDV | 13,877 | 124,000,000 | 0.01% | 1 | $423.0 |
-| 36 | DEFINIUM THERAPEUTICS INC | DFTX | 10,300 | 104,044,508 | 0.01% | 1 | $194.7 |
-| 37 | ORION ENERGY SYS INC | OESX | 178,469 | 3,552,077 | 5.02% | 1 | $1559.8 |
-| 38 | GRIDAI TECHNOLOGIES CORP | GRDX | 183,800 | 4,224,145 | 4.35% | 1 | $371.3 |
-| 39 | BOLT BIOTHERAPEUTICS INC | BOLT | 77,225 | 1,921,567 | 4.02% | 1 | $312.0 |
-| 40 | AIR T INC | AIRT | 106,411 | 2,702,639 | 3.94% | 1 | $2319.8 |
-| 41 | UNITED GUARDIAN INC | UG | 175,766 | 4,594,319 | 3.83% | 1 | $1177.6 |
-| 42 | TRIO TECH INTL | TRT | 325,526 | 8,960,166 | 3.63% | 1 | $1881.5 |
-| 43 | ROCKY MTN CHOCOLATE FACTORY | RMCF | 280,918 | 7,804,230 | 3.60% | 1 | $632.1 |
-| 44 | KEWAUNEE SCIENTIFIC CORP | KEQU | 98,511 | 2,866,000 | 3.44% | 1 | $3376.0 |
-| 45 | PROVIDENT FINL HLDGS INC | PROV | 212,353 | 6,323,219 | 3.36% | 1 | $3423.1 |
-| 46 | AMERISERV FINL INC | ASRV | 564,474 | 16,964,267 | 3.33% | 1 | $2043.4 |
-| 47 | EMERSON RADIO CORP | MSN | 644,738 | 21,042,652 | 3.06% | 1 | $243.1 |
-| 48 | PULMATRIX INC | PULM | 109,148 | 3,652,285 | 2.99% | 1 | $140.8 |
-| 49 | CHICAGO RIVET & MACH CO | CVR | 28,410 | 966,132 | 2.94% | 1 | $282.7 |
-| 50 | CSP INC | CSPI | 277,426 | 10,072,000 | 2.75% | 1 | $2399.7 |
+| 1 | EQUIPMENTSHARE COM INC | EQPT | 15,285,652 | 79,000,000 | 19.35% | 11 | $311368.7 |
+| 2 | FORGENT POWER SOLUTIONS INC | FPS | 11,881,253 | 233,735,000 | 5.08% | 11 | $347764.3 |
+| 3 | SUNBELT RENTALS HLDGS IN GB SH | SUNB | 79,438,386 | 415,072,800 | 19.14% | 10 | $5143173.5 |
+| 4 | PINNACLE FINL PARTNERS INC | PNFP | 16,330,497 | 151,000,000 | 10.81% | 9 | $1406709.0 |
+| 5 | INDIVIOR PHARMACEUTICALS INC | INDV | 11,032,322 | 124,000,000 | 8.90% | 9 | $336265.2 |
+| 6 | DEFINIUM THERAPEUTICS INC | DFTX | 8,711,819 | 104,044,508 | 8.37% | 9 | $164653.4 |
+| 7 | VERSANT     MEDIA   GROUP  INC | VSNT | 10,170,386 | 143,378,000 | 7.09% | 8 | $376507.7 |
+| 8 | PIPER   SANDLER     COMPANIES | PIPR | 2,645,026 | 67,857,561 | 3.90% | 8 | $202476.7 |
+| 9 | JANUS  LIVING   INC | JAN | 4,723,931 | 187,223,000 | 2.52% | 8 | $111343.1 |
+| 10 | ATRIUM THERAPEUTICS INC | RNA | 1,951,230 | 17,105,643 | 11.41% | 7 | $26087.9 |
+| 11 | BOBS DISC FURNITURE INC | BOBS | 5,723,015 | 130,502,007 | 4.39% | 7 | $67245.4 |
+| 12 | YORK SPACE SYSTEMS INC | YSS | 3,272,560 | 127,609,213 | 2.56% | 7 | $72552.7 |
+| 13 | ATAIBECKLEY INC | ATAI | 8,469,236 | 365,562,925 | 2.32% | 8 | $29981.1 |
+| 14 | INFLEQTION INC | INFQ | 24,257,039 | 17,449,020 | 139.02% | 6 | $237961.6 |
+| 15 | DAMORA    THERAPEUTICS         | DMRA | 8,970,082 | 60,303,212 | 14.87% | 7 | $232325.1 |
+| 16 | VERADERMICS       INC | MANE | 4,819,161 | 37,340,290 | 12.91% | 6 | $304330.0 |
+| 17 | AKTIS ONCOLOGY INC | AKTS | 5,021,642 | 53,403,173 | 9.40% | 6 | $89837.2 |
+| 18 | ONCE UPON A FARM PBC | OFRM | 2,412,755 | 41,890,392 | 5.76% | 6 | $39448.5 |
+| 19 | MINIMED GROUP INC | MMED | 7,761,678 | 252,813,348 | 3.07% | 6 | $115804.2 |
+| 20 | ETHOS TECHNOLOGIES INC | LIFE | 1,295,301 | 48,130,000 | 2.69% | 6 | $14468.5 |
+| 21 | KARYOPHARM THERAPEUTICS INC | KPTI | 4,083,198 | 22,544,000 | 18.11% | 8 | $22743.4 |
+| 22 | SANDISK CORP | SNDK | 13,664,471 | 148,000,000 | 9.23% | 16 | $8657367.6 |
+| 23 | EL POLLO LOCO HLDGS INC | LOCO | 2,329,977 | 30,455,298 | 7.65% | 8 | $32293.5 |
+| 24 | LUMENTUM HLDGS INC | LITE | 3,611,060 | 71,700,000 | 5.04% | 15 | $2532819.9 |
+| 25 | NCR ATLEOS CORPORATION | NATL | 3,498,523 | 73,800,000 | 4.74% | 9 | $152465.6 |
+| 26 | XEROX HOLDINGS CORP | XRXDW | 5,412,652 | 130,776,000 | 4.14% | 5 | $489.8 |
+| 27 | STRIVE   INC | ASST | 1,833,885 | 61,630,003 | 2.98% | 5 | $18375.5 |
+| 28 | ARKO PETE CORP | APC | 1,178,566 | 41,104,000 | 2.87% | 5 | $21084.5 |
+| 29 | EIKON   THERAPEUTICS       INC | EIKN | 1,355,488 | 54,138,555 | 2.50% | 5 | $14341.1 |
+| 30 | FORWARD INDUSTRIES INC | FWDI | 1,783,406 | 76,314,617 | 2.34% | 5 | $7900.5 |
+| 31 | GENERATE  BIOMEDICINES         | GENB | 2,549,087 | 128,192,484 | 1.99% | 5 | $31863.6 |
+| 32 | FUBOTV   INC | FUBO | 1,154,967 | 342,664,855 | 0.34% | 5 | $10926.0 |
+| 33 | RALLYBIO CORP                | RLYB | 1,077,333 | 5,290,236 | 20.36% | 4 | $9663.7 |
+| 34 | TWIST BIOSCIENCE CORP | TWST | 12,083,056 | 62,154,000 | 19.44% | 11 | $564407.5 |
+| 35 | WHITEHAWK THERAPEUTICS INC | WHWK | 5,905,009 | 47,196,564 | 12.51% | 8 | $20372.3 |
+| 36 | AGILON HEALTH INC | AGL | 1,321,187 | 16,606,000 | 7.96% | 4 | $10450.6 |
+| 37 | FLUOR CORP | FLR | 10,171,568 | 141,559,940 | 7.19% | 14 | $474503.6 |
+| 38 | APPLIED OPTOELECTRONICS INC | AAOI | 5,028,298 | 78,971,000 | 6.37% | 11 | $425343.7 |
+| 39 | SUMMIT HOTEL PPTYS | INN | 5,146,623 | 108,414,307 | 4.75% | 7 | $22748.1 |
+| 40 | AVALONBAY CMNTYS INC | AVB | 6,328,057 | 139,111,007 | 4.55% | 11 | $1033688.2 |
+| 41 | MICRON TECHNOLOGY INC | MU | 47,253,908 | 1,128,000,000 | 4.19% | 17 | $15956358.9 |
+| 42 | INHIBIKASE THERAPEUTICS INC | IKT | 5,102,687 | 132,032,636 | 3.86% | 7 | $8572.5 |
+| 43 | MILLERKNOLL INC | MLKN | 2,364,637 | 68,383,040 | 3.46% | 10 | $34192.7 |
+| 44 | BLACKBAUD INC | BLKB | 1,415,338 | 46,297,968 | 3.06% | 10 | $54646.2 |
+| 45 | ASTEC INDS INC | ASTE | 654,296 | 22,974,770 | 2.85% | 10 | $35227.3 |
+| 46 | ALCOA CORP | AA | 7,283,109 | 263,102,406 | 2.77% | 14 | $384034.8 |
+| 47 | VAALCO ENERGY INC | EGY | 2,833,116 | 104,258,253 | 2.72% | 8 | $17962.0 |
+| 48 | CANDEL THERAPEUTICS INC | CADL | 1,671,072 | 73,257,864 | 2.28% | 7 | $8188.3 |
+| 49 | ENERSYS | ENS | 801,290 | 36,462,211 | 2.20% | 11 | $139200.0 |
+| 50 | KORE GROUP HLDGS INC | KORE | 361,445 | 17,586,936 | 2.06% | 5 | $3260.2 |
 
 ## Concentration Risk Analysis
 
 ### Extremely High Concentration (>70% of shares outstanding)
 
-- **SUNOPTA INC**: 425.30% of shares outstanding held by 1 institutions
-- **NUTANIX INC**: 1020.04% of shares outstanding held by 2 institutions
-- **Tempus AI Inc**: 5371.06% of shares outstanding held by 1 institutions
+- **INFLEQTION INC**: 139.02% of shares outstanding held by 6 institutions
+- **MIRION TECHNOLOGIES INC**: 106.20% of shares outstanding held by 9 institutions
+- **AVITA MEDICAL INC**: 266.88% of shares outstanding held by 3 institutions
+- **ASPIRE   BIOPHARMA       HLDGS  INC**: 164.21% of shares outstanding held by 1 institutions
+- **MYRIAD GENETICS INC**: 151.09% of shares outstanding held by 9 institutions
+- **EHANG     HLDGS        LTD**: 757.12% of shares outstanding held by 4 institutions
+- **IHEARTMEDIA INC**: 104.35% of shares outstanding held by 5 institutions
+- **NUTANIX INC**: 3750.79% of shares outstanding held by 8 institutions
+- **SHIFT4 PMTS INC**: 629.26% of shares outstanding held by 6 institutions
+- **TEMPUS AI INC**: 8286.67% of shares outstanding held by 6 institutions
 
 ### Most Widely Held Securities
 
-- **ALPHABET INC**: 10 holders (0.21% of shares outstanding)
-- **MASTERCARD INCORPORATED**: 8 holders (1.09% of shares outstanding)
-- **ALPHABET INC**: 8 holders (0.21% of shares outstanding)
-- **NVIDIA CORPORATION**: 8 holders (0.11% of shares outstanding)
-- **META PLATFORMS INC**: 8 holders (0.28% of shares outstanding)
-- **Microsoft Corp**: 8 holders (0.28% of shares outstanding)
-- **AMAZON COM INC**: 8 holders (0.31% of shares outstanding)
-- **Airbnb Inc**: 7 holders (1.45% of shares outstanding)
-- **Intuitive Surgical Inc**: 7 holders (0.34% of shares outstanding)
-- **THERMO FISHER SCIENTIFIC INC**: 7 holders (0.79% of shares outstanding)
+- **ALPHABET INC**: 35 holders (2.08% of shares outstanding)
+- **AMAZON COM INC**: 33 holders (2.60% of shares outstanding)
+- **META PLATFORMS INC**: 31 holders (3.00% of shares outstanding)
+- **MICROSOFT CORP**: 31 holders (2.57% of shares outstanding)
+- **NVIDIA CORPORATION**: 29 holders (2.17% of shares outstanding)
+- **ALPHABET INC**: 25 holders (0.91% of shares outstanding)
+- **BROADCOM INC**: 25 holders (2.83% of shares outstanding)
+- **APPLE INC**: 22 holders (3.26% of shares outstanding)
+- **UBER TECHNOLOGIES INC**: 21 holders (4.99% of shares outstanding)
+- **DANAHER CORP DEL**: 20 holders (4.28% of shares outstanding)
 
 ## Key Insights
 
@@ -96,63 +103,63 @@
 
 ## Detailed Holdings (Top 10)
 
-### 1. SUNBELT RENTALS HOLDINGS INC
+### 1. EQUIPMENTSHARE COM INC
+- **CUSIP**: 29445S100
+- **% of Shares Outstanding**: 19.35%
+- **Total Value**: $311368.7M
+- **Key Holders**: Point72, Citadel Advisors, Wellington Management, Balyasny Asset Management, Goldman Sachs Asset Mgmt and 6 others
+
+### 2. FORGENT POWER SOLUTIONS INC
+- **CUSIP**: 34631F102
+- **% of Shares Outstanding**: 5.08%
+- **Total Value**: $347764.3M
+- **Key Holders**: Point72, Citadel Advisors, Balyasny Asset Management, Goldman Sachs Asset Mgmt, Texas Teachers Retirement and 6 others
+
+### 3. SUNBELT RENTALS HLDGS IN GB SHRS
 - **CUSIP**: 866966104
-- **% of Shares Outstanding**: 14.25%
-- **Total Value**: $3850799.7M
-- **Key Holders**: Dodge & Cox, Gardner Russo & Quinn, Texas Teachers Retirement
+- **% of Shares Outstanding**: 19.14%
+- **Total Value**: $5143173.5M
+- **Key Holders**: Citadel Advisors, Wellington Management, Gardner Russo & Quinn, Goldman Sachs Asset Mgmt, Texas Teachers Retirement and 5 others
 
-### 2. VERSANT MEDIA GROUP INC
+### 4. PINNACLE FINL PARTNERS INC
+- **CUSIP**: 72348N109
+- **% of Shares Outstanding**: 10.81%
+- **Total Value**: $1406709.0M
+- **Key Holders**: Point72, Citadel Advisors, Wellington Management, Renaissance Technologies, Balyasny Asset Management and 4 others
+
+### 5. INDIVIOR PHARMACEUTICALS INC
+- **CUSIP**: 45579U109
+- **% of Shares Outstanding**: 8.90%
+- **Total Value**: $336265.2M
+- **Key Holders**: Point72, Citadel Advisors, Wellington Management, Balyasny Asset Management, Goldman Sachs Asset Mgmt and 4 others
+
+### 6. DEFINIUM THERAPEUTICS INC
+- **CUSIP**: 24477V105
+- **% of Shares Outstanding**: 8.37%
+- **Total Value**: $164653.4M
+- **Key Holders**: Point72, Citadel Advisors, Wellington Management, Balyasny Asset Management, Goldman Sachs Asset Mgmt and 4 others
+
+### 7. VERSANT     MEDIA   GROUP  INC
 - **CUSIP**: 925283103
-- **% of Shares Outstanding**: 3.69%
-- **Total Value**: $195801.7M
-- **Key Holders**: Dodge & Cox, Texas Teachers Retirement, Renaissance Technologies
+- **% of Shares Outstanding**: 7.09%
+- **Total Value**: $376507.7M
+- **Key Holders**: Point72, Citadel Advisors, Renaissance Technologies, Balyasny Asset Management, Goldman Sachs Asset Mgmt and 3 others
 
-### 3. ETHOS TECHNOLOGIES INC
-- **CUSIP**: 29765A101
-- **% of Shares Outstanding**: 0.37%
-- **Total Value**: $2010.6M
-- **Key Holders**: Texas Teachers Retirement, Renaissance Technologies
-
-### 4. PIPER SANDLER COMPANIES
+### 8. PIPER   SANDLER     COMPANIES
 - **CUSIP**: 724078209
-- **% of Shares Outstanding**: 0.10%
-- **Total Value**: $4951.6M
-- **Key Holders**: Texas Teachers Retirement, Renaissance Technologies
+- **% of Shares Outstanding**: 3.90%
+- **Total Value**: $202476.7M
+- **Key Holders**: Citadel Advisors, Wellington Management, Renaissance Technologies, Balyasny Asset Management, Goldman Sachs Asset Mgmt and 3 others
 
-### 5. TRAEGER INC
-- **CUSIP**: 89269P202
-- **% of Shares Outstanding**: 17.99%
-- **Total Value**: $14322.0M
-- **Key Holders**: OTPP
+### 9. JANUS  LIVING   INC
+- **CUSIP**: 471024109
+- **% of Shares Outstanding**: 2.52%
+- **Total Value**: $111343.1M
+- **Key Holders**: Point72, Citadel Advisors, Wellington Management, Balyasny Asset Management, Goldman Sachs Asset Mgmt and 3 others
 
-### 6. Canton Strategic Holdings Inc
-- **CUSIP**: 432705309
-- **% of Shares Outstanding**: 7.51%
-- **Total Value**: $13920.7M
-- **Key Holders**: Renaissance Technologies, ARK Investment Management
-
-### 7. RALLYBIO CORP
-- **CUSIP**: 75120L209
-- **% of Shares Outstanding**: 2.96%
-- **Total Value**: $1404.0M
-- **Key Holders**: Renaissance Technologies
-
-### 8. BITCOIN DEPOT INC
-- **CUSIP**: 09174P303
-- **% of Shares Outstanding**: 2.39%
-- **Total Value**: $372.9M
-- **Key Holders**: Renaissance Technologies
-
-### 9. HARVARD BIOSCIENCE INC
-- **CUSIP**: 416906204
-- **% of Shares Outstanding**: 2.25%
-- **Total Value**: $493.9M
-- **Key Holders**: Renaissance Technologies
-
-### 10. ORIGIN MATERIALS INC
-- **CUSIP**: 68622D205
-- **% of Shares Outstanding**: 1.46%
-- **Total Value**: $183.4M
-- **Key Holders**: Renaissance Technologies
+### 10. ATRIUM THERAPEUTICS INC
+- **CUSIP**: 04965N104
+- **% of Shares Outstanding**: 11.41%
+- **Total Value**: $26087.9M
+- **Key Holders**: Point72, Citadel Advisors, Balyasny Asset Management, RA Capital, Goldman Sachs Asset Mgmt and 2 others
 

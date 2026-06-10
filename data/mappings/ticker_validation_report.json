@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-15T05:47:00.646424",
+  "timestamp": "2026-06-10T23:12:12.061296",
   "total_institutions": 69,
   "institutions_with_tickers": [
     {
@@ -405,14 +405,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -441,9 +441,9 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
+          "ticker": "FPS",
+          "company_name": "Forgent Power Solutions, Inc.",
+          "cik": "0002080126"
         },
         {
           "ticker": "OWL",
@@ -451,9 +451,9 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "FPS",
-          "company_name": "Forgent Power Solutions, Inc.",
-          "cik": "0002080126"
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -508,14 +508,14 @@
           "cik": "0000920522"
         },
         {
-          "ticker": "PSLV",
-          "company_name": "Sprott Physical Silver Trust",
-          "cik": "0001494728"
-        },
-        {
           "ticker": "PHYS",
           "company_name": "Sprott Physical Gold Trust",
           "cik": "0001477049"
+        },
+        {
+          "ticker": "PSLV",
+          "company_name": "Sprott Physical Silver Trust",
+          "cik": "0001494728"
         }
       ]
     },
@@ -534,14 +534,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -565,14 +565,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -591,24 +591,24 @@
           "cik": "0000731766"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
-        },
-        {
           "ticker": "GS",
           "company_name": "GOLDMAN SACHS GROUP INC",
           "cik": "0000886982"
         },
         {
-          "ticker": "BHP",
-          "company_name": "BHP Group Ltd",
-          "cik": "0000811809"
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         },
         {
           "ticker": "C",
           "company_name": "CITIGROUP INC",
           "cik": "0000831001"
+        },
+        {
+          "ticker": "MUFG",
+          "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
+          "cik": "0000067088"
         }
       ]
     },
@@ -627,14 +627,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -694,14 +694,14 @@
           "cik": "0001783180"
         },
         {
-          "ticker": "COIN",
-          "company_name": "Coinbase Global, Inc.",
-          "cik": "0001679788"
-        },
-        {
           "ticker": "GFS",
           "company_name": "GLOBALFOUNDRIES Inc.",
           "cik": "0001709048"
+        },
+        {
+          "ticker": "COIN",
+          "company_name": "Coinbase Global, Inc.",
+          "cik": "0001679788"
         }
       ]
     },
@@ -720,14 +720,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -756,14 +756,14 @@
           "cik": "0001783180"
         },
         {
-          "ticker": "COIN",
-          "company_name": "Coinbase Global, Inc.",
-          "cik": "0001679788"
-        },
-        {
           "ticker": "GFS",
           "company_name": "GLOBALFOUNDRIES Inc.",
           "cik": "0001709048"
+        },
+        {
+          "ticker": "COIN",
+          "company_name": "Coinbase Global, Inc.",
+          "cik": "0001679788"
         }
       ]
     },
@@ -777,14 +777,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -823,9 +823,9 @@
           "cik": "0002030781"
         },
         {
-          "ticker": "TPH",
-          "company_name": "Tri Pointe Homes, Inc.",
-          "cik": "0001561680"
+          "ticker": "SPNT",
+          "company_name": "SiriusPoint Ltd",
+          "cik": "0001576018"
         }
       ]
     },
@@ -839,14 +839,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -878,6 +878,16 @@
           "ticker": "FOFA",
           "company_name": "FAMILY OFFICE OF AMERICA, INC.",
           "cik": "0001871181"
+        },
+        {
+          "ticker": "OPIRQ",
+          "company_name": "OFFICE PROPERTIES INCOME TRUST",
+          "cik": "0001456772"
+        },
+        {
+          "ticker": "OPITQ",
+          "company_name": "OFFICE PROPERTIES INCOME TRUST",
+          "cik": "0001456772"
         }
       ]
     },
@@ -891,14 +901,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -922,14 +932,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -958,14 +968,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1020,14 +1030,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1041,24 +1051,24 @@
       "inst_cik": "0001021944",
       "potential_matches": [
         {
-          "ticker": "HSBC",
-          "company_name": "HSBC HOLDINGS PLC",
-          "cik": "0001089113"
-        },
-        {
           "ticker": "ARM",
           "company_name": "ARM HOLDINGS PLC /UK",
           "cik": "0001973239"
         },
         {
-          "ticker": "STX",
-          "company_name": "Seagate Technology Holdings plc",
-          "cik": "0001137789"
+          "ticker": "HSBC",
+          "company_name": "HSBC HOLDINGS PLC",
+          "cik": "0001089113"
         },
         {
           "ticker": "KXIAY",
           "company_name": "Kioxia Holdings Corporation/ADR",
           "cik": "0002053383"
+        },
+        {
+          "ticker": "STX",
+          "company_name": "Seagate Technology Holdings plc",
+          "cik": "0001137789"
         },
         {
           "ticker": "CRWD",
@@ -1113,14 +1123,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1196,14 +1206,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1263,14 +1273,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -1294,14 +1304,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -1325,14 +1335,14 @@
           "cik": "0001650107"
         },
         {
-          "ticker": "ACGL",
-          "company_name": "ARCH CAPITAL GROUP LTD.",
-          "cik": "0000947484"
-        },
-        {
           "ticker": "CQP",
           "company_name": "Cheniere Energy Partners, L.P.",
           "cik": "0001383650"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
         }
       ]
     },
@@ -1367,14 +1377,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -1450,14 +1460,14 @@
           "cik": "0001543151"
         },
         {
-          "ticker": "TT",
-          "company_name": "Trane Technologies plc",
-          "cik": "0001466258"
-        },
-        {
           "ticker": "IFNNY",
           "company_name": "INFINEON TECHNOLOGIES AG",
           "cik": "0001107457"
+        },
+        {
+          "ticker": "TT",
+          "company_name": "Trane Technologies plc",
+          "cik": "0001466258"
         }
       ]
     },
@@ -1476,14 +1486,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1507,14 +1517,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1538,14 +1548,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1564,14 +1574,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -1595,14 +1605,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -1626,24 +1636,24 @@
           "cik": "0000731766"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
-        },
-        {
           "ticker": "GS",
           "company_name": "GOLDMAN SACHS GROUP INC",
           "cik": "0000886982"
         },
         {
-          "ticker": "BHP",
-          "company_name": "BHP Group Ltd",
-          "cik": "0000811809"
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         },
         {
           "ticker": "C",
           "company_name": "CITIGROUP INC",
           "cik": "0000831001"
+        },
+        {
+          "ticker": "MUFG",
+          "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
+          "cik": "0000067088"
         }
       ]
     },
@@ -1667,14 +1677,14 @@
           "cik": "0001650107"
         },
         {
-          "ticker": "ACGL",
-          "company_name": "ARCH CAPITAL GROUP LTD.",
-          "cik": "0000947484"
-        },
-        {
           "ticker": "CQP",
           "company_name": "Cheniere Energy Partners, L.P.",
           "cik": "0001383650"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
         }
       ]
     },
@@ -1688,14 +1698,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -1724,14 +1734,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1755,14 +1765,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1781,14 +1791,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -1848,14 +1858,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1879,14 +1889,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1941,14 +1951,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -1972,14 +1982,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -1998,14 +2008,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -2029,14 +2039,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -2091,24 +2101,24 @@
           "cik": "0000731766"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
-        },
-        {
           "ticker": "GS",
           "company_name": "GOLDMAN SACHS GROUP INC",
           "cik": "0000886982"
         },
         {
-          "ticker": "BHP",
-          "company_name": "BHP Group Ltd",
-          "cik": "0000811809"
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         },
         {
           "ticker": "C",
           "company_name": "CITIGROUP INC",
           "cik": "0000831001"
+        },
+        {
+          "ticker": "MUFG",
+          "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
+          "cik": "0000067088"
         }
       ]
     }
