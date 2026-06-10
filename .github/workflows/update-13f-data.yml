@@ -2,11 +2,11 @@ name: Update 13F Data Quarterly
 
 on:
   schedule:
-    # Run 45 days after each quarter end
-    - cron: '0 2 14 2 *'   # Feb 14 (45 days after Q4)
-    - cron: '0 2 15 5 *'   # May 15 (45 days after Q1)
-    - cron: '0 2 14 8 *'   # Aug 14 (45 days after Q2)
-    - cron: '0 2 14 11 *'  # Nov 14 (45 days after Q3)
+    # 13F deadline = 45 days after quarter end (Feb 14 / May 15 / Aug 14 / Nov 14).
+    # Most managers file ON deadline day (or the next business day when it falls on
+    # a weekend/holiday), so pulling before/at the deadline captures almost nothing
+    # (May 15 2026 run: 16 of ~57 institutions). Pull on the 20th, 06:00 UTC.
+    - cron: '0 6 20 2,5,8,11 *'
   
   workflow_dispatch:  # Manual trigger for testing
 
@@ -53,7 +53,26 @@ jobs:
         python 03_get_sec_shares_outstanding.py
         python 04_complete_cusip_mapping.py
         python 05_analyze_net_adds.py
-    
+
+    - name: Verify filing coverage
+      run: |
+        # Healthy quarter ≈ 57 current-quarter institutions. A low count means the
+        # filing wave hasn't landed yet — fail here so stale-good data stays published.
+        python - <<'EOF'
+        import json, sys
+        from datetime import date
+        t = date.today()
+        q, y = ((t.month - 1) // 3, t.year) if t.month > 3 else (4, t.year - 1)
+        path = f'output/Q{q}_{y}/quarterly_adds_data.json'
+        try:
+            n = json.load(open(path))['metadata']['institution_breakdown']['current_quarter_institutions']
+        except (FileNotFoundError, KeyError) as e:
+            sys.exit(f'coverage check failed reading {path}: {e!r}')
+        print(f'Q{q} {y}: {n} current-quarter institutions')
+        if n < 40:
+            sys.exit(f'only {n} current-quarter institutions (<40) — refusing to publish thin data')
+        EOF
+
     - name: Commit and push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
