@@ -1,0 +1,23 @@
+name: Keepalive
+
+# GitHub auto-disables scheduled workflows after 60 days without repo activity,
+# and this repo's natural cadence is one bot commit per quarter (~90 days).
+# Re-enabling via the API resets the 60-day timer for both workflows.
+on:
+  schedule:
+    - cron: '0 6 1 * *'  # monthly
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-enable scheduled workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow enable update-13f-data.yml -R ${{ github.repository }}
+          gh workflow enable keepalive.yml -R ${{ github.repository }}
