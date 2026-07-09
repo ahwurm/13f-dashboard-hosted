@@ -7,6 +7,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import plotly.io as pio
 from plotly.subplots import make_subplots
 import json
 from pathlib import Path
@@ -38,44 +39,68 @@ def format_large_number(value_in_millions):
 # Page configuration
 st.set_page_config(
     page_title="Smart Capital Tracker",
-    page_icon="financial-institution-icon.png",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="auto"
 )
 
-# Custom CSS for professional styling - optimized for 100% zoom
+# Plotly template matching the theme in .streamlit/config.toml
+_EDGE, _INK, _DIM, _SURFACE_2, _ACCENT, _AMBER = '#272b34', '#e9ebef', '#9b9ea6', '#191d24', '#56dc85', '#f0bb3b'
+pio.templates['lh'] = go.layout.Template(layout=go.Layout(
+    paper_bgcolor='rgba(0,0,0,0)',
+    plot_bgcolor='rgba(0,0,0,0)',
+    font=dict(family='Geist Variable, ui-sans-serif, sans-serif', color=_INK, size=12),
+    title=dict(font=dict(size=13, color=_DIM)),
+    colorway=[_ACCENT, _AMBER, _DIM, _INK],
+    xaxis=dict(gridcolor=_EDGE, zerolinecolor=_EDGE, linecolor=_EDGE, tickfont=dict(family='Geist Mono Variable, ui-monospace, monospace', size=11)),
+    yaxis=dict(gridcolor=_EDGE, zerolinecolor=_EDGE, linecolor=_EDGE, tickfont=dict(family='Geist Mono Variable, ui-monospace, monospace', size=11)),
+    hoverlabel=dict(bgcolor=_SURFACE_2, bordercolor=_EDGE, font=dict(family='Geist Mono Variable, ui-monospace, monospace', size=12, color=_INK)),
+))
+pio.templates.default = 'lh'
+
+# Engineering-paper styling on top of the theme in .streamlit/config.toml —
+# depth from tint and hairlines, never shadow (localharness.dev language)
 st.markdown("""
     <style>
-    /* Reduce main header size */
-    .main-header {
-        font-size: 1.8rem;
-        font-weight: 700;
-        color: #1f2937;
-        margin-bottom: 0.25rem;
+    /* barely-there engineering grid behind the main canvas */
+    .stApp::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background-image:
+            linear-gradient(to right, rgba(86,220,133,0.025) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(86,220,133,0.025) 1px, transparent 1px),
+            linear-gradient(to right, rgba(233,235,239,0.015) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(233,235,239,0.015) 1px, transparent 1px);
+        background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
     }
-    /* Tighter metric cards */
-    .metric-card {
-        background-color: #f9fafb;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        border: 1px solid #e5e7eb;
+    /* metric plates: surface tint + hairline edge */
+    div[data-testid="stMetric"] {
+        background: #14171e;
+        border: 1px solid #272b34;
+        border-radius: 8px;
+        padding: 0.55rem 0.9rem;
     }
-    /* Smaller metric values */
-    .metric-value {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: #1f2937;
+    div[data-testid="stMetric"] label {
+        font-size: 0.72rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #9b9ea6;
     }
-    .metric-label {
-        font-size: 0.75rem;
-        color: #6b7280;
+    div[data-testid="stMetricValue"] {
+        font-size: 1.15rem;
+        font-variant-numeric: tabular-nums;
     }
-    /* Narrower sidebar */
+    div[data-testid="stMetricDelta"] {
+        font-variant-numeric: tabular-nums;
+    }
+    /* narrower sidebar; bg comes from the theme */
     div[data-testid="stSidebar"] {
-        background-color: #f9fafb;
         max-width: 250px;
     }
-    /* Reduce all font sizes */
+    /* compact tabs, accent underline reads as the section marker */
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
     }
@@ -83,37 +108,24 @@ st.markdown("""
         padding: 4px 12px;
         font-size: 0.9rem;
     }
-    /* Tighter metric containers */
-    div[data-testid="metric-container"] {
-        padding: 0.5rem 0.75rem;
-    }
-    div[data-testid="metric-container"] label {
-        font-size: 0.75rem;
-    }
-    div[data-testid="metric-container"] div[data-testid="metric-value"] {
-        font-size: 1.1rem;
-    }
-    /* Reduce header sizes */
+    /* compact headers */
     h1 {
-        font-size: 1.5rem !important;
+        font-size: 1.45rem !important;
         margin-top: 0.5rem !important;
         margin-bottom: 0.5rem !important;
+        letter-spacing: -0.01em;
     }
     h2 {
-        font-size: 1.25rem !important;
+        font-size: 1.2rem !important;
         margin-top: 0.5rem !important;
         margin-bottom: 0.5rem !important;
     }
     h3 {
-        font-size: 1.1rem !important;
+        font-size: 1.05rem !important;
         margin-top: 0.5rem !important;
         margin-bottom: 0.5rem !important;
     }
-    /* Tighter spacing in sidebar */
-    .css-1544g2n {
-        padding: 1rem 0.5rem;
-    }
-    /* Reduce padding around main content - more space from top ribbon */
+    /* keep content clear of the top ribbon */
     .block-container {
         padding-top: 4rem;
         padding-bottom: 0rem;
@@ -591,8 +603,9 @@ def create_ownership_scatter(df, top_n=100, single_institution=None, institution
         }
     )
     
-    fig.update_traces(textposition='top center', textfont_size=7)
-    
+    fig.update_traces(textposition='top center', textfont_size=7, textfont_color='#9b9ea6',
+                      marker=dict(color='#56dc85', opacity=0.75, line=dict(width=1, color='#272b34')))
+
     # Both axes are percentages now, no log scale needed
     fig.update_layout(
         height=450,
@@ -602,8 +615,7 @@ def create_ownership_scatter(df, top_n=100, single_institution=None, institution
         yaxis=dict(tickformat='.1f', ticksuffix='%'),
         showlegend=False,
         dragmode=False,
-        clickmode='none',
-        hovermode=False
+        clickmode='none'
     )
     
     return fig
@@ -672,16 +684,15 @@ def create_top_holdings_bar(df, top_n=20, single_institution=None, institution_t
         title=title,
         labels={x_col: x_label, 'ticker': 'Ticker'},
         color=color_col,
-        color_continuous_scale='Blues'
+        color_continuous_scale=['#1c2b22', '#56dc85']
     )
-    
+
     fig.update_layout(
         height=500,
         yaxis={'categoryorder': 'total ascending'},
         coloraxis_colorbar_title=color_title,
         dragmode=False,
-        clickmode='none',
-        hovermode=False
+        clickmode='none'
     )
     
     return fig
@@ -799,7 +810,7 @@ def render_overview_tab(filtered_df, single_institution, institution_totals, fil
                 filtered_institutions=filtered_institutions
             )
             if fig_scatter:
-                st.plotly_chart(fig_scatter, width='stretch', config={'displayModeBar': False, 'staticPlot': True})
+                st.plotly_chart(fig_scatter, width='stretch', config={'displayModeBar': False})
             else:
                 st.info("No data available for scatter plot")
         else:
@@ -815,7 +826,7 @@ def render_overview_tab(filtered_df, single_institution, institution_totals, fil
                 filtered_institutions=filtered_institutions
             )
             if fig_bar:
-                st.plotly_chart(fig_bar, width='stretch', config={'displayModeBar': False, 'staticPlot': True})
+                st.plotly_chart(fig_bar, width='stretch', config={'displayModeBar': False})
             else:
                 st.info("No data available for bar chart")
         else:
@@ -892,7 +903,7 @@ def main():
         return
     
     # Sidebar quarter selector
-    st.sidebar.header("📅 Period")
+    st.sidebar.header("Period")
     quarter_options = [f"{q[0]} {q[1]}" for q in available_quarters]
     selected_quarter_idx = st.sidebar.selectbox(
         "Quarter",
@@ -926,7 +937,7 @@ def main():
     institution_totals = calculate_institution_portfolios(quarter, year, df)
     
     # Sidebar filters
-    st.sidebar.header("🔍 Filters")
+    st.sidebar.header("Filters")
     
     # Search box
     search_term = st.sidebar.text_input("Ticker", "")
@@ -1163,7 +1174,7 @@ def main():
             
             # Truncate name if too long
             display_name = security_data['name'][:25] + '...' if len(security_data['name']) > 25 else security_data['name']
-            st.subheader(f"📊 {security_data['ticker']} - {display_name}")
+            st.subheader(f"{security_data['ticker']} — {display_name}")
             
             # If single institution selected, highlight their position
             if single_institution and 'positions' in security_data and single_institution in security_data['positions']:
@@ -1315,27 +1326,27 @@ def main():
                             y=holder_names,
                             x=base_values,
                             orientation='h',
-                            marker_color='#e0e0e0',
+                            marker_color='#9b9ea6',
                             showlegend=False
                         ))
-                        
+
                         # Added portion (green)
                         fig_holders.add_trace(go.Bar(
                             name='Added',
                             y=holder_names,
                             x=added_values,
                             orientation='h',
-                            marker_color='#28a745',
+                            marker_color='#56dc85',
                             showlegend=False
                         ))
-                        
+
                         # Reduced portion (red - shown to the right of base)
                         fig_holders.add_trace(go.Bar(
                             name='Reduced',
                             y=holder_names,
                             x=reduced_values,
                             orientation='h',
-                            marker_color='#dc3545',
+                            marker_color='#e5484d',
                             showlegend=False
                         ))
                         
@@ -1346,18 +1357,17 @@ def main():
                             xaxis_title='Portfolio %',
                             yaxis_title='',
                             title=dict(
-                                text='<span style="color:#28a745">■</span> Added <span style="color:#dc3545">■</span> Reduced <span style="color:#e0e0e0">■</span> Base',
+                                text='<span style="color:#56dc85">■</span> Added <span style="color:#e5484d">■</span> Reduced <span style="color:#9b9ea6">■</span> Base',
                                 font=dict(size=12),
                                 x=0.5,
                                 xanchor='center'
                             ),
                             showlegend=False,
                             dragmode=False,
-                            clickmode='none',
-                            hovermode=False
+                            clickmode='none'
                         )
                         fig_holders.update_xaxes(tickformat='.1f', ticksuffix='%')
-                        st.plotly_chart(fig_holders, width='stretch', config={'displayModeBar': False, 'staticPlot': True})
+                        st.plotly_chart(fig_holders, width='stretch', config={'displayModeBar': False})
                 
                 with col2:
                     # Display the holders table
@@ -1380,9 +1390,9 @@ def main():
     else:
         # Normal 3-tab view when not searching
         tab1, tab2, tab3 = st.tabs([
-            "📈 Overview", 
-            "🏆 Holdings", 
-            "🆕 Changes"
+            "Overview",
+            "Holdings",
+            "Changes"
         ])
         
         with tab1:
