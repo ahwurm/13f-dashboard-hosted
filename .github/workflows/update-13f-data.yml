@@ -43,8 +43,10 @@ jobs:
     
     - name: Run pipeline
       env:
-        SEC_EMAIL: ${{ secrets.SEC_EMAIL }}
-        SEC_NAME: ${{ secrets.SEC_NAME }}
+        # config_loader.py reads SEC_USER_* — env names must match it, or the
+        # pipeline silently falls back to the placeholder user agent
+        SEC_USER_EMAIL: ${{ secrets.SEC_EMAIL }}
+        SEC_USER_NAME: ${{ secrets.SEC_NAME }}
       run: |
         cd pipeline
         python 00_download_13f_filings.py --top 200
@@ -65,12 +67,16 @@ jobs:
         q, y = ((t.month - 1) // 3, t.year) if t.month > 3 else (4, t.year - 1)
         path = f'output/Q{q}_{y}/quarterly_adds_data.json'
         try:
-            n = json.load(open(path))['metadata']['institution_breakdown']['current_quarter_institutions']
+            m = json.load(open(path))['metadata']
+            n = m['institution_breakdown']['current_quarter_institutions']
+            s = m['total_securities']
         except (FileNotFoundError, KeyError) as e:
             sys.exit(f'coverage check failed reading {path}: {e!r}')
-        print(f'Q{q} {y}: {n} current-quarter institutions')
+        print(f'Q{q} {y}: {n} current-quarter institutions, {s} securities')
         if n < 40:
             sys.exit(f'only {n} current-quarter institutions (<40) — refusing to publish thin data')
+        if s < 2000:
+            sys.exit(f'only {s} securities (<2000, healthy ~3700) — an upstream mapping/shares step likely failed')
         EOF
 
     - name: Commit and push changes

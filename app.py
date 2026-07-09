@@ -346,9 +346,10 @@ def load_investor_metadata():
     return investor_types
 
 @st.cache_data
-def calculate_institution_portfolios(_df):
+def calculate_institution_portfolios(quarter, year, _df):
     """Calculate total portfolio value for each institution"""
-    # Using _df with underscore prefix to avoid hashing issues with lists
+    # _df is underscore-prefixed (unhashable lists inside), so quarter/year
+    # must carry the cache key — without them every quarter shares one entry
     institution_totals = {}
     
     for _, row in _df.iterrows():
@@ -798,7 +799,7 @@ def render_overview_tab(filtered_df, single_institution, institution_totals, fil
                 filtered_institutions=filtered_institutions
             )
             if fig_scatter:
-                st.plotly_chart(fig_scatter, use_container_width=True, config={'displayModeBar': False, 'staticPlot': True})
+                st.plotly_chart(fig_scatter, width='stretch', config={'displayModeBar': False, 'staticPlot': True})
             else:
                 st.info("No data available for scatter plot")
         else:
@@ -814,7 +815,7 @@ def render_overview_tab(filtered_df, single_institution, institution_totals, fil
                 filtered_institutions=filtered_institutions
             )
             if fig_bar:
-                st.plotly_chart(fig_bar, use_container_width=True, config={'displayModeBar': False, 'staticPlot': True})
+                st.plotly_chart(fig_bar, width='stretch', config={'displayModeBar': False, 'staticPlot': True})
             else:
                 st.info("No data available for bar chart")
         else:
@@ -865,7 +866,7 @@ def render_top_holdings_tab(filtered_df, single_institution, institution_totals,
     # Display table
     st.dataframe(
         display_df,
-        use_container_width=True,
+        width='stretch',
         hide_index=True,
         height=450
     )
@@ -922,7 +923,7 @@ def main():
         df['net_adds'] = 0
     
     # Calculate institution portfolios
-    institution_totals = calculate_institution_portfolios(df)
+    institution_totals = calculate_institution_portfolios(quarter, year, df)
     
     # Sidebar filters
     st.sidebar.header("🔍 Filters")
@@ -1188,8 +1189,10 @@ def main():
                 security_adds = df_adds[df_adds['cusip'] == security_data['cusip']]
                 if len(security_adds) > 0:
                     adds_data = security_adds.iloc[0]
-                    new_holders = adds_data.get('new_holders', [])
-                    institution_changes = adds_data.get('institution_changes', {})
+                    # Prior-quarter files store these as null, not missing —
+                    # .get() returns the None, so coerce explicitly
+                    new_holders = adds_data.get('new_holders', []) or []
+                    institution_changes = adds_data.get('institution_changes', {}) or {}
             
             if positions:
                 # Use real positions data
@@ -1354,13 +1357,13 @@ def main():
                             hovermode=False
                         )
                         fig_holders.update_xaxes(tickformat='.1f', ticksuffix='%')
-                        st.plotly_chart(fig_holders, use_container_width=True, config={'displayModeBar': False, 'staticPlot': True})
+                        st.plotly_chart(fig_holders, width='stretch', config={'displayModeBar': False, 'staticPlot': True})
                 
                 with col2:
                     # Display the holders table
                     st.dataframe(
                         holders_df,
-                        use_container_width=True,
+                        width='stretch',
                         height=400,
                         hide_index=True
                     )
@@ -1368,7 +1371,7 @@ def main():
                 # If no positions data, just show the table
                 st.dataframe(
                     holders_df,
-                    use_container_width=True,
+                    width='stretch',
                     height=350,
                     hide_index=True
                 )
@@ -1485,7 +1488,7 @@ def main():
                             st.dataframe(
                                 display_adds,
                                 column_config=column_config_adds,
-                                use_container_width=True,
+                                width='stretch',
                                 hide_index=True,
                                 height=400
                             )
@@ -1533,7 +1536,7 @@ def main():
                             st.dataframe(
                                 display_drops,
                                 column_config=column_config_drops,
-                                use_container_width=True,
+                                width='stretch',
                                 hide_index=True,
                                 height=400
                             )

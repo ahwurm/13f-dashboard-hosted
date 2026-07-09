@@ -598,10 +598,10 @@ def main():
     parser = argparse.ArgumentParser(description='Download 13F-HR filings from SEC EDGAR')
     parser.add_argument('--quarter', type=int, help='Quarter (1-4)', default=None)
     parser.add_argument('--year', type=int, help='Year (e.g., 2025)', default=None)
-    parser.add_argument('--company', type=str, help='Company/Your Name (for SEC)', 
-                       default='Research Project')
-    parser.add_argument('--email', type=str, help='Email address (for SEC)', 
-                       default='research@example.com')
+    parser.add_argument('--company', type=str, default=None,
+                       help='Company/Your Name (for SEC); defaults to config/env user agent')
+    parser.add_argument('--email', type=str, default=None,
+                       help='Email address (for SEC); defaults to config/env user agent')
     parser.add_argument('--force', action='store_true',
                        help='Force re-download, ignoring progress cache')
     parser.add_argument('--interactive', action='store_true', 

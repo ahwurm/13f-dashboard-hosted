@@ -6,6 +6,7 @@ Only extracts data for companies we actually need, avoiding 17GB of unnecessary 
 import os
 import json
 import requests
+import sys
 import zipfile
 import logging
 from pathlib import Path
@@ -141,7 +142,7 @@ class OptimizedSECSharesFetcher:
             }
             
             # Download with streaming to handle large file
-            response = requests.get(url, stream=True, headers=headers)
+            response = requests.get(url, stream=True, headers=headers, timeout=(30, 120))
             response.raise_for_status()
             
             # Get total file size
@@ -447,6 +448,8 @@ def main():
     if fetcher.run_optimized_extraction():
         # Offer to clean up old data
         fetcher.cleanup_old_data()
+    else:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

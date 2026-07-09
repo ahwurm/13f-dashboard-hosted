@@ -7,6 +7,7 @@ import json
 import requests
 import logging
 import csv
+import sys
 import time
 from pathlib import Path
 from datetime import datetime
@@ -330,14 +331,14 @@ class SECTickerDownloader:
         # Step 1: Download
         if not self.download_company_tickers():
             logger.error("Failed to download company_tickers.json")
-            return
-        
+            sys.exit(1)
+
         # Step 2: Process
         ticker_to_cik = self.process_ticker_mappings()
-        
+
         if not ticker_to_cik:
             logger.error("Failed to process ticker mappings")
-            return
+            sys.exit(1)
         
         # Step 3: Validate against institutions
         validation_report = self.validate_against_institutions(ticker_to_cik)

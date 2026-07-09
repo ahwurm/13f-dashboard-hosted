@@ -1,30 +1,22 @@
 # 13F Holdings Analysis Pipeline Requirements
+# Capped to the major versions the pipeline (CI, py3.10) and the hosted app are
+# proven on — an uncapped major would land unreviewed on the next reinstall.
 
 # SEC Data Download
-sec-edgar-downloader>=5.0.0
+sec-edgar-downloader>=5.0,<6
 
 # API and Web Requests
-requests>=2.31.0
-urllib3>=2.0.0
+requests>=2.31,<3
 
 # Data Processing
-pandas>=2.0.0
-numpy>=1.24.0
+pandas>=2.2,<3
+numpy>=1.26,<3
 
 # Visualization
-plotly>=5.14.0
+plotly>=5.14,<7
 
 # Progress Tracking
-tqdm>=4.65.0
-
-# Financial Data (optional, for fallback)
-yfinance>=0.2.18
+tqdm>=4.65,<5
 
 # Web Application
-streamlit>=1.28.0
-
-# Excel Export (optional)
-openpyxl>=3.1.0
-
-# Utilities
-pathlib2>=2.3.7
+streamlit>=1.59,<2
