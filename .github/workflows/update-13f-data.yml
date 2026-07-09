@@ -8,7 +8,14 @@ on:
     # (May 15 2026 run: 16 of ~57 institutions). Pull on the 20th, 06:00 UTC.
     - cron: '0 6 20 2,5,8,11 *'
   
-  workflow_dispatch:  # Manual trigger for testing
+  workflow_dispatch:  # Manual trigger; optionally re-run a specific quarter
+    inputs:
+      quarter:
+        description: 'Target quarter (1-4); leave empty for latest completed'
+        required: false
+      year:
+        description: 'Target year (e.g. 2026); required with quarter'
+        required: false
 
 jobs:
   update-data:
@@ -47,9 +54,15 @@ jobs:
         # pipeline silently falls back to the placeholder user agent
         SEC_USER_EMAIL: ${{ secrets.SEC_EMAIL }}
         SEC_USER_NAME: ${{ secrets.SEC_NAME }}
+        Q_OVERRIDE: ${{ inputs.quarter }}
+        Y_OVERRIDE: ${{ inputs.year }}
       run: |
         cd pipeline
-        python 00_download_13f_filings.py --top 200
+        ARGS="--top 200"
+        if [ -n "$Q_OVERRIDE" ] && [ -n "$Y_OVERRIDE" ]; then
+          ARGS="$ARGS --quarter $Q_OVERRIDE --year $Y_OVERRIDE"
+        fi
+        python 00_download_13f_filings.py $ARGS
         python 01_download_sec_tickers.py
         python 02_build_cusip_mappings.py
         python 03_get_sec_shares_outstanding.py
@@ -57,14 +70,22 @@ jobs:
         python 05_analyze_net_adds.py
 
     - name: Verify filing coverage
+      env:
+        Q_OVERRIDE: ${{ inputs.quarter }}
+        Y_OVERRIDE: ${{ inputs.year }}
       run: |
-        # Healthy quarter ≈ 57 current-quarter institutions. A low count means the
-        # filing wave hasn't landed yet — fail here so stale-good data stays published.
+        # Conviction roster = 77 institutions; healthy quarter ≈ 70+ filed and
+        # ~1900 securities. A low count means the filing wave hasn't landed yet —
+        # fail here so stale-good data stays published.
         python - <<'EOF'
-        import json, sys
+        import json, os, sys
+        from statistics import median
         from datetime import date
-        t = date.today()
-        q, y = ((t.month - 1) // 3, t.year) if t.month > 3 else (4, t.year - 1)
+        if os.environ.get('Q_OVERRIDE') and os.environ.get('Y_OVERRIDE'):
+            q, y = int(os.environ['Q_OVERRIDE']), int(os.environ['Y_OVERRIDE'])
+        else:
+            t = date.today()
+            q, y = ((t.month - 1) // 3, t.year) if t.month > 3 else (4, t.year - 1)
         path = f'output/Q{q}_{y}/quarterly_adds_data.json'
         try:
             m = json.load(open(path))['metadata']
@@ -73,10 +94,22 @@ jobs:
         except (FileNotFoundError, KeyError) as e:
             sys.exit(f'coverage check failed reading {path}: {e!r}')
         print(f'Q{q} {y}: {n} current-quarter institutions, {s} securities')
-        if n < 40:
-            sys.exit(f'only {n} current-quarter institutions (<40) — refusing to publish thin data')
-        if s < 2000:
-            sys.exit(f'only {s} securities (<2000, healthy ~3700) — an upstream mapping/shares step likely failed')
+        if n < 55:
+            sys.exit(f'only {n} current-quarter institutions (<55) — refusing to publish thin data')
+        if s < 1200:
+            sys.exit(f'only {s} securities (<1200, healthy ~1900) — an upstream mapping/shares step likely failed')
+        # Unit sanity: a filer still reporting values in thousands (pre-2023
+        # convention) would land 1000x low — implied share prices expose it.
+        holdings = json.load(open(f'output/Q{q}_{y}/total_holdings_data.json'))
+        prices = {}
+        for sec in holdings['securities']:
+            for inst, pos in sec.get('positions', {}).items():
+                if pos.get('shares'):
+                    prices.setdefault(inst, []).append(pos['value'] / 1000 / pos['shares'])
+        bad = {i: round(median(p), 4) for i, p in prices.items() if len(p) >= 5 and median(p) < 0.5}
+        if bad:
+            sys.exit(f'implied share prices suggest thousands-scaled filings (unit bug): {bad}')
+        print(f'unit sanity OK across {len(prices)} institutions')
         EOF
 
     - name: Commit and push changes

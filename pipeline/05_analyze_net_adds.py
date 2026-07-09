@@ -343,7 +343,19 @@ class Filing13FAnalyzer:
                 
                 if holding.get('cusip') and holding.get('shares'):
                     holdings.append(holding)
-            
+
+            # Normalize legacy unit scaling: some filers (e.g. Duquesne, Baupost)
+            # still report values in thousands despite the post-2023 dollars rule.
+            # With dollar reporting, value/1000/shares ≈ share price; a median
+            # under $0.50 means the whole table is 1000x low — scale it up.
+            priced = sorted(h['value'] / 1000 / h['shares'] for h in holdings
+                            if h.get('shares') and h.get('value'))
+            if len(priced) >= 5 and priced[len(priced) // 2] < 0.5:
+                for h in holdings:
+                    if 'value' in h:
+                        h['value'] *= 1000
+                logger.info(f"Scaled thousands-reported values x1000 in {filing_path}")
+
             # Log parsing results
             if holdings:
                 if prefix and prefix not in ['ns', '']:
