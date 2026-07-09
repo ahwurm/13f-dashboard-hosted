@@ -29,11 +29,14 @@ def load_config_with_env(config_path: Path) -> Dict[str, Any]:
             config['user_agent'] = {}
         config['user_agent']['email'] = os.environ['SEC_USER_EMAIL']
     
-    # Validate required fields
-    if 'user_agent' not in config or not config['user_agent'].get('email'):
+    # Validate required fields — the committed config holds a placeholder, so a
+    # real contact must arrive via env or a local config edit (SEC requires one)
+    email = config.get('user_agent', {}).get('email')
+    if not email or email == 'your.email@example.com':
         raise ValueError(
             "SEC_USER_EMAIL environment variable must be set or "
-            "user_agent.email must be configured in analysis_config.json"
+            "user_agent.email must be configured in analysis_config.json "
+            "(the committed placeholder is rejected)"
         )
     
     return config

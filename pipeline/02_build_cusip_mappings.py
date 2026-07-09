@@ -292,22 +292,28 @@ class CUSIPMapper:
                 logger.debug(f"First batch request: {json.dumps(batch_request[:2])}...")
                 logger.debug(f"Request size: {len(json.dumps(batch_request))} bytes")
             
-            # Rate limiting
-            elapsed = time.time() - self.last_openfigi_call
-            if elapsed < self.openfigi_delay:
-                time.sleep(self.openfigi_delay - elapsed)
-            
             try:
-                response = requests.post(
-                    self.openfigi_url,
-                    headers=self.openfigi_headers,
-                    json=batch_request,
-                    timeout=30
-                )
-                
-                self.last_openfigi_call = time.time()
-                self.stats['api_calls'] += 1
-                
+                for attempt in range(4):
+                    # Rate limiting
+                    elapsed = time.time() - self.last_openfigi_call
+                    if elapsed < self.openfigi_delay:
+                        time.sleep(self.openfigi_delay - elapsed)
+
+                    response = requests.post(
+                        self.openfigi_url,
+                        headers=self.openfigi_headers,
+                        json=batch_request,
+                        timeout=30
+                    )
+
+                    self.last_openfigi_call = time.time()
+                    self.stats['api_calls'] += 1
+
+                    if response.status_code != 429:
+                        break
+                    logger.warning(f"Rate limited by OpenFIGI (attempt {attempt + 1}/4). Waiting 60 seconds...")
+                    time.sleep(60)
+
                 if response.status_code == 200:
                     data = response.json()
                     
@@ -336,11 +342,6 @@ class CUSIPMapper:
                     # Save cache after each successful batch
                     self.save_json_cache(self.cusip_ticker_cache, self.cusip_ticker_cache_file)
                     
-                elif response.status_code == 429:
-                    logger.warning("Rate limited by OpenFIGI. Waiting 60 seconds...")
-                    time.sleep(60)
-                    # Retry this batch
-                    batch_num -= batch_size
                 elif response.status_code == 413:
                     logger.error(f"Payload too large (413) even with batch size {batch_size}")
                     logger.error("Consider reducing batch size further or checking request structure")
@@ -358,6 +359,13 @@ class CUSIPMapper:
                 logger.info(f"Progress: {self.stats['newly_mapped']} newly mapped, "
                           f"{self.stats['failed_mappings']} failed, "
                           f"{self.stats['api_errors']} API errors")
+
+        # Fail loudly if API errors dropped a meaningful share of batches —
+        # each lost batch is up to 10 securities silently missing from output
+        if self.stats['api_errors'] > max(2, total_batches // 50):
+            raise RuntimeError(
+                f"{self.stats['api_errors']} of {total_batches} OpenFIGI batches failed — aborting"
+            )
     
     def generate_summary_report(self):
         """Generate a summary report of the mapping process"""

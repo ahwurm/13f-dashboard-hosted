@@ -31,24 +31,16 @@ Access at: http://localhost:8501
 ## Configuration
 
 ### `config/analysis_config.json`
-```json
-{
-  "quarter": "Q2",
-  "year": 2025,
-  "paths": {
-    "filings_base": "data/13f_filings/sec-edgar-filings",
-    "cik_metadata": "data/cik_metadata.json",
-    "output_base": "output",
-    "data_cache": "data/mappings"
-  },
-  "analysis": {
-    "ownership_cap_percent": 101,
-    "exclude_etfs": true,
-    "min_shares_outstanding": 100000,
-    "max_data_age_days": 1095
-  }
-}
-```
+
+Holds `user_agent` (overridden by `SEC_USER_NAME`/`SEC_USER_EMAIL` env vars — the
+CI workflow maps its secrets to these names), `paths`, `api` (OpenFIGI/SEC rate
+limits), and `analysis` thresholds (`ownership_cap_percent`, etc.). There are
+**no quarter/year keys**: the quarter is derived at runtime — script 00 labels
+the download with the latest completed calendar quarter, and script 05 trusts
+that label (falling back to deadline-aware date logic in `path_config.py`).
+The GitHub Actions coverage gate recomputes the same quarter independently and
+refuses to publish thin data (<40 current-quarter institutions or <2000
+securities).
 
 ## Data Scaling
 
