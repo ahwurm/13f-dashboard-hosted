@@ -1,0 +1,33 @@
+# Theme ported from localharness.dev design tokens (oklch -> sRGB).
+# Fonts are vendored in static/ and served via enableStaticServing.
+
+[server]
+enableStaticServing = true
+
+[theme]
+base = "dark"
+primaryColor = "#56dc85"        # accent  oklch(80% .17 152)
+backgroundColor = "#0d0f15"     # bg      oklch(17% .012 265)
+secondaryBackgroundColor = "#14171e"  # surface oklch(20.5% .014 265)
+textColor = "#e9ebef"           # ink     oklch(94% .005 265)
+linkColor = "#56dc85"
+borderColor = "#272b34"         # edge    oklch(29% .016 265)
+dataframeBorderColor = "#272b34"
+dataframeHeaderBackgroundColor = "#14171e"
+baseRadius = "0.375rem"
+font = "Geist Variable, ui-sans-serif, system-ui, sans-serif"
+headingFont = "Geist Variable, ui-sans-serif, system-ui, sans-serif"
+codeFont = "Geist Mono Variable, ui-monospace, monospace"
+chartCategoricalColors = ["#56dc85", "#f0bb3b", "#9b9ea6", "#e9ebef"]
+
+[[theme.fontFaces]]
+family = "Geist Variable"
+url = "app/static/geist-latin-wght-normal.woff2"
+weight = "100 900"
+style = "normal"
+
+[[theme.fontFaces]]
+family = "Geist Mono Variable"
+url = "app/static/geist-mono-latin-wght-normal.woff2"
+weight = "100 900"
+style = "normal"
