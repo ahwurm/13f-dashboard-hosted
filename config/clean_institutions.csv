@@ -8,7 +8,7 @@ Berkshire Hathaway,0001067983,Value Investor,258,Warren Buffett
 Gardner Russo & Quinn,0000860643,Global Value,9.4,Tom Russo
 Polen Capital,0001034524,Quality Growth,60,Dan Davidowitz
 Baupost Group,0001061768,Deep Value,30,Seth Klarman
-Greenlight Capital,0001079114,Value/Short,2.5,David Einhorn
+Greenlight Capital,0001489933,Value/Short,3.2,David Einhorn
 Pabrai Investments,0001549575,Concentrated Value,0.3,Mohnish Pabrai
 Fundsmith,0001569205,Quality Growth,19.8,Terry Smith
 Tiger Global,0001167483,Growth/Tech,70,Chase Coleman
@@ -17,17 +17,15 @@ Viking Global,0001103804,Tiger Cub Growth,40,Andreas Halvorsen
 Coatue Management,0001135730,Tech Growth,30,Philippe Laffont
 Third Point,0001040273,Event-Driven,19,Dan Loeb
 Elliott Management,0001791786,Activist,70,Paul Singer
-Icahn Enterprises,0000813762,Activist,25,Carl Icahn
+Carl Icahn,0000921669,Activist,8.6,Carl Icahn
 Duquesne Family Office,0001536411,Macro/Growth,4,Stanley Druckenmiller
 Appaloosa Management,0001656456,Opportunistic,7.4,David Tepper
 Soros Fund Management,0001029160,Macro,25,George Soros
-ValueAct Capital,0001351069,Activist,5,Jeffrey Ubben
+ValueAct Capital,0001418814,Activist,5.7,Mason Morfit
 Starboard Value,0001517137,Activist,3,Jeffrey Smith
 Giverny Capital,0001641864,Quality Value,3,Francois Rochon
 Temasek Holdings,0001021944,Sovereign Wealth,26.2,Dilhan Pillay
 OTPP,0000937567,Pension Fund,5.1,Jo Taylor
-CPP Investment Board,0001032989,Pension Fund,103,John Graham
-CalPERS,0001628471,Pension Fund,480,Marcie Frost
 RA Capital,0001346824,Healthcare,12.6,Peter Kolchinsky
 Baker Bros Advisors,0001263508,Healthcare,18,Julian Baker
 OrbiMed Advisors,0001055951,Healthcare,18,Samuel Isaly
@@ -36,35 +34,49 @@ Whale Rock Capital,0001387322,Tech Growth,6,Alex Sacerdote
 Light Street Capital,0001569049,Tech Growth,12,Glen Kacher
 Discovery Capital,0001389507,Emerging Tech,25,Rob Citrone
 Durable Capital Partners,0001798849,Long-term Growth,10,Henry Ellenbogen
-Citadel Advisors,0001423053,Multi-Strategy,62,Ken Griffin
-Millennium Management,0001273087,Multi-Strategy,62,Israel Englander
-Point72,0001603466,Multi-Strategy,30,Steve Cohen
-Two Sigma,0001179392,Quant,60,John Overdeck
-Bridgewater Associates,0001350694,Macro,140,Ray Dalio
-Renaissance Technologies,0001037389,Quant,130,Peter Brown
 Maverick Capital,0000934639,Long/Short,12,Lee Ainslie
-Soroban Capital,0001501913,Event-Driven,8,Eric Mandelblatt
+Soroban Capital,0001517857,Event-Driven,51.8,Eric Mandelblatt
 Cantillon Capital,0001279936,International,21,William von Mueffling
-Fidelity Management,0000035368,Asset Manager,1400,Abigail Johnson
-T. Rowe Price,0001113169,Growth Manager,769,Rob Sharps
-Wellington Management,0000902219,Institutional,928,Jean Hynes
-Capital Group,0000732812,Global Manager,1402,Mike Gitlin
-Goldman Sachs Asset Mgmt,0000886982,Alternative,1117,David Solomon
 D1 Capital Partners,0001747057,Tiger Cub Growth,28,Dan Sundheim
 ARK Investment Management,0001697748,Disruptive Tech,7,Cathie Wood
 Glenview Capital,0001138995,Healthcare Value,8,Larry Robbins
 Abrams Capital,0001358706,Concentrated Value,13,David Abrams
 Ruane Cunniff,0001720792,Concentrated Value,5.8,Richard Goldfarb
 Trian Fund Management,0001345471,Activist,5.8,Nelson Peltz
-Jana Partners,0001159159,Activist,2.4,Barry Rosenstein
+Jana Partners,0001998597,Activist,1.6,Barry Rosenstein
 Lindsell Train,0001484150,Quality Growth,14.7,Nick Train
 Egerton Capital,0001581811,European Equity,16.5,John Armitage
 Himalaya Capital,0001709323,Deep Value,2.7,Li Lu
-Wedgewood Partners,0000829464,Quality Growth,0.5,David Rolfe
+Wedgewood Partners,0000859804,Quality Growth,0.5,David Rolfe
 Brown Capital Management,0000885062,Small-Cap Growth,12,Eddie Brown
-Matrix Capital Management,0001048678,Tech Growth,5,David Goel
 Corvex Management,0001535472,Activist,4,Keith Meister
-Balyasny Asset Management,0001218710,Multi-Strategy,13,Dmitry Balyasny
 Texas Teachers Retirement,0000796848,Pension Fund,23.8,Brian Guthrie
 Select Equity Group,0001592643,Quality Growth,23.9,Robert Caruso
 Dodge & Cox,0000200217,Value Fund,172,Dana Emery
+PRIMECAP Management,0000763212,Quality Growth,127.0,Theo Kolokotrones
+Harris Associates,0000813917,Value Investor,75.0,Bill Nygren
+GQG Partners,0001697233,Quality Growth,63.1,Rajiv Jain
+Artisan Partners,0001466153,Growth Manager,62.3,Eric Colson
+WCM Investment Management,0001061186,Quality Growth,43.8,Paul Black
+Sands Capital,0001020066,Tech Growth,25.5,Frank Sands
+Orbis Investments,0001663865,Global Value,23.7,Adam Karr
+Davis Selected Advisers,0001036325,Value Investor,21.8,Chris Davis
+Mawer Investment Management,0001538449,Global Value,15.4,Paul Moroz
+Public Investment Fund,0001767640,Sovereign Wealth,12.0,Yasir Al-Rumayyan
+Avoro Capital,0001633313,Healthcare,10.2,Behzad Aghazadeh
+RTW Investments,0001493215,Healthcare,10.0,Roderick Wong
+Harding Loevner,0000928196,Quality Growth,9.7,Ferrill Roll
+Yacktman Asset Management,0000905567,Value Investor,7.5,Stephen Yacktman
+Perceptive Advisors,0001224962,Healthcare,5.1,Joseph Edelman
+Eminence Capital,0001107310,Value/Short,4.4,Ricky Sandler
+Sachem Head Capital,0001582090,Activist,4.2,Scott Ferguson
+Brave Warrior Advisors,0001553733,Concentrated Value,4.0,Glenn Greenberg
+Suvretta Capital,0001569064,Long/Short,3.9,Aaron Cowen
+Dragoneer Investment Group,0001602189,Tech Growth,3.0,Marc Stad
+Senator Investment Group,0001443689,Event-Driven,2.2,Douglas Silverman
+Southeastern Asset Management,0000807985,Deep Value,2.0,Ross Glotzbach
+Tweedy Browne,0000732905,Deep Value,1.3,Thomas Shrager
+Situational Awareness LP,0002045724,AI Concentrated,13.7,Leopold Aschenbrenner
+SurgoCap Partners,0001960830,Crossover Growth,3.0,Mala Gaonkar
+Voyager Global,0001849753,Tech Growth,2.9,Grant Wonders
+Untitled Investments,0001808696,Concentrated Growth,0.3,Neeraj Chandra

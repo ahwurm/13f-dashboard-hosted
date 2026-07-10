@@ -80,6 +80,16 @@ class Filing13FAnalyzer:
             'positions': {}  # Store individual institution positions
         })
         
+        # Per-institution book stats: long book from share positions,
+        # options notionals recorded separately (never counted as ownership)
+        self.institution_books = defaultdict(lambda: {
+            'long_value': 0,
+            'long_positions': 0,
+            'puts_value': 0,
+            'calls_value': 0,
+            'top5_weight_pct': None
+        })
+
         # For tracking quarterly changes (will need Q1 data)
         self.previous_holdings = {}
         self.net_additions = defaultdict(lambda: {
@@ -343,7 +353,19 @@ class Filing13FAnalyzer:
                 
                 if holding.get('cusip') and holding.get('shares'):
                     holdings.append(holding)
-            
+
+            # Normalize legacy unit scaling: some filers (e.g. Duquesne, Baupost)
+            # still report values in thousands despite the post-2023 dollars rule.
+            # With dollar reporting, value/1000/shares ≈ share price; a median
+            # under $0.50 means the whole table is 1000x low — scale it up.
+            priced = sorted(h['value'] / 1000 / h['shares'] for h in holdings
+                            if h.get('shares') and h.get('value'))
+            if len(priced) >= 5 and priced[len(priced) // 2] < 0.5:
+                for h in holdings:
+                    if 'value' in h:
+                        h['value'] *= 1000
+                logger.info(f"Scaled thousands-reported values x1000 in {filing_path}")
+
             # Log parsing results
             if holdings:
                 if prefix and prefix not in ['ns', '']:
@@ -486,8 +508,14 @@ class Filing13FAnalyzer:
                     for holding in holdings:
                         cusip = holding['cusip']
 
-                        # Skip PUT options entirely
-                        if holding.get('put_call') in ['PUT', 'P']:
+                        # Options are exposure, not ownership: exclude puts AND
+                        # calls from share aggregation, record notionals per book
+                        put_call = holding.get('put_call')
+                        if put_call in ['PUT', 'P']:
+                            self.institution_books[company_name]['puts_value'] += holding.get('value', 0)
+                            continue
+                        if put_call in ['CALL', 'C']:
+                            self.institution_books[company_name]['calls_value'] += holding.get('value', 0)
                             continue
 
                         shares = holding['shares']
@@ -533,6 +561,24 @@ class Filing13FAnalyzer:
             'failed_parses': len(failed_institutions),
             'parse_success_rate': round(successful_parses/filing_count*100, 1) if filing_count > 0 else 0
         }
+
+        self.compute_institution_books()
+
+    def compute_institution_books(self):
+        """Fill long-book stats from aggregated positions (all CUSIPs, incl.
+        ones later dropped for missing shares outstanding) so portfolio
+        weights and concentration reflect the whole filed long book."""
+        values_by_inst = defaultdict(list)
+        for data in self.current_holdings.values():
+            for inst_name, pos in data.get('positions', {}).items():
+                values_by_inst[inst_name].append(pos['value'])
+        for inst_name, values in values_by_inst.items():
+            book = self.institution_books[inst_name]
+            book['long_value'] = sum(values)
+            book['long_positions'] = len(values)
+            if book['long_value'] > 0:
+                top5 = sorted(values, reverse=True)[:5]
+                book['top5_weight_pct'] = round(sum(top5) / book['long_value'] * 100, 2)
     
     
     def save_progress(self, stage: str, data: Dict = None):
@@ -703,10 +749,12 @@ class Filing13FAnalyzer:
                 positions_with_pct = {}
                 for inst_name, inst_position in data.get('positions', {}).items():
                     inst_pct = (inst_position['shares'] / shares_outstanding * 100) if shares_outstanding > 0 else 0
+                    book_value = self.institution_books.get(inst_name, {}).get('long_value', 0)
                     positions_with_pct[inst_name] = {
                         'shares': inst_position['shares'],
                         'value': inst_position['value'],
-                        'pct_of_company_shares': inst_pct
+                        'pct_of_company_shares': inst_pct,
+                        'pct_of_portfolio': round(inst_position['value'] / book_value * 100, 3) if book_value else None
                     }
                 
                 total_holdings_pct.append({
@@ -1033,7 +1081,10 @@ class Filing13FAnalyzer:
                 "total_value_usd": sum(item['value'] for item in data),
                 "data_source": f"{self.quarter} {self.year} 13F Filings",
                 "metric": "Percentage of Shares Outstanding",
-                "institution_breakdown": institution_breakdown
+                "institution_breakdown": institution_breakdown,
+                # Per-institution book stats (values in millicents like positions).
+                # Options notionals are informational only — never in ownership math.
+                "institutions": dict(self.institution_books)
             },
             "securities": []
         }
