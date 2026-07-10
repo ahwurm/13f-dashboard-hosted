@@ -1,1561 +1,669 @@
 """
-13F Institutional Holdings Dashboard
-Professional Streamlit dashboard for analyzing institutional investor holdings
+Conviction Terminal — 13F institutional holdings, organized by question not data-shape.
+Four pages (Signals / Managers / Securities / Screener) on an st.navigation shell.
+All monetary JSON is in millicents; SCALE_FACTOR converts to $M. Conviction math is
+roster-only: only positions held by managers in config/clean_institutions.csv count.
+Gracefully degrades on quarters whose JSON lacks the richer fields.
 """
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
-from plotly.subplots import make_subplots
-import json
+import json, csv, html
 from pathlib import Path
-from datetime import datetime, timedelta
-import numpy as np
+from datetime import date, timedelta
+from statistics import median
 
-# All JSON values are stored in millicents (tenths of cents). We display in millions throughout the app.
-SCALE_FACTOR = 1_000_000_000  # Divide by this to convert millicents to millions (1 billion millicents = 1 million dollars)
-DAYS_PER_QUARTER = 92  # Conservative estimate to avoid false exclusions in age calculations
+SCALE_FACTOR = 1_000_000_000  # millicents -> $M
+ACCENT, AMBER, RED, DIM, INK, EDGE, SURFACE, FAINT = (
+    "#56dc85", "#f0bb3b", "#e5484d", "#9b9ea6", "#e9ebef", "#272b34", "#14171e", "#6b6f78")
+Q_END = {1: (3, 31), 2: (6, 30), 3: (9, 30), 4: (12, 31)}
 
-# Load configuration
-@st.cache_data
-def load_config():
-    """Load analysis configuration"""
-    with open('config/analysis_config.json', 'r') as f:
-        return json.load(f)
+# ---- query params read (before set_page_config so the tab title can be dynamic) ----
+_qp = st.query_params
+_page, _t, _m, _q = (_qp.get(k, "") for k in ("page", "t", "m", "q"))
 
-CONFIG = load_config()
+def _tab_title():
+    qs = f" · {_q.replace('_', ' ')}" if _q else ""
+    if _page in ("security", "securities") and _t:
+        return f"{_t} — Conviction{qs}"
+    if _page == "managers" and _m:
+        return f"{_m} — Conviction"
+    label = {"managers": "Managers", "security": "Securities", "securities": "Securities",
+             "screener": "Screener"}.get(_page, "Signals")
+    return f"{label} — Conviction{qs}"
 
-def format_large_number(value_in_millions):
-    """Format millions to B or T as appropriate."""
-    if value_in_millions >= 1_000_000:
-        return f"${value_in_millions/1_000_000:.2f}T"
-    elif value_in_millions >= 1_000:
-        return f"${value_in_millions/1_000:.1f}B"
-    else:
-        return f"${value_in_millions:.1f}M"
+st.set_page_config(page_title=_tab_title(), page_icon="static/favicon.svg",
+                   layout="wide", initial_sidebar_state="auto")
 
-# Page configuration
-st.set_page_config(
-    page_title="Smart Capital Tracker",
-    page_icon="📊",
-    layout="wide",
-    initial_sidebar_state="auto"
-)
-
-# Plotly template matching the theme in .streamlit/config.toml
-_EDGE, _INK, _DIM, _SURFACE_2, _ACCENT, _AMBER = '#272b34', '#e9ebef', '#9b9ea6', '#191d24', '#56dc85', '#f0bb3b'
+# ---- plotly template (ported from the shipped app) ----
 pio.templates['lh'] = go.layout.Template(layout=go.Layout(
-    paper_bgcolor='rgba(0,0,0,0)',
-    plot_bgcolor='rgba(0,0,0,0)',
-    font=dict(family='Geist Variable, ui-sans-serif, sans-serif', color=_INK, size=12),
-    title=dict(font=dict(size=13, color=_DIM)),
-    colorway=[_ACCENT, _AMBER, _DIM, _INK],
-    xaxis=dict(gridcolor=_EDGE, zerolinecolor=_EDGE, linecolor=_EDGE, tickfont=dict(family='Geist Mono Variable, ui-monospace, monospace', size=11)),
-    yaxis=dict(gridcolor=_EDGE, zerolinecolor=_EDGE, linecolor=_EDGE, tickfont=dict(family='Geist Mono Variable, ui-monospace, monospace', size=11)),
-    hoverlabel=dict(bgcolor=_SURFACE_2, bordercolor=_EDGE, font=dict(family='Geist Mono Variable, ui-monospace, monospace', size=12, color=_INK)),
+    paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+    font=dict(family='Geist Variable, ui-sans-serif, sans-serif', color=INK, size=12),
+    title=dict(font=dict(size=13, color=DIM)),
+    colorway=[ACCENT, AMBER, DIM, INK],
+    xaxis=dict(gridcolor=EDGE, zerolinecolor=EDGE, linecolor=EDGE,
+               tickfont=dict(family='Geist Mono Variable, ui-monospace, monospace', size=11)),
+    yaxis=dict(gridcolor=EDGE, zerolinecolor=EDGE, linecolor=EDGE,
+               tickfont=dict(family='Geist Mono Variable, ui-monospace, monospace', size=11)),
+    hoverlabel=dict(bgcolor=SURFACE, bordercolor=EDGE,
+                    font=dict(family='Geist Mono Variable, ui-monospace, monospace', size=12, color=INK)),
 ))
 pio.templates.default = 'lh'
 
-# Engineering-paper styling on top of the theme in .streamlit/config.toml —
-# depth from tint and hairlines, never shadow (localharness.dev language)
 st.markdown("""
-    <style>
-    /* barely-there engineering grid behind the main canvas */
-    .stApp::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        background-image:
-            linear-gradient(to right, rgba(86,220,133,0.025) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(86,220,133,0.025) 1px, transparent 1px),
-            linear-gradient(to right, rgba(233,235,239,0.015) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(233,235,239,0.015) 1px, transparent 1px);
-        background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
-    }
-    /* metric plates: surface tint + hairline edge */
-    div[data-testid="stMetric"] {
-        background: #14171e;
-        border: 1px solid #272b34;
-        border-radius: 8px;
-        padding: 0.55rem 0.9rem;
-    }
-    div[data-testid="stMetric"] label {
-        font-size: 0.72rem;
-        letter-spacing: 0.04em;
-        text-transform: uppercase;
-        color: #9b9ea6;
-    }
-    div[data-testid="stMetricValue"] {
-        font-size: 1.15rem;
-        font-variant-numeric: tabular-nums;
-    }
-    div[data-testid="stMetricDelta"] {
-        font-variant-numeric: tabular-nums;
-    }
-    /* narrower sidebar; bg comes from the theme */
-    div[data-testid="stSidebar"] {
-        max-width: 250px;
-    }
-    /* compact tabs, accent underline reads as the section marker */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 8px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        padding: 4px 12px;
-        font-size: 0.9rem;
-    }
-    /* compact headers */
-    h1 {
-        font-size: 1.45rem !important;
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-        letter-spacing: -0.01em;
-    }
-    h2 {
-        font-size: 1.2rem !important;
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-    h3 {
-        font-size: 1.05rem !important;
-        margin-top: 0.5rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-    /* keep content clear of the top ribbon */
-    .block-container {
-        padding-top: 4rem;
-        padding-bottom: 0rem;
-    }
-    </style>
+<style>
+.stApp::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+ background-image:linear-gradient(to right,rgba(86,220,133,.025) 1px,transparent 1px),
+ linear-gradient(to bottom,rgba(86,220,133,.025) 1px,transparent 1px),
+ linear-gradient(to right,rgba(233,235,239,.015) 1px,transparent 1px),
+ linear-gradient(to bottom,rgba(233,235,239,.015) 1px,transparent 1px);
+ background-size:96px 96px,96px 96px,24px 24px,24px 24px;}
+div[data-testid="stMetric"]{background:#14171e;border:1px solid #272b34;border-radius:8px;padding:.55rem .9rem;}
+div[data-testid="stMetric"] label{font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;color:#9b9ea6;}
+div[data-testid="stMetricValue"]{font-size:1.15rem;font-variant-numeric:tabular-nums;}
+h1{font-size:1.45rem!important;margin:.4rem 0!important;letter-spacing:-.01em;}
+h2{font-size:1.15rem!important;margin:.4rem 0!important;}
+h3{font-size:1rem!important;margin:.4rem 0!important;}
+.block-container{padding-top:3rem;padding-bottom:1rem;}
+.vintage{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:11px;letter-spacing:.03em;
+ color:#9b9ea6;text-transform:uppercase;border:1px solid #272b34;background:#14171e;border-radius:6px;
+ padding:6px 10px;margin:2px 0 12px;}
+.vintage b{color:#e9ebef;}
+.ctab{width:100%;border-collapse:collapse;font-size:13px;}
+.ctab th{text-align:left;color:#9b9ea6;font-weight:600;font-size:11px;text-transform:uppercase;
+ letter-spacing:.03em;border-bottom:1px solid #272b34;padding:5px 8px;}
+.ctab td{padding:5px 8px;border-bottom:1px solid #191d24;}
+.ctab td.r{text-align:right;font-family:'Geist Mono Variable',ui-monospace,monospace;}
+.ctab a{color:#e9ebef;text-decoration:none;font-weight:600;}
+.ctab a:hover{color:#56dc85;}
+.ctab .nm{color:#9b9ea6;}
+.pill{font-family:'Geist Mono Variable',ui-monospace,monospace;font-size:11px;padding:1px 6px;border-radius:4px;}
+.buy{background:rgba(86,220,133,.15);color:#56dc85;}
+.exit{background:rgba(229,72,77,.15);color:#e5484d;}
+.new{background:rgba(86,220,133,.15);color:#56dc85;}
+.trim{background:rgba(240,187,59,.15);color:#f0bb3b;}
+</style>
 """, unsafe_allow_html=True)
 
-# Helper function to get available quarters
-def get_available_quarters():
-    """Get list of available quarters from output directory"""
-    output_dir = Path("output")
-    if not output_dir.exists():
+# ---------------- data layer ----------------
+@st.cache_data
+def load_config():
+    return json.load(open('config/analysis_config.json'))
+
+@st.cache_data
+def load_roster():
+    return {r['Institution']: r for r in csv.DictReader(open('config/clean_institutions.csv'))}
+
+@st.cache_data
+def get_quarters():
+    out = Path('output')
+    if not out.exists():
         return []
-    
-    quarters = []
-    for folder in output_dir.iterdir():
-        if folder.is_dir() and "_" in folder.name:
-            # Parse folder name like "Q2_2025"
-            parts = folder.name.split("_")
-            if len(parts) == 2 and parts[0].startswith("Q"):
-                quarters.append((parts[0], int(parts[1]), folder.name))
-    
-    # Sort by year and quarter
-    quarters.sort(key=lambda x: (x[1], x[0]), reverse=True)
-    return quarters
+    qs = []
+    for f in out.iterdir():
+        if f.is_dir() and f.name.startswith('Q') and '_' in f.name \
+                and (f / 'quarterly_adds_data.json').exists():
+            q, y = f.name.split('_')
+            qs.append((f.name, int(y), int(q[1])))
+    qs.sort(key=lambda x: (x[1], x[2]), reverse=True)
+    return [x[0] for x in qs]
 
-# Data loading and caching
-@st.cache_data(ttl=3600)  # Cache for 1 hour to allow for updates
-def load_holdings_data(quarter, year):
-    """Load and cache holdings data from JSON file"""
-    data_path = Path(f"output/{quarter}_{year}/total_holdings_data.json")
-    
-    if not data_path.exists():
-        st.error(f"Data file not found: {data_path}")
-        return None, None
-    
-    with open(data_path, 'r') as f:
-        data = json.load(f)
-    
-    # Filter out institutions with stale data based on config
-    max_age_days = CONFIG.get('analysis', {}).get('max_data_age_days', 365)
-    current_quarter = int(quarter[1])
-    
-    # Get filing periods
-    filing_periods = data['metadata'].get('institution_breakdown', {}).get('filing_periods', {})
-    
-    # Identify institutions to exclude (those with old data)
-    stale_institutions = set()
-    for inst_name, period in filing_periods.items():
-        if period['year'] < year or (period['year'] == year and period['quarter'] < current_quarter):
-            # Calculate age in quarters (rough approximation)
-            quarters_old = (year - period['year']) * 4 + (current_quarter - period['quarter'])
-            days_old = quarters_old * DAYS_PER_QUARTER
-            
-            if days_old > max_age_days:
-                stale_institutions.add(inst_name)
-    
-    # Filter securities to remove positions from stale institutions
-    filtered_securities = []
-    for sec in data['securities']:
-        if 'positions' in sec and sec['positions']:
-            # Remove stale institution positions
-            filtered_positions = {k: v for k, v in sec['positions'].items() 
-                                if k not in stale_institutions}
-            
-            # Only keep security if it still has positions after filtering
-            if filtered_positions:
-                sec = sec.copy()
-                sec['positions'] = filtered_positions
-                # Also filter holders array to match positions
-                sec['holders'] = [h for h in sec.get('holders', []) if h in filtered_positions]
-                # Recalculate holder count
-                sec['holder_count'] = len(filtered_positions)
-                filtered_securities.append(sec)
-        else:
-            # Keep securities without position data (shouldn't happen, but be safe)
-            filtered_securities.append(sec)
-    
-    # Update metadata to reflect filtered counts
-    current_institutions = [name for name, p in filing_periods.items() 
-                           if p['quarter'] == current_quarter and p['year'] == year 
-                           and name not in stale_institutions]
-    
-    data['metadata']['institution_breakdown']['filtered_total'] = len(filing_periods) - len(stale_institutions)
-    data['metadata']['institution_breakdown']['filtered_current_quarter'] = len(current_institutions)
-    data['metadata']['institution_breakdown']['excluded_stale'] = len(stale_institutions)
-    
-    # Convert securities to DataFrame
-    df = pd.DataFrame(filtered_securities)
-    
-    if len(df) == 0:
-        return df, data['metadata']
-    
-    # Convert from storage (millicents) to display (millions)
-    df['value_usd'] = df['value_usd'] / SCALE_FACTOR
-
-    # Filter out securities with ownership > cap (indicates stale shares outstanding)
-    ownership_cap = CONFIG.get('analysis', {}).get('ownership_cap_percent', 101)
-    df = df[df['pct_of_shares_outstanding'] <= ownership_cap]
-
-    # Add formatted columns
-    df['value_formatted'] = df['value_usd'].apply(lambda x: f"${x:,.0f}")
-    df['pct_formatted'] = df['pct_of_shares_outstanding'].apply(lambda x: f"{x:.2f}%")
-
-    return df, data['metadata']
-
-@st.cache_data(ttl=3600)  # Cache for 1 hour to allow for updates
-def load_quarterly_adds_data(quarter, year):
-    """Load and cache quarterly additions data from JSON file"""
-    data_path = Path(f"output/{quarter}_{year}/quarterly_adds_data.json")
-    
-    if not data_path.exists():
-        return None, None
-    
-    with open(data_path, 'r') as f:
-        data = json.load(f)
-    
-    # Convert securities to DataFrame
-    df = pd.DataFrame(data['securities'])
-    
-    if len(df) == 0:
-        return df, data.get('metadata', {})
-    
-    # Convert from storage (millicents) to display (millions)
-    df['value_usd'] = df['value_usd'] / SCALE_FACTOR
-
-    # Filter out securities with ownership > cap (indicates stale shares outstanding)
-    ownership_cap = CONFIG.get('analysis', {}).get('ownership_cap_percent', 101)
-    df = df[df['pct_of_shares_outstanding'] <= ownership_cap]
-
-    # Add formatted columns
-    df['value_formatted'] = df['value_usd'].apply(lambda x: f"${x:,.0f}")
-    df['pct_formatted'] = df['pct_of_shares_outstanding'].apply(lambda x: f"{x:.2f}%")
-
-    return df, data.get('metadata', {})
-
-# Investor type consolidation mapping
-# Methodology-based investor categorization
-INVESTOR_TYPE_MAPPING = {
-    # Quantitative/Systematic
-    'Quant Fund': 'Quantitative',
-    'Quant Value': 'Quantitative',
-    
-    # Hedge Funds
-    'Hedge Fund': 'Hedge Funds',
-    'Multi-Strategy': 'Hedge Funds',
-    'Tech Hedge Fund': 'Hedge Funds',
-    'Event-Driven': 'Hedge Funds',
-    'Macro Fund': 'Hedge Funds',
-    'Tiger Cub': 'Hedge Funds',
-    
-    # Value & Growth
-    'Value Fund': 'Value & Growth',
-    'Growth Fund': 'Value & Growth',
-    'Activist Investor': 'Value & Growth',
-    'Activist Hedge Fund': 'Value & Growth',
-    'Conglomerate': 'Value & Growth',  # Berkshire
-    
-    # Alternative Assets
-    'Private Equity': 'Alternative Assets',
-    'Private Credit': 'Alternative Assets',
-    'Distressed Debt': 'Alternative Assets',
-    'Distressed Fund': 'Alternative Assets',
-    'Credit Fund': 'Alternative Assets',
-    
-    # Banks
-    'Bank': 'Banks',
-    'Investment Bank': 'Banks',
-    
-    # Other
-    'Pension Fund': 'Other',
-    'REIT Fund': 'Other',
-    'ESG Fund': 'Traditional Active',
-    'Small Cap Fund': 'Traditional Active',
-    
-    # Asset Manager will be handled specially based on firm name
-    'Asset Manager': 'Asset Manager'  # Placeholder, resolved in function
-}
-
-def get_methodology_category(firm_name, original_type):
-    """Categorize institutions based on investment methodology."""
-    # Special handling for Asset Managers based on firm name
-    if original_type == 'Asset Manager':
-        # Passive/Index firms
-        passive_firms = ['BlackRock', 'Vanguard', 'State Street', 'Geode', 
-                        'Dimensional', 'Northern Trust', 'BNY Mellon']
-        for p in passive_firms:
-            if p in firm_name:
-                return 'Passive/Index'
-        
-        # Traditional Active managers
-        return 'Traditional Active'
-    
-    # Use standard mapping for other types
-    mapped = INVESTOR_TYPE_MAPPING.get(original_type, 'Other')
-    
-    # Don't return the placeholder
-    if mapped == 'Asset Manager':
-        return 'Traditional Active'
-    
-    return mapped
+def prior_quarter(qdir):
+    qs = get_quarters()
+    if qdir in qs:
+        i = qs.index(qdir)
+        if i + 1 < len(qs):
+            return qs[i + 1]
+    return None
 
 @st.cache_data
-def load_investor_metadata():
-    """Load investor metadata with consolidated types"""
-    metadata_path = Path("data/cik_metadata.json")
-    
-    if not metadata_path.exists():
-        return {}
-    
-    with open(metadata_path, 'r') as f:
-        data = json.load(f)
-    
-    # Create investor name to type mapping with methodology-based consolidation
-    investor_types = {}
-    for cik, details in data['cik_details'].items():
-        original_type = details.get('type', 'Unknown')
-        firm_name = details['name']
-        
-        # Apply methodology-based categorization
-        consolidated_type = get_methodology_category(firm_name, original_type)
-        
-        investor_types[firm_name] = {
-            'type': consolidated_type,
-            'original_type': original_type,
-            'investor': details.get('investor', ''),
-            'description': details.get('description', '')
-        }
-    
-    return investor_types
+def load_conviction(qdir):
+    """One conviction row per roster-held security (roster-only recomputed math)."""
+    d = json.load(open(f'output/{qdir}/quarterly_adds_data.json'))
+    roster = set(load_roster())
+    cap = load_config().get('analysis', {}).get('ownership_cap_percent', 100)
+    rows = []
+    for s in d['securities']:
+        pos_all = s.get('positions') or {}
+        rpos = {k: v for k, v in pos_all.items() if k in roster}
+        if not rpos:
+            continue
+        so = s.get('shares_outstanding') or 0
+        r_shares = sum(p['shares'] for p in rpos.values())
+        r_value = sum(p['value'] for p in rpos.values()) / SCALE_FACTOR
+        r_pct = r_shares / so * 100 if so else 0.0
+        if r_pct > cap:
+            continue
+        ic = s.get('institution_changes') or {}
+        nh = [h for h in (s.get('new_holders') or []) if h in roster]
+        dh = [h for h in (s.get('dropped_holders') or []) if h in roster]
+        buyers = sorted(set(nh) | {i for i, c in ic.items() if i in roster and c.get('shares_change', 0) > 0})
+        sellers = sorted(set(dh) | {i for i, c in ic.items() if i in roster and c.get('shares_change', 0) < 0})
+        rows.append(dict(
+            cusip=s['cusip'], ticker=s['ticker'] or s['cusip'], name=s['name'] or s['ticker'] or s['cusip'],
+            shares_outstanding=so, positions=rpos,
+            r_holders=list(rpos.keys()), r_num=len(rpos), r_value=r_value, r_shares=r_shares, r_pct=r_pct,
+            new_holders=nh, dropped_holders=dh, institution_changes=ic,
+            buyers=buyers, sellers=sellers, n_buyers=len(buyers), n_sellers=len(sellers),
+            n_exits=len(dh), net_dir=len(buyers) - len(sellers)))
+    df = pd.DataFrame(rows)
+    return df, d.get('metadata', {})
 
 @st.cache_data
-def calculate_institution_portfolios(quarter, year, _df):
-    """Calculate total portfolio value for each institution"""
-    # _df is underscore-prefixed (unhashable lists inside), so quarter/year
-    # must carry the cache key — without them every quarter shares one entry
-    institution_totals = {}
-    
-    for _, row in _df.iterrows():
-        if 'positions' in row and row['positions']:
-            for institution, position in row['positions'].items():
-                if institution not in institution_totals:
-                    institution_totals[institution] = 0
-                # Value is in millicents, convert to millions for consistency
-                institution_totals[institution] += position['value'] / SCALE_FACTOR
-    
-    return institution_totals
+def load_manager_books(qdir):
+    """Per-roster-manager book derived from positions (metadata.institutions absent today)."""
+    df, _ = load_conviction(qdir)
+    roster = load_roster()
+    books = {}
+    for _, r in df.iterrows():
+        for inst, p in r['positions'].items():
+            b = books.setdefault(inst, {'positions': [], 'long_value': 0.0, 'exits': []})
+            ch = r['institution_changes'].get(inst, {})
+            b['long_value'] += p['value'] / SCALE_FACTOR
+            b['positions'].append(dict(
+                ticker=r['ticker'], name=r['name'], cusip=r['cusip'],
+                value=p['value'] / SCALE_FACTOR, shares=p['shares'],
+                pct_co=p.get('pct_of_company_shares', 0) or 0,
+                shares_change=ch.get('shares_change', 0), prev_shares=ch.get('prev_shares', 0),
+                is_new=inst in r['new_holders']))
+        for inst in r['dropped_holders']:
+            if inst in books:
+                books[inst]['exits'].append(r['ticker'])
+    for inst, b in books.items():
+        vals = sorted((p['value'] for p in b['positions']), reverse=True)
+        b['n_pos'] = len(vals)
+        b['top5_weight'] = (sum(vals[:5]) / b['long_value'] * 100) if b['long_value'] else 0.0
+        b['exits'] = sorted(set(b['exits']))
+    return books
 
-def add_portfolio_percentages(df, selected_institution, institution_totals):
-    """Add portfolio percentage column for a specific institution"""
-    df = df.copy()
+# ---------------- helpers ----------------
+def fmt_money_m(m):
+    """$M value -> B/T/M string."""
+    if m >= 1_000_000:
+        return f"${m/1_000_000:.2f}T"
+    if m >= 1_000:
+        return f"${m/1_000:.1f}B"
+    return f"${m:.1f}M"
 
-    if selected_institution and selected_institution in institution_totals:
-        total_portfolio = institution_totals[selected_institution]
+def quarter_dates(qdir):
+    q, y = qdir.split('_')
+    mo, da = Q_END[int(q[1])]
+    end = date(int(y), mo, da)
+    return end, end + timedelta(days=45)
 
-        def get_portfolio_pct(row):
-            position_value = get_position_value(row, selected_institution)
-            return calculate_portfolio_percentage(position_value, total_portfolio)
+def vintage_eyebrow(qdir, meta, prefix=""):
+    end, deadline = quarter_dates(qdir)
+    pull = (meta.get('generated') or '')[:10] or '—'
+    st.markdown(
+        f'<div class="vintage">{prefix}POSITIONS AS OF <b>{end}</b> · FILED BY <b>{deadline}</b> · '
+        f'PULLED <b>{pull}</b> · 13F = 45-DAY LAG, LONG US EQUITY ONLY</div>',
+        unsafe_allow_html=True)
 
-        df['portfolio_pct'] = df.apply(get_portfolio_pct, axis=1)
-        df['portfolio_pct_formatted'] = df['portfolio_pct'].apply(lambda x: f"{x:.2f}%" if x != 0 else "")
+def takeaway(text, source):
+    st.caption(f"**Takeaway:** {text}  \n*Source: {source}*")
 
-        # Filter to only show holdings of this institution
-        df = df[df['portfolio_pct'] != 0]
-    else:
-        # Institution has no data - return empty dataframe with required columns
-        df['portfolio_pct'] = 0.0
-        df['portfolio_pct_formatted'] = ""
-        df = df[df['portfolio_pct'] != 0]
+def link(url_params, label):
+    q = "&".join(f"{k}={html.escape(str(v))}" for k, v in url_params.items())
+    return f'<a href="?{q}" target="_self">{html.escape(label)}</a>'
 
-    return df
+def sec_link(ticker, extra=None):
+    p = {"page": "security", "t": ticker, "q": CURRENT_Q}
+    return link(p, ticker)
 
-def filter_dataframe(df, filters, investor_metadata=None, institution_totals=None):
-    """Apply filters to the dataframe"""
-    filtered_df = df.copy()
-    
-    # Check if single institution is selected
-    single_institution = None
-    if filters['selected_investors'] and len(filters['selected_investors']) == 1:
-        single_institution = filters['selected_investors'][0]
-    
-    # Text search filter - exact ticker match only
-    if filters['search']:
-        search_term = filters['search'].upper()
-        filtered_df = filtered_df[filtered_df['ticker'] == search_term]
-    
-    # For single institution, filter by portfolio percentage if calculated
-    if single_institution and institution_totals and 'portfolio_pct' not in filtered_df.columns:
-        filtered_df = add_portfolio_percentages(filtered_df, single_institution, institution_totals)
-    
-    # For single institution, only show securities they hold
-    if single_institution and len(filtered_df) > 0:
-        # Filter to only show securities this institution holds
-        filtered_df['position_value'] = filtered_df.apply(lambda row: get_position_value(row, single_institution), axis=1)
-        # Only show securities this institution holds
-        filtered_df = filtered_df[filtered_df['position_value'] != 0]
-    
-    # Number of holders filter (skip for single institution)
-    if not single_institution:
-        filtered_df = filtered_df[
-            (filtered_df['num_holders'] >= filters['holders_range'][0]) &
-            (filtered_df['num_holders'] <= filters['holders_range'][1])
-        ]
-    
-    # Investor filter
-    if filters['selected_investors'] and not single_institution:
-        filtered_df = filtered_df[
-            filtered_df['holders'].apply(
-                lambda x: any(inv in x for inv in filters['selected_investors'])
-            )
-        ]
-    
-    # Investor type filter - recalculate values to show only filtered type holdings
-    if filters['investor_types'] and investor_metadata and not single_institution:
-        # First filter to securities that have at least one holder of the selected type
-        filtered_df = filtered_df[
-            filtered_df['holders'].apply(
-                lambda holders: any(
-                    investor_metadata.get(h, {}).get('type', 'Unknown') in filters['investor_types']
-                    for h in holders
-                )
-            )
-        ].copy()
-        
-        # Now recalculate values to only include positions from filtered investor types
-        if len(filtered_df) > 0:
-            # Store original values
-            filtered_df['original_value_usd'] = filtered_df['value_usd']
-            filtered_df['original_num_holders'] = filtered_df['num_holders']
-            
-            # Recalculate for each security
-            new_values = []
-            new_holders = []
-            new_shares = []
-            filtered_holders_list = []
-            
-            for idx, row in filtered_df.iterrows():
-                type_specific_value = 0
-                type_specific_shares = 0
-                type_specific_holders = []
-                
-                if 'positions' in row and row['positions']:
-                    for inst_name, position in row['positions'].items():
-                        # Check if this institution is of the selected type
-                        if investor_metadata.get(inst_name, {}).get('type', 'Unknown') in filters['investor_types']:
-                            type_specific_value += position['value'] / SCALE_FACTOR  # Convert millicents to millions
-                            type_specific_shares += position['shares']
-                            type_specific_holders.append(inst_name)
-                
-                # Values already converted to millions in the loop above
-                new_values.append(type_specific_value)
-                new_shares.append(type_specific_shares)
-                new_holders.append(len(type_specific_holders))
-                filtered_holders_list.append(type_specific_holders)
-            
-            # Update the dataframe with filtered values (now in millions)
-            filtered_df['value_usd'] = new_values
-            filtered_df['shares_held'] = new_shares
-            filtered_df['num_holders'] = new_holders
-            filtered_df['holders'] = filtered_holders_list
-            
-            # Recalculate ownership percentage based on filtered shares
-            filtered_df['pct_of_shares_outstanding'] = (
-                filtered_df['shares_held'] / filtered_df['shares_outstanding'] * 100
-            ).fillna(0)
-            
-            # Update formatted columns
-            filtered_df['value_formatted'] = filtered_df['value_usd'].apply(lambda x: f"${x:,.0f}")
-            filtered_df['pct_formatted'] = filtered_df['pct_of_shares_outstanding'].apply(lambda x: f"{x:.2f}%")
-            
-            # Remove securities with zero value after filtering
-            filtered_df = filtered_df[filtered_df['value_usd'] > 0]
-    
-    return filtered_df
+def mgr_link(name):
+    return link({"page": "managers", "m": name, "q": CURRENT_Q}, name)
 
-def create_ownership_scatter(df, top_n=100, single_institution=None, institution_totals=None, filtered_institutions=None):
-    """Create scatter plot with portfolio % on x-axis and company ownership on y-axis"""
-    if len(df) == 0:
-        return None
-    
-    # For single institution, use portfolio percentage on x-axis and company ownership on y-axis
-    if single_institution and 'portfolio_pct' in df.columns:
-        plot_df = df.nlargest(min(top_n, len(df)), 'portfolio_pct')
-        
-        # Calculate institution's % ownership of each company
-        plot_df['inst_company_ownership'] = plot_df.apply(
-            lambda row: row['positions'][single_institution].get('pct_of_company_shares', 0) 
-            if 'positions' in row and row['positions'] and single_institution in row['positions'] else 0,
-            axis=1
-        )
-        
-        x_col = 'portfolio_pct'
-        y_col = 'inst_company_ownership'
-        x_label = '% of Institution Portfolio'
-        y_label = '% of Company Owned'
-        x_title = '% of Portfolio'
-        y_title = '% of Company Owned'
-        title = f'{single_institution[:20]}... Portfolio vs Ownership' if len(single_institution) > 20 else f'{single_institution}: Portfolio vs Ownership'
-        size_col = 'position_value' if 'position_value' in plot_df.columns else None
-    else:
-        # Calculate average portfolio % across filtered institutions
-        if institution_totals and filtered_institutions:
-            institutions_count = len(filtered_institutions)
-            def calc_avg_portfolio_pct(row):
-                if 'positions' not in row or not row['positions']:
-                    return 0
-                total_pct = 0
-                for inst_name, position in row['positions'].items():
-                    # Only include institutions that are in the filtered set
-                    if inst_name in filtered_institutions and inst_name in institution_totals:
-                        position_value_millions = position['value'] / 1_000_000_000  # Convert to millions
-                        portfolio_pct = calculate_portfolio_percentage(position_value_millions, institution_totals[inst_name])
-                        total_pct += portfolio_pct
-                # Divide by total filtered institutions (not just holders)
-                return total_pct / institutions_count if institutions_count > 0 else 0
-            
-            df = df.copy()
-            df['avg_portfolio_pct'] = df.apply(calc_avg_portfolio_pct, axis=1)
-            plot_df = df.nlargest(min(top_n, len(df)), 'avg_portfolio_pct')
-            x_col = 'avg_portfolio_pct'
-        else:
-            # Calculate average portfolio % even without explicit institution totals
-            # Use all institutions in the data
-            all_institutions = set()
-            for _, row in df.iterrows():
-                if 'positions' in row and row['positions']:
-                    all_institutions.update(row['positions'].keys())
-            
-            institutions_count = len(all_institutions) if all_institutions else 1
-            
-            def calc_avg_portfolio_pct_fallback(row):
-                if 'positions' not in row or not row['positions']:
-                    return 0
-                # Sum the portfolio percentages (assuming equal weight for simplicity)
-                total_value = sum(p['value'] for p in row['positions'].values())
-                # This is a rough estimate when we don't have total portfolio values
-                return (total_value / 1_000_000_000) / institutions_count * 0.1  # Scale factor
-            
-            df = df.copy()
-            df['avg_portfolio_pct'] = df.apply(calc_avg_portfolio_pct_fallback, axis=1)
-            plot_df = df.nlargest(min(top_n, len(df)), 'avg_portfolio_pct')
-            x_col = 'avg_portfolio_pct'
-        
-        y_col = 'pct_of_shares_outstanding'
-        x_label = '% of Institution Portfolio' if x_col == 'avg_portfolio_pct' else '% of Total Value'
-        y_label = '% of Company Owned'
-        x_title = 'Avg Portfolio %'
-        y_title = '% Outstanding Held'
-        title = f'Top {min(top_n, len(plot_df))} Holdings'
-        size_col = 'num_holders'
-    
-    # Create hover data dynamically
-    hover_data = ['ticker', 'name']
-    if single_institution and 'portfolio_pct_formatted' in plot_df.columns:
-        hover_data.append('portfolio_pct_formatted')
-        if 'position_value' in plot_df.columns:
-            plot_df['position_value_formatted'] = plot_df['position_value'].apply(lambda x: f"${x:.1f}M" if x < 1000 else format_large_number(x))
-            hover_data.append('position_value_formatted')
-    else:
-        hover_data.extend(['value_formatted', 'pct_formatted'])
-    
-    fig = px.scatter(
-        plot_df,
-        x=x_col,
-        y=y_col,
-        size=size_col,
-        hover_data=hover_data,
-        text='ticker',
-        title=title,
-        labels={
-            x_col: x_label,
-            y_col: y_label,
-            'num_holders': 'Number of Holders',
-            'position_value': 'Position Value ($)'
-        }
-    )
-    
-    fig.update_traces(textposition='top center', textfont_size=7, textfont_color='#9b9ea6',
-                      marker=dict(color='#56dc85', opacity=0.75, line=dict(width=1, color='#272b34')))
+def sync_qp(**kw):
+    for k, v in kw.items():
+        if _qp.get(k, "") != str(v):
+            _qp[k] = str(v)
 
-    # Both axes are percentages now, no log scale needed
-    fig.update_layout(
-        height=450,
-        xaxis_title=x_title,
-        yaxis_title=y_title,
-        xaxis=dict(tickformat='.2f', ticksuffix='%'),
-        yaxis=dict(tickformat='.1f', ticksuffix='%'),
-        showlegend=False,
-        dragmode=False,
-        clickmode='none'
-    )
-    
-    return fig
+def drop_qp(*keys):
+    for k in keys:
+        if k in _qp:
+            del _qp[k]
 
-def create_top_holdings_bar(df, top_n=20, single_institution=None, institution_totals=None, filtered_institutions=None):
-    """Create bar chart of top holdings"""
-    if len(df) == 0:
-        return None
-    
-    # For single institution, use portfolio percentage
-    if single_institution and 'portfolio_pct' in df.columns:
-        plot_df = df.nlargest(min(top_n, len(df)), 'portfolio_pct')
-        x_col = 'portfolio_pct'
-        display_inst = single_institution[:20] + '...' if len(single_institution) > 20 else single_institution
-        title = f'{display_inst}: Top {min(top_n, len(plot_df))}'
-        x_label = 'Portfolio %'
-        
-        # Color by portfolio percentage for single institution
-        color_col = 'portfolio_pct'
-        color_title = 'Portfolio %'
-    else:
-        # Calculate average portfolio % across filtered institutions
-        if institution_totals and filtered_institutions:
-            institutions_count = len(filtered_institutions)
-            def calc_avg_portfolio_pct(row):
-                if 'positions' not in row or not row['positions']:
-                    return 0
-                total_pct = 0
-                for inst_name, position in row['positions'].items():
-                    # Only include institutions that are in the filtered set
-                    if inst_name in filtered_institutions and inst_name in institution_totals:
-                        position_value_millions = position['value'] / 1_000_000_000  # Convert to millions
-                        portfolio_pct = calculate_portfolio_percentage(position_value_millions, institution_totals[inst_name])
-                        total_pct += portfolio_pct
-                # Divide by total filtered institutions (not just holders)
-                return total_pct / institutions_count if institutions_count > 0 else 0
-            
-            df = df.copy()
-            df['avg_portfolio_pct'] = df.apply(calc_avg_portfolio_pct, axis=1)
-            plot_df = df.nlargest(min(top_n, len(df)), 'avg_portfolio_pct')
-            x_col = 'avg_portfolio_pct'
-            title = f'Top {min(top_n, len(plot_df))} by Portfolio %'
-            x_label = 'Average % of Portfolio'
-        else:
-            # Fallback to original behavior if data not available
-            plot_df = df.nlargest(min(top_n, len(df)), 'pct_of_shares_outstanding')
-            x_col = 'pct_of_shares_outstanding'
-            title = f'Top {min(top_n, len(plot_df))} by Ownership %'
-            x_label = 'Ownership %'
-        
-        color_col = 'num_holders'
-        color_title = '# Holders'
-    
-    hover_data = ['name']
-    if single_institution and 'portfolio_pct_formatted' in plot_df.columns:
-        hover_data.append('portfolio_pct_formatted')
-    else:
-        hover_data.extend(['value_formatted', 'num_holders'])
-    
-    fig = px.bar(
-        plot_df,
-        x=x_col,
-        y='ticker',
-        orientation='h',
-        hover_data=hover_data,
-        title=title,
-        labels={x_col: x_label, 'ticker': 'Ticker'},
-        color=color_col,
-        color_continuous_scale=['#1c2b22', '#56dc85']
-    )
+def copy_link(url_params):
+    q = "&".join(f"{k}={v}" for k, v in url_params.items())
+    st.code(f"?{q}", language=None)
 
-    fig.update_layout(
-        height=500,
-        yaxis={'categoryorder': 'total ascending'},
-        coloraxis_colorbar_title=color_title,
-        dragmode=False,
-        clickmode='none'
-    )
-    
-    return fig
+# ---------------- sidebar: brand + global quarter picker ----------------
+QUARTERS = get_quarters()
+if not QUARTERS:
+    st.error("No data found in output/. Run the pipeline first.")
+    st.stop()
 
-# Helper functions to reduce duplication
-def get_position_value(row, institution, scale=True):
-    """Extract position value for an institution from a row."""
-    if 'positions' in row and row['positions'] and institution in row['positions']:
-        value = row['positions'][institution]['value']
-        return value / SCALE_FACTOR if scale else value
-    return 0
+with st.sidebar:
+    st.markdown(
+        '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">'
+        '<svg width="22" height="22" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0d0f15"/>'
+        '<rect x="6" y="18" width="4.5" height="8" rx="1" fill="#6b6f78"/>'
+        '<rect x="13.75" y="12" width="4.5" height="14" rx="1" fill="#9b9ea6"/>'
+        '<rect x="21.5" y="6" width="4.5" height="20" rx="1" fill="#56dc85"/></svg>'
+        '<b style="letter-spacing:.08em;">CONVICTION</b></div>', unsafe_allow_html=True)
+    _default_q = _q if _q in QUARTERS else QUARTERS[0]
+    CURRENT_Q = st.selectbox("Quarter", QUARTERS, index=QUARTERS.index(_default_q),
+                             format_func=lambda s: s.replace('_', ' '))
+    sync_qp(q=CURRENT_Q)
+    st.caption(f"{len(load_roster())}-name conviction roster")
 
-def calculate_portfolio_percentage(position_value, total_portfolio):
-    """Calculate portfolio percentage for a position."""
-    if total_portfolio == 0:
-        return 0
-    return (position_value / total_portfolio) * 100
-
-def create_holdings_display_df(holdings_df, single_institution=None):
-    """Create display dataframe for holdings table."""
-    if len(holdings_df) == 0:
-        return pd.DataFrame()
-    
-    if single_institution and 'portfolio_pct' in holdings_df.columns:
-        return pd.DataFrame({
-            'Ticker': holdings_df['ticker'],
-            'Company': holdings_df['name'].apply(lambda x: x[:30] + '...' if len(x) > 30 else x),
-            'Portfolio %': holdings_df['portfolio_pct'],
-            'Position Value ($M)': holdings_df['position_value'] if 'position_value' in holdings_df.columns else holdings_df['value_usd'],
-            'Shares': holdings_df.apply(
-                lambda x: x['positions'][single_institution]['shares'] if single_institution in x.get('positions', {}) else 0, 
-                axis=1
-            ),
-            '% of Company': holdings_df.apply(
-                lambda x: x['positions'][single_institution].get('pct_of_company_shares', 0) if single_institution in x.get('positions', {}) else 0,
-                axis=1
-            )
-        })
-    else:
-        return pd.DataFrame({
-            'Ticker': holdings_df['ticker'],
-            'Company': holdings_df['name'].apply(lambda x: x[:30] + '...' if len(x) > 30 else x),
-            'Ownership %': holdings_df['pct_of_shares_outstanding'],
-            'Value ($M)': holdings_df['value_usd'],
-            '# Holders': holdings_df['num_holders'],
-            'Net Adds': holdings_df['net_adds'] if 'net_adds' in holdings_df.columns else 0
-        })
-
-def create_table_column_config(single_institution=False):
-    """Create column configuration for dataframe display."""
-    if single_institution:
-        return {
-            "Ticker": st.column_config.TextColumn("Ticker", width="small"),
-            "Company": st.column_config.TextColumn("Company", width="medium"),
-            "Portfolio %": st.column_config.NumberColumn(
-                "Portfolio %",
-                format="%.2f%%",
-                width="small"
-            ),
-            "Position Value ($M)": st.column_config.NumberColumn(
-                "Value",
-                format="$%.1f M",
-                width="small"
-            ),
-            "Shares": st.column_config.NumberColumn(
-                "Shares",
-                format="%,d",
-                width="small"
-            ),
-            "% of Company": st.column_config.NumberColumn(
-                "% of Co.",
-                format="%.2f%%",
-                width="small",
-                help="Institution's ownership % of this company"
-            )
-        }
-    else:
-        return {
-            "Ticker": st.column_config.TextColumn("Ticker", width="small"),
-            "Company": st.column_config.TextColumn("Company", width="medium"),
-            "Ownership %": st.column_config.NumberColumn(
-                "Own %",
-                format="%.2f%%",
-                width="small"
-            ),
-            "Value ($M)": st.column_config.NumberColumn(
-                "Value",
-                format="$%.1f M",
-                width="small"
-            ),
-            "# Holders": st.column_config.NumberColumn(
-                "Holders",
-                format="%d",
-                width="small"
-            ),
-            "Net Adds": st.column_config.NumberColumn(
-                "Net Adds",
-                format="%+d",
-                width="small",
-                help="New institutions this quarter"
-            )
-        }
-
-def render_overview_tab(filtered_df, single_institution, institution_totals, filtered_institutions):
-    """Render the Overview tab with scatter and bar charts."""
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # Ownership scatter plot
-        if len(filtered_df) > 0:
-            fig_scatter = create_ownership_scatter(
-                filtered_df, 
-                single_institution=single_institution,
-                institution_totals=institution_totals,
-                filtered_institutions=filtered_institutions
-            )
-            if fig_scatter:
-                st.plotly_chart(fig_scatter, width='stretch', config={'displayModeBar': False})
-            else:
-                st.info("No data available for scatter plot")
-        else:
-            st.info("No securities match current filters")
-    
-    with col2:
-        # Top holdings bar chart
-        if len(filtered_df) > 0:
-            fig_bar = create_top_holdings_bar(
-                filtered_df, 
-                single_institution=single_institution,
-                institution_totals=institution_totals,
-                filtered_institutions=filtered_institutions
-            )
-            if fig_bar:
-                st.plotly_chart(fig_bar, width='stretch', config={'displayModeBar': False})
-            else:
-                st.info("No data available for bar chart")
-        else:
-            st.info("No securities match current filters")
-
-def render_top_holdings_tab(filtered_df, single_institution, institution_totals, quarter, year, filtered_institutions):
-    """Render the Top Holdings tab with sortable table."""
-    if len(filtered_df) == 0:
-        st.info("No holdings match current filters")
+# ============================================================ PAGES ============
+def page_signals():
+    sync_qp(page="signals")
+    drop_qp("t", "m")
+    df, meta = load_conviction(CURRENT_Q)
+    roster = load_roster()
+    st.title("Signals")
+    vintage_eyebrow(CURRENT_Q, meta)
+    if df.empty:
+        st.info("No roster holdings in this quarter.")
         return
-    
-    # Calculate average portfolio allocation for non-single institution view
-    if not single_institution:
-        institutions_count = len(filtered_institutions)
-        def calc_avg_portfolio_pct(row):
-            if 'positions' not in row or not row['positions']:
-                return 0
-            total_pct = 0
-            for inst_name, position in row['positions'].items():
-                # Only include institutions that are in the filtered set
-                if inst_name in filtered_institutions and inst_name in institution_totals:
-                    position_value_millions = position['value'] / 1_000_000_000  # Convert to millions
-                    portfolio_pct = calculate_portfolio_percentage(position_value_millions, institution_totals[inst_name])
-                    total_pct += portfolio_pct
-            # Divide by total filtered institutions (not just holders)
-            return total_pct / institutions_count if institutions_count > 0 else 0
-        
-        filtered_df = filtered_df.copy()
-        filtered_df['avg_portfolio_pct'] = filtered_df.apply(calc_avg_portfolio_pct, axis=1)
-        
-        # Sort by average portfolio allocation
-        top_holdings = filtered_df.nlargest(50, 'avg_portfolio_pct')
-        
-        # Create display dataframe
-        display_df = pd.DataFrame({
-            'Ticker': top_holdings['ticker'],
-            'Company': top_holdings['name'].apply(lambda x: x[:25] + '...' if len(x) > 25 else x),
-            'Avg Portfolio %': top_holdings['avg_portfolio_pct'],
-            'Ownership %': top_holdings['pct_of_shares_outstanding'],
-            'Value ($M)': top_holdings['value_usd'],
-            '# Holders': top_holdings['num_holders']
-        })
-    else:
-        # Single institution view - sort by portfolio percentage
-        top_holdings = filtered_df.nlargest(50, 'portfolio_pct')
-        display_df = create_holdings_display_df(top_holdings, single_institution)
-    
-    # Display table
-    st.dataframe(
-        display_df,
-        width='stretch',
-        hide_index=True,
-        height=450
-    )
-    
-    st.markdown("---")
-    
-    # Download button
-    csv = top_holdings.to_csv(index=False)
-    st.download_button(
-        label="📥 Download Top Holdings CSV",
-        data=csv,
-        file_name=f"top_holdings_{datetime.now().strftime('%Y%m%d')}.csv",
-        mime="text/csv"
-    )
 
-# Main app
-def main():
-    # Get available quarters
-    available_quarters = get_available_quarters()
-    
-    if not available_quarters:
-        st.error("No data found in output directory. Please run the pipeline first.")
-        return
-    
-    # Sidebar quarter selector
-    st.sidebar.header("Period")
-    quarter_options = [f"{q[0]} {q[1]}" for q in available_quarters]
-    selected_quarter_idx = st.sidebar.selectbox(
-        "Quarter",
-        range(len(quarter_options)),
-        format_func=lambda x: quarter_options[x]
-    )
-    
-    selected_quarter = available_quarters[selected_quarter_idx]
-    quarter = selected_quarter[0]
-    year = selected_quarter[1]
-    
-    # Load data for selected quarter
-    df, metadata = load_holdings_data(quarter, year)
-    df = df.copy() if df is not None else None  # Prevent mutation of cached DataFrame
-    df_adds, metadata_adds = load_quarterly_adds_data(quarter, year)
-    investor_metadata = load_investor_metadata()
-    
-    if df is None:
-        st.error(f"Unable to load data for {quarter} {year}. Please ensure the data files are in the correct location.")
-        return
-    
-    # Merge net_adds data with main dataframe if available
-    if df_adds is not None and len(df_adds) > 0:
-        # Create a mapping of CUSIP to net_adds
-        net_adds_map = df_adds.set_index('cusip')['net_adds'].to_dict()
-        df['net_adds'] = df['cusip'].map(net_adds_map).fillna(0).astype(int)
+    fp = meta.get('institution_breakdown', {}).get('filing_periods', {})
+    q, y = CURRENT_Q.split('_'); qn, yn = int(q[1]), int(y)
+    filers = len([n for n, p in fp.items() if n in roster and p.get('quarter') == qn and p.get('year') == yn])
+    if not filers:  # older/thin schema: fall back to managers present in the book
+        filers = len(load_manager_books(CURRENT_Q))
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Filers", f"{filers} / {len(roster)}")
+    c2.metric("Long book tracked", fmt_money_m(df['r_value'].sum()))
+    c3.metric("Securities", f"{len(df):,}")
+    c4.metric("Consensus buys ≥3", f"{int((df['n_buyers'] >= 3).sum()):,}")
+
+    # ---- treemap hero: size = roster $ held, color = net managers buying - selling ----
+    st.subheader("Where conviction money sits")
+    top = df.nlargest(40, 'r_value').copy()
+    top['label'] = top['ticker'] + "<br>" + top['r_value'].apply(fmt_money_m) + " · " + \
+        top['net_dir'].apply(lambda n: (f"+{n} ▲" if n > 0 else (f"{n} ▼" if n < 0 else "0 ·")))
+    lim = max(1, int(top['net_dir'].abs().max()))
+    fig = go.Figure(go.Treemap(
+        labels=top['label'], parents=[""] * len(top), values=top['r_value'],
+        marker=dict(colors=top['net_dir'], colorscale=[[0, RED], [0.5, "#454b57"], [1, ACCENT]],
+                    cmid=0, cmin=-lim, cmax=lim, line=dict(width=1, color="#0d0f15")),
+        textinfo="label", hovertemplate="%{label}<extra></extra>",
+        tiling=dict(pad=2)))
+    fig.update_layout(height=380, margin=dict(t=6, b=6, l=0, r=0))
+    st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
+    worst = df.nlargest(1, 'n_sellers').iloc[0] if df['n_sellers'].max() else None
+    takeaway(
+        (f"Net direction across the roster's biggest positions — {worst['ticker']} saw the widest exit "
+         f"({worst['n_sellers']} reducing/closing vs {worst['n_buyers']} adding)." if worst is not None
+         else "Size is roster dollars held; color is net managers buying minus selling."),
+        f"{CURRENT_Q.replace('_',' ')} 13F-HR filings, conviction roster only.")
+
+    # ---- three panels: consensus buys / crowded exits / new-stakes tape ----
+    a, b, c = st.columns(3)
+    with a:
+        st.markdown("**CONSENSUS BUYS** · managers adding")
+        cb = df[df['n_buyers'] > 0].nlargest(8, 'n_buyers')
+        rows = "".join(
+            f'<tr><td>{sec_link(r.ticker)}</td><td class="nm">{html.escape(r.name[:16])}</td>'
+            f'<td class="nm" style="font-size:11px">{html.escape(", ".join(r.buyers[:3]))}'
+            f'{" +"+str(len(r.buyers)-3) if len(r.buyers)>3 else ""}</td>'
+            f'<td class="r"><span class="pill buy">{r.n_buyers}</span></td></tr>'
+            for r in cb.itertuples())
+        st.markdown(f'<table class="ctab">{rows}</table>', unsafe_allow_html=True)
+        takeaway("Count = roster managers initiating or increasing.", f"{CURRENT_Q.replace('_',' ')} new_holders + institution_changes.")
+    with b:
+        st.markdown("**CROWDED EXITS** · full closes")
+        ce = df[df['n_exits'] > 0].nlargest(8, 'n_exits')
+        if ce.empty:
+            st.caption("No full exits recorded this quarter.")
+        else:
+            rows = "".join(
+                f'<tr><td>{sec_link(r.ticker)}</td><td class="nm">{html.escape(r.name[:18])}</td>'
+                f'<td class="r"><span class="pill exit">{r.n_exits}</span></td></tr>'
+                for r in ce.itertuples())
+            st.markdown(f'<table class="ctab">{rows}</table>', unsafe_allow_html=True)
+        takeaway("First surfacing of dropped_holders — full position closes.", f"{CURRENT_Q.replace('_',' ')} dropped_holders.")
+    with c:
+        st.markdown("**BIGGEST NEW STAKES**")
+        tape = []
+        for r in df.itertuples():
+            for inst in r.new_holders:
+                tape.append((r.ticker, inst, r.positions[inst]['value'] / SCALE_FACTOR))
+        tape.sort(key=lambda x: x[2], reverse=True)
+        rows = "".join(
+            f'<tr><td>{sec_link(tk)}</td><td class="nm">{html.escape(nm[:16])}</td>'
+            f'<td class="r">{fmt_money_m(v)}</td></tr>'
+            for tk, nm, v in tape[:8])
+        st.markdown(f'<table class="ctab">{rows}</table>', unsafe_allow_html=True)
+        takeaway("new_holders × position value — the quarter's headline entries.", f"{CURRENT_Q.replace('_',' ')} new_holders.")
+
+
+def page_managers():
+    sync_qp(page="managers")
+    drop_qp("t")
+    books = load_manager_books(CURRENT_Q)
+    roster = load_roster()
+    _, meta = load_conviction(CURRENT_Q)
+    m = _qp.get("m", "")
+    if m and m in books:
+        _manager_profile(m, books, roster, meta)
     else:
-        df['net_adds'] = 0
-    
-    # Calculate institution portfolios
-    institution_totals = calculate_institution_portfolios(quarter, year, df)
-    
-    # Sidebar filters
-    st.sidebar.header("Filters")
-    
-    # Search box
-    search_term = st.sidebar.text_input("Ticker", "")
-    
-    # Get unique values for filters
-    all_investors = set()
-    for holders in df['holders']:
-        all_investors.update(holders)
-    all_investors = sorted(list(all_investors))
-    
-    # Get unique consolidated investor types
-    investor_types = set()
-    for inv in all_investors:
-        if inv in investor_metadata:
-            investor_types.add(investor_metadata[inv]['type'])
-    investor_types = sorted(list(investor_types))
-    
-    # Filter controls
-    selected_investor_types = st.sidebar.multiselect(
-        "Types",
-        options=investor_types,
-        default=[]
-    )
-    
-    selected_investors = st.sidebar.multiselect(
-        "Investors",
-        options=all_investors,
-        default=[]
-    )
-    
-    holders_range = st.sidebar.slider(
-        "# Holders",
-        min_value=int(df['num_holders'].min()),
-        max_value=int(df['num_holders'].max()),
-        value=(int(df['num_holders'].min()), int(df['num_holders'].max())),
-        step=1
-    )
-    
-    # Apply filters
-    filters = {
-        'search': search_term,
-        'investor_types': selected_investor_types,
-        'selected_investors': selected_investors,
-        'holders_range': holders_range
-    }
-    
-    # Data Coverage calculations - must be before metrics row and filter
-    # Use the total from metadata (69 institutions that we actually have data for)
-    total_expected_institutions = metadata.get('institution_breakdown', {}).get('total_institutions', 69)
-    
-    # Get actual values from metadata (after filtering)
-    institutions_filed = metadata.get('institution_breakdown', {}).get('filtered_total', 
-                                     metadata.get('institution_breakdown', {}).get('total_institutions', 0))
-    current_quarter_filed = metadata.get('institution_breakdown', {}).get('filtered_current_quarter',
-                                        metadata.get('institution_breakdown', {}).get('current_quarter_institutions', 0))
-    excluded_stale = metadata.get('institution_breakdown', {}).get('excluded_stale', 0)
-    
-    unique_holders_in_data = len(all_investors)  # Unique holders across analyzed securities
-    coverage_pct = (institutions_filed / total_expected_institutions) * 100 if total_expected_institutions > 0 else 0
-    
-    # Get pipeline metrics from actual data
-    pipeline_metrics = {
-        'filings_processed': institutions_filed,
-        'total_filings': total_expected_institutions,
-        'cusips_extracted': metadata.get('total_securities', 0),
-        'securities_with_shares': len(df),
-        'parse_success_rate': (institutions_filed / total_expected_institutions * 100) if total_expected_institutions > 0 else 0
-    }
-    
-    # Check if single institution is selected
-    single_institution = None
-    if selected_investors and len(selected_investors) == 1:
-        single_institution = selected_investors[0]
-    
-    # Apply filters with investor_metadata and institution totals
-    filtered_df = filter_dataframe(df, filters, investor_metadata, institution_totals)
-    
-    # Calculate filtered institutions based on current filters
-    filtered_institutions = set()
-    if filters['selected_investors']:
-        # If specific investors are selected, use only those
-        filtered_institutions = set(filters['selected_investors'])
-    elif filters['investor_types']:
-        # If investor types are selected, get all institutions of those types
-        for inst_name, inst_data in investor_metadata.items():
-            if inst_data.get('type', 'Unknown') in filters['investor_types']:
-                filtered_institutions.add(inst_name)
-    else:
-        # Otherwise use all institutions that have filed
-        filtered_institutions = set(institution_totals.keys())
-    
-    # Filter to only institutions that have actually filed (are in institution_totals)
-    filtered_institutions = filtered_institutions.intersection(set(institution_totals.keys()))
-    
-    # Check if user is searching for a specific ticker
-    has_ticker_search = bool(search_term)
-    
-    # Metrics row - adjust for ticker search, single institution view, or general view
-    col1, col2, col3, col4, col5 = st.columns(5)
-    
-    with col1:
-        if has_ticker_search and len(filtered_df) > 0:
-            # Show security-specific metric
-            security_data = filtered_df.iloc[0]
-            st.metric("Inst. Own", f"{security_data['pct_of_shares_outstanding']:.1f}%")
-        elif single_institution:
-            display_inst = single_institution[:15] + '...' if len(single_institution) > 15 else single_institution
-            st.metric(f"{display_inst} Holdings", f"{len(filtered_df):,}")
-        else:
-            st.metric("Securities", f"{len(filtered_df):,}")
-    
-    with col2:
-        if has_ticker_search and len(filtered_df) > 0:
-            # Show security-specific metric
-            security_data = filtered_df.iloc[0]
-            st.metric("Value", format_large_number(security_data['value_usd']))
-        elif single_institution and single_institution in institution_totals:
-            # Show filtered portfolio value for single institution
-            if 'position_value' in filtered_df.columns:
-                filtered_value = filtered_df['position_value'].sum()
-                st.metric("Value", format_large_number(filtered_value))
-            else:
-                st.metric("Portfolio", format_large_number(institution_totals[single_institution]))
-        else:
-            total_value = filtered_df['value_usd'].sum()
-            st.metric("Value", format_large_number(total_value))
-    
-    with col3:
-        if has_ticker_search and len(filtered_df) > 0:
-            # Show security-specific metric
-            security_data = filtered_df.iloc[0]
-            st.metric("# Holders", security_data['num_holders'])
-        elif single_institution and 'portfolio_pct' in filtered_df.columns:
-            # Show top 5 concentration from filtered results
-            if len(filtered_df) > 0:
-                top_5_pct = filtered_df.nlargest(min(5, len(filtered_df)), 'portfolio_pct')['portfolio_pct'].sum()
-                st.metric("Top 5", f"{top_5_pct:.1f}%")
-            else:
-                st.metric("Top 5 Concentration", "0.0%")
-        elif selected_investors and len(selected_investors) > 1:
-            # Calculate portfolio overlap for multiple selected institutions
-            if len(filtered_df) > 0:
-                # Find securities held by ALL selected institutions
-                securities_held_by_all = 0
-                total_unique_securities = 0
-                
-                for _, row in filtered_df.iterrows():
-                    if 'positions' in row and row['positions']:
-                        # Check if all selected institutions hold this security
-                        holders = set(row['positions'].keys())
-                        if all(inst in holders for inst in selected_investors):
-                            securities_held_by_all += 1
-                        # Count if any selected institution holds it
-                        if any(inst in holders for inst in selected_investors):
-                            total_unique_securities += 1
-                
-                if total_unique_securities > 0:
-                    overlap_pct = (securities_held_by_all / total_unique_securities) * 100
-                    st.metric("Overlap", f"{overlap_pct:.1f}%")
-                else:
-                    st.metric("Portfolio Overlap", "0.0%")
-            else:
-                st.metric("Portfolio Overlap", "0.0%")
-        else:
-            # Show value-weighted consensus % - % of capital in securities held by >50% of institutions
-            if len(filtered_df) > 0:
-                # Determine active institution count based on filters
-                if filters['selected_investors']:
-                    active_institutions = len(filters['selected_investors'])
-                elif filters['investor_types']:
-                    # Count institutions matching selected types from filtered data
-                    # Get all unique investors from the filtered dataframe
-                    all_investors_in_data = set()
-                    for holders in filtered_df['holders']:
-                        all_investors_in_data.update(holders)
-                    
-                    active_institutions = len([inv for inv in all_investors_in_data 
-                                              if investor_metadata.get(inv, {}).get('type', 'Unknown') in filters['investor_types']])
-                else:
-                    # Use institutions that filed this quarter
-                    active_institutions = institutions_filed
-                
-                # Calculate consensus threshold (>50% of active institutions)
-                consensus_threshold = active_institutions * 0.5
-                
-                # Calculate value in consensus positions (held by >50% of active institutions)
-                consensus_mask = filtered_df['num_holders'] > consensus_threshold
-                consensus_value = filtered_df[consensus_mask]['value_usd'].sum()
-                total_value = filtered_df['value_usd'].sum()
-                
-                # Calculate percentage of value in consensus positions
-                value_consensus_pct = (consensus_value / total_value) * 100 if total_value > 0 else 0
-                
-                # Format values for tooltip  
-                consensus_value_str = format_large_number(consensus_value)
-                total_value_str = format_large_number(total_value)
-                
-                st.metric("Consensus", f"{value_consensus_pct:.1f}%")
-            else:
-                st.metric("Capital Consensus", "0.0%")
-    
-    with col4:
-        if has_ticker_search and len(filtered_df) > 0:
-            # Show security-specific metric
-            security_data = filtered_df.iloc[0]
-            net_adds_val = security_data.get('net_adds', 0)
-            st.metric("Net Adds", f"{net_adds_val:+d}" if net_adds_val != 0 else "0")
-        elif filters['investor_types']:
-            # Show filtered institutions count when type filter is applied
-            st.metric("Inst.", f"{len(filtered_institutions)}")
-        elif filters['selected_investors']:
-            # Show selected institutions count when specific investors are selected
-            st.metric("Selected", f"{len(filtered_institutions)}")
-        else:
-            st.metric("Filed", f"{institutions_filed}/{total_expected_institutions}")
-    
-    with col5:
-        if has_ticker_search and len(filtered_df) > 0:
-            # Show security-specific metric
-            security_data = filtered_df.iloc[0]
-            st.metric("Shares", 
-                     f"{security_data['shares_held']/1e6:.0f}M/{security_data['shares_outstanding']/1e6:.0f}M")
-        else:
-            st.metric("Date", metadata.get('generated', 'Unknown')[:10])
-    
-    # Conditional display: Show Securities Detail when searching, otherwise show 3 tabs
-    if has_ticker_search:
-        # Direct Securities Detail view when searching for a ticker
+        _manager_roster(books, roster, meta)
+
+
+def _manager_roster(books, roster, meta):
+    st.title("Managers")
+    vintage_eyebrow(CURRENT_Q, meta)
+    present = sorted(books, key=lambda n: books[n]['long_value'], reverse=True)
+    st.caption(f"{len(present)} roster managers filed with holdings this quarter. Select to compare or open a profile.")
+    # multi-manager overlap (preserves the old Portfolio Analysis capability)
+    sel = st.multiselect("Compare managers (portfolio overlap)", present)
+    if len(sel) >= 2:
+        _manager_compare(sel, books)
         st.markdown("---")
-        # Auto-display first security from filtered data
-        if len(filtered_df) > 0:
-            # Get the first security that matches filters
-            security_data = filtered_df.iloc[0]
-            
-            # Truncate name if too long
-            display_name = security_data['name'][:25] + '...' if len(security_data['name']) > 25 else security_data['name']
-            st.subheader(f"{security_data['ticker']} — {display_name}")
-            
-            # If single institution selected, highlight their position
-            if single_institution and 'positions' in security_data and single_institution in security_data['positions']:
-                inst_position = security_data['positions'][single_institution]
-                display_inst = single_institution[:20] + '...' if len(single_institution) > 20 else single_institution
-                st.info(f"**{display_inst}**: {inst_position['shares']:,} shares | {format_large_number(inst_position['value'] / SCALE_FACTOR)} | {inst_position.get('pct_of_company_shares', 0):.1f}%")
-                if 'portfolio_pct' in security_data:
-                    st.caption(f"{security_data['portfolio_pct']:.1f}% of portfolio")
-            
-            # If single institution, show comparison context
-            if single_institution and single_institution in security_data.get('positions', {}):
-                display_inst = single_institution[:20] + '...' if len(single_institution) > 20 else single_institution
-                st.caption(f"vs other holders")
-            
-            # Get positions data if available
-            positions = security_data.get('positions', {})
-            
-            # Get list of new holders and institution-level changes from quarterly adds data
-            new_holders = []
-            institution_changes = {}
-            if df_adds is not None and len(df_adds) > 0:
-                # Find this security in quarterly adds data
-                security_adds = df_adds[df_adds['cusip'] == security_data['cusip']]
-                if len(security_adds) > 0:
-                    adds_data = security_adds.iloc[0]
-                    # Prior-quarter files store these as null, not missing —
-                    # .get() returns the None, so coerce explicitly
-                    new_holders = adds_data.get('new_holders', []) or []
-                    institution_changes = adds_data.get('institution_changes', {}) or {}
-            
-            if positions:
-                # Use real positions data
-                holders_data = []
-                for holder, position in positions.items():
-                    # Get the quarter-over-quarter change for this institution
-                    inst_change = institution_changes.get(holder, {})
-                    shares_change = inst_change.get('shares_change', 0)
-                    
-                    # Calculate portfolio impact of the change
-                    portfolio_impact = 0
-                    if shares_change != 0 and holder in institution_totals:
-                        # Calculate the value of the change (using current price)
-                        if position['shares'] > 0:
-                            price_per_share = position['value'] / position['shares']
-                            change_value_millions = (shares_change * price_per_share) / SCALE_FACTOR
-                            portfolio_impact = change_value_millions / institution_totals[holder] * 100
-                    
-                    row_data = {
-                        'Institution': (holder[:20] + '...' if len(holder) > 20 else holder) + (" 🆕" if holder in new_holders else ""),
-                        '% of Company': position.get('pct_of_company_shares', 0),  # Percentage of company's total shares
-                        'Q/Q %': portfolio_impact,  # Raw value for sorting
-                        'portfolio_impact_raw': portfolio_impact  # For sorting
-                    }
-                    # Add portfolio % for each institution
-                    if holder in institution_totals:
-                        position_value_millions = position['value'] / SCALE_FACTOR
-                        row_data['% of Portfolio'] = calculate_portfolio_percentage(position_value_millions, institution_totals[holder])
-                    holders_data.append(row_data)
-                
-                # Sort by portfolio impact (largest changes first)
-                holders_df = pd.DataFrame(holders_data)
-                holders_df = holders_df.sort_values('portfolio_impact_raw', ascending=False, key=abs)
-                
-                # Highlight the selected institution if present
-                if single_institution and single_institution in holders_df['Institution'].values:
-                    # Move selected institution to top
-                    selected_row = holders_df[holders_df['Institution'] == single_institution]
-                    other_rows = holders_df[holders_df['Institution'] != single_institution]
-                    holders_df = pd.concat([selected_row, other_rows], ignore_index=True)
-                
-                # Format the display
-                holders_df['% of Company'] = holders_df['% of Company'].apply(lambda x: f"{x:.2f}%")
-                if '% of Portfolio' in holders_df.columns:
-                    holders_df['% of Portfolio'] = holders_df['% of Portfolio'].apply(lambda x: f"{x:.2f}%" if pd.notna(x) else "")
-                
-                # Format Q/Q columns
-                holders_df['Q/Q %'] = holders_df['Q/Q %'].apply(
-                    lambda x: f"+{x:.2f}%" if x > 0 else f"{x:.2f}%" if x != 0 else "-"
-                )
-                
-                # Remove raw sorting columns from display
-                holders_df = holders_df.drop(columns=['portfolio_impact_raw'])
-            else:
-                # Fallback if no positions data (shouldn't happen with new pipeline)
-                st.warning("Individual position data not available. Please re-run the pipeline to generate position-level data.")
-                holders_df = pd.DataFrame()
-            
-            # Display chart and table side by side
-            if positions:
-                col1, col2 = st.columns(2)
-                
-                with col1:
-                    # Create a bar chart of holders by % of their portfolio with Q/Q changes
-                    holders_with_pct = []
-                    for holder, position in positions.items():
-                        if holder in institution_totals:
-                            position_value_millions = position['value'] / SCALE_FACTOR
-                            portfolio_pct = calculate_portfolio_percentage(position_value_millions, institution_totals[holder])
-                            # Get Q/Q change
-                            inst_change = institution_changes.get(holder, {})
-                            shares_change = inst_change.get('shares_change', 0)
-                            prev_shares = inst_change.get('prev_shares', 0)
-                            current_shares = position['shares']
-                            
-                            # Calculate the portfolio % for previous position
-                            if current_shares > 0 and shares_change != 0:
-                                # Estimate previous value (assuming same price)
-                                price_per_share = position['value'] / current_shares
-                                prev_value_millions = (prev_shares * price_per_share) / SCALE_FACTOR
-                                prev_portfolio_pct = calculate_portfolio_percentage(prev_value_millions, institution_totals[holder])
-                            else:
-                                prev_portfolio_pct = portfolio_pct if shares_change == 0 else 0
-                            
-                            holders_with_pct.append((holder, portfolio_pct, prev_portfolio_pct, shares_change))
-                    
-                    # Sort by portfolio percentage
-                    sorted_holders = sorted(holders_with_pct, key=lambda x: x[1], reverse=True)[:20]
-                    
-                    if sorted_holders:
-                        holder_names = [h[0] for h in sorted_holders][::-1]  # Reverse to show largest at top
-                        
-                        # Create stacked bar data
-                        base_values = []  # Gray base (previous or unchanged)
-                        added_values = []  # Green additions
-                        reduced_values = []  # Red reductions (shown as negative for proper stacking)
-                        
-                        for holder, current_pct, prev_pct, shares_change in sorted_holders[::-1]:
-                            if shares_change > 0:
-                                # Addition: gray base is previous, green is the increase
-                                base_values.append(prev_pct)
-                                added_values.append(current_pct - prev_pct)
-                                reduced_values.append(0)
-                            elif shares_change < 0:
-                                # Reduction: gray base is current, red shows what was removed
-                                base_values.append(current_pct)
-                                added_values.append(0)
-                                reduced_values.append(prev_pct - current_pct)
-                            else:
-                                # No change: all gray
-                                base_values.append(current_pct)
-                                added_values.append(0)
-                                reduced_values.append(0)
-                        
-                        fig_holders = go.Figure()
-                        
-                        # Base bar (gray - current holdings after reductions or previous before additions)
-                        fig_holders.add_trace(go.Bar(
-                            name='Current Holdings',
-                            y=holder_names,
-                            x=base_values,
-                            orientation='h',
-                            marker_color='#9b9ea6',
-                            showlegend=False
-                        ))
+    grid = pd.DataFrame([{
+        "Manager": n, "Key person": roster[n].get('Key_Person', ''), "Strategy": roster[n].get('Type', ''),
+        "Long book ($M)": books[n]['long_value'], "Positions": books[n]['n_pos'],
+        "Top-5 weight": books[n]['top5_weight']} for n in present])
+    st.dataframe(grid, width="stretch", hide_index=True, height=430, column_config={
+        "Long book ($M)": st.column_config.NumberColumn(format="$%.0f M"),
+        "Top-5 weight": st.column_config.ProgressColumn(format="%.0f%%", min_value=0, max_value=100)})
+    st.caption("Open a profile via the URL: `?page=managers&m=<name>` — or pick two above to see shared conviction.")
+    pick = st.selectbox("Open profile", ["—"] + present, index=0)
+    if pick != "—":
+        sync_qp(m=pick)
+        st.rerun()
 
-                        # Added portion (green)
-                        fig_holders.add_trace(go.Bar(
-                            name='Added',
-                            y=holder_names,
-                            x=added_values,
-                            orientation='h',
-                            marker_color='#56dc85',
-                            showlegend=False
-                        ))
 
-                        # Reduced portion (red - shown to the right of base)
-                        fig_holders.add_trace(go.Bar(
-                            name='Reduced',
-                            y=holder_names,
-                            x=reduced_values,
-                            orientation='h',
-                            marker_color='#e5484d',
-                            showlegend=False
-                        ))
-                        
-                        fig_holders.update_layout(
-                            barmode='stack',
-                            height=400,
-                            margin=dict(t=20, b=0, l=0, r=0),
-                            xaxis_title='Portfolio %',
-                            yaxis_title='',
-                            title=dict(
-                                text='<span style="color:#56dc85">■</span> Added <span style="color:#e5484d">■</span> Reduced <span style="color:#9b9ea6">■</span> Base',
-                                font=dict(size=12),
-                                x=0.5,
-                                xanchor='center'
-                            ),
-                            showlegend=False,
-                            dragmode=False,
-                            clickmode='none'
-                        )
-                        fig_holders.update_xaxes(tickformat='.1f', ticksuffix='%')
-                        st.plotly_chart(fig_holders, width='stretch', config={'displayModeBar': False})
-                
-                with col2:
-                    # Display the holders table
-                    st.dataframe(
-                        holders_df,
-                        width='stretch',
-                        height=400,
-                        hide_index=True
-                    )
-            else:
-                # If no positions data, just show the table
-                st.dataframe(
-                    holders_df,
-                    width='stretch',
-                    height=350,
-                    hide_index=True
-                )
+def _manager_compare(sel, books):
+    st.markdown("**PORTFOLIO OVERLAP** — shared conviction positions")
+    sets = {n: {p['ticker']: p['value'] for p in books[n]['positions']} for n in sel}
+    common = set.intersection(*[set(s) for s in sets.values()])
+    if not common:
+        st.info("No tickers held by all selected managers.")
+        return
+    rows = [{"Ticker": tk, **{n: sets[n].get(tk, 0) for n in sel}} for tk in common]
+    ov = pd.DataFrame(rows).sort_values(sel[0], ascending=False)
+    st.dataframe(ov, width="stretch", hide_index=True,
+                 column_config={n: st.column_config.NumberColumn(format="$%.0f M") for n in sel})
+    st.caption(f"{len(common)} shared names across {len(sel)} managers.")
+
+
+def _manager_profile(name, books, roster, meta):
+    b = books[name]
+    info = roster.get(name, {})
+    st.title(name)
+    vintage_eyebrow(CURRENT_Q, meta,
+                    prefix=f"{html.escape(info.get('Key_Person',''))} · {html.escape(info.get('Type',''))} · "
+                           f"CIK {info.get('CIK','—')} · ")
+    copy_link({"page": "managers", "m": name, "q": CURRENT_Q})
+    pos = sorted(b['positions'], key=lambda p: p['value'], reverse=True)
+    n_new = sum(1 for p in pos if p['is_new'])
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("13F long notional", fmt_money_m(b['long_value']))
+    c2.metric("Long book", fmt_money_m(b['long_value']))
+    c3.metric("Positions", f"{b['n_pos']} L")
+    c4.metric("Top-5 weight", f"{b['top5_weight']:.0f}%")
+
+    left, right = st.columns([1.4, 1])
+    with left:
+        _manager_waterfall(name, b, books)
+    with right:
+        _concentration_gauge(b, books)
+
+    # composition treemap
+    st.subheader("Portfolio composition")
+    tdf = pd.DataFrame(pos[:30])
+    if not tdf.empty:
+        fig = px.treemap(tdf, path=['ticker'], values='value')
+        fig.update_traces(marker=dict(line=dict(width=1, color="#0d0f15")),
+                          hovertemplate="%{label}<br>$%{value:.0f}M<extra></extra>")
+        fig.update_layout(height=300, margin=dict(t=6, b=6, l=0, r=0))
+        st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
+        takeaway("Position sizes across the long book.", f"{name}, {CURRENT_Q.replace('_',' ')} 13F-HR.")
+
+    # options overlay donut — only if metadata.institutions present (options data underivable otherwise)
+    insts_meta = meta.get('institutions', {}).get(name) if isinstance(meta.get('institutions'), dict) else None
+    if insts_meta and (insts_meta.get('puts_value') or insts_meta.get('calls_value')):
+        _options_donut(insts_meta)
+
+    # holdings table with weight bars + QoQ badges
+    st.subheader("Holdings")
+    def badge(p):
+        if p['is_new']:
+            return "NEW"
+        pv = p['prev_shares']
+        if pv and p['shares_change']:
+            return f"{p['shares_change']/pv*100:+.0f}%"
+        return "—"
+    hd = pd.DataFrame([{
+        "Ticker": p['ticker'], "Company": p['name'][:28], "Weight": p['value'] / b['long_value'] * 100 if b['long_value'] else 0,
+        "Value ($M)": p['value'], "Shares": p['shares'], "% of co.": p['pct_co'], "QoQ": badge(p)} for p in pos])
+    st.dataframe(hd, width="stretch", hide_index=True, height=420, column_config={
+        "Weight": st.column_config.ProgressColumn(format="%.1f%%", min_value=0,
+                                                  max_value=float(hd['Weight'].max()) if len(hd) else 100),
+        "Value ($M)": st.column_config.NumberColumn(format="$%.0f M"),
+        "Shares": st.column_config.NumberColumn(format="%d"),
+        "% of co.": st.column_config.NumberColumn(format="%.2f%%")})
+    if b['exits']:
+        st.markdown(f"**Q1 exits** · <span style='color:{RED}'>" + " · ".join(b['exits'][:12]) +
+                    (f" +{len(b['exits'])-12}" if len(b['exits']) > 12 else "") + "</span>",
+                    unsafe_allow_html=True)
+
+
+def _manager_waterfall(name, b, books):
+    st.markdown("**LONG BOOK — QoQ WATERFALL ($M)**")
+    prev_q = prior_quarter(CURRENT_Q)
+    pb = load_manager_books(prev_q).get(name) if prev_q else None
+    cur = {p['ticker']: p['value'] for p in b['positions']}
+    Cb = b['long_value']
+    if not pb:
+        st.caption("Prior quarter not retained — waterfall unlocks once history is kept (R-D1).")
+        return
+    prev = {p['ticker']: p['value'] for p in pb['positions']}
+    Pb = pb['long_value']
+    new_v = sum(v for t, v in cur.items() if t not in prev)
+    exit_v = sum(v for t, v in prev.items() if t not in cur)
+    cont = Cb - new_v - Pb + exit_v
+    fig = go.Figure(go.Waterfall(
+        orientation="v", measure=["absolute", "relative", "relative", "relative", "total"],
+        x=["Prior book", "New", "Continuing", "Exits", "Current"],
+        y=[Pb, new_v, cont, -exit_v, Cb],
+        increasing=dict(marker=dict(color=ACCENT)), decreasing=dict(marker=dict(color=RED)),
+        totals=dict(marker=dict(color="#454b57")), connector=dict(line=dict(color=EDGE))))
+    fig.update_layout(height=300, margin=dict(t=6, b=6, l=0, r=0), showlegend=False)
+    st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
+    takeaway(f"{fmt_money_m(exit_v)} exited, {fmt_money_m(new_v)} new; continuing bar mixes flows and price moves.",
+             f"{name}, {prev_q.replace('_',' ')} → {CURRENT_Q.replace('_',' ')}.")
+
+
+def _concentration_gauge(b, books):
+    st.markdown("**CONCENTRATION**")
+    med = median([x['top5_weight'] for x in books.values()]) if books else 50
+    fig = go.Figure(go.Indicator(
+        mode="gauge+number", value=b['top5_weight'], number=dict(suffix="%", font=dict(size=26)),
+        gauge=dict(axis=dict(range=[0, 100]), bar=dict(color=ACCENT),
+                   threshold=dict(line=dict(color=INK, width=3), value=med),
+                   steps=[dict(range=[0, 50], color="#191d24"), dict(range=[50, 100], color="#14171e")])))
+    fig.update_layout(height=230, margin=dict(t=10, b=0, l=20, r=20))
+    st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
+    takeaway(f"Top-5 weight vs roster median ({med:.0f}%).", "plotly indicator.")
+
+
+def _options_donut(insts_meta):
+    st.subheader("Notional mix")
+    longv = insts_meta.get('long_value', 0) / SCALE_FACTOR
+    puts = insts_meta.get('puts_value', 0) / SCALE_FACTOR
+    calls = insts_meta.get('calls_value', 0) / SCALE_FACTOR
+    fig = go.Figure(go.Pie(labels=["Long", "Puts", "Calls"], values=[longv, puts, calls], hole=.55,
+                           marker=dict(colors=[ACCENT, AMBER, DIM])))
+    fig.update_layout(height=260, margin=dict(t=6, b=6, l=6, r=6))
+    st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
+    tot = longv + puts + calls
+    takeaway(f"{puts/tot*100:.0f}% of notional is downside hedge." if tot else "Options overlay.",
+             "metadata.institutions options notional.")
+
+
+def page_securities():
+    sync_qp(page="security")
+    drop_qp("m")
+    df, meta = load_conviction(CURRENT_Q)
+    roster = load_roster()
+    st.title("Securities")
+    if df.empty:
+        st.info("No roster holdings in this quarter.")
+        return
+    tickers = sorted(df['ticker'].unique())
+    want = _qp.get("t", "")
+    idx = tickers.index(want) + 1 if want in tickers else 0
+    sel = st.selectbox("Search ticker", ["—"] + tickers, index=idx,
+                       help="Type-ahead over roster-held securities")
+    if sel == "—":
+        vintage_eyebrow(CURRENT_Q, meta)
+        st.caption("Pick a ticker to see conviction holders, entries and exits.")
+        return
+    sync_qp(t=sel)
+    row = df[df['ticker'] == sel].iloc[0]
+    vintage_eyebrow(CURRENT_Q, meta, prefix=f"{html.escape(row['name'])} · CUSIP {row['cusip']} · ")
+    copy_link({"page": "security", "t": sel, "q": CURRENT_Q})
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Conviction holders", row['r_num'])
+    c2.metric("Held by roster", fmt_money_m(row['r_value']))
+    c3.metric("% shares out", f"{row['r_pct']:.2f}%")
+    c4.metric("Q1 exits", row['n_exits'])
+
+    left, right = st.columns([1.6, 1])
+    with left:
+        st.markdown("**HOLDERS BY POSITION**")
+        def badge(inst):
+            if inst in row['new_holders']:
+                return "NEW"
+            ch = row['institution_changes'].get(inst, {})
+            pv, sc = ch.get('prev_shares', 0), ch.get('shares_change', 0)
+            return f"{sc/pv*100:+.0f}%" if pv and sc else "—"
+        hd = pd.DataFrame([{
+            "Manager": inst, "Value ($M)": p['value'] / SCALE_FACTOR,
+            "% of co.": p.get('pct_of_company_shares', 0) or 0, "QoQ": badge(inst)}
+            for inst, p in sorted(row['positions'].items(), key=lambda kv: kv[1]['value'], reverse=True)])
+        st.dataframe(hd, width="stretch", hide_index=True, height=380, column_config={
+            "Value ($M)": st.column_config.NumberColumn(format="$%.1f M"),
+            "% of co.": st.column_config.NumberColumn(format="%.3f%%")})
+    with right:
+        st.markdown(f"<span style='color:{RED}'>**EXITED THIS QUARTER**</span>", unsafe_allow_html=True)
+        if row['dropped_holders']:
+            st.markdown('<table class="ctab">' + "".join(
+                f'<tr><td>{mgr_link(x)}</td><td class="r"><span class="pill exit">OUT</span></td></tr>'
+                for x in row['dropped_holders']) + '</table>', unsafe_allow_html=True)
         else:
-            st.info(f"No data found for ticker: {search_term.upper()}")
-    else:
-        # Normal 3-tab view when not searching
-        tab1, tab2, tab3 = st.tabs([
-            "Overview",
-            "Holdings",
-            "Changes"
-        ])
-        
-        with tab1:
-            render_overview_tab(filtered_df, single_institution, institution_totals, filtered_institutions)
-        
-        with tab2:
-            render_top_holdings_tab(filtered_df, single_institution, institution_totals, quarter, year, filtered_institutions)
-        
-        with tab3:
-            if df_adds is not None and len(df_adds) > 0:
-                # Calculate net portfolio % impact for each security
-                # This is the average portfolio % allocation across filtered institutions
-                institutions_filed_count = len(filtered_institutions) if filtered_institutions else current_quarter_filed
-            
-                def calculate_net_portfolio_change(row):
-                    """Calculate the NET CHANGE in average portfolio % across all institutions"""
-                    if 'institution_changes' not in row or not row['institution_changes']:
-                        # If no changes data, fall back to simple calculation
-                        return 0
-                    
-                    total_portfolio_change = 0
-                    
-                    # For each filtered institution, calculate their portfolio % change
-                    for inst_name in filtered_institutions:
-                        if inst_name not in institution_totals:
-                            continue
-                            
-                        inst_change = row['institution_changes'].get(inst_name, {})
-                        
-                        if inst_change:
-                            # Calculate portfolio % change for this institution
-                            shares_change = inst_change.get('shares_change', 0)
-                            current_shares = inst_change.get('current_shares', 0)
-                            
-                            if current_shares > 0 and shares_change != 0:
-                                # Estimate the portfolio impact of this change
-                                # Using current price as proxy
-                                if 'positions' in row and inst_name in row['positions']:
-                                    position = row['positions'][inst_name]
-                                    price_per_share = position['value'] / position['shares']
-                                    change_value_millions = (shares_change * price_per_share) / SCALE_FACTOR
-                                    portfolio_change = change_value_millions / institution_totals[inst_name] * 100
-                                    total_portfolio_change += portfolio_change
-                        elif 'positions' in row and inst_name in row['positions']:
-                            # Institution holds but didn't change - no contribution to net change
-                            pass
-                    
-                    # Average across all filtered institutions
-                    return total_portfolio_change / institutions_filed_count if institutions_filed_count > 0 else 0
-            
-                df_adds['net_portfolio_change'] = df_adds.apply(calculate_net_portfolio_change, axis=1)
-            
-                # Apply filters to quarterly adds data
-                filtered_adds = filter_dataframe(df_adds, filters, investor_metadata, institution_totals)
-            
-                if len(filtered_adds) > 0:
-                    # Split into additions and drops based on portfolio impact
-                    # Sort by net portfolio change to show biggest consensus moves
-                    additions_df = filtered_adds[filtered_adds['net_portfolio_change'] > 0].sort_values(by='net_portfolio_change', ascending=False)
-                    drops_df = filtered_adds[filtered_adds['net_portfolio_change'] < 0].sort_values(by='net_portfolio_change', ascending=True)
-                    
-                    # Create two columns for side-by-side display
-                    col1, col2 = st.columns(2)
-                    
-                    with col1:
-                        st.markdown(f"**🟢 Increases** ({len(additions_df)} securities)")
-                        
-                        if len(additions_df) > 0:
-                            # Get top 50 additions by portfolio impact
-                            top_additions = additions_df.head(50)
-                        
-                            # Create display dataframe for additions
-                            display_adds = pd.DataFrame({
-                                'Ticker': top_additions['ticker'],
-                                'Company': top_additions['name'].apply(lambda x: x[:15] + '...' if len(x) > 15 else x),
-                                'Avg Port Δ%': top_additions['net_portfolio_change'],
-                                'Value ($M)': top_additions['value_usd'],
-                                'Own %': top_additions['pct_of_shares_outstanding']
-                            })
-                        
-                            # Display table
-                            column_config_adds = {
-                                "Ticker": st.column_config.TextColumn("Ticker", width="small"),
-                                "Company": st.column_config.TextColumn("Company", width="medium"),
-                                "Avg Port Δ%": st.column_config.NumberColumn(
-                                    "Port Δ%",
-                                    format="%+.4f%%",
-                                    width="small",
-                                    help="Average portfolio % change across all institutions"
-                                ),
-                                "Value ($M)": st.column_config.NumberColumn(
-                                    "Value",
-                                    format="$%.1f M",
-                                    width="small"
-                                ),
-                                "Own %": st.column_config.NumberColumn(
-                                    "Own %",
-                                    format="%.2f%%",
-                                    width="small"
-                                )
-                            }
-                        
-                            st.dataframe(
-                                display_adds,
-                                column_config=column_config_adds,
-                                width='stretch',
-                                hide_index=True,
-                                height=400
-                            )
-                        else:
-                            st.info("No securities with institutional additions")
-                    
-                    with col2:
-                        st.markdown(f"**🔴 Decreases** ({len(drops_df)} securities)")
-                        
-                        if len(drops_df) > 0:
-                            # Get top 50 drops by portfolio impact
-                            top_drops = drops_df.head(50)
-                        
-                            # Create display dataframe for drops
-                            display_drops = pd.DataFrame({
-                                'Ticker': top_drops['ticker'],
-                                'Company': top_drops['name'].apply(lambda x: x[:15] + '...' if len(x) > 15 else x),
-                                'Avg Port Δ%': top_drops['net_portfolio_change'],
-                                'Value ($M)': top_drops['value_usd'],
-                                'Own %': top_drops['pct_of_shares_outstanding']
-                            })
-                        
-                            # Display table
-                            column_config_drops = {
-                                "Ticker": st.column_config.TextColumn("Ticker", width="small"),
-                                "Company": st.column_config.TextColumn("Company", width="medium"),
-                                "Avg Port Δ%": st.column_config.NumberColumn(
-                                    "Port Δ%",
-                                    format="%.4f%%",
-                                    width="small",
-                                    help="Average portfolio % change across all institutions"
-                                ),
-                                "Value ($M)": st.column_config.NumberColumn(
-                                    "Value",
-                                    format="$%.1f M",
-                                    width="small"
-                                ),
-                                "Own %": st.column_config.NumberColumn(
-                                    "Own %",
-                                    format="%.2f%%",
-                                    width="small"
-                                )
-                            }
-                        
-                            st.dataframe(
-                                display_drops,
-                                column_config=column_config_drops,
-                                width='stretch',
-                                hide_index=True,
-                                height=400
-                            )
-                        else:
-                            st.info("No securities with institutional drops")
-                else:
-                    st.info("No institutional positions match the current filters.")
-            else:
-                st.info(f"Quarterly additions data not available for {quarter} {year}. This may be because it's the first quarter analyzed or the data hasn't been generated yet.")
+            st.caption("No full exits this quarter.")
+        _security_trend(df, sel)
 
-if __name__ == "__main__":
-    main()
+
+def _security_trend(df, ticker):
+    st.markdown("**CONVICTION OWNERSHIP · BY QUARTER**")
+    prev_q = prior_quarter(CURRENT_Q)
+    pts = []
+    if prev_q:
+        pdf, _ = load_conviction(prev_q)
+        pr = pdf[pdf['ticker'] == ticker]
+        if not pr.empty:
+            pts.append((prev_q.replace('_', ' '), pr.iloc[0]['r_num'], pr.iloc[0]['r_value']))
+    cur = df[df['ticker'] == ticker].iloc[0]
+    pts.append((CURRENT_Q.replace('_', ' '), cur['r_num'], cur['r_value']))
+    if len(pts) < 2:
+        st.caption("Trend unlocks as more quarters are retained (R-D1).")
+        return
+    tdf = pd.DataFrame(pts, columns=["Quarter", "Holders", "Value"])
+    fig = px.area(tdf, x="Quarter", y="Holders", markers=True)
+    fig.update_traces(line=dict(color=ACCENT), fillcolor="rgba(86,220,133,.12)")
+    fig.update_layout(height=180, margin=dict(t=6, b=6, l=6, r=6))
+    st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
+    takeaway(f"Roster holder count {tdf['Holders'].iloc[0]}→{tdf['Holders'].iloc[-1]} across retained quarters.",
+             "conviction dataset, retained quarters.")
+
+
+def page_screener():
+    sync_qp(page="screener")
+    drop_qp("t", "m")
+    df, meta = load_conviction(CURRENT_Q)
+    roster = load_roster()
+    st.title("Screener")
+    vintage_eyebrow(CURRENT_Q, meta)
+    if df.empty:
+        st.info("No roster holdings in this quarter.")
+        return
+    types = sorted({r.get('Type', '') for r in roster.values() if r.get('Type')})
+    managers = sorted(roster)
+    with st.sidebar:
+        st.markdown("**Filters**")
+        f_ticker = st.text_input("Ticker", "").upper().strip()
+        f_types = st.multiselect("Strategy types", types)
+        f_invs = st.multiselect("Specific managers", managers)
+        f_own = st.slider("Ownership % of shares out", 0.0, 100.0, (0.0, 100.0))
+        maxv = float(df['r_value'].max())
+        f_val = st.slider("Roster value ($M)", 0.0, maxv, (0.0, maxv))
+        f_hold = st.slider("Min holders", 1, int(df['r_num'].max()), 1)
+        view = st.radio("View", ["Table", "Scatter"], horizontal=True)
+
+    d = df.copy()
+    # per-security type of the largest roster holder (for clustering/color + type filter)
+    def dom_type(r):
+        top = max(r['positions'].items(), key=lambda kv: kv[1]['value'])[0]
+        return roster.get(top, {}).get('Type', 'Other')
+    d['Type'] = d.apply(dom_type, axis=1)
+    if f_ticker:
+        d = d[d['ticker'] == f_ticker]
+    if f_invs:
+        d = d[d['r_holders'].apply(lambda hs: any(i in hs for i in f_invs))]
+    if f_types:
+        keep = {n for n, r in roster.items() if r.get('Type') in f_types}
+        # recompute roster value/holders to selected-type holders only (roster-only math, R-A4)
+        recs = []
+        for i, r in d.iterrows():
+            sub = {k: v for k, v in r['positions'].items() if k in keep}
+            if not sub:
+                continue
+            rs = sum(p['shares'] for p in sub.values())
+            so = r['shares_outstanding']
+            recs.append((i, sum(p['value'] for p in sub.values()) / SCALE_FACTOR, len(sub),
+                         rs / so * 100 if so else 0))
+        if recs:
+            d = d.loc[[x[0] for x in recs]].copy()
+            d['r_value'] = [x[1] for x in recs]
+            d['r_num'] = [x[2] for x in recs]
+            d['r_pct'] = [x[3] for x in recs]
+        else:
+            d = d.iloc[0:0]
+    d = d[(d['r_pct'] >= f_own[0]) & (d['r_pct'] <= f_own[1])]
+    d = d[(d['r_value'] >= f_val[0]) & (d['r_value'] <= f_val[1])]
+    d = d[d['r_num'] >= f_hold]
+    d = d.sort_values('r_value', ascending=False)
+    st.caption(f"{len(d):,} securities match — roster-only value & ownership.")
+
+    if view == "Scatter":
+        if d.empty:
+            st.info("No securities match filters.")
+            return
+        fig = px.scatter(d, x='r_pct', y='r_num', size='r_value', color='Type', hover_name='ticker',
+                         labels={'r_pct': '% shares out (roster)', 'r_num': 'Holders'})
+        fig.update_layout(height=460, margin=dict(t=6, b=6, l=6, r=6))
+        st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
+        takeaway("Ownership vs holder count, clustered by dominant-holder strategy.", f"{CURRENT_Q.replace('_',' ')} conviction dataset.")
+        return
+
+    show = pd.DataFrame({
+        "Ticker": d['ticker'], "Name": d['name'].str[:32], "Holders": d['r_num'],
+        "Roster value ($M)": d['r_value'], "Roster % shares out": d['r_pct']})
+    st.dataframe(show, width="stretch", hide_index=True, height=460, column_config={
+        "Roster value ($M)": st.column_config.NumberColumn(format="$%.0f M"),
+        "Roster % shares out": st.column_config.ProgressColumn(format="%.2f%%", min_value=0,
+                                    max_value=float(show['Roster % shares out'].max()) if len(show) else 100)})
+    csv_df = show.copy()  # already in $M / scaled dollars, never millicents
+    st.download_button("⬇ Export CSV ($M)", csv_df.to_csv(index=False),
+                       file_name=f"conviction_screener_{CURRENT_Q}.csv", mime="text/csv")
+
+
+# ============================================================ NAV ==============
+_pages = [
+    st.Page(page_signals, title="Signals", url_path="signals", default=(_page in ("", "signals"))),
+    st.Page(page_managers, title="Managers", url_path="managers", default=(_page == "managers")),
+    st.Page(page_securities, title="Securities", url_path="securities",
+            default=(_page in ("security", "securities"))),
+    st.Page(page_screener, title="Screener", url_path="screener", default=(_page == "screener")),
+]
+st.navigation(_pages, position="top").run()
