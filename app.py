@@ -514,7 +514,7 @@ def _concentration_gauge(b, books):
                    bar=dict(color=ACCENT),
                    threshold=dict(line=dict(color=INK, width=3), value=med),
                    steps=[dict(range=[0, 50], color="#191d24"), dict(range=[50, 100], color="#14171e")])))
-    fig.update_layout(height=230, margin=dict(t=10, b=0, l=20, r=20))
+    fig.update_layout(height=230, margin=dict(t=10, b=0, l=40, r=40))
     st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
     takeaway(f"Top-5 weight vs roster median ({med:.0f}%).", "plotly indicator.")
 
