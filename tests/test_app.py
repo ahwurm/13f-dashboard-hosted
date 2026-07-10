@@ -63,6 +63,25 @@ def test_manager_profile_renders():
     assert "Long book" in labels
 
 
+def test_manager_profile_no_duplicate_notional():
+    # with metadata.institutions absent, the notional slot must be the honest
+    # options hint — never two labels showing the same derived number
+    at = _run(page="managers", m="Berkshire Hathaway", q="Q1_2026")
+    _no_exc(at)
+    metrics = {m.label: m.value for m in at.metric}
+    assert "13F long notional" not in metrics
+    assert metrics.get("Options exposure") == "n/a"
+
+
+def test_manager_deep_link_without_data_shows_notice():
+    # roster manager with no filing in the committed Q1 dataset
+    at = _run(page="managers", m="Greenlight Capital", q="Q1_2026")
+    _no_exc(at)
+    warnings = [w.value for w in at.warning]
+    assert any("Greenlight Capital" in w and "no Q1 2026 filing" in w for w in warnings)
+    assert any(t.value == "Managers" for t in at.title)  # list still renders after the notice
+
+
 def test_quarter_switch_changes_data():
     a1 = _run(q="Q1_2026")
     a2 = _run(q="Q4_2025")

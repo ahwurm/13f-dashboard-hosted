@@ -202,7 +202,9 @@ def vintage_eyebrow(qdir, meta, prefix=""):
         unsafe_allow_html=True)
 
 def takeaway(text, source):
-    st.caption(f"**Takeaway:** {text}  \n*Source: {source}*")
+    # escape $ so paired dollar amounts don't trigger Streamlit's LaTeX rendering
+    esc = lambda s: s.replace("$", r"\$")
+    st.caption(f"**Takeaway:** {esc(text)}  \n*Source: {esc(source)}*")
 
 def link(url_params, label):
     q = "&".join(f"{k}={html.escape(str(v))}" for k, v in url_params.items())
@@ -343,6 +345,12 @@ def page_managers():
     if m and m in books:
         _manager_profile(m, books, roster, meta)
     else:
+        if m:  # deep link to a manager with no data this quarter — say so, don't silently fall back
+            if m in roster:
+                st.warning(f"{m} is on the roster but has no {CURRENT_Q.replace('_', ' ')} filing "
+                           "in the current dataset (81-filer republish pending).")
+            else:
+                st.warning(f"'{m}' is not on the conviction roster.")
         _manager_roster(books, roster, meta)
 
 
@@ -393,10 +401,18 @@ def _manager_profile(name, books, roster, meta):
                            f"CIK {info.get('CIK','—')} · ")
     copy_link({"page": "managers", "m": name, "q": CURRENT_Q})
     pos = sorted(b['positions'], key=lambda p: p['value'], reverse=True)
-    n_new = sum(1 for p in pos if p['is_new'])
+    # options data only exists once metadata.institutions ships (next pipeline run)
+    insts_meta = meta.get('institutions', {}).get(name) if isinstance(meta.get('institutions'), dict) else None
     c1, c2, c3, c4 = st.columns(4)
-    c1.metric("13F long notional", fmt_money_m(b['long_value']))
-    c2.metric("Long book", fmt_money_m(b['long_value']))
+    if insts_meta:
+        notional = (insts_meta.get('long_value', 0) + insts_meta.get('puts_value', 0)
+                    + insts_meta.get('calls_value', 0)) / SCALE_FACTOR
+        c1.metric("13F notional", fmt_money_m(notional))
+        c2.metric("Long book", fmt_money_m(b['long_value']))
+    else:
+        c1.metric("Long book", fmt_money_m(b['long_value']))
+        c2.metric("Options exposure", "n/a",
+                  help="Puts/calls notional arrives with the next data run (metadata.institutions).")
     c3.metric("Positions", f"{b['n_pos']} L")
     c4.metric("Top-5 weight", f"{b['top5_weight']:.0f}%")
 
@@ -406,19 +422,31 @@ def _manager_profile(name, books, roster, meta):
     with right:
         _concentration_gauge(b, books)
 
-    # composition treemap
+    # composition treemap — same convention as the Signals hero: diverging color by QoQ change
     st.subheader("Portfolio composition")
-    tdf = pd.DataFrame(pos[:30])
-    if not tdf.empty:
-        fig = px.treemap(tdf, path=['ticker'], values='value')
-        fig.update_traces(marker=dict(line=dict(width=1, color="#0d0f15")),
-                          hovertemplate="%{label}<br>$%{value:.0f}M<extra></extra>")
+    top_pos = pos[:30]
+    if top_pos:
+        def qoq_frac(p):  # -1..1: red = reduced, green = added, 0 = unchanged/no prior
+            if p['is_new']:
+                return 1.0
+            if p['prev_shares'] and p['shares_change']:
+                return max(-1.0, min(1.0, p['shares_change'] / p['prev_shares']))
+            return 0.0
+        fig = go.Figure(go.Treemap(
+            labels=[p['ticker'] for p in top_pos], parents=[""] * len(top_pos),
+            values=[p['value'] for p in top_pos],
+            marker=dict(colors=[qoq_frac(p) for p in top_pos],
+                        colorscale=[[0, RED], [0.5, "#272b34"], [1, ACCENT]],
+                        cmid=0, cmin=-1, cmax=1, line=dict(width=1, color="#0d0f15")),
+            textfont=dict(color=INK),
+            textinfo="label", hovertemplate="%{label}<br>$%{value:.0f}M<extra></extra>",
+            tiling=dict(pad=2)))
         fig.update_layout(height=300, margin=dict(t=6, b=6, l=0, r=0))
         st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
-        takeaway("Position sizes across the long book.", f"{name}, {CURRENT_Q.replace('_',' ')} 13F-HR.")
+        takeaway("Size = position value; green added, red reduced this quarter.",
+                 f"{name}, {CURRENT_Q.replace('_',' ')} 13F-HR.")
 
     # options overlay donut — only if metadata.institutions present (options data underivable otherwise)
-    insts_meta = meta.get('institutions', {}).get(name) if isinstance(meta.get('institutions'), dict) else None
     if insts_meta and (insts_meta.get('puts_value') or insts_meta.get('calls_value')):
         _options_donut(insts_meta)
 
@@ -466,9 +494,13 @@ def _manager_waterfall(name, b, books):
         y=[Pb, new_v, cont, -exit_v, Cb],
         increasing=dict(marker=dict(color=ACCENT)), decreasing=dict(marker=dict(color=RED)),
         totals=dict(marker=dict(color="#454b57")), connector=dict(line=dict(color=EDGE))))
-    fig.update_layout(height=300, margin=dict(t=6, b=6, l=0, r=0), showlegend=False)
+    # truncate the axis so deltas are readable against a large book (spec footnote)
+    cum = [Pb, Pb + new_v, Pb + new_v + cont, Cb]
+    fig.update_layout(height=300, margin=dict(t=6, b=6, l=0, r=0), showlegend=False,
+                      yaxis=dict(range=[min(cum) * 0.97, max(cum) * 1.01]))
     st.plotly_chart(fig, width="stretch", config={'displayModeBar': False})
-    takeaway(f"{fmt_money_m(exit_v)} exited, {fmt_money_m(new_v)} new; continuing bar mixes flows and price moves.",
+    takeaway(f"{fmt_money_m(new_v)} of new stakes against {fmt_money_m(exit_v)} of exits; "
+             "continuing bar mixes flows and price moves (axis truncated).",
              f"{name}, {prev_q.replace('_',' ')} → {CURRENT_Q.replace('_',' ')}.")
 
 
@@ -477,7 +509,9 @@ def _concentration_gauge(b, books):
     med = median([x['top5_weight'] for x in books.values()]) if books else 50
     fig = go.Figure(go.Indicator(
         mode="gauge+number", value=b['top5_weight'], number=dict(suffix="%", font=dict(size=26)),
-        gauge=dict(axis=dict(range=[0, 100]), bar=dict(color=ACCENT),
+        gauge=dict(axis=dict(range=[0, 100], tickvals=[0, 25, 50, 75, 100],
+                             ticktext=["0", "25", "50", "75", "100"]),
+                   bar=dict(color=ACCENT),
                    threshold=dict(line=dict(color=INK, width=3), value=med),
                    steps=[dict(range=[0, 50], color="#191d24"), dict(range=[50, 100], color="#14171e")])))
     fig.update_layout(height=230, margin=dict(t=10, b=0, l=20, r=20))
