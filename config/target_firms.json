@@ -37,7 +37,7 @@
       "name": "Baupost Group"
     },
     {
-      "cik": "0001079114",
+      "cik": "0001489933",
       "name": "Greenlight Capital"
     },
     {
@@ -73,8 +73,8 @@
       "name": "Elliott Management"
     },
     {
-      "cik": "0000813762",
-      "name": "Icahn Enterprises"
+      "cik": "0000921669",
+      "name": "Carl Icahn"
     },
     {
       "cik": "0001536411",
@@ -89,7 +89,7 @@
       "name": "Soros Fund Management"
     },
     {
-      "cik": "0001351069",
+      "cik": "0001418814",
       "name": "ValueAct Capital"
     },
     {
@@ -107,14 +107,6 @@
     {
       "cik": "0000937567",
       "name": "OTPP"
-    },
-    {
-      "cik": "0001032989",
-      "name": "CPP Investment Board"
-    },
-    {
-      "cik": "0001628471",
-      "name": "CalPERS"
     },
     {
       "cik": "0001346824",
@@ -149,60 +141,16 @@
       "name": "Durable Capital Partners"
     },
     {
-      "cik": "0001423053",
-      "name": "Citadel Advisors"
-    },
-    {
-      "cik": "0001273087",
-      "name": "Millennium Management"
-    },
-    {
-      "cik": "0001603466",
-      "name": "Point72"
-    },
-    {
-      "cik": "0001179392",
-      "name": "Two Sigma"
-    },
-    {
-      "cik": "0001350694",
-      "name": "Bridgewater Associates"
-    },
-    {
-      "cik": "0001037389",
-      "name": "Renaissance Technologies"
-    },
-    {
       "cik": "0000934639",
       "name": "Maverick Capital"
     },
     {
-      "cik": "0001501913",
+      "cik": "0001517857",
       "name": "Soroban Capital"
     },
     {
       "cik": "0001279936",
       "name": "Cantillon Capital"
-    },
-    {
-      "cik": "0000035368",
-      "name": "Fidelity Management"
-    },
-    {
-      "cik": "0001113169",
-      "name": "T. Rowe Price"
-    },
-    {
-      "cik": "0000902219",
-      "name": "Wellington Management"
-    },
-    {
-      "cik": "0000732812",
-      "name": "Capital Group"
-    },
-    {
-      "cik": "0000886982",
-      "name": "Goldman Sachs Asset Mgmt"
     },
     {
       "cik": "0001747057",
@@ -229,7 +177,7 @@
       "name": "Trian Fund Management"
     },
     {
-      "cik": "0001159159",
+      "cik": "0001998597",
       "name": "Jana Partners"
     },
     {
@@ -245,7 +193,7 @@
       "name": "Himalaya Capital"
     },
     {
-      "cik": "0000829464",
+      "cik": "0000859804",
       "name": "Wedgewood Partners"
     },
     {
@@ -253,16 +201,8 @@
       "name": "Brown Capital Management"
     },
     {
-      "cik": "0001048678",
-      "name": "Matrix Capital Management"
-    },
-    {
       "cik": "0001535472",
       "name": "Corvex Management"
-    },
-    {
-      "cik": "0001218710",
-      "name": "Balyasny Asset Management"
     },
     {
       "cik": "0000796848",
@@ -275,6 +215,114 @@
     {
       "cik": "0000200217",
       "name": "Dodge & Cox"
+    },
+    {
+      "cik": "0000763212",
+      "name": "PRIMECAP Management"
+    },
+    {
+      "cik": "0000813917",
+      "name": "Harris Associates"
+    },
+    {
+      "cik": "0001697233",
+      "name": "GQG Partners"
+    },
+    {
+      "cik": "0001466153",
+      "name": "Artisan Partners"
+    },
+    {
+      "cik": "0001061186",
+      "name": "WCM Investment Management"
+    },
+    {
+      "cik": "0001020066",
+      "name": "Sands Capital"
+    },
+    {
+      "cik": "0001663865",
+      "name": "Orbis Investments"
+    },
+    {
+      "cik": "0001036325",
+      "name": "Davis Selected Advisers"
+    },
+    {
+      "cik": "0001538449",
+      "name": "Mawer Investment Management"
+    },
+    {
+      "cik": "0001767640",
+      "name": "Public Investment Fund"
+    },
+    {
+      "cik": "0001633313",
+      "name": "Avoro Capital"
+    },
+    {
+      "cik": "0001493215",
+      "name": "RTW Investments"
+    },
+    {
+      "cik": "0000928196",
+      "name": "Harding Loevner"
+    },
+    {
+      "cik": "0000905567",
+      "name": "Yacktman Asset Management"
+    },
+    {
+      "cik": "0001224962",
+      "name": "Perceptive Advisors"
+    },
+    {
+      "cik": "0001107310",
+      "name": "Eminence Capital"
+    },
+    {
+      "cik": "0001582090",
+      "name": "Sachem Head Capital"
+    },
+    {
+      "cik": "0001553733",
+      "name": "Brave Warrior Advisors"
+    },
+    {
+      "cik": "0001569064",
+      "name": "Suvretta Capital"
+    },
+    {
+      "cik": "0001602189",
+      "name": "Dragoneer Investment Group"
+    },
+    {
+      "cik": "0001443689",
+      "name": "Senator Investment Group"
+    },
+    {
+      "cik": "0000807985",
+      "name": "Southeastern Asset Management"
+    },
+    {
+      "cik": "0000732905",
+      "name": "Tweedy Browne"
+    },
+    {
+      "cik": "0002045724",
+      "name": "Situational Awareness LP"
+    },
+    {
+      "cik": "0001960830",
+      "name": "SurgoCap Partners"
+    },
+    {
+      "cik": "0001849753",
+      "name": "Voyager Global"
+    },
+    {
+      "cik": "0001808696",
+      "name": "Untitled Investments"
     }
   ]
 }

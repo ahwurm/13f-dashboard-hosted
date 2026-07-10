@@ -1,30 +1,30 @@
 {
-  "generated": "2026-06-10T23:54:41.771357",
+  "generated": "2026-07-10T03:03:00.566160",
   "statistics": {
-    "total_cusips": 9533,
+    "total_cusips": 2859,
     "already_mapped": 0,
-    "newly_mapped": 7712,
-    "failed_mappings": 1821,
-    "api_calls": 954,
+    "newly_mapped": 2431,
+    "failed_mappings": 419,
+    "api_calls": 286,
     "api_errors": 0,
-    "filings_processed": 122,
-    "successful_parses": 118,
-    "failed_parses": 4
+    "filings_processed": 162,
+    "successful_parses": 162,
+    "failed_parses": 0
   },
   "filing_coverage": {
-    "total_filings": 122,
-    "successful_parses": 118,
-    "failed_parses": 4,
-    "parse_success_rate": 96.72
+    "total_filings": 162,
+    "successful_parses": 162,
+    "failed_parses": 0,
+    "parse_success_rate": 100.0
   },
   "coverage": {
-    "total_cusips": 9533,
-    "mapped_cusips": 7712,
-    "unmapped_cusips": 1821,
-    "coverage_percentage": 80.9
+    "total_cusips": 2859,
+    "mapped_cusips": 2431,
+    "unmapped_cusips": 419,
+    "coverage_percentage": 85.03
   },
   "api_usage": {
-    "total_calls": 954,
+    "total_calls": 286,
     "errors": 0
   },
   "example_mappings": [
@@ -51,7 +51,7 @@
     {
       "cusip": "14888U101",
       "ticker": "CPRX",
-      "name": "CATALYST   PHARMACEUTICALS          INC"
+      "name": "CATALYST PHARMACEUTICALS INC"
     },
     {
       "cusip": "171340102",
@@ -61,7 +61,7 @@
     {
       "cusip": "189054109",
       "ticker": "CLX",
-      "name": "CLOROX CO DEL"
+      "name": "The Clorox Company"
     },
     {
       "cusip": "26622P107",
@@ -91,7 +91,7 @@
     {
       "cusip": "571903202",
       "ticker": "MAR",
-      "name": "MARRIOTT   INTL      INC  NEW"
+      "name": "MARRIOTT INTL INC NEW"
     },
     {
       "cusip": "58506Q109",

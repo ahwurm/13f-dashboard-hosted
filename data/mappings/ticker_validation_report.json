@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-06-10T23:12:12.061296",
-  "total_institutions": 69,
+  "timestamp": "2026-07-10T02:49:38.565256",
+  "total_institutions": 81,
   "institutions_with_tickers": [
     {
       "institution": "Berkshire Hathaway",
@@ -14,55 +14,6 @@
         {
           "ticker": "BRK-A",
           "company_name": "BERKSHIRE HATHAWAY INC"
-        }
-      ]
-    },
-    {
-      "institution": "Icahn Enterprises",
-      "cik": "0000813762",
-      "type": "Activist",
-      "tickers": [
-        {
-          "ticker": "IEP",
-          "company_name": "ICAHN ENTERPRISES L.P."
-        }
-      ]
-    },
-    {
-      "institution": "T. Rowe Price",
-      "cik": "0001113169",
-      "type": "Growth Manager",
-      "tickers": [
-        {
-          "ticker": "TROW",
-          "company_name": "PRICE T ROWE GROUP INC"
-        }
-      ]
-    },
-    {
-      "institution": "Goldman Sachs Asset Mgmt",
-      "cik": "0000886982",
-      "type": "Alternative",
-      "tickers": [
-        {
-          "ticker": "GS",
-          "company_name": "GOLDMAN SACHS GROUP INC"
-        },
-        {
-          "ticker": "GSCE",
-          "company_name": "GOLDMAN SACHS GROUP INC"
-        },
-        {
-          "ticker": "GS-PA",
-          "company_name": "GOLDMAN SACHS GROUP INC"
-        },
-        {
-          "ticker": "GS-PC",
-          "company_name": "GOLDMAN SACHS GROUP INC"
-        },
-        {
-          "ticker": "GS-PD",
-          "company_name": "GOLDMAN SACHS GROUP INC"
         }
       ]
     }
@@ -110,7 +61,7 @@
     },
     {
       "institution": "Greenlight Capital",
-      "cik": "0001079114",
+      "cik": "0001489933",
       "type": "Value/Short"
     },
     {
@@ -154,6 +105,11 @@
       "type": "Activist"
     },
     {
+      "institution": "Carl Icahn",
+      "cik": "0000921669",
+      "type": "Activist"
+    },
+    {
       "institution": "Duquesne Family Office",
       "cik": "0001536411",
       "type": "Macro/Growth"
@@ -170,7 +126,7 @@
     },
     {
       "institution": "ValueAct Capital",
-      "cik": "0001351069",
+      "cik": "0001418814",
       "type": "Activist"
     },
     {
@@ -191,16 +147,6 @@
     {
       "institution": "OTPP",
       "cik": "0000937567",
-      "type": "Pension Fund"
-    },
-    {
-      "institution": "CPP Investment Board",
-      "cik": "0001032989",
-      "type": "Pension Fund"
-    },
-    {
-      "institution": "CalPERS",
-      "cik": "0001628471",
       "type": "Pension Fund"
     },
     {
@@ -244,64 +190,19 @@
       "type": "Long-term Growth"
     },
     {
-      "institution": "Citadel Advisors",
-      "cik": "0001423053",
-      "type": "Multi-Strategy"
-    },
-    {
-      "institution": "Millennium Management",
-      "cik": "0001273087",
-      "type": "Multi-Strategy"
-    },
-    {
-      "institution": "Point72",
-      "cik": "0001603466",
-      "type": "Multi-Strategy"
-    },
-    {
-      "institution": "Two Sigma",
-      "cik": "0001179392",
-      "type": "Quant"
-    },
-    {
-      "institution": "Bridgewater Associates",
-      "cik": "0001350694",
-      "type": "Macro"
-    },
-    {
-      "institution": "Renaissance Technologies",
-      "cik": "0001037389",
-      "type": "Quant"
-    },
-    {
       "institution": "Maverick Capital",
       "cik": "0000934639",
       "type": "Long/Short"
     },
     {
       "institution": "Soroban Capital",
-      "cik": "0001501913",
+      "cik": "0001517857",
       "type": "Event-Driven"
     },
     {
       "institution": "Cantillon Capital",
       "cik": "0001279936",
       "type": "International"
-    },
-    {
-      "institution": "Fidelity Management",
-      "cik": "0000035368",
-      "type": "Asset Manager"
-    },
-    {
-      "institution": "Wellington Management",
-      "cik": "0000902219",
-      "type": "Institutional"
-    },
-    {
-      "institution": "Capital Group",
-      "cik": "0000732812",
-      "type": "Global Manager"
     },
     {
       "institution": "D1 Capital Partners",
@@ -335,7 +236,7 @@
     },
     {
       "institution": "Jana Partners",
-      "cik": "0001159159",
+      "cik": "0001998597",
       "type": "Activist"
     },
     {
@@ -355,7 +256,7 @@
     },
     {
       "institution": "Wedgewood Partners",
-      "cik": "0000829464",
+      "cik": "0000859804",
       "type": "Quality Growth"
     },
     {
@@ -364,19 +265,9 @@
       "type": "Small-Cap Growth"
     },
     {
-      "institution": "Matrix Capital Management",
-      "cik": "0001048678",
-      "type": "Tech Growth"
-    },
-    {
       "institution": "Corvex Management",
       "cik": "0001535472",
       "type": "Activist"
-    },
-    {
-      "institution": "Balyasny Asset Management",
-      "cik": "0001218710",
-      "type": "Multi-Strategy"
     },
     {
       "institution": "Texas Teachers Retirement",
@@ -392,6 +283,141 @@
       "institution": "Dodge & Cox",
       "cik": "0000200217",
       "type": "Value Fund"
+    },
+    {
+      "institution": "PRIMECAP Management",
+      "cik": "0000763212",
+      "type": "Quality Growth"
+    },
+    {
+      "institution": "Harris Associates",
+      "cik": "0000813917",
+      "type": "Value Investor"
+    },
+    {
+      "institution": "GQG Partners",
+      "cik": "0001697233",
+      "type": "Quality Growth"
+    },
+    {
+      "institution": "Artisan Partners",
+      "cik": "0001466153",
+      "type": "Growth Manager"
+    },
+    {
+      "institution": "WCM Investment Management",
+      "cik": "0001061186",
+      "type": "Quality Growth"
+    },
+    {
+      "institution": "Sands Capital",
+      "cik": "0001020066",
+      "type": "Tech Growth"
+    },
+    {
+      "institution": "Orbis Investments",
+      "cik": "0001663865",
+      "type": "Global Value"
+    },
+    {
+      "institution": "Davis Selected Advisers",
+      "cik": "0001036325",
+      "type": "Value Investor"
+    },
+    {
+      "institution": "Mawer Investment Management",
+      "cik": "0001538449",
+      "type": "Global Value"
+    },
+    {
+      "institution": "Public Investment Fund",
+      "cik": "0001767640",
+      "type": "Sovereign Wealth"
+    },
+    {
+      "institution": "Avoro Capital",
+      "cik": "0001633313",
+      "type": "Healthcare"
+    },
+    {
+      "institution": "RTW Investments",
+      "cik": "0001493215",
+      "type": "Healthcare"
+    },
+    {
+      "institution": "Harding Loevner",
+      "cik": "0000928196",
+      "type": "Quality Growth"
+    },
+    {
+      "institution": "Yacktman Asset Management",
+      "cik": "0000905567",
+      "type": "Value Investor"
+    },
+    {
+      "institution": "Perceptive Advisors",
+      "cik": "0001224962",
+      "type": "Healthcare"
+    },
+    {
+      "institution": "Eminence Capital",
+      "cik": "0001107310",
+      "type": "Value/Short"
+    },
+    {
+      "institution": "Sachem Head Capital",
+      "cik": "0001582090",
+      "type": "Activist"
+    },
+    {
+      "institution": "Brave Warrior Advisors",
+      "cik": "0001553733",
+      "type": "Concentrated Value"
+    },
+    {
+      "institution": "Suvretta Capital",
+      "cik": "0001569064",
+      "type": "Long/Short"
+    },
+    {
+      "institution": "Dragoneer Investment Group",
+      "cik": "0001602189",
+      "type": "Tech Growth"
+    },
+    {
+      "institution": "Senator Investment Group",
+      "cik": "0001443689",
+      "type": "Event-Driven"
+    },
+    {
+      "institution": "Southeastern Asset Management",
+      "cik": "0000807985",
+      "type": "Deep Value"
+    },
+    {
+      "institution": "Tweedy Browne",
+      "cik": "0000732905",
+      "type": "Deep Value"
+    },
+    {
+      "institution": "Situational Awareness LP",
+      "cik": "0002045724",
+      "type": "AI Concentrated"
+    },
+    {
+      "institution": "SurgoCap Partners",
+      "cik": "0001960830",
+      "type": "Crossover Growth"
+    },
+    {
+      "institution": "Voyager Global",
+      "cik": "0001849753",
+      "type": "Tech Growth"
+    },
+    {
+      "institution": "Untitled Investments",
+      "cik": "0001808696",
+      "type": "Concentrated Growth"
     }
   ],
   "potential_ticker_matches": [
@@ -405,14 +431,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -441,9 +467,9 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "FPS",
-          "company_name": "Forgent Power Solutions, Inc.",
-          "cik": "0002080126"
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "OWL",
@@ -451,9 +477,9 @@
           "cik": "0001823945"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
+          "ticker": "FPS",
+          "company_name": "Forgent Power Solutions, Inc.",
+          "cik": "0002080126"
         }
       ]
     },
@@ -534,14 +560,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -565,14 +591,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -596,11 +622,6 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
-        },
-        {
           "ticker": "C",
           "company_name": "CITIGROUP INC",
           "cik": "0000831001"
@@ -609,12 +630,17 @@
           "ticker": "MUFG",
           "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
           "cik": "0000067088"
+        },
+        {
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         }
       ]
     },
     {
       "institution": "Greenlight Capital",
-      "inst_cik": "0001079114",
+      "inst_cik": "0001489933",
       "potential_matches": [
         {
           "ticker": "COF",
@@ -627,14 +653,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -694,14 +720,14 @@
           "cik": "0001783180"
         },
         {
-          "ticker": "GFS",
-          "company_name": "GLOBALFOUNDRIES Inc.",
-          "cik": "0001709048"
-        },
-        {
           "ticker": "COIN",
           "company_name": "Coinbase Global, Inc.",
           "cik": "0001679788"
+        },
+        {
+          "ticker": "GFS",
+          "company_name": "GLOBALFOUNDRIES Inc.",
+          "cik": "0001709048"
         }
       ]
     },
@@ -720,14 +746,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -756,9 +782,9 @@
           "cik": "0001783180"
         },
         {
-          "ticker": "GFS",
-          "company_name": "GLOBALFOUNDRIES Inc.",
-          "cik": "0001709048"
+          "ticker": "VIK",
+          "company_name": "Viking Holdings Ltd",
+          "cik": "0001745201"
         },
         {
           "ticker": "COIN",
@@ -777,14 +803,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -839,14 +865,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -861,6 +887,37 @@
       ]
     },
     {
+      "institution": "Carl Icahn",
+      "inst_cik": "0000921669",
+      "potential_matches": [
+        {
+          "ticker": "CG",
+          "company_name": "Carlyle Group Inc.",
+          "cik": "0001527166"
+        },
+        {
+          "ticker": "CSL",
+          "company_name": "CARLISLE COMPANIES INC",
+          "cik": "0000790051"
+        },
+        {
+          "ticker": "IEP",
+          "company_name": "ICAHN ENTERPRISES L.P.",
+          "cik": "0000813762"
+        },
+        {
+          "ticker": "CGBD",
+          "company_name": "Carlyle Secured Lending, Inc.",
+          "cik": "0001544206"
+        },
+        {
+          "ticker": "CARL",
+          "company_name": "CARLSMED, INC.",
+          "cik": "0001794546"
+        }
+      ]
+    },
+    {
       "institution": "Duquesne Family Office",
       "inst_cik": "0001536411",
       "potential_matches": [
@@ -868,6 +925,11 @@
           "ticker": "BFAM",
           "company_name": "BRIGHT HORIZONS FAMILY SOLUTIONS INC.",
           "cik": "0001437578"
+        },
+        {
+          "ticker": "OPI",
+          "company_name": "OFFICE PROPERTIES INCOME TRUST",
+          "cik": "0001456772"
         },
         {
           "ticker": "NLOP",
@@ -878,16 +940,6 @@
           "ticker": "FOFA",
           "company_name": "FAMILY OFFICE OF AMERICA, INC.",
           "cik": "0001871181"
-        },
-        {
-          "ticker": "OPIRQ",
-          "company_name": "OFFICE PROPERTIES INCOME TRUST",
-          "cik": "0001456772"
-        },
-        {
-          "ticker": "OPITQ",
-          "company_name": "OFFICE PROPERTIES INCOME TRUST",
-          "cik": "0001456772"
         }
       ]
     },
@@ -901,14 +953,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -932,14 +984,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -955,7 +1007,7 @@
     },
     {
       "institution": "ValueAct Capital",
-      "inst_cik": "0001351069",
+      "inst_cik": "0001418814",
       "potential_matches": [
         {
           "ticker": "COF",
@@ -968,14 +1020,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1030,14 +1082,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1051,9 +1103,9 @@
       "inst_cik": "0001021944",
       "potential_matches": [
         {
-          "ticker": "ARM",
-          "company_name": "ARM HOLDINGS PLC /UK",
-          "cik": "0001973239"
+          "ticker": "XOM",
+          "company_name": "ExxonMobil Holdings Corp",
+          "cik": "0002115436"
         },
         {
           "ticker": "HSBC",
@@ -1061,50 +1113,19 @@
           "cik": "0001089113"
         },
         {
+          "ticker": "ARM",
+          "company_name": "ARM HOLDINGS PLC /UK",
+          "cik": "0001973239"
+        },
+        {
           "ticker": "KXIAY",
           "company_name": "Kioxia Holdings Corporation/ADR",
           "cik": "0002053383"
         },
         {
-          "ticker": "STX",
-          "company_name": "Seagate Technology Holdings plc",
-          "cik": "0001137789"
-        },
-        {
           "ticker": "CRWD",
           "company_name": "CrowdStrike Holdings, Inc.",
           "cik": "0001535527"
-        }
-      ]
-    },
-    {
-      "institution": "CPP Investment Board",
-      "inst_cik": "0001032989",
-      "potential_matches": [
-        {
-          "ticker": "AGNC",
-          "company_name": "AGNC Investment Corp.",
-          "cik": "0001423689"
-        },
-        {
-          "ticker": "SEIC",
-          "company_name": "SEI INVESTMENTS CO",
-          "cik": "0000350894"
-        },
-        {
-          "ticker": "FRT",
-          "company_name": "FEDERAL REALTY INVESTMENT TRUST",
-          "cik": "0000034903"
-        },
-        {
-          "ticker": "MTG",
-          "company_name": "MGIC INVESTMENT CORP",
-          "cik": "0000876437"
-        },
-        {
-          "ticker": "SEB",
-          "company_name": "SEABOARD CORP /DE/",
-          "cik": "0000088121"
         }
       ]
     },
@@ -1123,14 +1144,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1206,14 +1227,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1237,14 +1258,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "RKLB",
-          "company_name": "Rocket Lab Corp",
-          "cik": "0001819994"
-        },
-        {
           "ticker": "ROK",
           "company_name": "ROCKWELL AUTOMATION, INC",
           "cik": "0001024478"
+        },
+        {
+          "ticker": "RKLB",
+          "company_name": "Rocket Lab Corp",
+          "cik": "0001819994"
         },
         {
           "ticker": "RKT",
@@ -1273,14 +1294,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         }
       ]
     },
@@ -1304,14 +1325,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         }
       ]
     },
@@ -1335,139 +1356,14 @@
           "cik": "0001650107"
         },
         {
-          "ticker": "CQP",
-          "company_name": "Cheniere Energy Partners, L.P.",
-          "cik": "0001383650"
-        },
-        {
           "ticker": "ACGL",
           "company_name": "ARCH CAPITAL GROUP LTD.",
           "cik": "0000947484"
-        }
-      ]
-    },
-    {
-      "institution": "Citadel Advisors",
-      "inst_cik": "0001423053",
-      "potential_matches": [
-        {
-          "ticker": "HNNA",
-          "company_name": "HENNESSY ADVISORS INC",
-          "cik": "0001145255"
         },
         {
-          "ticker": "CTWO",
-          "company_name": "COTWO ADVISORS PHYSICAL EUROPEAN CARBON ALLOWANCE TRUST",
-          "cik": "0001958928"
-        },
-        {
-          "ticker": "HNNAZ",
-          "company_name": "HENNESSY ADVISORS INC",
-          "cik": "0001145255"
-        }
-      ]
-    },
-    {
-      "institution": "Millennium Management",
-      "inst_cik": "0001273087",
-      "potential_matches": [
-        {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
-          "ticker": "ARES",
-          "company_name": "Ares Management Corp",
-          "cik": "0001176948"
-        },
-        {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        }
-      ]
-    },
-    {
-      "institution": "Two Sigma",
-      "inst_cik": "0001179392",
-      "potential_matches": [
-        {
-          "ticker": "SGML",
-          "company_name": "Sigma Lithium Corp",
-          "cik": "0001848309"
-        }
-      ]
-    },
-    {
-      "institution": "Bridgewater Associates",
-      "inst_cik": "0001350694",
-      "potential_matches": [
-        {
-          "ticker": "JKHY",
-          "company_name": "JACK HENRY & ASSOCIATES INC",
-          "cik": "0000779152"
-        },
-        {
-          "ticker": "MANH",
-          "company_name": "MANHATTAN ASSOCIATES INC",
-          "cik": "0001056696"
-        },
-        {
-          "ticker": "CBL",
-          "company_name": "CBL & ASSOCIATES PROPERTIES INC",
-          "cik": "0000910612"
-        },
-        {
-          "ticker": "BWB",
-          "company_name": "Bridgewater Bancshares Inc",
-          "cik": "0001341317"
-        },
-        {
-          "ticker": "NEN",
-          "company_name": "NEW ENGLAND REALTY ASSOCIATES LIMITED PARTNERSHIP",
-          "cik": "0000746514"
-        }
-      ]
-    },
-    {
-      "institution": "Renaissance Technologies",
-      "inst_cik": "0001037389",
-      "potential_matches": [
-        {
-          "ticker": "PLTR",
-          "company_name": "Palantir Technologies Inc.",
-          "cik": "0001321655"
-        },
-        {
-          "ticker": "DELL",
-          "company_name": "Dell Technologies Inc.",
-          "cik": "0001571996"
-        },
-        {
-          "ticker": "UBER",
-          "company_name": "Uber Technologies, Inc",
-          "cik": "0001543151"
-        },
-        {
-          "ticker": "IFNNY",
-          "company_name": "INFINEON TECHNOLOGIES AG",
-          "cik": "0001107457"
-        },
-        {
-          "ticker": "TT",
-          "company_name": "Trane Technologies plc",
-          "cik": "0001466258"
+          "ticker": "CQP",
+          "company_name": "Cheniere Energy Partners, L.P.",
+          "cik": "0001383650"
         }
       ]
     },
@@ -1486,14 +1382,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1504,7 +1400,7 @@
     },
     {
       "institution": "Soroban Capital",
-      "inst_cik": "0001501913",
+      "inst_cik": "0001517857",
       "potential_matches": [
         {
           "ticker": "COF",
@@ -1517,14 +1413,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1548,112 +1444,19 @@
           "cik": "0000947484"
         },
         {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        },
+        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "ARCC",
           "company_name": "ARES CAPITAL CORP",
           "cik": "0001287750"
-        }
-      ]
-    },
-    {
-      "institution": "Fidelity Management",
-      "inst_cik": "0000035368",
-      "potential_matches": [
-        {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
-          "ticker": "ARES",
-          "company_name": "Ares Management Corp",
-          "cik": "0001176948"
-        },
-        {
-          "ticker": "FIS",
-          "company_name": "Fidelity National Information Services, Inc.",
-          "cik": "0001136893"
-        }
-      ]
-    },
-    {
-      "institution": "Wellington Management",
-      "inst_cik": "0000902219",
-      "potential_matches": [
-        {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
-        },
-        {
-          "ticker": "ARES",
-          "company_name": "Ares Management Corp",
-          "cik": "0001176948"
-        },
-        {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        }
-      ]
-    },
-    {
-      "institution": "Capital Group",
-      "inst_cik": "0000732812",
-      "potential_matches": [
-        {
-          "ticker": "UNH",
-          "company_name": "UNITEDHEALTH GROUP INC",
-          "cik": "0000731766"
-        },
-        {
-          "ticker": "GS",
-          "company_name": "GOLDMAN SACHS GROUP INC",
-          "cik": "0000886982"
-        },
-        {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
-        },
-        {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
-        },
-        {
-          "ticker": "MUFG",
-          "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
-          "cik": "0000067088"
         }
       ]
     },
@@ -1677,14 +1480,14 @@
           "cik": "0001650107"
         },
         {
-          "ticker": "CQP",
-          "company_name": "Cheniere Energy Partners, L.P.",
-          "cik": "0001383650"
-        },
-        {
           "ticker": "ACGL",
           "company_name": "ARCH CAPITAL GROUP LTD.",
           "cik": "0000947484"
+        },
+        {
+          "ticker": "CQP",
+          "company_name": "Cheniere Energy Partners, L.P.",
+          "cik": "0001383650"
         }
       ]
     },
@@ -1698,14 +1501,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -1734,14 +1537,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1765,14 +1568,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1791,14 +1594,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
         },
         {
           "ticker": "ARES",
@@ -1814,7 +1617,7 @@
     },
     {
       "institution": "Jana Partners",
-      "inst_cik": "0001159159",
+      "inst_cik": "0001998597",
       "potential_matches": [
         {
           "ticker": "EPD",
@@ -1858,14 +1661,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1889,14 +1692,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "OWL",
-          "company_name": "BLUE OWL CAPITAL INC.",
-          "cik": "0001823945"
-        },
-        {
           "ticker": "NLY",
           "company_name": "ANNALY CAPITAL MANAGEMENT INC",
           "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
         },
         {
           "ticker": "ARCC",
@@ -1907,7 +1710,7 @@
     },
     {
       "institution": "Wedgewood Partners",
-      "inst_cik": "0000829464",
+      "inst_cik": "0000859804",
       "potential_matches": [
         {
           "ticker": "EPD",
@@ -1951,45 +1754,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
         },
         {
-          "ticker": "ARES",
-          "company_name": "Ares Management Corp",
-          "cik": "0001176948"
-        }
-      ]
-    },
-    {
-      "institution": "Matrix Capital Management",
-      "inst_cik": "0001048678",
-      "potential_matches": [
-        {
-          "ticker": "COF",
-          "company_name": "CAPITAL ONE FINANCIAL CORP",
-          "cik": "0000927628"
-        },
-        {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
-        },
-        {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -2008,45 +1780,14 @@
           "cik": "0000823768"
         },
         {
-          "ticker": "APO",
-          "company_name": "Apollo Global Management, Inc.",
-          "cik": "0001858681"
-        },
-        {
           "ticker": "BAM",
           "company_name": "Brookfield Asset Management Ltd.",
           "cik": "0001937926"
         },
         {
-          "ticker": "ARES",
-          "company_name": "Ares Management Corp",
-          "cik": "0001176948"
-        },
-        {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        }
-      ]
-    },
-    {
-      "institution": "Balyasny Asset Management",
-      "inst_cik": "0001218710",
-      "potential_matches": [
-        {
-          "ticker": "WM",
-          "company_name": "WASTE MANAGEMENT INC",
-          "cik": "0000823768"
-        },
-        {
           "ticker": "APO",
           "company_name": "Apollo Global Management, Inc.",
           "cik": "0001858681"
-        },
-        {
-          "ticker": "BAM",
-          "company_name": "Brookfield Asset Management Ltd.",
-          "cik": "0001937926"
         },
         {
           "ticker": "ARES",
@@ -2106,9 +1847,573 @@
           "cik": "0000886982"
         },
         {
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
+        },
+        {
+          "ticker": "MUFG",
+          "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
+          "cik": "0000067088"
+        },
+        {
           "ticker": "BABA",
           "company_name": "Alibaba Group Holding Ltd",
           "cik": "0001577552"
+        }
+      ]
+    },
+    {
+      "institution": "PRIMECAP Management",
+      "inst_cik": "0000763212",
+      "potential_matches": [
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
+        },
+        {
+          "ticker": "ARES",
+          "company_name": "Ares Management Corp",
+          "cik": "0001176948"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        }
+      ]
+    },
+    {
+      "institution": "Harris Associates",
+      "inst_cik": "0000813917",
+      "potential_matches": [
+        {
+          "ticker": "LHX",
+          "company_name": "L3HARRIS TECHNOLOGIES, INC. /DE/",
+          "cik": "0000202058"
+        },
+        {
+          "ticker": "JKHY",
+          "company_name": "JACK HENRY & ASSOCIATES INC",
+          "cik": "0000779152"
+        },
+        {
+          "ticker": "MANH",
+          "company_name": "MANHATTAN ASSOCIATES INC",
+          "cik": "0001056696"
+        },
+        {
+          "ticker": "CBL",
+          "company_name": "CBL & ASSOCIATES PROPERTIES INC",
+          "cik": "0000910612"
+        },
+        {
+          "ticker": "NEN",
+          "company_name": "NEW ENGLAND REALTY ASSOCIATES LIMITED PARTNERSHIP",
+          "cik": "0000746514"
+        }
+      ]
+    },
+    {
+      "institution": "GQG Partners",
+      "inst_cik": "0001697233",
+      "potential_matches": [
+        {
+          "ticker": "EPD",
+          "company_name": "ENTERPRISE PRODUCTS PARTNERS L.P.",
+          "cik": "0001061219"
+        },
+        {
+          "ticker": "CCEP",
+          "company_name": "COCA-COLA EUROPACIFIC PARTNERS plc",
+          "cik": "0001650107"
+        },
+        {
+          "ticker": "CQP",
+          "company_name": "Cheniere Energy Partners, L.P.",
+          "cik": "0001383650"
+        },
+        {
+          "ticker": "BEP",
+          "company_name": "Brookfield Renewable Partners L.P.",
+          "cik": "0001533232"
+        },
+        {
+          "ticker": "WES",
+          "company_name": "Western Midstream Partners, LP",
+          "cik": "0001423902"
+        }
+      ]
+    },
+    {
+      "institution": "Artisan Partners",
+      "inst_cik": "0001466153",
+      "potential_matches": [
+        {
+          "ticker": "EPD",
+          "company_name": "ENTERPRISE PRODUCTS PARTNERS L.P.",
+          "cik": "0001061219"
+        },
+        {
+          "ticker": "CCEP",
+          "company_name": "COCA-COLA EUROPACIFIC PARTNERS plc",
+          "cik": "0001650107"
+        },
+        {
+          "ticker": "CQP",
+          "company_name": "Cheniere Energy Partners, L.P.",
+          "cik": "0001383650"
+        },
+        {
+          "ticker": "BEP",
+          "company_name": "Brookfield Renewable Partners L.P.",
+          "cik": "0001533232"
+        },
+        {
+          "ticker": "WES",
+          "company_name": "Western Midstream Partners, LP",
+          "cik": "0001423902"
+        }
+      ]
+    },
+    {
+      "institution": "WCM Investment Management",
+      "inst_cik": "0001061186",
+      "potential_matches": [
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
+        },
+        {
+          "ticker": "ARES",
+          "company_name": "Ares Management Corp",
+          "cik": "0001176948"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        }
+      ]
+    },
+    {
+      "institution": "Sands Capital",
+      "inst_cik": "0001020066",
+      "potential_matches": [
+        {
+          "ticker": "COF",
+          "company_name": "CAPITAL ONE FINANCIAL CORP",
+          "cik": "0000927628"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
+        },
+        {
+          "ticker": "LVS",
+          "company_name": "LAS VEGAS SANDS CORP",
+          "cik": "0001300514"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
+        }
+      ]
+    },
+    {
+      "institution": "Orbis Investments",
+      "inst_cik": "0001663865",
+      "potential_matches": [
+        {
+          "ticker": "SEIC",
+          "company_name": "SEI INVESTMENTS CO",
+          "cik": "0000350894"
+        },
+        {
+          "ticker": "CLOV",
+          "company_name": "CLOVER HEALTH INVESTMENTS, CORP. /DE",
+          "cik": "0001801170"
+        },
+        {
+          "ticker": "PAX",
+          "company_name": "Patria Investments Ltd",
+          "cik": "0001825570"
+        },
+        {
+          "ticker": "IRS",
+          "company_name": "IRSA INVESTMENTS & REPRESENTATIONS INC",
+          "cik": "0000933267"
+        },
+        {
+          "ticker": "VINP",
+          "company_name": "Vinci Compass Investments Ltd.",
+          "cik": "0001826286"
+        }
+      ]
+    },
+    {
+      "institution": "Davis Selected Advisers",
+      "inst_cik": "0001036325",
+      "potential_matches": [
+        {
+          "ticker": "ZD",
+          "company_name": "ZIFF DAVIS, INC.",
+          "cik": "0001084048"
+        },
+        {
+          "ticker": "DTCKF",
+          "company_name": "DAVIS COMMODITIES Ltd",
+          "cik": "0001949478"
+        }
+      ]
+    },
+    {
+      "institution": "Mawer Investment Management",
+      "inst_cik": "0001538449",
+      "potential_matches": [
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
+        },
+        {
+          "ticker": "ARES",
+          "company_name": "Ares Management Corp",
+          "cik": "0001176948"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        }
+      ]
+    },
+    {
+      "institution": "Public Investment Fund",
+      "inst_cik": "0001767640",
+      "potential_matches": [
+        {
+          "ticker": "CRH",
+          "company_name": "CRH PUBLIC LTD CO",
+          "cik": "0000849395"
+        },
+        {
+          "ticker": "RSG",
+          "company_name": "REPUBLIC SERVICES, INC.",
+          "cik": "0001060391"
+        },
+        {
+          "ticker": "PSA",
+          "company_name": "Public Storage",
+          "cik": "0001393311"
+        },
+        {
+          "ticker": "PEG",
+          "company_name": "PUBLIC SERVICE ENTERPRISE GROUP INC",
+          "cik": "0000788784"
+        },
+        {
+          "ticker": "VOD",
+          "company_name": "VODAFONE GROUP PUBLIC LTD CO",
+          "cik": "0000839923"
+        }
+      ]
+    },
+    {
+      "institution": "Avoro Capital",
+      "inst_cik": "0001633313",
+      "potential_matches": [
+        {
+          "ticker": "COF",
+          "company_name": "CAPITAL ONE FINANCIAL CORP",
+          "cik": "0000927628"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
+        }
+      ]
+    },
+    {
+      "institution": "RTW Investments",
+      "inst_cik": "0001493215",
+      "potential_matches": [
+        {
+          "ticker": "SEIC",
+          "company_name": "SEI INVESTMENTS CO",
+          "cik": "0000350894"
+        },
+        {
+          "ticker": "CLOV",
+          "company_name": "CLOVER HEALTH INVESTMENTS, CORP. /DE",
+          "cik": "0001801170"
+        },
+        {
+          "ticker": "PAX",
+          "company_name": "Patria Investments Ltd",
+          "cik": "0001825570"
+        },
+        {
+          "ticker": "IRS",
+          "company_name": "IRSA INVESTMENTS & REPRESENTATIONS INC",
+          "cik": "0000933267"
+        },
+        {
+          "ticker": "VINP",
+          "company_name": "Vinci Compass Investments Ltd.",
+          "cik": "0001826286"
+        }
+      ]
+    },
+    {
+      "institution": "Yacktman Asset Management",
+      "inst_cik": "0000905567",
+      "potential_matches": [
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
+        },
+        {
+          "ticker": "ARES",
+          "company_name": "Ares Management Corp",
+          "cik": "0001176948"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        }
+      ]
+    },
+    {
+      "institution": "Perceptive Advisors",
+      "inst_cik": "0001224962",
+      "potential_matches": [
+        {
+          "ticker": "PCSC",
+          "company_name": "Perceptive Capital Solutions Corp",
+          "cik": "0002017526"
+        },
+        {
+          "ticker": "HNNA",
+          "company_name": "HENNESSY ADVISORS INC",
+          "cik": "0001145255"
+        },
+        {
+          "ticker": "CTWO",
+          "company_name": "COTWO ADVISORS PHYSICAL EUROPEAN CARBON ALLOWANCE TRUST",
+          "cik": "0001958928"
+        },
+        {
+          "ticker": "HNNAZ",
+          "company_name": "HENNESSY ADVISORS INC",
+          "cik": "0001145255"
+        }
+      ]
+    },
+    {
+      "institution": "Eminence Capital",
+      "inst_cik": "0001107310",
+      "potential_matches": [
+        {
+          "ticker": "COF",
+          "company_name": "CAPITAL ONE FINANCIAL CORP",
+          "cik": "0000927628"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
+        }
+      ]
+    },
+    {
+      "institution": "Sachem Head Capital",
+      "inst_cik": "0001582090",
+      "potential_matches": [
+        {
+          "ticker": "COF",
+          "company_name": "CAPITAL ONE FINANCIAL CORP",
+          "cik": "0000927628"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
+        }
+      ]
+    },
+    {
+      "institution": "Brave Warrior Advisors",
+      "inst_cik": "0001553733",
+      "potential_matches": [
+        {
+          "ticker": "HCC",
+          "company_name": "WARRIOR MET COAL, INC.",
+          "cik": "0001691303"
+        },
+        {
+          "ticker": "BATRA",
+          "company_name": "Atlanta Braves Holdings, Inc.",
+          "cik": "0001958140"
+        },
+        {
+          "ticker": "HNNA",
+          "company_name": "HENNESSY ADVISORS INC",
+          "cik": "0001145255"
+        },
+        {
+          "ticker": "CTWO",
+          "company_name": "COTWO ADVISORS PHYSICAL EUROPEAN CARBON ALLOWANCE TRUST",
+          "cik": "0001958928"
+        },
+        {
+          "ticker": "BATRK",
+          "company_name": "Atlanta Braves Holdings, Inc.",
+          "cik": "0001958140"
+        }
+      ]
+    },
+    {
+      "institution": "Suvretta Capital",
+      "inst_cik": "0001569064",
+      "potential_matches": [
+        {
+          "ticker": "COF",
+          "company_name": "CAPITAL ONE FINANCIAL CORP",
+          "cik": "0000927628"
+        },
+        {
+          "ticker": "ACGL",
+          "company_name": "ARCH CAPITAL GROUP LTD.",
+          "cik": "0000947484"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        },
+        {
+          "ticker": "OWL",
+          "company_name": "BLUE OWL CAPITAL INC.",
+          "cik": "0001823945"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
+        }
+      ]
+    },
+    {
+      "institution": "Dragoneer Investment Group",
+      "inst_cik": "0001602189",
+      "potential_matches": [
+        {
+          "ticker": "UNH",
+          "company_name": "UNITEDHEALTH GROUP INC",
+          "cik": "0000731766"
+        },
+        {
+          "ticker": "GS",
+          "company_name": "GOLDMAN SACHS GROUP INC",
+          "cik": "0000886982"
         },
         {
           "ticker": "C",
@@ -2119,6 +2424,177 @@
           "ticker": "MUFG",
           "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
           "cik": "0000067088"
+        },
+        {
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
+        }
+      ]
+    },
+    {
+      "institution": "Senator Investment Group",
+      "inst_cik": "0001443689",
+      "potential_matches": [
+        {
+          "ticker": "UNH",
+          "company_name": "UNITEDHEALTH GROUP INC",
+          "cik": "0000731766"
+        },
+        {
+          "ticker": "GS",
+          "company_name": "GOLDMAN SACHS GROUP INC",
+          "cik": "0000886982"
+        },
+        {
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
+        },
+        {
+          "ticker": "MUFG",
+          "company_name": "MITSUBISHI UFJ FINANCIAL GROUP INC",
+          "cik": "0000067088"
+        },
+        {
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
+        }
+      ]
+    },
+    {
+      "institution": "Southeastern Asset Management",
+      "inst_cik": "0000807985",
+      "potential_matches": [
+        {
+          "ticker": "WM",
+          "company_name": "WASTE MANAGEMENT INC",
+          "cik": "0000823768"
+        },
+        {
+          "ticker": "BAM",
+          "company_name": "Brookfield Asset Management Ltd.",
+          "cik": "0001937926"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
+        },
+        {
+          "ticker": "ARES",
+          "company_name": "Ares Management Corp",
+          "cik": "0001176948"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        }
+      ]
+    },
+    {
+      "institution": "Situational Awareness LP",
+      "inst_cik": "0002045724",
+      "potential_matches": [
+        {
+          "ticker": "TAAG",
+          "company_name": "Awareness Group, Inc.",
+          "cik": "0001386044"
+        }
+      ]
+    },
+    {
+      "institution": "SurgoCap Partners",
+      "inst_cik": "0001960830",
+      "potential_matches": [
+        {
+          "ticker": "EPD",
+          "company_name": "ENTERPRISE PRODUCTS PARTNERS L.P.",
+          "cik": "0001061219"
+        },
+        {
+          "ticker": "CCEP",
+          "company_name": "COCA-COLA EUROPACIFIC PARTNERS plc",
+          "cik": "0001650107"
+        },
+        {
+          "ticker": "CQP",
+          "company_name": "Cheniere Energy Partners, L.P.",
+          "cik": "0001383650"
+        },
+        {
+          "ticker": "BEP",
+          "company_name": "Brookfield Renewable Partners L.P.",
+          "cik": "0001533232"
+        },
+        {
+          "ticker": "WES",
+          "company_name": "Western Midstream Partners, LP",
+          "cik": "0001423902"
+        }
+      ]
+    },
+    {
+      "institution": "Voyager Global",
+      "inst_cik": "0001849753",
+      "potential_matches": [
+        {
+          "ticker": "SPGI",
+          "company_name": "S&P Global Inc.",
+          "cik": "0000064040"
+        },
+        {
+          "ticker": "APO",
+          "company_name": "Apollo Global Management, Inc.",
+          "cik": "0001858681"
+        },
+        {
+          "ticker": "CARR",
+          "company_name": "CARRIER GLOBAL Corp",
+          "cik": "0001783180"
+        },
+        {
+          "ticker": "COIN",
+          "company_name": "Coinbase Global, Inc.",
+          "cik": "0001679788"
+        },
+        {
+          "ticker": "GFS",
+          "company_name": "GLOBALFOUNDRIES Inc.",
+          "cik": "0001709048"
+        }
+      ]
+    },
+    {
+      "institution": "Untitled Investments",
+      "inst_cik": "0001808696",
+      "potential_matches": [
+        {
+          "ticker": "SEIC",
+          "company_name": "SEI INVESTMENTS CO",
+          "cik": "0000350894"
+        },
+        {
+          "ticker": "CLOV",
+          "company_name": "CLOVER HEALTH INVESTMENTS, CORP. /DE",
+          "cik": "0001801170"
+        },
+        {
+          "ticker": "PAX",
+          "company_name": "Patria Investments Ltd",
+          "cik": "0001825570"
+        },
+        {
+          "ticker": "IRS",
+          "company_name": "IRSA INVESTMENTS & REPRESENTATIONS INC",
+          "cik": "0000933267"
+        },
+        {
+          "ticker": "VINP",
+          "company_name": "Vinci Compass Investments Ltd.",
+          "cik": "0001826286"
         }
       ]
     }
