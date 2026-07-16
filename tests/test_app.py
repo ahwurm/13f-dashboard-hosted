@@ -44,10 +44,10 @@ def test_default_view_renders_both_quarters(qidx):
 def test_changes_tab_has_data():
     at = _run()
     _no_exc(at)
-    assert any("Institutional Movements" in h.value for h in at.header)
-    subs = [s.value for s in at.subheader]
-    assert any("Top Portfolio Increases" in s for s in subs)
-    assert any("Top Portfolio Decreases" in s for s in subs)
+    md = " ".join(m.value for m in at.markdown)  # icon headings render via st.markdown
+    assert "Institutional Movements" in md
+    assert "Top Portfolio Increases" in md
+    assert "Top Portfolio Decreases" in md
     def _cols(el):
         v = el.value
         return list(getattr(v, "data", v).columns)  # heat-shaded tables arrive as Styler

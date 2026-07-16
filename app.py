@@ -42,6 +42,22 @@ def _heat_column(col, rgb):
     return [f'background-color: rgba({rgb},{min(abs(v) / peak, 1) * 0.4:.2f})' if pd.notna(v) else ''
             for v in col]
 
+# Lucide icon paths (ISC license) — the icon language used on awurm.com:
+# 24px grid, stroke-width 2, round caps/joins, currentColor.
+LUCIDE = {
+    'calendar': "<path d='M8 2v4'/><path d='M16 2v4'/><rect width='18' height='18' x='3' y='4' rx='2'/><path d='M3 10h18'/>",
+    'sliders': "<line x1='21' x2='14' y1='4' y2='4'/><line x1='10' x2='3' y1='4' y2='4'/><line x1='21' x2='12' y1='12' y2='12'/><line x1='8' x2='3' y1='12' y2='12'/><line x1='21' x2='16' y1='20' y2='20'/><line x1='12' x2='3' y1='20' y2='20'/><line x1='14' x2='14' y1='2' y2='6'/><line x1='8' x2='8' y1='10' y2='14'/><line x1='16' x2='16' y1='18' y2='22'/>",
+    'chart-line': "<path d='M3 3v16a2 2 0 0 0 2 2h16'/><path d='m19 9-5 5-4-4-3 3'/>",
+    'trending-up': "<polyline points='22 7 13.5 15.5 8.5 10.5 2 17'/><polyline points='16 7 22 7 22 13'/>",
+    'trending-down': "<polyline points='22 17 13.5 8.5 8.5 13.5 2 7'/><polyline points='16 17 22 17 22 11'/>",
+}
+
+def lucide(name, size=14, color="currentColor"):
+    """Inline Lucide SVG icon matching awurm.com's icon style."""
+    return (f"<svg width='{size}' height='{size}' viewBox='0 0 24 24' fill='none' stroke='{color}' "
+            f"stroke-width='2' stroke-linecap='round' stroke-linejoin='round' "
+            f"style='display:inline-block;vertical-align:-2px;margin-right:7px'>{LUCIDE[name]}</svg>")
+
 # Page configuration
 st.set_page_config(
     page_title="Smart Capital Tracker",
@@ -135,6 +151,36 @@ st.markdown("""
     .block-container {
         padding-top: 4rem;
         padding-bottom: 0rem;
+    }
+    /* lucide icons (awurm.com icon language) on tabs & buttons via currentColor masks */
+    .stTabs [data-baseweb="tab"]:nth-child(1) p::before,
+    .stTabs [data-baseweb="tab"]:nth-child(2) p::before,
+    .stTabs [data-baseweb="tab"]:nth-child(3) p::before,
+    .st-key-f_reset button p::before,
+    .st-key-dl_holdings button p::before {
+        content: "";
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-right: 7px;
+        vertical-align: -2px;
+        background: currentColor;
+        -webkit-mask: var(--lucide) center / contain no-repeat;
+        mask: var(--lucide) center / contain no-repeat;
+    }
+    .stTabs [data-baseweb="tab"]:nth-child(1) p { --lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 3v16a2 2 0 0 0 2 2h16'/%3E%3Cpath d='m19 9-5 5-4-4-3 3'/%3E%3C/svg%3E"); }
+    .stTabs [data-baseweb="tab"]:nth-child(2) p { --lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9H4.5a2.5 2.5 0 0 1 0-5H6'/%3E%3Cpath d='M18 9h1.5a2.5 2.5 0 0 0 0-5H18'/%3E%3Cpath d='M4 22h16'/%3E%3Cpath d='M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22'/%3E%3Cpath d='M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22'/%3E%3Cpath d='M18 2H6v7a6 6 0 0 0 12 0V2Z'/%3E%3C/svg%3E"); }
+    .stTabs [data-baseweb="tab"]:nth-child(3) p { --lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M8 12h8'/%3E%3Cpath d='M12 8v8'/%3E%3C/svg%3E"); }
+    .st-key-f_reset button p { --lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8'/%3E%3Cpath d='M3 3v5h5'/%3E%3C/svg%3E"); }
+    .st-key-dl_holdings button p { --lucide: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4'/%3E%3Cpolyline points='7 10 12 15 17 10'/%3E%3Cline x1='12' x2='12' y1='15' y2='3'/%3E%3C/svg%3E"); }
+    /* sidebar section heads with inline lucide icons */
+    .sb-head {
+        display: flex;
+        align-items: center;
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: #e9ebef;
+        margin: 0.6rem 0 0.2rem;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -916,7 +962,8 @@ def render_top_holdings_tab(filtered_df, single_institution, institution_totals,
     # Download button
     csv = top_holdings.to_csv(index=False)
     st.download_button(
-        label="📥 Download Top Holdings CSV",
+        label="Download Top Holdings CSV",
+        key="dl_holdings",
         data=csv,
         file_name=f"top_holdings_{datetime.now().strftime('%Y%m%d')}.csv",
         mime="text/csv"
@@ -932,7 +979,7 @@ def main():
         return
     
     # Sidebar quarter selector
-    st.sidebar.header("📅 Data Period")
+    st.sidebar.markdown(f'<div class="sb-head">{lucide("calendar", 15)}Data Period</div>', unsafe_allow_html=True)
     quarter_options = [f"{q[0]} {q[1]}" for q in available_quarters]
     selected_quarter_idx = st.sidebar.selectbox(
         "Select Quarter",
@@ -966,7 +1013,7 @@ def main():
     institution_totals = calculate_institution_portfolios(quarter, year, df)
     
     # Sidebar filters
-    st.sidebar.header("🔍 Filters")
+    st.sidebar.markdown(f'<div class="sb-head">{lucide("sliders", 15)}Filters</div>', unsafe_allow_html=True)
     
     # Search box
     search_term = st.sidebar.text_input(
@@ -1023,7 +1070,7 @@ def main():
             st.session_state.pop(k, None)
 
     if search_term or selected_investor_types or selected_investors or holders_range != (nh_min, nh_max):
-        st.sidebar.button("↺ Reset filters", on_click=_reset_filters)
+        st.sidebar.button("Reset filters", on_click=_reset_filters, key="f_reset")
     
     # Apply filters
     filters = {
@@ -1272,7 +1319,7 @@ def main():
                             portfolio_impact = change_value_millions / institution_totals[holder] * 100
                     
                     row_data = {
-                        'Institution': (holder[:20] + '...' if len(holder) > 20 else holder) + (" 🆕" if holder in new_holders else ""),
+                        'Institution': (holder[:20] + '...' if len(holder) > 20 else holder) + (" · NEW" if holder in new_holders else ""),
                         '% of Company': position.get('pct_of_company_shares', 0),  # Percentage of company's total shares
                         'Q/Q %': portfolio_impact,  # Raw value for sorting
                         'portfolio_impact_raw': portfolio_impact  # For sorting
@@ -1439,9 +1486,9 @@ def main():
     else:
         # Normal 3-tab view when not searching
         tab1, tab2, tab3 = st.tabs([
-            "📈 Overview",
-            "🏆 Top Holdings",
-            "🆕 Latest Additions"
+            "Overview",
+            "Top Holdings",
+            "Latest Additions"
         ])
         
         with tab1:
@@ -1452,7 +1499,8 @@ def main():
         
         with tab3:
             if df_adds is not None and len(df_adds) > 0:
-                st.header("📈 Institutional Movements - Quarter-over-Quarter Changes")
+                st.markdown(f'<h2>{lucide("chart-line", 17)}Institutional Movements - Quarter-over-Quarter Changes</h2>',
+                            unsafe_allow_html=True)
                 # Calculate net portfolio % impact for each security
                 # This is the average portfolio % allocation across filtered institutions
                 institutions_filed_count = len(filtered_institutions) if filtered_institutions else current_quarter_filed
@@ -1508,7 +1556,8 @@ def main():
                     col1, col2 = st.columns(2)
                     
                     with col1:
-                        st.subheader("🟢 Top Portfolio Increases")
+                        st.markdown(f'<h3>{lucide("trending-up", 15, "#56dc85")}Top Portfolio Increases</h3>',
+                                    unsafe_allow_html=True)
                         st.caption(f"Securities with highest average portfolio % increases ({len(additions_df)} total)")
                         
                         if len(additions_df) > 0:
@@ -1567,7 +1616,8 @@ def main():
                             st.info("No securities with institutional additions")
                     
                     with col2:
-                        st.subheader("🔴 Top Portfolio Decreases")
+                        st.markdown(f'<h3>{lucide("trending-down", 15, "#e5484d")}Top Portfolio Decreases</h3>',
+                                    unsafe_allow_html=True)
                         st.caption(f"Securities with highest average portfolio % decreases ({len(drops_df)} total)")
                         
                         if len(drops_df) > 0:
