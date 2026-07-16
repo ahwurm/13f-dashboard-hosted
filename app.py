@@ -8,11 +8,9 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
-from plotly.subplots import make_subplots
 import json
 from pathlib import Path
-from datetime import datetime, timedelta
-import numpy as np
+from datetime import datetime
 
 # All JSON values are stored in millicents (tenths of cents). We display in millions throughout the app.
 SCALE_FACTOR = 1_000_000_000  # Divide by this to convert millicents to millions (1 billion millicents = 1 million dollars)
@@ -36,10 +34,18 @@ def format_large_number(value_in_millions):
     else:
         return f"${value_in_millions:.1f}M"
 
+def _heat_column(col, rgb):
+    """Cell background intensity by |value| so big moves pop at a glance."""
+    peak = col.abs().max()
+    if pd.isna(peak) or not peak:
+        return ['' for _ in col]
+    return [f'background-color: rgba({rgb},{min(abs(v) / peak, 1) * 0.4:.2f})' if pd.notna(v) else ''
+            for v in col]
+
 # Page configuration
 st.set_page_config(
     page_title="Smart Capital Tracker",
-    page_icon="📊",
+    page_icon="static/favicon.svg",
     layout="wide",
     initial_sidebar_state="auto"
 )
@@ -587,13 +593,17 @@ def create_ownership_scatter(df, top_n=100, single_institution=None, institution
     else:
         hover_data.extend(['value_formatted', 'pct_formatted'])
     
+    # Label only the top 15 points — the rest stay hover-only to avoid label soup
+    plot_df = plot_df.copy()
+    plot_df['chart_label'] = ['' if i >= 15 else t for i, t in enumerate(plot_df['ticker'])]
+
     fig = px.scatter(
         plot_df,
         x=x_col,
         y=y_col,
         size=size_col,
         hover_data=hover_data,
-        text='ticker',
+        text='chart_label',
         title=title,
         labels={
             x_col: x_label,
@@ -875,8 +885,27 @@ def render_top_holdings_tab(filtered_df, single_institution, institution_totals,
         display_df = create_holdings_display_df(top_holdings, single_institution)
     
     # Display table
+    def _pct_bar(col_series, label):
+        peak = float(col_series.max())
+        return st.column_config.ProgressColumn(
+            label, format="%.2f%%", min_value=0,
+            max_value=peak if peak > 0 else 1.0
+        )
+
+    if single_institution:
+        holdings_config = create_table_column_config(single_institution=True)
+        holdings_config["Portfolio %"] = _pct_bar(display_df['Portfolio %'], "Portfolio %")
+    else:
+        holdings_config = {
+            "Avg Portfolio %": _pct_bar(display_df['Avg Portfolio %'], "Avg Portfolio %"),
+            "Ownership %": _pct_bar(display_df['Ownership %'], "Ownership %"),
+            "Value ($M)": st.column_config.NumberColumn("Value", format="$%.1f M"),
+            "# Holders": st.column_config.NumberColumn("Holders", format="%d"),
+        }
+
     st.dataframe(
         display_df,
+        column_config=holdings_config,
         width='stretch',
         hide_index=True,
         height=450
@@ -929,7 +958,7 @@ def main():
     if df_adds is not None and len(df_adds) > 0:
         # Create a mapping of CUSIP to net_adds
         net_adds_map = df_adds.set_index('cusip')['net_adds'].to_dict()
-        df['net_adds'] = df['cusip'].map(net_adds_map).fillna(0).astype(int)
+        df['net_adds'] = pd.to_numeric(df['cusip'].map(net_adds_map), errors='coerce').fillna(0).astype(int)
     else:
         df['net_adds'] = 0
     
@@ -940,7 +969,12 @@ def main():
     st.sidebar.header("🔍 Filters")
     
     # Search box
-    search_term = st.sidebar.text_input("Search by Ticker Symbol", "")
+    search_term = st.sidebar.text_input(
+        "Search by Ticker Symbol", "",
+        key="f_search",
+        placeholder="e.g. AAPL",
+        help="Exact ticker match — jumps straight to the security's detail view"
+    )
     
     # Get unique values for filters
     all_investors = set()
@@ -959,22 +993,37 @@ def main():
     selected_investor_types = st.sidebar.multiselect(
         "Investor Types",
         options=investor_types,
-        default=[]
+        default=[],
+        key="f_types",
+        placeholder="All types"
     )
     
     selected_investors = st.sidebar.multiselect(
         "Specific Investors",
         options=all_investors,
-        default=[]
+        default=[],
+        key="f_investors",
+        placeholder="All investors",
+        help="Select exactly one to switch into that institution's portfolio view"
     )
     
+    nh_min, nh_max = int(df['num_holders'].min()), int(df['num_holders'].max())
     holders_range = st.sidebar.slider(
         "Number of Holders",
-        min_value=int(df['num_holders'].min()),
-        max_value=int(df['num_holders'].max()),
-        value=(int(df['num_holders'].min()), int(df['num_holders'].max())),
-        step=1
+        min_value=nh_min,
+        max_value=nh_max,
+        value=(nh_min, nh_max),
+        step=1,
+        key="f_holders",
+        help="How many tracked institutions hold the security"
     )
+
+    def _reset_filters():
+        for k in ("f_search", "f_types", "f_investors", "f_holders"):
+            st.session_state.pop(k, None)
+
+    if search_term or selected_investor_types or selected_investors or holders_range != (nh_min, nh_max):
+        st.sidebar.button("↺ Reset filters", on_click=_reset_filters)
     
     # Apply filters
     filters = {
@@ -1076,7 +1125,7 @@ def main():
                 top_5_pct = filtered_df.nlargest(min(5, len(filtered_df)), 'portfolio_pct')['portfolio_pct'].sum()
                 st.metric("Top 5", f"{top_5_pct:.1f}%")
             else:
-                st.metric("Top 5 Concentration", "0.0%")
+                st.metric("Top 5", "0.0%")
         elif selected_investors and len(selected_investors) > 1:
             # Calculate portfolio overlap for multiple selected institutions
             if len(filtered_df) > 0:
@@ -1098,9 +1147,9 @@ def main():
                     overlap_pct = (securities_held_by_all / total_unique_securities) * 100
                     st.metric("Overlap", f"{overlap_pct:.1f}%")
                 else:
-                    st.metric("Portfolio Overlap", "0.0%")
+                    st.metric("Overlap", "0.0%")
             else:
-                st.metric("Portfolio Overlap", "0.0%")
+                st.metric("Overlap", "0.0%")
         else:
             # Show value-weighted consensus % - % of capital in securities held by >50% of institutions
             if len(filtered_df) > 0:
@@ -1505,7 +1554,10 @@ def main():
                             }
                         
                             st.dataframe(
-                                display_adds,
+                                display_adds.style.apply(
+                                    lambda col: _heat_column(col, "86,220,133"),
+                                    subset=['Avg Port Δ%', '# Adds']
+                                ),
                                 column_config=column_config_adds,
                                 width='stretch',
                                 hide_index=True,
@@ -1561,7 +1613,10 @@ def main():
                             }
                         
                             st.dataframe(
-                                display_drops,
+                                display_drops.style.apply(
+                                    lambda col: _heat_column(col, "229,72,77"),
+                                    subset=['Avg Port Δ%', '# Drops']
+                                ),
                                 column_config=column_config_drops,
                                 width='stretch',
                                 hide_index=True,

@@ -48,7 +48,10 @@ def test_changes_tab_has_data():
     subs = [s.value for s in at.subheader]
     assert any("Top Portfolio Increases" in s for s in subs)
     assert any("Top Portfolio Decreases" in s for s in subs)
-    df_cols = [list(d.value.columns) for d in at.dataframe]
+    def _cols(el):
+        v = el.value
+        return list(getattr(v, "data", v).columns)  # heat-shaded tables arrive as Styler
+    df_cols = [_cols(d) for d in at.dataframe]
     assert any("# Adds" in cols for cols in df_cols)
     assert any("# Drops" in cols for cols in df_cols)
 
@@ -110,3 +113,12 @@ def test_holdings_tab_has_csv_download():
     at = _run()
     _no_exc(at)
     assert len(at.download_button) >= 1
+
+
+def test_reset_filters_button():
+    at = _run()
+    at.sidebar.text_input[0].set_value("MSFT").run(timeout=TIMEOUT)
+    assert any(s.value.startswith("MSFT") for s in at.subheader)
+    at.sidebar.button[0].click().run(timeout=TIMEOUT)
+    _no_exc(at)
+    assert "Total Securities" in _metrics(at)  # back to the unfiltered default view
