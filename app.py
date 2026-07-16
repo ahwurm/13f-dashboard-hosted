@@ -903,10 +903,10 @@ def main():
         return
     
     # Sidebar quarter selector
-    st.sidebar.header("Period")
+    st.sidebar.header("📅 Data Period")
     quarter_options = [f"{q[0]} {q[1]}" for q in available_quarters]
     selected_quarter_idx = st.sidebar.selectbox(
-        "Quarter",
+        "Select Quarter",
         range(len(quarter_options)),
         format_func=lambda x: quarter_options[x]
     )
@@ -937,10 +937,10 @@ def main():
     institution_totals = calculate_institution_portfolios(quarter, year, df)
     
     # Sidebar filters
-    st.sidebar.header("Filters")
+    st.sidebar.header("🔍 Filters")
     
     # Search box
-    search_term = st.sidebar.text_input("Ticker", "")
+    search_term = st.sidebar.text_input("Search by Ticker Symbol", "")
     
     # Get unique values for filters
     all_investors = set()
@@ -957,19 +957,19 @@ def main():
     
     # Filter controls
     selected_investor_types = st.sidebar.multiselect(
-        "Types",
+        "Investor Types",
         options=investor_types,
         default=[]
     )
     
     selected_investors = st.sidebar.multiselect(
-        "Investors",
+        "Specific Investors",
         options=all_investors,
         default=[]
     )
     
     holders_range = st.sidebar.slider(
-        "# Holders",
+        "Number of Holders",
         min_value=int(df['num_holders'].min()),
         max_value=int(df['num_holders'].max()),
         value=(int(df['num_holders'].min()), int(df['num_holders'].max())),
@@ -1047,7 +1047,7 @@ def main():
             display_inst = single_institution[:15] + '...' if len(single_institution) > 15 else single_institution
             st.metric(f"{display_inst} Holdings", f"{len(filtered_df):,}")
         else:
-            st.metric("Securities", f"{len(filtered_df):,}")
+            st.metric("Total Securities", f"{len(filtered_df):,}")
     
     with col2:
         if has_ticker_search and len(filtered_df) > 0:
@@ -1063,7 +1063,7 @@ def main():
                 st.metric("Portfolio", format_large_number(institution_totals[single_institution]))
         else:
             total_value = filtered_df['value_usd'].sum()
-            st.metric("Value", format_large_number(total_value))
+            st.metric("Total Value", format_large_number(total_value))
     
     with col3:
         if has_ticker_search and len(filtered_df) > 0:
@@ -1135,7 +1135,7 @@ def main():
                 consensus_value_str = format_large_number(consensus_value)
                 total_value_str = format_large_number(total_value)
                 
-                st.metric("Consensus", f"{value_consensus_pct:.1f}%")
+                st.metric("Capital Consensus", f"{value_consensus_pct:.1f}%")
             else:
                 st.metric("Capital Consensus", "0.0%")
     
@@ -1152,7 +1152,7 @@ def main():
             # Show selected institutions count when specific investors are selected
             st.metric("Selected", f"{len(filtered_institutions)}")
         else:
-            st.metric("Filed", f"{institutions_filed}/{total_expected_institutions}")
+            st.metric("Institutions Filed", f"{institutions_filed}/{total_expected_institutions}")
     
     with col5:
         if has_ticker_search and len(filtered_df) > 0:
@@ -1161,7 +1161,7 @@ def main():
             st.metric("Shares", 
                      f"{security_data['shares_held']/1e6:.0f}M/{security_data['shares_outstanding']/1e6:.0f}M")
         else:
-            st.metric("Date", metadata.get('generated', 'Unknown')[:10])
+            st.metric("Data Date", metadata.get('generated', 'Unknown')[:10])
     
     # Conditional display: Show Securities Detail when searching, otherwise show 3 tabs
     if has_ticker_search:
@@ -1390,9 +1390,9 @@ def main():
     else:
         # Normal 3-tab view when not searching
         tab1, tab2, tab3 = st.tabs([
-            "Overview",
-            "Holdings",
-            "Changes"
+            "📈 Overview",
+            "🏆 Top Holdings",
+            "🆕 Latest Additions"
         ])
         
         with tab1:
@@ -1403,6 +1403,7 @@ def main():
         
         with tab3:
             if df_adds is not None and len(df_adds) > 0:
+                st.header("📈 Institutional Movements - Quarter-over-Quarter Changes")
                 # Calculate net portfolio % impact for each security
                 # This is the average portfolio % allocation across filtered institutions
                 institutions_filed_count = len(filtered_institutions) if filtered_institutions else current_quarter_filed
@@ -1458,7 +1459,8 @@ def main():
                     col1, col2 = st.columns(2)
                     
                     with col1:
-                        st.markdown(f"**🟢 Increases** ({len(additions_df)} securities)")
+                        st.subheader("🟢 Top Portfolio Increases")
+                        st.caption(f"Securities with highest average portfolio % increases ({len(additions_df)} total)")
                         
                         if len(additions_df) > 0:
                             # Get top 50 additions by portfolio impact
@@ -1469,6 +1471,7 @@ def main():
                                 'Ticker': top_additions['ticker'],
                                 'Company': top_additions['name'].apply(lambda x: x[:15] + '...' if len(x) > 15 else x),
                                 'Avg Port Δ%': top_additions['net_portfolio_change'],
+                                '# Adds': top_additions['net_adds'].fillna(0).astype(int),
                                 'Value ($M)': top_additions['value_usd'],
                                 'Own %': top_additions['pct_of_shares_outstanding']
                             })
@@ -1482,6 +1485,12 @@ def main():
                                     format="%+.4f%%",
                                     width="small",
                                     help="Average portfolio % change across all institutions"
+                                ),
+                                "# Adds": st.column_config.NumberColumn(
+                                    "# Adds",
+                                    format="%+d",
+                                    width="small",
+                                    help="Net institutions adding this quarter"
                                 ),
                                 "Value ($M)": st.column_config.NumberColumn(
                                     "Value",
@@ -1506,7 +1515,8 @@ def main():
                             st.info("No securities with institutional additions")
                     
                     with col2:
-                        st.markdown(f"**🔴 Decreases** ({len(drops_df)} securities)")
+                        st.subheader("🔴 Top Portfolio Decreases")
+                        st.caption(f"Securities with highest average portfolio % decreases ({len(drops_df)} total)")
                         
                         if len(drops_df) > 0:
                             # Get top 50 drops by portfolio impact
@@ -1517,6 +1527,7 @@ def main():
                                 'Ticker': top_drops['ticker'],
                                 'Company': top_drops['name'].apply(lambda x: x[:15] + '...' if len(x) > 15 else x),
                                 'Avg Port Δ%': top_drops['net_portfolio_change'],
+                                '# Drops': (-top_drops['net_adds'].fillna(0)).astype(int),
                                 'Value ($M)': top_drops['value_usd'],
                                 'Own %': top_drops['pct_of_shares_outstanding']
                             })
@@ -1530,6 +1541,12 @@ def main():
                                     format="%.4f%%",
                                     width="small",
                                     help="Average portfolio % change across all institutions"
+                                ),
+                                "# Drops": st.column_config.NumberColumn(
+                                    "# Drops",
+                                    format="%d",
+                                    width="small",
+                                    help="Net institutions dropping this quarter"
                                 ),
                                 "Value ($M)": st.column_config.NumberColumn(
                                     "Value",

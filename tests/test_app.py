@@ -36,16 +36,21 @@ def test_default_view_renders_both_quarters(qidx):
         at.sidebar.selectbox[0].set_value(qidx).run(timeout=TIMEOUT)
     _no_exc(at)
     m = _metrics(at)
-    for label in ("Securities", "Value", "Consensus", "Filed", "Date"):
+    for label in ("Total Securities", "Total Value", "Capital Consensus",
+                  "Institutions Filed", "Data Date"):
         assert label in m, f"missing metric {label!r} in {sorted(m)}"
 
 
 def test_changes_tab_has_data():
     at = _run()
     _no_exc(at)
-    texts = [md.value for md in at.markdown]
-    assert any("Increases" in t for t in texts)
-    assert any("Decreases" in t for t in texts)
+    assert any("Institutional Movements" in h.value for h in at.header)
+    subs = [s.value for s in at.subheader]
+    assert any("Top Portfolio Increases" in s for s in subs)
+    assert any("Top Portfolio Decreases" in s for s in subs)
+    df_cols = [list(d.value.columns) for d in at.dataframe]
+    assert any("# Adds" in cols for cols in df_cols)
+    assert any("# Drops" in cols for cols in df_cols)
 
 
 def test_ticker_search_shows_security_detail():
@@ -94,10 +99,10 @@ def test_investor_type_filter_applies():
 
 def test_quarter_switch_changes_data():
     at = _run()
-    v1 = _metrics(at)["Value"]
+    v1 = _metrics(at)["Total Value"]
     at.sidebar.selectbox[0].set_value(1).run(timeout=TIMEOUT)
     _no_exc(at)
-    v2 = _metrics(at)["Value"]
+    v2 = _metrics(at)["Total Value"]
     assert v1 != v2  # distinct quarters -> distinct aggregates
 
 
