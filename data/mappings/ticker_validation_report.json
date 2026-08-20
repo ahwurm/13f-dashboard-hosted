@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-10T02:49:38.565256",
+  "timestamp": "2026-08-20T06:25:05.986629",
   "total_institutions": 81,
   "institutions_with_tickers": [
     {
@@ -467,19 +467,19 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
         },
         {
-          "ticker": "FPS",
-          "company_name": "Forgent Power Solutions, Inc.",
-          "cik": "0002080126"
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
+        },
+        {
+          "ticker": "ARCC",
+          "company_name": "ARES CAPITAL CORP",
+          "cik": "0001287750"
         }
       ]
     },
@@ -503,9 +503,9 @@
           "cik": "0001952073"
         },
         {
-          "ticker": "ZSQR",
-          "company_name": "Z Squared Inc.",
-          "cik": "0001759186"
+          "ticker": "CSQR",
+          "company_name": "Csquare, Inc.",
+          "cik": "0002105398"
         },
         {
           "ticker": "PSBD",
@@ -591,14 +591,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -622,9 +622,9 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         },
         {
           "ticker": "MUFG",
@@ -632,9 +632,9 @@
           "cik": "0000067088"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
         }
       ]
     },
@@ -653,14 +653,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -725,9 +725,9 @@
           "cik": "0001679788"
         },
         {
-          "ticker": "GFS",
-          "company_name": "GLOBALFOUNDRIES Inc.",
-          "cik": "0001709048"
+          "ticker": "VG",
+          "company_name": "Venture Global, Inc.",
+          "cik": "0002007855"
         }
       ]
     },
@@ -746,14 +746,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -849,9 +849,9 @@
           "cik": "0002030781"
         },
         {
-          "ticker": "SPNT",
-          "company_name": "SiriusPoint Ltd",
-          "cik": "0001576018"
+          "ticker": "AVPT",
+          "company_name": "AvePoint, Inc.",
+          "cik": "0001777921"
         }
       ]
     },
@@ -1020,14 +1020,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1082,14 +1082,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1118,9 +1118,9 @@
           "cik": "0001973239"
         },
         {
-          "ticker": "KXIAY",
-          "company_name": "Kioxia Holdings Corporation/ADR",
-          "cik": "0002053383"
+          "ticker": "STX",
+          "company_name": "Seagate Technology Holdings plc",
+          "cik": "0001137789"
         },
         {
           "ticker": "CRWD",
@@ -1144,14 +1144,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1204,11 +1204,6 @@
           "ticker": "CTWO",
           "company_name": "COTWO ADVISORS PHYSICAL EUROPEAN CARBON ALLOWANCE TRUST",
           "cik": "0001958928"
-        },
-        {
-          "ticker": "HNNAZ",
-          "company_name": "HENNESSY ADVISORS INC",
-          "cik": "0001145255"
         }
       ]
     },
@@ -1227,14 +1222,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1258,14 +1253,14 @@
           "cik": "0000927628"
         },
         {
-          "ticker": "ROK",
-          "company_name": "ROCKWELL AUTOMATION, INC",
-          "cik": "0001024478"
-        },
-        {
           "ticker": "RKLB",
           "company_name": "Rocket Lab Corp",
           "cik": "0001819994"
+        },
+        {
+          "ticker": "ROK",
+          "company_name": "ROCKWELL AUTOMATION, INC",
+          "cik": "0001024478"
         },
         {
           "ticker": "RKT",
@@ -1294,14 +1289,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -1325,14 +1320,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -1382,14 +1377,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1413,14 +1408,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1444,14 +1439,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1537,14 +1532,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1568,14 +1563,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1635,9 +1630,9 @@
           "cik": "0001383650"
         },
         {
-          "ticker": "BEP",
-          "company_name": "Brookfield Renewable Partners L.P.",
-          "cik": "0001533232"
+          "ticker": "EQR",
+          "company_name": "ERP OPERATING LTD PARTNERSHIP",
+          "cik": "0000931182"
         },
         {
           "ticker": "WES",
@@ -1661,14 +1656,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1692,14 +1687,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -1728,9 +1723,9 @@
           "cik": "0001383650"
         },
         {
-          "ticker": "BEP",
-          "company_name": "Brookfield Renewable Partners L.P.",
-          "cik": "0001533232"
+          "ticker": "EQR",
+          "company_name": "ERP OPERATING LTD PARTNERSHIP",
+          "cik": "0000931182"
         },
         {
           "ticker": "WES",
@@ -1847,9 +1842,9 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         },
         {
           "ticker": "MUFG",
@@ -1857,9 +1852,9 @@
           "cik": "0000067088"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
         }
       ]
     },
@@ -1904,14 +1899,14 @@
           "cik": "0000202058"
         },
         {
-          "ticker": "JKHY",
-          "company_name": "JACK HENRY & ASSOCIATES INC",
-          "cik": "0000779152"
-        },
-        {
           "ticker": "MANH",
           "company_name": "MANHATTAN ASSOCIATES INC",
           "cik": "0001056696"
+        },
+        {
+          "ticker": "JKHY",
+          "company_name": "JACK HENRY & ASSOCIATES INC",
+          "cik": "0000779152"
         },
         {
           "ticker": "CBL",
@@ -1945,9 +1940,9 @@
           "cik": "0001383650"
         },
         {
-          "ticker": "BEP",
-          "company_name": "Brookfield Renewable Partners L.P.",
-          "cik": "0001533232"
+          "ticker": "EQR",
+          "company_name": "ERP OPERATING LTD PARTNERSHIP",
+          "cik": "0000931182"
         },
         {
           "ticker": "WES",
@@ -1976,9 +1971,9 @@
           "cik": "0001383650"
         },
         {
-          "ticker": "BEP",
-          "company_name": "Brookfield Renewable Partners L.P.",
-          "cik": "0001533232"
+          "ticker": "EQR",
+          "company_name": "ERP OPERATING LTD PARTNERSHIP",
+          "cik": "0000931182"
         },
         {
           "ticker": "WES",
@@ -2038,14 +2033,14 @@
           "cik": "0001300514"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         }
       ]
     },
@@ -2132,14 +2127,14 @@
       "inst_cik": "0001767640",
       "potential_matches": [
         {
-          "ticker": "CRH",
-          "company_name": "CRH PUBLIC LTD CO",
-          "cik": "0000849395"
-        },
-        {
           "ticker": "RSG",
           "company_name": "REPUBLIC SERVICES, INC.",
           "cik": "0001060391"
+        },
+        {
+          "ticker": "CRH",
+          "company_name": "CRH PUBLIC LTD CO",
+          "cik": "0000849395"
         },
         {
           "ticker": "PSA",
@@ -2173,14 +2168,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -2256,11 +2251,6 @@
       "inst_cik": "0001224962",
       "potential_matches": [
         {
-          "ticker": "PCSC",
-          "company_name": "Perceptive Capital Solutions Corp",
-          "cik": "0002017526"
-        },
-        {
           "ticker": "HNNA",
           "company_name": "HENNESSY ADVISORS INC",
           "cik": "0001145255"
@@ -2269,11 +2259,6 @@
           "ticker": "CTWO",
           "company_name": "COTWO ADVISORS PHYSICAL EUROPEAN CARBON ALLOWANCE TRUST",
           "cik": "0001958928"
-        },
-        {
-          "ticker": "HNNAZ",
-          "company_name": "HENNESSY ADVISORS INC",
-          "cik": "0001145255"
         }
       ]
     },
@@ -2292,14 +2277,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -2323,14 +2308,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -2354,6 +2339,11 @@
           "cik": "0001958140"
         },
         {
+          "ticker": "BRVE",
+          "company_name": "Braveheart Bio, Inc.",
+          "cik": "0002131524"
+        },
+        {
           "ticker": "HNNA",
           "company_name": "HENNESSY ADVISORS INC",
           "cik": "0001145255"
@@ -2362,11 +2352,6 @@
           "ticker": "CTWO",
           "company_name": "COTWO ADVISORS PHYSICAL EUROPEAN CARBON ALLOWANCE TRUST",
           "cik": "0001958928"
-        },
-        {
-          "ticker": "BATRK",
-          "company_name": "Atlanta Braves Holdings, Inc.",
-          "cik": "0001958140"
         }
       ]
     },
@@ -2385,14 +2370,14 @@
           "cik": "0000947484"
         },
         {
-          "ticker": "NLY",
-          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
-          "cik": "0001043219"
-        },
-        {
           "ticker": "OWL",
           "company_name": "BLUE OWL CAPITAL INC.",
           "cik": "0001823945"
+        },
+        {
+          "ticker": "NLY",
+          "company_name": "ANNALY CAPITAL MANAGEMENT INC",
+          "cik": "0001043219"
         },
         {
           "ticker": "ARCC",
@@ -2416,9 +2401,9 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         },
         {
           "ticker": "MUFG",
@@ -2426,9 +2411,9 @@
           "cik": "0000067088"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
         }
       ]
     },
@@ -2447,9 +2432,9 @@
           "cik": "0000886982"
         },
         {
-          "ticker": "C",
-          "company_name": "CITIGROUP INC",
-          "cik": "0000831001"
+          "ticker": "BABA",
+          "company_name": "Alibaba Group Holding Ltd",
+          "cik": "0001577552"
         },
         {
           "ticker": "MUFG",
@@ -2457,9 +2442,9 @@
           "cik": "0000067088"
         },
         {
-          "ticker": "BABA",
-          "company_name": "Alibaba Group Holding Ltd",
-          "cik": "0001577552"
+          "ticker": "C",
+          "company_name": "CITIGROUP INC",
+          "cik": "0000831001"
         }
       ]
     },
@@ -2525,9 +2510,9 @@
           "cik": "0001383650"
         },
         {
-          "ticker": "BEP",
-          "company_name": "Brookfield Renewable Partners L.P.",
-          "cik": "0001533232"
+          "ticker": "EQR",
+          "company_name": "ERP OPERATING LTD PARTNERSHIP",
+          "cik": "0000931182"
         },
         {
           "ticker": "WES",
@@ -2561,9 +2546,9 @@
           "cik": "0001679788"
         },
         {
-          "ticker": "GFS",
-          "company_name": "GLOBALFOUNDRIES Inc.",
-          "cik": "0001709048"
+          "ticker": "VG",
+          "company_name": "Venture Global, Inc.",
+          "cik": "0002007855"
         }
       ]
     },

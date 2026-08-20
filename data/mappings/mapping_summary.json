@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-10T03:03:00.566160",
+  "generated": "2026-08-20T06:38:03.261492",
   "statistics": {
-    "total_cusips": 2859,
+    "total_cusips": 2806,
     "already_mapped": 0,
-    "newly_mapped": 2431,
-    "failed_mappings": 419,
-    "api_calls": 286,
+    "newly_mapped": 2406,
+    "failed_mappings": 400,
+    "api_calls": 281,
     "api_errors": 0,
     "filings_processed": 162,
     "successful_parses": 162,
@@ -18,115 +18,115 @@
     "parse_success_rate": 100.0
   },
   "coverage": {
-    "total_cusips": 2859,
-    "mapped_cusips": 2431,
-    "unmapped_cusips": 419,
-    "coverage_percentage": 85.03
+    "total_cusips": 2806,
+    "mapped_cusips": 2406,
+    "unmapped_cusips": 400,
+    "coverage_percentage": 85.74
   },
   "api_usage": {
-    "total_calls": 286,
+    "total_calls": 281,
     "errors": 0
   },
   "example_mappings": [
     {
-      "cusip": "000899104",
-      "ticker": "ADMA",
-      "name": "ADMA BIOLOGICS INC"
+      "cusip": "004890109",
+      "ticker": "ACRV",
+      "name": "ACRIVON THERAPEUTICS INC"
     },
     {
-      "cusip": "02079K305",
-      "ticker": "GOOGL",
-      "name": "ALPHABET INC"
+      "cusip": "007002207",
+      "ticker": "ACET",
+      "name": "ADICET BIO INC"
     },
     {
-      "cusip": "053015103",
-      "ticker": "ADP",
-      "name": "AUTOMATIC DATA PROCESSING IN"
+      "cusip": "008064206",
+      "ticker": "JBIO",
+      "name": "JADE BIOSCIENCES INC"
     },
     {
-      "cusip": "056525108",
-      "ticker": "BMI",
-      "name": "BADGER METER INC"
+      "cusip": "045396207",
+      "ticker": "ASMB",
+      "name": "ASSEMBLY BIOSCIENCES INC"
     },
     {
-      "cusip": "14888U101",
-      "ticker": "CPRX",
-      "name": "CATALYST PHARMACEUTICALS INC"
+      "cusip": "055477103",
+      "ticker": "BCAX",
+      "name": "BICARA THERAPEUTICS INC"
     },
     {
-      "cusip": "171340102",
-      "ticker": "CHD",
-      "name": "CHURCH & DWIGHT CO INC"
+      "cusip": "221015100",
+      "ticker": "CRVS",
+      "name": "CORVUS PHARMACEUTICALS INC"
     },
     {
-      "cusip": "189054109",
-      "ticker": "CLX",
-      "name": "The Clorox Company"
+      "cusip": "252828108",
+      "ticker": "DNTH",
+      "name": "DIANTHUS THERAPEUTICS INC"
     },
     {
-      "cusip": "26622P107",
-      "ticker": "DOCS",
-      "name": "DOXIMITY INC"
+      "cusip": "254604101",
+      "ticker": "IRON",
+      "name": "DISC MEDICINE INC"
     },
     {
-      "cusip": "34959E109",
-      "ticker": "FTNT",
-      "name": "FORTINET INC"
+      "cusip": "359616109",
+      "ticker": "FULC",
+      "name": "FULCRUM THERAPEUTICS INC"
     },
     {
-      "cusip": "437076102",
-      "ticker": "HD",
-      "name": "HOME DEPOT INC"
+      "cusip": "374163103",
+      "ticker": "GERN",
+      "name": "GERON CORP"
     },
     {
-      "cusip": "45168D104",
-      "ticker": "IDXX",
-      "name": "IDEXX LABS INC"
+      "cusip": "384747101",
+      "ticker": "GRAL",
+      "name": "GRAIL INC"
     },
     {
-      "cusip": "562750109",
-      "ticker": "MANH",
-      "name": "MANHATTAN ASSOCIATES INC"
+      "cusip": "433313103",
+      "ticker": "HNGE",
+      "name": "HINGE HEALTH INC"
     },
     {
-      "cusip": "571903202",
-      "ticker": "MAR",
-      "name": "MARRIOTT INTL INC NEW"
+      "cusip": "457730109",
+      "ticker": "INSP",
+      "name": "INSPIRE MED SYS INC"
     },
     {
-      "cusip": "58506Q109",
-      "ticker": "MEDP",
-      "name": "MEDPACE HLDGS INC"
+      "cusip": "556099109",
+      "ticker": "MGNX",
+      "name": "MACROGENICS INC"
     },
     {
-      "cusip": "30303M102",
-      "ticker": "META",
-      "name": "META PLATFORMS INC"
+      "cusip": "603170101",
+      "ticker": "MLYS",
+      "name": "MINERALYS THERAPEUTICS INC"
     },
     {
-      "cusip": "592688105",
-      "ticker": "MTD",
-      "name": "METTLER TOLEDO INTERNATIONAL"
+      "cusip": "604749101",
+      "ticker": "MIRM",
+      "name": "MIRUM PHARMACEUTICALS INC"
     },
     {
-      "cusip": "594918104",
-      "ticker": "MSFT",
-      "name": "MICROSOFT CORP"
+      "cusip": "690469101",
+      "ticker": "OVID",
+      "name": "OVID THERAPEUTICS INC"
     },
     {
-      "cusip": "55354G100",
-      "ticker": "MSCI",
-      "name": "MSCI INC"
+      "cusip": "696077601",
+      "ticker": "PTN",
+      "name": "PALATIN TECHNOLOGIES INC"
     },
     {
-      "cusip": "630402105",
-      "ticker": "NSSC",
-      "name": "NAPCO SEC TECHNOLOGIES INC"
+      "cusip": "696389402",
+      "ticker": "PALI",
+      "name": "PALISADE BIO INC"
     },
     {
-      "cusip": "67059N108",
-      "ticker": "NTNX",
-      "name": "NUTANIX INC"
+      "cusip": "713317105",
+      "ticker": "PEPG",
+      "name": "PEPGEN INC                  "
     }
   ]
 }
